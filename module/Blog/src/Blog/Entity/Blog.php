@@ -37,6 +37,12 @@ class Blog
     protected $urlKey;
 
     /**
+     * @var string
+     * @ORM\Column(type="string", length=255)
+     */
+    protected $photo;
+
+    /**
      * @var boolean
      * @ORM\Column(type="boolean")
      */
@@ -59,21 +65,21 @@ class Blog
 
     /**
      * @var \Blog\Entity\Locale
-     * @ORM\OneToOne(targetEntity="Locale")
+     * @ORM\ManyToOne(targetEntity="Locale")
      * @ORM\JoinColumn(name="locale_id", referencedColumnName="id", nullable=true)
      */
     protected $locale;
 
     /**
      * @var \User\Entity\User
-     * @ORM\OneToOne(targetEntity="User\Entity\User")
+     * @ORM\ManyToOne(targetEntity="User\Entity\User")
      * @ORM\JoinColumn(name="create_user_id", referencedColumnName="id", nullable=false)
      */
     protected $createUser;
 
     /**
      * @var \User\Entity\User
-     * @ORM\OneToOne(targetEntity="User\Entity\User")
+     * @ORM\ManyToOne(targetEntity="User\Entity\User")
      * @ORM\JoinColumn(name="update_user_id", referencedColumnName="id", nullable=true)
      */
     protected $updateUser;
@@ -94,6 +100,16 @@ class Blog
     public function __construct()
     {
         $this->categories = new ArrayCollection();
+    }
+
+    public function preUpdate()
+    {
+        $this->updateTime = new \DateTime('now');
+    }
+
+    public function prePersist()
+    {
+        $this->createTime = new \DateTime('now');
     }
 
     public function getId()
@@ -146,6 +162,16 @@ class Blog
         foreach ($categories as $category) {
             $this->categories[] = $category;
         }
+    }
+
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto($photoPath)
+    {
+        $this->photo = $photoPath;
     }
 
     public function getLocale()
@@ -213,14 +239,9 @@ class Blog
         $this->updateTime = $time;
     }
 
-    public function publish()
+    public function togglePublished()
     {
-        $this->published = true;
-    }
-
-    public function hide()
-    {
-        $this->published = false;
+        $this->published = !$this->published;
     }
 
     public function isPublished()
@@ -236,6 +257,7 @@ class Blog
             'urlKey',
             'published',
             'content',
+            'photo',
             'categories',
             'locale',
             'createUser',
@@ -258,6 +280,7 @@ class Blog
             'urlKey',
             'published',
             'content',
+            'photo',
             'categories',
             'locale',
             'createUser',

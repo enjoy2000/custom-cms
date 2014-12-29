@@ -126,11 +126,46 @@ trait ControllerMethods{
      */
     public function getCurrentUser(){
         if($this->currentUser === null){
-            $userId = User::currentLoginId();
-            if($userId){
-                $this->currentUser = $this->getUserById($userId);
+            if ($this->zfcUserAuthentication()->hasIdentity()) {
+                $this->currentUser = $this->zfcUserAuthentication()->getIdentity();
             }
         }
         return $this->currentUser;
+    }
+
+    /**
+     * Check for user logged in permission is Moderator of list categories or admin
+     */
+    public function checkPermissionForModerator(array $categories)
+    {
+        if ($this->getCurrentUser()) {
+            $roles = $this->getCurrentUser()->getRoles();
+            foreach ($roles as $role) {
+                $roleId = $role->getRoleId();
+                if($roleId == 'administrator') {  // if admin return true
+                    return true;
+                } else if ($roleId == 'moderator') {  // if mod check if has permission in at least 1 category
+                    foreach ($categories as $category) {
+                        $mods = $category->getModerators();
+                        if (in_array($this->getCurrentUser(), $mods)) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+
+        return $this->redirect()->toRoute('zfcuser', [
+            'controller' => 'user',
+            'action' => 'login'
+        ]);
+    }
+
+    /**
+     * Check current user is admin or not
+     */
+    public function isAdmin()
+    {
+        return ($this->getCurrentUser()->getRoleId() == 'administrator');
     }
 }

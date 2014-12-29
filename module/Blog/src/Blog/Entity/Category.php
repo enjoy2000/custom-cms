@@ -9,6 +9,8 @@
 namespace Blog\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use User\Entity\User;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -29,11 +31,31 @@ class Category {
     protected $name;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    protected $urlKey;
+
+    /**
      * @var \Blog\Entity\Locale
-     * @ORM\OneToOne(targetEntity="Locale")
+     * @ORM\ManyToOne(targetEntity="Locale")
      * @ORM\JoinColumn(name="locale_id", referencedColumnName="id", nullable=true)
      */
     protected $locale;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     * @ORM\ManyToMany(targetEntity="User\Entity\User")
+     * @ORM\JoinTable(name="user_category",
+     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="category_id", referencedColumnName="id")}
+     * )
+     */
+    protected $moderators;
+
+    public function __construct()
+    {
+        $this->moderators = new ArrayCollection();
+    }
 
     public function getId()
     {
@@ -60,5 +82,55 @@ class Category {
     public function setLocale($locale)
     {
         $this->locale = $locale;
+    }
+
+    public function setUrlKey($urlKey)
+    {
+        $this->urlKey = $urlKey;
+    }
+
+    public function getUrlKey()
+    {
+        return $this->urlKey;
+    }
+
+    public function getModerators()
+    {
+        return $this->moderators->getValues();
+    }
+
+    public function setModerators(array $moderators)
+    {
+        $this->moderators = $moderators;
+    }
+
+    public function getData()
+    {
+        $keys = [
+            'id',
+            'name',
+            'urlKey',
+            'locale',
+            'moderators'
+        ];
+        $data = [];
+        foreach ($keys as $key) {
+            $data[$key] = $this->$key;
+        }
+
+        return $data;
+    }
+
+    public function setData($data)
+    {
+        $keys = [
+            'name',
+            'urlKey',
+            'locale',
+            'moderators'
+        ];
+        foreach ($keys as $key) {
+            $this->$key = $data[$key];
+        }
     }
 }
