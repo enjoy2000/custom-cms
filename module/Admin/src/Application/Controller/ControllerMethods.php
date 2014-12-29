@@ -10,7 +10,6 @@ namespace Application\Controller;
 
 use Zend\Stdlib\RequestInterface as Request;
 use Zend\Stdlib\ResponseInterface as Response;
-use Zend\Session\Container;
 
 use User\Entity\User;
 
@@ -20,8 +19,6 @@ trait ControllerMethods{
     protected $currentUser = null;
 
     protected $_entityManager = null;
-
-    protected $_locale = null;
 
     /**
      * Dispatch a request
@@ -47,30 +44,12 @@ trait ControllerMethods{
     }
 
     /**
-     * Get current locale
-     * @return string|null
-     */
-    public function getLocale()
-    {
-        if (null === $this->_locale) {
-            $locale = new Container('locale');
-            $this->_locale  = $locale->locale;
-        }
-
-        return $this->_locale;
-    }
-
-    /**
      * @param $entityName
      * @param $criteria
      * @return object
      */
     public function findOneBy($entityName, $criteria){
-        return $this->getEntityManager()->getRepository($entityName)->findOneBy($criteria);
-    }
-
-    public function findBy($entityName, $criteria){
-        return $this->getEntityManager()->getRepository($entityName)->findBy($criteria);
+        $this->getEntityManager()->getRepository($entityName)->findOneBy($criteria);
     }
 
     /**

@@ -11,6 +11,7 @@ namespace Application;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
+use Zend\Session\Container;
 
 class Module
 {
@@ -19,6 +20,39 @@ class Module
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+
+        // service manager
+        $sm = $e->getApplication()->getServiceManager();
+
+        // set language based on $_SERVER['HTTP_ACCEPT_LANGUAGE'] && session
+        // session container
+        $sessionContainer = new Container('locale');
+
+        $sessionContainer->offsetUnset('locale');
+        // test if session language exists
+        if (!$sessionContainer->offsetExists('locale')) {
+            // if not use the browser locale
+            if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])){
+                $localeCode = \Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+                $em = $sm->get('doctrine.entitymanager.orm_default');
+
+                // check if we support this language or not
+                $localeExist = $em->getRepository('Blog\Entity\Locale')->findOneBy(['name' => $localeCode]);
+                if ($localeExist) {
+                    $sessionContainer->offsetSet('locale', $localeCode);
+                } else{
+                    $sessionContainer->offsetSet('locale', 'en_US');
+                }
+            } else {
+                $sessionContainer->offsetSet('locale', 'en_US');
+            }
+
+        }
+
+        // translating system
+        $translator = $sm->get('translator');
+        $translator ->setLocale($sessionContainer->locale)
+            ->setFallbackLocale('en_US');
     }
 
     public function getConfig()
