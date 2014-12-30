@@ -16,6 +16,7 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
+        // $this->getCurrentUser()->addRoleByRoleName($this, 'administrator');
         return new ViewModel();
     }
 }

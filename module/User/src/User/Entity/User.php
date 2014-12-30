@@ -239,10 +239,10 @@ class User implements UserInterface, ProviderInterface
     * @return void
     */
     public function addRoleByRoleName($controller, $roleName = 'guest') {
-        $role = $this->getEntityManager()->getRepository('User\Entity\Role')->findOneBy(array('roleId' => $roleName));
+        $role = $controller->getEntityManager()->getRepository('User\Entity\Role')->findOneBy(array('roleId' => $roleName));
         if ($role) {
             $this->addRole($role);
-            $controller->getEntityManager()->merge($user);
+            $controller->getEntityManager()->merge($this);
             $controller->getEntityManager()->flush();
             
             return $this;
@@ -250,5 +250,17 @@ class User implements UserInterface, ProviderInterface
             
             return false;
         }
+    }
+
+    public function isModeratorOrAdmin()
+    {
+        $roles = $this->getRoles();
+        foreach ($roles as $role) {
+            if ($role->getRoleId() == 'administrator' || $role->getRoleId() == 'moderator') {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

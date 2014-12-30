@@ -62,6 +62,8 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Api\Controller\Blog\Blog' => 'Api\Controller\Blog\BlogController',
+            'Api\Controller\Blog\Category' => 'Api\Controller\Blog\CategoryController',
+            'Api\Controller\Blog\Locale' => 'Api\Controller\Blog\LocaleController',
         ),
     ),
     'view_manager' => array(
@@ -69,49 +71,4 @@ return array(
             'ViewJsonStrategy',
         ),
     ),
-    'countries' => [
-        'US' => 'United State',
-        'VN' => 'Vietnam',
-        'CN' => 'China',
-        'EN' => 'England',
-    ],
-    'project_create' => [
-        'statuses' => [
-            ['id' => 1, 'name' => 'Quote', 'decorator' => 'info'],
-            ['id' => 2, 'name' => 'Ordered', 'decorator' => 'danger'],
-        ],
-        'priorities' => [
-            ['id' => 1, 'name' => 'Normal', 'decorator' => 'primary'],
-            ['id' => 2, 'name' => 'High', 'decorator' => 'danger'],
-        ],
-        'levels' => [
-            ['id' => 1, 'name' => 'Professional', 'price' => [
-                'USD' => 1.00,
-                'CNY' => 10.00,
-            ]],
-            ['id' => 2, 'name' => 'Business', 'price' => [
-                'USD' => 2.00,
-                'CNY' => 20.00,
-            ]],
-            ['id' => 3, 'name' => 'Premium', 'price' => [
-                'USD' => 3.00,
-                'CNY' => 30.00,
-            ]],
-        ],
-        'interpretingUnits' => [
-            ['id' => 1, 'name' => 'Day'],
-            ['id' => 2, 'name' => 'Half Day'],
-        ],
-        'engineeringUnits' => [
-            ['id' => 1, 'name' => 'Page'],
-            ['id' => 2, 'name' => 'Graphic'],
-            ['id' => 3, 'name' => 'Hour'],
-            ['id' => 4, 'name' => 'Day'],
-            ['id' => 5, 'name' => 'Month'],
-        ],
-        'dtpUnits' => [
-            ['id' => 1, 'name' => 'Hour'],
-            ['id' => 2, 'name' => 'Page'],
-        ],
-    ],
 );

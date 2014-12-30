@@ -26,6 +26,11 @@ class Locale {
     /**
      * @ORM\Column(type="string", length=10)
      */
+    protected $code;
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
     protected $name;
 
     public function getId()
@@ -41,5 +46,30 @@ class Locale {
     public function setName($localeCode)
     {
         $this->name = $localeCode;
+    }
+
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    public function setCode($localeCode)
+    {
+        $this->code = $localeCode;
+    }
+
+    public function getData()
+    {
+        $keys = [
+            'id',
+            'code',
+            'name'
+        ];
+        $data = [];
+        foreach ($keys as $key) {
+            $data[$key] = $this->$key;
+        }
+
+        return $data;
     }
 }

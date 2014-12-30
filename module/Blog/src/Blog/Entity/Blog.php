@@ -38,9 +38,9 @@ class Blog
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    protected $photo;
+    protected $photo = null;
 
     /**
      * @var boolean
@@ -51,7 +51,24 @@ class Blog
     /**
      * @ORM\Column(type="text")
      */
+    protected $shortContent;
+
+    /**
+     * @ORM\Column(type="text")
+     */
     protected $content;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    protected $metaDescription = null;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    protected $metaKeywords = null;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -249,6 +266,36 @@ class Blog
         return (boolean) $this->published;
     }
 
+    public function getShortContent()
+    {
+        return $this->shortContent;
+    }
+
+    public function setShortContent($shortContent)
+    {
+        $this->shortContent = $shortContent;
+    }
+
+    public function getMetaDescription()
+    {
+        return $this->metaDescription;
+    }
+
+    public function setMetaDescription($metaDescription)
+    {
+        $this->metaDescription = $metaDescription;
+    }
+
+    public function getMetaKeywords()
+    {
+        return $this->metaKeywords;
+    }
+
+    public function setMetaKeywords($metaKeywords)
+    {
+        $this->metaKeywords = $metaKeywords;
+    }
+
     public function getData()
     {
         $keys = [
@@ -256,7 +303,10 @@ class Blog
             'title',
             'urlKey',
             'published',
+            'shortContent',
             'content',
+            'metaDescription',
+            'metaKeywords',
             'photo',
             'categories',
             'locale',
@@ -279,7 +329,10 @@ class Blog
             'title',
             'urlKey',
             'published',
+            'shortContent',
             'content',
+            'metaDescription',
+            'metaKeywords',
             'photo',
             'categories',
             'locale',

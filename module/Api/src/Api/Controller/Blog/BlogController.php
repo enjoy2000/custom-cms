@@ -13,7 +13,6 @@ use Zend\View\Model\JsonModel;
 use Zend\Paginator\Paginator;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
-use Zend\Session\Container;
 
 class BlogController extends AbstractRestfulJsonController
 {
@@ -24,6 +23,10 @@ class BlogController extends AbstractRestfulJsonController
         $em = $this->getEntityManager();
         $blogs = $em->getRepository('Blog\Entity\Blog');
         $queryBuilder = $blogs->createQueryBuilder('blog');
+
+        if (!$this->getCurrentUser() || !$this->getCurrentUser()->isModeratorOrAdmin()) {
+            $queryBuilder->andWhere('blog.published=true');
+        }
 
         // start filter
         if ($localeCode = $this->params()->fromQuery('locale')) {
@@ -36,7 +39,7 @@ class BlogController extends AbstractRestfulJsonController
         $paginator->setDefaultItemCountPerPage(10);
 
         $page = (int)$this->getRequest()->getQuery('page');
-        if($page) $paginator->setCurrentPageNumber($page);
+        if ($page) $paginator->setCurrentPageNumber($page);
         $data = array();
 
         foreach($paginator as $blog){

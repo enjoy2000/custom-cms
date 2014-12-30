@@ -5,7 +5,7 @@
  * Date: 29/12/2014
  * Time: 15:10
  */
-namespace Api\Controller\Category;
+namespace Api\Controller\Blog;
 
 use Api\Controller\AbstractRestfulJsonController;
 use Blog\Entity\Category;

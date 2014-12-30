@@ -10,41 +10,37 @@
 return array(
     'router' => array(
         'routes' => array(
-            'home' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
-                'options' => array(
-                    'route'    => '/',
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\Index',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            // The following is a route to simplify getting started creating
-            // new controllers and actions without needing to create a new
-            // module. Simply drop new controllers in, and you can access them
-            // using the path /application/:controller/:action
-            'application' => array(
-                'type'    => 'Literal',
-                'options' => array(
-                    'route'    => '/application',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Application\Controller',
-                        'controller'    => 'Index',
-                        'action'        => 'index',
-                    ),
-                ),
-                'may_terminate' => true,
+            'zfcadmin' => array(
                 'child_routes' => array(
-                    'default' => array(
-                        'type'    => 'Segment',
+
+                    // DASHBOARD
+                    'dashboard' => array(
+                        'type' => 'Segment',
                         'options' => array(
-                            'route'    => '/[:controller[/:action]]',
+                            'route' => '/dashboard[/:action]',
                             'constraints' => array(
-                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'controller' => 'Admin\Controller\Dashboard',
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                             ),
                             'defaults' => array(
+                                'controller' => 'Admin\Controller\Dashboard',
+                                'action'     => 'index',
+                            ),
+                        ),
+                    ),
+
+                    // CATEGORY
+                    'category' => array(
+                        'type' => 'Segment',
+                        'options' => array(
+                            'route' => '/category[/:action]',
+                            'constraints' => array(
+                                'controller' => 'Admin\Controller\Category',
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                                'controller' => 'Admin\Controller\Category',
+                                'action'     => 'index',
                             ),
                         ),
                     ),
@@ -73,21 +69,18 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Admin\Controller\Dashboard' => 'Admin\Controller\DashboardController',
+            'Admin\Controller\Category' => 'Admin\Controller\CategoryController'
         ),
     ),
     'view_manager' => array(
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
         'doctype'                  => 'HTML5',
-        'not_found_template'       => 'error/404',
-        'exception_template'       => 'error/index',
         'template_map' => array(
-            'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'layout/admin'           => __DIR__ . '/../view/layout/admin.phtml',
-            'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
-            'error/404'               => __DIR__ . '/../view/error/404.phtml',
-            'error/index'             => __DIR__ . '/../view/error/index.phtml',
+            'admin/category/index' => __DIR__ . '/../view/admin/category/index.phtml',
+            'admin/category/new' => __DIR__ . '/../view/admin/category/new.phtml',
+            'admin/dashboard/index' => __DIR__ . '/../view/admin/dashboard/index.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
