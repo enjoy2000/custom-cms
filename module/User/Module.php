@@ -19,6 +19,7 @@ class Module
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+        $eventManager->attach(MvcEvent::EVENT_DISPATCH, array($this, 'selectLayout'));
     }
 
     public function getConfig()
@@ -35,5 +36,11 @@ class Module
                 ),
             ),
         );
+    }
+
+    public function selectLayout(MvcEvent $e)
+    {
+        $controller = $e->getTarget();
+        $controller->layout('layout/admin');
     }
 }

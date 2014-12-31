@@ -12,6 +12,23 @@ class AbstractRestfulJsonController extends AbstractRestfulController
         throw new \Exception('Method Not Allowed');
     }
 
+    public function getDataList($array)
+    {
+        $data = [];
+        foreach ($array as $member) {
+            $data[] = $member->getData();
+        }
+
+        return $data;
+    }
+
+    public function getAllData($entityPath)
+    {
+        $rows = $this->getEntityManager()->getRepository($entityPath)->findAll();
+
+        return $this->getDataList($rows);
+    }
+
     # Override default actions as they do not return valid JsonModels
     public function create($data)
     {

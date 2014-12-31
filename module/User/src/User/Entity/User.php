@@ -263,4 +263,15 @@ class User implements UserInterface, ProviderInterface
 
         return false;
     }
+
+    public function getData()
+    {
+        return [
+            'id' => $this->id,
+            'username' => $this->username,
+            'email' => $this->email,
+            'displayName' => $this->displayName,
+            'roles' => $this->getRoles()
+        ];
+    }
 }

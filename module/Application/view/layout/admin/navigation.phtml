@@ -1,0 +1,40 @@
+<?php
+$routeName = $this->getHelperPluginManager()->getServiceLocator()->get('Application')
+    ->getMvcEvent()->getRouteMatch()->getMatchedRouteName();
+$modules = explode('/', $routeName);
+$module = isset($modules[1]) ? $modules[1] : null;
+?>
+
+<ul class="nav navbar-nav">
+    <li class="<?php echo ($module == 'dashboard') ? ' active' : '' ?>">
+        <a href="/admin/dashboard">Dashboard</a>
+    </li>
+    <li class="dropdown<?php echo ($module == 'category') ? ' active' : '' ?>">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Category <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="/admin/category/new">Add a Category</a>
+            </li>
+            <li>
+                <a href="/admin/category">Categories Manager</a>
+            </li>
+        </ul>
+    </li>
+    <li class="dropdown<?php echo ($module == 'blog') ? ' active' : '' ?>">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Blog <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="/admin/blog/new">Add a Blog</a>
+            </li>
+            <li>
+                <a href="/admin/blog">Blogs Manager</a>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<?php if ($this->zfcUserIdentity()) : ?>
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="/user/logout">Logout</a></li>
+</ul>
+<?php endif; ?>

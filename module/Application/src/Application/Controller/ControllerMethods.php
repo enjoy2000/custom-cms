@@ -166,6 +166,13 @@ trait ControllerMethods{
      */
     public function isAdmin()
     {
-        return ($this->getCurrentUser()->getRoleId() == 'administrator');
+        $roles = $this->getCurrentUser()->getRoles();
+        foreach ($roles as $role) {
+            if ($role->getRoleId() == 'administrator') {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

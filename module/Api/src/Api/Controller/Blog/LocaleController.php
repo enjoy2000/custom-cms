@@ -15,13 +15,7 @@ class LocaleController extends AbstractRestfulJsonController
 
     public function getList()
     {
-        $em = $this->getEntityManager();
-        $locales = $em->getRepository('Blog\Entity\Locale');
-        //var_dump($locales);die;
-        $data = [];
-        foreach ($locales as $locale) {
-            $data[] = $locale->getData();
-        }
+        $data = $this->getAllData('Blog\Entity\Locale');
 
         return new JsonModel([
             'locales' => $data,

@@ -1,6 +1,8 @@
 <?php $this->headTitle($this->translate('Add a category')) ?>
 <?php $this->headScript()
         ->prependFile('/js/admin/category-new.js')
+        ->prependScript("var angularModule = angular.module('customCMS', []);")
+        ->prependFile('//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js')
         ->prependFile('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js');
 ?>
 
@@ -10,7 +12,7 @@
     <input type="hidden" name="id" ng-model="category.id" />
 
     <div class="form-group">
-        <label class="control-label col-md-3" for="name">Name</label>
+        <label class="control-label col-md-3" for="name">Name *</label>
         <div class="col-md-7">
             <input class="required form-control" name="name" type="text" ng-model="category.name" />
         </div>
@@ -24,12 +26,23 @@
     </div>
 
     <div class="form-group">
-        <label class="control-label col-md-3" for="locale">Locale</label>
+        <label class="control-label col-md-3" for="locale">Locale *</label>
         <div class="col-md-7">
             <select class="required form-control" name="locale" ng-model="category.locale">
-                <option>Please choose</option>
-                <option ng-repeat="locale in locales" value="locale.id">{{locale.name}}</option>
+                <option value="">
+                    Please choose
+                </option>
+                <option ng-repeat="locale in locales" value="{{locale.id}}">
+                    {{locale.name}}
+                </option>
             </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3" for="urlKey">&nbsp;</label>
+        <div class="col-md-7">
+            <input ng-click="submit()" class="form-control btn btn-primary" type="submit" name="urlKey" value="Create" />
         </div>
     </div>
 </form>

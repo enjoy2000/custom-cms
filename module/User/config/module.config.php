@@ -21,6 +21,8 @@ return array(
         'user_entity_class'       => 'User\Entity\User',
         // telling ZfcUserDoctrineORM to skip the entities it defines
         'enable_default_entities' => false,
+        'enable_registration' => false,
+        'login_redirect_route' => 'zfcadmin',
     ),
 
     'bjyauthorize' => array(

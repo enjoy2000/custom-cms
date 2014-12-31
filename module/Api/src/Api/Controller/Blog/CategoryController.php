@@ -72,13 +72,33 @@ class CategoryController extends AbstractRestfulJsonController
 
         $em = $this->getEntityManager();
         $category = new Category();
-        $category->setData($category);
-        $category->setCreateUser($user);
+
+        // get locale
+        $data['locale'] = $this->find('Blog\Entity\Locale', (int)$data['locale']);
+
+        if (!$data['urlKey']) {
+            $slug = \Application\Helper\Url::formatUrl($data['name']);
+
+            // check slug exist
+            $slugExist = $this->findOneBy('Blog\Entity\Category', ['urlKey' => $slug]);
+            if ($slugExist) {
+                $slug .= '-' . date('Ymdhis');
+            }
+            $data['urlKey'] = $slug;
+        } else {
+            // check slug exist
+            $slugExist = $this->findOneBy('Blog\Entity\Category', ['urlKey' => $data['urlKey']]);
+            if ($slugExist) {
+                $data['urlKey'] .= '-' . date('Ymdhis');
+            }
+        }
+
+        $category->setData($data);
         $em->persist($category);
         $em->flush();
 
         return new JsonModel([
-            'category' => $category
+            'success' => true
         ]);
     }
 
@@ -90,18 +110,48 @@ class CategoryController extends AbstractRestfulJsonController
                 'action' => 'login'
             ]);
         }
+
         // get data for update
         $user = $this->getCurrentUser();
 
         $em = $this->getEntityManager();
         $category = $this->find('Blog\Entity\Category', $id);
+
+        // update moderators
+        if ($data['updateMods']) {
+            $arrModEntities = [];
+            foreach ($data['updateMods'] as $modId) {
+                $arrModEntities[] = $this->find('User\Entity\User', (int)$modId);
+            }
+            $category->setModerators($arrModEntities);
+            $em->merge($category);
+            $em->flush();
+
+            return new JsonModel([
+                'category' => $category->getData()
+            ]);
+        }
+
+        if ($data['urlKey']) {
+            // check slug exist
+            $slugExist = $this->findOneBy('Blog\Entity\Category', ['urlKey' => $data['urlKey']]);
+            if ($slugExist) {
+                $data['urlKey'] .= '-' . date('Ymdhis');
+            }
+        }
+
+        // get locale
+        if ($data['locale']) {
+            $data['locale'] = $this->find('Blog\Entity\Locale', (int)$data['locale']);
+        }
+
         $category->setData($data);
         $category->setUpdateUser($user);
         $em->merge($category);
         $em->flush();
 
         return new JsonModel([
-            'category' => $category
+            'category' => $category->getData()
         ]);
     }
 
@@ -121,6 +171,7 @@ class CategoryController extends AbstractRestfulJsonController
         $em->flush();
 
         return new JsonModel([
+            'success' => true
         ]);
     }
 }

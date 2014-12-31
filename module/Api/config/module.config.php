@@ -64,6 +64,7 @@ return array(
             'Api\Controller\Blog\Blog' => 'Api\Controller\Blog\BlogController',
             'Api\Controller\Blog\Category' => 'Api\Controller\Blog\CategoryController',
             'Api\Controller\Blog\Locale' => 'Api\Controller\Blog\LocaleController',
+            'Api\Controller\Blog\Moderator' => 'Api\Controller\Blog\ModeratorController',
         ),
     ),
     'view_manager' => array(

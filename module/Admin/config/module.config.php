@@ -11,6 +11,12 @@ return array(
     'router' => array(
         'routes' => array(
             'zfcadmin' => array(
+                'options' => array(
+                    'defaults' => array(
+                        'controller' => 'Admin\Controller\Dashboard',
+                        'action'     => 'index',
+                    ),
+                ),
                 'child_routes' => array(
 
                     // DASHBOARD
@@ -31,16 +37,36 @@ return array(
 
                     // CATEGORY
                     'category' => array(
-                        'type' => 'Segment',
+                        'type' => 'literal',
                         'options' => array(
-                            'route' => '/category[/:action]',
-                            'constraints' => array(
-                                'controller' => 'Admin\Controller\Category',
-                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                            ),
+                            'route' => '/category',
                             'defaults' => array(
                                 'controller' => 'Admin\Controller\Category',
-                                'action'     => 'index',
+                                'action' => 'index',
+                            ),
+                        ),
+                        'may_terminate' => true,
+                        'child_routes' => array(
+                            'new' => array(
+                                'type' => 'literal',
+                                'options' => array(
+                                    'route' => '/new',
+                                    'defaults' => array(
+                                        'action' => 'new',
+                                    ),
+                                ),
+                            ),
+                            'edit' => array(
+                                'type' => 'Segment',
+                                'options' => array(
+                                    'route' => '/edit[/][:id]',
+                                    'constraints' => array(
+                                        'slug' => '[0-9]+',
+                                    ),
+                                    'defaults' => array(
+                                        'action' => 'edit',
+                                    ),
+                                ),
                             ),
                         ),
                     ),

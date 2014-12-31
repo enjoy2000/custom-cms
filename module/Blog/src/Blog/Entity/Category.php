@@ -31,7 +31,7 @@ class Category {
     protected $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=false, unique=true)
      */
     protected $urlKey;
 
@@ -106,19 +106,18 @@ class Category {
 
     public function getData()
     {
-        $keys = [
-            'id',
-            'name',
-            'urlKey',
-            'locale',
-            'moderators'
-        ];
-        $data = [];
-        foreach ($keys as $key) {
-            $data[$key] = $this->$key;
+        $mods = $this->getModerators();
+        $users = [];
+        foreach ($mods as $mod) {
+            $users[] = $mod->getData();
         }
-
-        return $data;
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'locale' => $this->locale->getData(),
+            'urlKey' => $this->urlKey,
+            'moderators' => $users
+        ];
     }
 
     public function setData($data)
@@ -127,7 +126,6 @@ class Category {
             'name',
             'urlKey',
             'locale',
-            'moderators'
         ];
         foreach ($keys as $key) {
             $this->$key = $data[$key];
