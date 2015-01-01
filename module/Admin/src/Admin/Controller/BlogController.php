@@ -11,7 +11,7 @@ namespace Admin\Controller;
 use Application\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class CategoryController extends AbstractActionController
+class BlogController extends AbstractActionController
 {
     public function indexAction()
     {

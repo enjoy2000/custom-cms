@@ -70,6 +70,42 @@ return array(
                             ),
                         ),
                     ),
+
+                    // BLOG
+                    'blog' => array(
+                        'type' => 'literal',
+                        'options' => array(
+                            'route' => '/blog',
+                            'defaults' => array(
+                                'controller' => 'Admin\Controller\Blog',
+                                'action' => 'index',
+                            ),
+                        ),
+                        'may_terminate' => true,
+                        'child_routes' => array(
+                            'new' => array(
+                                'type' => 'literal',
+                                'options' => array(
+                                    'route' => '/new',
+                                    'defaults' => array(
+                                        'action' => 'new',
+                                    ),
+                                ),
+                            ),
+                            'edit' => array(
+                                'type' => 'Segment',
+                                'options' => array(
+                                    'route' => '/edit[/][:id]',
+                                    'constraints' => array(
+                                        'slug' => '[0-9]+',
+                                    ),
+                                    'defaults' => array(
+                                        'action' => 'edit',
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
                 ),
             ),
         ),
@@ -95,6 +131,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
+            'Admin\Controller\Blog' => 'Admin\Controller\BlogController',
             'Admin\Controller\Dashboard' => 'Admin\Controller\DashboardController',
             'Admin\Controller\Category' => 'Admin\Controller\CategoryController'
         ),
