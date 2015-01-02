@@ -24,10 +24,10 @@ $module = isset($modules[1]) ? $modules[1] : null;
         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Blog <b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
-                <a href="/admin/blog/new">Add a Blog</a>
+                <a href="/admin/blog/new">Add News</a>
             </li>
             <li>
-                <a href="/admin/blog">Blogs Manager</a>
+                <a href="/admin/blog">News Manager</a>
             </li>
         </ul>
     </li>
@@ -35,6 +35,17 @@ $module = isset($modules[1]) ? $modules[1] : null;
 
 <?php if ($this->zfcUserIdentity()) : ?>
 <ul class="nav navbar-nav navbar-right">
-    <li><a href="/user/logout">Logout</a></li>
+    <li><a href="/admin/moderator/create">Create Moderator</a></li>
+    <li class="dropdown">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Account <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="/user/changepassword">Change password</a>
+            </li>
+            <li>
+                <a href="/user/logout">Logout</a>
+            </li>
+        </ul>
+    </li>
 </ul>
 <?php endif; ?>

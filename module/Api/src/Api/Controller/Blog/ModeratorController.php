@@ -22,7 +22,7 @@ class ModeratorController extends AbstractRestfulJsonController
         $queryBuilder = $users->createQueryBuilder('user');
         $mods  = $queryBuilder
                     ->innerJoin('user.roles', 'r')
-                    ->where("r.roleId='administrator'")
+                    ->where("r.roleId='moderator'")
                     ->getQuery()
                     ->getResult();
         $data = [];

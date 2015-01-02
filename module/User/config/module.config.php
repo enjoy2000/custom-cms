@@ -23,6 +23,8 @@ return array(
         'enable_default_entities' => false,
         'enable_registration' => false,
         'login_redirect_route' => 'zfcadmin',
+        'login_after_registration' => true,
+        'enable_display_name' => true,
     ),
 
     'bjyauthorize' => array(

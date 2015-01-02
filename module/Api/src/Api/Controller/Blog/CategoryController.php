@@ -23,13 +23,27 @@ class CategoryController extends AbstractRestfulJsonController
         // create pager
         $em = $this->getEntityManager();
         $categories = $em->getRepository('Blog\Entity\Category');
-        $queryBuilder = $categories->createQueryBuilder('Category');
+        $queryBuilder = $categories->createQueryBuilder('c');
 
         // start filter
-        if ($localeCode = $this->params()->fromQuery('locale')) {
-            $locale = $this->findOneBy('Blog\Entity\Locale', ['name' => $localeCode]);
-            $queryBuilder->andWhere('Category.locale_id = ' . $locale->getId());
+        if ($localeId = $this->params()->fromQuery('locale')) {
+            $queryBuilder
+                ->innerJoin('\Blog\Entity\Locale', 'l')
+                ->where("c.locale=l.id")
+                ->andWhere('l.id=:id')
+                ->setParameter(':id', (int)$localeId);
         }
+        $cats = $queryBuilder->getQuery()->getResult();
+        $data = [];
+        /**
+         * @var \Blog\Entity\Category $cat
+         */
+        foreach ($cats as $cat) {
+            $data[] = $cat->getData();
+        }
+
+
+        /**
         // end filter
         $adapter = new DoctrineAdapter(new ORMPaginator($queryBuilder));
         $paginator = new Paginator($adapter);
@@ -39,14 +53,16 @@ class CategoryController extends AbstractRestfulJsonController
         if($page) $paginator->setCurrentPageNumber($page);
         $data = array();
 
+        // var_dump($paginator);die;
+
         foreach($paginator as $category){
             $categoryData = $category->getData();
             $data[] = $categoryData;
         }
+        */
         //var_dump($paginator);die;
         return new JsonModel([
             'categories' => $data,
-            'pages' => $paginator->getPages()
         ]);
     }
 

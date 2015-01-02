@@ -13,6 +13,8 @@ use Zend\Form\Element;
 use Zend\InputFilter;
 use Zend\Mvc\Application;
 use Zend\Validator;
+use Zend\Filter;
+use Blog\Entity\Blog;
 
 
 class BlogForm extends ZendForm {
@@ -21,72 +23,90 @@ class BlogForm extends ZendForm {
         // we want to ignore the name passed
         parent::__construct();
         $this->setAttribute('method', 'post');
+        $this->setAttribute('role', 'form');
+        $this->setAttribute('class', 'form form-horizontal');
+        $this->setAttribute('id', 'blogForm');
         $this->getInputFilter();
 
         $this->add(array(
             'name' => 'id',
-            'options' => array(
-                'label' => 'id',
-            ),
             'type'  => 'hidden',
         ));
 
         // get list options locale
         $localeEntity = $controller->getEntityManager()->getRepository('Blog\Entity\Locale')->findAll();
-        $locales = [];
+        $locales = [null => 'Please choose'];
 
         /** @var \Blog\Entity\Locale $locale */
         foreach ($localeEntity as $locale) {
-            $locales[] = [$locale->getId() => $locale->getName()];
+            $locales[$locale->getId()] = $locale->getName();
         }
 
         $this->add(array(
             'type' => 'Zend\Form\Element\Select',
             'name' => 'locale',
-            'options' => array(
-                'label' => 'Language',
-                'class' => 'input-control',
-                'values' => $locales
+            'attributes' => array(
+                'class' => 'form-control col-md-7',
+                'required' => true,
+                'id' => 'select-locale',
             ),
+            'options' => array(
+                'label' => 'Select language',
+                'value_options' => $locales,
+            )
         ));
 
         $this->add(array(
             'type' => 'Zend\Form\Element\Select',
             'name' => 'categories',
-            'options' => array(
-                'label' => 'Categories',
-                'class' => 'input-control',
-                'id' => 'select-category'
+            'attributes' => array(
+                'class' => 'form-control col-md-7',
+                'required' => true,
+                'id' => 'select-category',
+                'multiple' => 'multiple',
             ),
+            'options' => array(
+                'disable_inarray_validator' => true, // <-- disable
+                'label' => 'Select Categories',
+                'value_options' => [
+                    null => 'Please select language first'
+                ],
+            )
         ));
 
         $this->add(array(
             'type' => 'Zend\Form\Element\Text',
             'name' => 'title',
+            'attributes' => array(
+                'class' => 'form-control col-md-7',
+                'required' => true,
+            ),
             'options' => array(
                 'label' => 'Title',
-                'class' => 'input-control'
-            ),
+            )
         ));
         $this->add(array(
             'name' => 'urlKey',
             'options' => array(
                 'label' => 'Url key',
             ),
+            'attributes' => array(
+                'class' => 'form-control col-md-7',
+                'required' => false,
+            ),
             'type'  => 'Text',
-            'validators' => array(
-                array('StringLength', FALSE, array(3, 255)),
-                array('Regex', FALSE, array('pattern' => '/^[\w.-]*$/'))
-            )
         ));
 
         $this->add(array(
             'type' => 'Zend\Form\Element\Select',
             'name' => 'published',
+            'attributes' => [
+                'class' => 'form-control col-md-7',
+                'required' => true,
+            ],
             'options' => array(
                 'label' => 'Published',
-                'class' => 'input-control',
-                'values' => [
+                'value_options' => [
                     '1' => 'Active',
                     '2' => 'Inactive'
                 ]
@@ -96,6 +116,7 @@ class BlogForm extends ZendForm {
         // File Input
         $file = new Element\File('photo');
         $file->setLabel('Photo')
+            ->setAttribute('class', 'form-control')
             ->setAttribute('id', 'photo');
         $this->add($file);
 
@@ -104,34 +125,44 @@ class BlogForm extends ZendForm {
             'name' => 'shortContent',
             'options' => array(
                 'label' => 'Description',
-                'id' => 'shortContent',
-                'class' => 'input-control'
             ),
+            'attributes' => [
+                'id' => 'shortContent',
+                'class' => 'form-control col-md-7',
+                'required' => true
+            ]
         ));
         $this->add(array(
             'type' => 'Zend\Form\Element\Textarea',
             'name' => 'content',
             'options' => array(
                 'label' => 'Content',
-                'id' => 'content',
-                'class' => 'input-control summernote'
             ),
+            'attributes' => [
+                'id' => 'blog-content',
+                'class' => 'form-control summernote',
+                'required' => true
+            ],
         ));
         $this->add(array(
             'type' => 'Zend\Form\Element\Textarea',
             'name' => 'metaDescription',
             'options' => array(
                 'label' => 'Meta Description',
-                'class' => 'input-control meta meta-desc'
             ),
+            'attributes' => [
+                'class' => 'form-control meta meta-desc',
+            ],
         ));
         $this->add(array(
             'type' => 'Zend\Form\Element\Textarea',
             'name' => 'metaKeywords',
             'options' => array(
                 'label' => 'Meta Keywords',
-                'class' => 'input-control meta meta-keywords'
             ),
+            'attributes' => [
+                'class' => 'form-control meta meta-keywords',
+            ],
         ));
         $this->add(new Element\Csrf('security'));
         $this->add(array(
@@ -139,6 +170,7 @@ class BlogForm extends ZendForm {
             'type'  => 'Submit',
             'attributes' => array(
                 'value' => 'Submit',
+                'class' => 'btn btn-primary'
             ),
         ));
 
@@ -156,7 +188,7 @@ class BlogForm extends ZendForm {
 
         $categories = new InputFilter\Input('categories');
         $categories->setRequired(true);
-        $inputFilter->add($categories);
+        //$inputFilter->add($categories);
 
         // File Input
         $fileInput = new InputFilter\FileInput('photo');
@@ -164,7 +196,7 @@ class BlogForm extends ZendForm {
         $fileInput->getFilterChain()->attachByName(
             'filerenameupload',
             array(
-                'target'    => './public/uploads/blog-photo/blog.png',
+                'target'    => './public' . \Blog\Entity\Blog::DEFAULT_UPLOAD_PATH . 'blog.png',
                 'randomize' => true,
             )
         );
@@ -173,6 +205,29 @@ class BlogForm extends ZendForm {
         $published = new InputFilter\Input('published');
         $published->setRequired(true);
         $inputFilter->add($published);
+
+        $urlKey = new InputFilter\Input('urlKey');
+        /**
+        $urlKey->getFilterChain()->attachByName(
+            'slug',
+            array(
+                array('StringLength', FALSE, array(3, 255)),
+                array('Regex', FALSE, array('pattern' => '/^[\w.-]*$/'))
+            )
+        );
+         * */
+        $urlKey->getFilterChain()->attach(
+            new Validator\StringLength(array(
+                'min' => 3,
+                'max' => 255
+            ))
+        );
+        $urlKey->getFilterChain()->attach(
+            new Validator\Regex([
+                'pattern' => '/^[\w.-]*$/'
+            ])
+        );
+        //$inputFilter->add($urlKey);
 
         $shortContent = new InputFilter\Input('shortContent');
         $shortContent->setRequired(true);
@@ -183,5 +238,71 @@ class BlogForm extends ZendForm {
         $inputFilter->add($content);
 
         return $inputFilter;
+    }
+
+    public function save(\Application\Controller\AbstractActionController $controller)
+    {
+        $em = $controller->getEntityManager();
+        $formData = $this->getData();
+        //var_dump($formData);die;
+        $blog = new Blog();
+        $locale = $controller->find('Blog\Entity\Locale', (int)$formData['locale']);
+        $user = $controller->getCurrentUser();
+        $categories = [];
+        foreach ($formData['categories'] as $catId) {
+            $categories[] = $controller->find('Blog\Entity\Category', (int)$catId);
+        }
+        if (isset($formData['tmp_name'])) {
+            $photo = explode('/', $formData['tmp_name']);
+            $photo = end($photo);
+
+            // modify data
+            $formData['photo'] = $photo;
+        }
+        $formData['categories'] = $categories;
+        $formData['locale'] = $locale;
+        if (!$formData['id']) {
+            $formData['createUser'] = $user;
+            $formData['createTime'] = new \DateTime('now');
+
+            // check url key
+            if (!$formData['urlKey']) {
+                $slug = \Application\Helper\Url::formatUrl($formData['title']);
+
+                // check slug exist
+                $slugExist = $controller->findOneBy('Blog\Entity\Blog', ['urlKey' => $slug]);
+                if ($slugExist) {
+                    $slug .= '-' . date('Ymdhis');
+                }
+                $formData['urlKey'] = $slug;
+            } else {
+                // check slug exist
+                $slugExist = $controller->findOneBy('Blog\Entity\Blog', ['urlKey' => $formData['urlKey']]);
+                if ($slugExist) {
+                    $formData['urlKey'] .= '-' . date('Ymdhis');
+                }
+            }
+
+            // save
+            $blog->setData($formData);
+            $em->persist($blog);
+            $em->flush();
+        } else {
+            $formData['updateUser'] = $user;
+            $formData['updateTime'] = new \DateTime('now');
+
+            $oldData = $controller->find('Blog\Entity\Blog', (int)$formData['id']);
+            if ($formData['urlKey'] != $oldData->getUrlKey()) {
+                // check slug exist
+                $slugExist = $controller->findOneBy('Blog\Entity\Blog', ['urlKey' => $formData['urlKey']]);
+                if ($slugExist) {
+                    $formData['urlKey'] .= '-' . date('Ymdhis');
+                }
+            }
+            // save
+            $oldData->setData($formData);
+            $em->merge($oldData);
+            $em->flush();
+        }
     }
 } 

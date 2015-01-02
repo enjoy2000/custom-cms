@@ -35,6 +35,7 @@ angularModule.controller('NewCategoryController', function($scope, $http) {
             $http.post('/api/blog/category', $scope.category).success(function($data){
                 if ($data['success']) {
                     $scope.category = nullCategory;
+                    window.location.href = "/admin/category";
                 }
             });
         }

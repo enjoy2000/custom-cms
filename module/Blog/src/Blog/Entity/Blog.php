@@ -9,6 +9,7 @@
 namespace Blog\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -16,6 +17,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Blog
 {
+    const DEFAULT_UPLOAD_PATH = '/uploads/blog-photo/';
+
     /**
      * @var int
      * @ORM\Id
@@ -232,7 +235,7 @@ class Blog
 
     public function getCreateTime()
     {
-        return $this->createTime;
+        return $this->createTime->format('Y-m-d H:i:s');
     }
 
     /**
@@ -245,7 +248,7 @@ class Blog
 
     public function getUpdateTime()
     {
-        return $this->updateTime;
+        return $this->updateTime->format('Y-m-d H:i:s');
     }
 
     /**
@@ -323,6 +326,25 @@ class Blog
         return $data;
     }
 
+    public function getFormData()
+    {
+        $data = $this->getData();
+        $data['locale'] = $this->locale->getId();
+        $categories = [];
+        foreach ($this->getCategories() as $cat) {
+            $categories[] = $cat->getId();
+        }
+        //var_dump($categories);die;
+        $data['categories'] = $categories;
+
+        $unsetKeys = [
+            'createUser',
+            'createTime',
+        ];
+
+        return $data;
+    }
+
     public function setData($data)
     {
         $keys = [
@@ -342,9 +364,16 @@ class Blog
             'updateTime'
         ];
         foreach ($keys as $key) {
-            $this->$key = $data[$key];
+            if (isset($data[$key])) {
+                $this->$key = $data[$key];
+            }
         }
 
         return $this;
+    }
+
+    public function getEditUrl()
+    {
+        return '/admin/blog/edit/' . $this->id;
     }
 }

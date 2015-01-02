@@ -106,6 +106,51 @@ return array(
                             ),
                         ),
                     ),
+
+                    // USER
+                    'moderator' => array(
+                        'type' => 'literal',
+                        'options' => array(
+                            'route' => '/moderator',
+                            'defaults' => array(
+                                'controller' => 'Admin\Controller\Moderator',
+                                'action' => 'index',
+                            ),
+                        ),
+                        'may_terminate' => true,
+                        'child_routes' => array(
+                            'create' => array(
+                                'type' => 'literal',
+                                'options' => array(
+                                    'route' => '/create',
+                                    'defaults' => array(
+                                        'action' => 'register',
+                                    ),
+                                ),
+                            ),
+                            'register' => array(
+                                'type' => 'literal',
+                                'options' => array(
+                                    'route' => '/register',
+                                    'defaults' => array(
+                                        'action' => 'register',
+                                    ),
+                                ),
+                            ),
+                            'edit' => array(
+                                'type' => 'Segment',
+                                'options' => array(
+                                    'route' => '/edit[/][:id]',
+                                    'constraints' => array(
+                                        'slug' => '[0-9]+',
+                                    ),
+                                    'defaults' => array(
+                                        'action' => 'edit',
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
                 ),
             ),
         ),
@@ -132,8 +177,9 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Admin\Controller\Blog' => 'Admin\Controller\BlogController',
+            'Admin\Controller\Category' => 'Admin\Controller\CategoryController',
             'Admin\Controller\Dashboard' => 'Admin\Controller\DashboardController',
-            'Admin\Controller\Category' => 'Admin\Controller\CategoryController'
+            'Admin\Controller\Moderator' => 'Admin\Controller\ModeratorController'
         ),
     ),
     'view_manager' => array(
@@ -147,6 +193,7 @@ return array(
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
+            'zfcuser' => __DIR__ . '/../view',
         ),
     ),
     // Placeholder for console routes
