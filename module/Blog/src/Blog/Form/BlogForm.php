@@ -108,7 +108,7 @@ class BlogForm extends ZendForm {
                 'label' => 'Published',
                 'value_options' => [
                     '1' => 'Active',
-                    '2' => 'Inactive'
+                    '0' => 'Inactive'
                 ]
             ),
         ));

@@ -1,6 +1,6 @@
 <?php $this->headTitle($this->translate('News Manager')) ?>
 <?php $this->headScript()
-    ->prependFile('/js/admin/category-index.js')
+    ->prependFile('/js/admin/blog-index.js')
     ->prependFile('/js/plugin/bootbox/bootbox.min.js')
     ->prependFile('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js');
 ?>
@@ -52,7 +52,7 @@ echo $this->paginationControl(
             </td>
             <td><?php echo $blog->getLocale()->getName(); ?></td>
             <td valign="top">
-                <a style="font-size: 20px;" href="#"
+                <a style="font-size: 20px;" href="#" data-blog="<?php echo $blog->getId() ?>"
                    class="toggle-active-blog text-<?php echo $blog->isPublished() ? 'success' : 'danger'; ?>"
                    title="Toggle Blog Status">
                     <i class="fa fa-toggle-<?php echo $blog->isPublished() ? 'on' : 'off'; ?>"></i>

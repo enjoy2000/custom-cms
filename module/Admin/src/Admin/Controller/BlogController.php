@@ -34,13 +34,18 @@ class BlogController extends AbstractActionController
             $locale = $this->findOneBy('Blog\Entity\Locale', ['name' => $localeCode]);
             $queryBuilder->andWhere('blog.locale_id = ' . $locale->getId());
         }
+
+        // set order by blog id DESC
+        $queryBuilder->orderBy('b.id', 'DESC');
         // end filter
         $adapter = new DoctrineAdapter(new ORMPaginator($queryBuilder));
         $paginator = new Paginator($adapter);
         $paginator->setDefaultItemCountPerPage(10);
 
         $page = (int)$this->getRequest()->getQuery('page');
-        if ($page) $paginator->setCurrentPageNumber($page);
+        if ($page) {
+            $paginator->setCurrentPageNumber($page);
+        }
 
         //var_dump($paginator);die;
         return new ViewModel([
