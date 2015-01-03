@@ -18,6 +18,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Blog
 {
     const DEFAULT_UPLOAD_PATH = '/uploads/blog-photo/';
+    const BLOG_ROUTE = 'blog';
 
     /**
      * @var int
@@ -375,5 +376,15 @@ class Blog
     public function getEditUrl()
     {
         return '/admin/blog/edit/' . $this->id;
+    }
+
+    public function getDate($type='createTime')
+    {
+        return $this->$type->format('d/m/Y');
+    }
+
+    public function getUrl()
+    {
+        return '/' . self::BLOG_ROUTE . '/' . $this->urlKey;
     }
 }

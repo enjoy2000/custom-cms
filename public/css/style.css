@@ -1,8 +1,8 @@
-body {
-    padding-top: 60px;
-    padding-bottom: 40px;
+@media (min-width: 1200px) {
+    .container {
+        width: 1000px;
+    }
 }
-
 .zf-green {
     color: #68b604;
 }
@@ -25,7 +25,18 @@ body {
 .btn-success[disabled] {
   background-color: #57a900;
 }
-
+.white-head {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    border-bottom: solid 3px #fff;
+}
+.black-head {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    border-bottom: solid 3px #000;
+}
 .btn-success:active, .btn-success.active {
   background-color: #57a900;
 }
@@ -36,6 +47,89 @@ div.container a.brand {
     padding: 8px 20px 12px 40px;
 }
 
-div#content{
-    min-height: 400px;
+div#main-content{
+    min-height: 200px;
+}
+header {
+    position: relative;
+    background: url('../trash/images/3.jpg') top center no-repeat;
+}
+header .head-logo{
+    font-size: 20px;
+    padding-top: 70px;
+}
+header .logo > a {
+    padding: 5px;
+}
+header #language-switcher {
+    position: absolute;
+    right: 0;
+}
+nav#top-nav {
+    background: #fff;
+    border: none;
+    margin-bottom: 0;
+}
+nav#top-nav ul.nav li a {
+    padding: 10px 15px;
+    background-color: #fff;
+    color: #45494B;
+}
+nav#top-nav ul.nav li.active > a {
+    background: #3B93C9;
+    color: #fff;
+}
+nav#top-nav .collapse.navbar-collapse {
+    border-bottom: solid 2px #3B93C9;
+    padding: 0;
+    margin-right: 30px;
+}
+#news-ticker {
+    margin: 0 15px;
+    background-color: #3B93C9;
+}
+#news-ticker .title{
+    font-size: 16px;
+    color: #fff;
+    background-color: #E63200;
+    padding: 5px 20px
+}
+#news-ticker ul {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 10px;
+}
+#news-ticker ul li a{
+    font-size: 16px;
+    color: #fff;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    padding: 5px 0;
+    display: inline-block;
+}
+#news-ticker ul li .date {
+    display: inline-block;
+    margin-left: 20px;
+    color: #080808;
+    font-size: 16px;
+}
+#news-ticker ul li a:hover {
+    color: #61D762;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #3B93C9;
+}
+footer ul {
+    list-style: none;
+    padding-left: 0;
+}
+footer .col-sm-6 {
+    padding: 0;
+}
+footer ul li a,
+footer p.site-title {
+    color: #fff;
+    font-size: 16px;
 }

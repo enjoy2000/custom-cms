@@ -35,63 +35,228 @@ return array(
                     ),
                 ),
             ),
-            'freelancer' => array(
+            'ministry' => array(
                 'type' => 'Literal',
                 'options' => array(
-                    'route'    => '/freelancer/',
+                    'route'    => '/the-ministry',
                     'defaults' => array(
-                        'controller' => 'Landing\Controller\Index',
-                        'action'     => 'freelancer',
+                        'controller' => 'Landing\Controller\Ministry',
+                        'action'     => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'faq' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/faq',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\Ministry',
+                                'action'     => 'faq',
+                            ),
+                        ),
+                    ),
+                    'ministry-departments' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/ministry-departments',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\Ministry',
+                                'action'     => 'ministryDepartments',
+                            ),
+                        ),
+                    ),
+                    'the-minister' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/the-minister',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\Ministry',
+                                'action'     => 'theMinister',
+                            ),
+                        ),
+                    ),
+                    'speeches-interviews' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/speeches-interviews',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\Ministry',
+                                'action'     => 'speechesInterViews',
+                            ),
+                        ),
+                    ),
+                    'undersecretaries' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/undersecretaries',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\Ministry',
+                                'action'     => 'undersecretaries',
+                            ),
+                        ),
+                    ),
+                    'announcements' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/announcements',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\Ministry',
+                                'action'     => 'announcements',
+                            ),
+                        ),
+                    ),
+                    'magazine' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/magazine',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\Ministry',
+                                'action'     => 'magazine',
+                            ),
+                        ),
                     ),
                 ),
             ),
-            'languages' => array(
+            'about-iraq' => array(
                 'type' => 'Literal',
                 'options' => array(
-                    'route'    => '/languages/',
+                    'route'    => '/about-iraq',
                     'defaults' => array(
-                        'controller' => 'Landing\Controller\Index',
-                        'action'     => 'languages',
+                        'controller' => 'Landing\Controller\AboutIraq',
+                        'action'     => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'investment' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/investment',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\AboutIraq',
+                                'action'     => 'investment',
+                            ),
+                        ),
+                    ),
+                    'constitution' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/constitution',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\AboutIraq',
+                                'action'     => 'constitution',
+                            ),
+                        ),
+                    ),
+                    'encyclopedia' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/encyclopedia',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\AboutIraq',
+                                'action'     => 'encyclopedia',
+                            ),
+                        ),
+                    ),
+                    'announcements' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/announcements',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\AboutIraq',
+                                'action'     => 'announcements',
+                            ),
+                        ),
                     ),
                 ),
             ),
-            'contact' => array(
+            'foreign-policy' => array(
                 'type' => 'Literal',
                 'options' => array(
-                    'route'    => '/contact/',
+                    'route'    => '/foreign-policy',
                     'defaults' => array(
-                        'controller' => 'Landing\Controller\Index',
-                        'action'     => 'contact',
+                        'controller' => 'Landing\Controller\ForeignPolicy',
+                        'action'     => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'press-releases' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/press-releases',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ForeignPolicy',
+                                'action'     => 'pressReleases',
+                            ),
+                        ),
+                    ),
+                    'international-organizations' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/international-organizations',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ForeignPolicy',
+                                'action'     => 'internationalOrganizations',
+                            ),
+                        ),
                     ),
                 ),
             ),
-            'order' => array(
+            'diplomatic-missions' => array(
                 'type' => 'Literal',
                 'options' => array(
-                    'route'    => '/order/',
+                    'route'    => '/diplomatic-missions',
                     'defaults' => array(
-                        'controller' => 'Landing\Controller\Index',
-                        'action'     => 'order',
+                        'controller' => 'Landing\Controller\DiplomaticMissions',
+                        'action'     => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'iraqi-ambassadors' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/iraqi-ambassadors',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ForeignPolicy',
+                                'action'     => 'iraqiAmbassadors',
+                            ),
+                        ),
                     ),
                 ),
             ),
-            'terms' => array(
+            'consular-services' => array(
                 'type' => 'Literal',
                 'options' => array(
-                    'route'    => '/terms/',
+                    'route'    => '/consular-services',
                     'defaults' => array(
-                        'controller' => 'Landing\Controller\Index',
-                        'action'     => 'terms',
+                        'controller' => 'Landing\Controller\ConsularServices',
+                        'action'     => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'other-links' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/other-links',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ForeignPolicy',
+                                'action'     => 'otherLinks',
+                            ),
+                        ),
                     ),
                 ),
             ),
-            'privacy' => array(
+            'contact-us' => array(
                 'type' => 'Literal',
                 'options' => array(
-                    'route'    => '/privacy/',
+                    'route'    => '/contact-us',
                     'defaults' => array(
-                        'controller' => 'Landing\Controller\Index',
-                        'action'     => 'privacy',
+                        'controller' => 'Landing\Controller\ContactUs',
+                        'action'     => 'index',
                     ),
                 ),
             ),
@@ -99,7 +264,13 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Landing\Controller\Index' => 'Landing\Controller\IndexController'
+            'Landing\Controller\AboutIraq' => 'Landing\Controller\AboutIraqController',
+            'Landing\Controller\ConsularServices' => 'Landing\Controller\ConsularServicesController',
+            'Landing\Controller\ContactUs' => 'Landing\Controller\ContactUsController',
+            'Landing\Controller\ForeignPolicy' => 'Landing\Controller\ForeignPolicyController',
+            'Landing\Controller\DiplomaticMissions' => 'Landing\Controller\DiplomaticMissionsController',
+            'Landing\Controller\Index' => 'Landing\Controller\IndexController',
+            'Landing\Controller\Ministry' => 'Landing\Controller\MinistryController',
         ),
     ),
     'view_manager' => array(

@@ -33,6 +33,11 @@ class Locale {
      */
     protected $name;
 
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    protected $shortCode;
+
     public function getId()
     {
         return $this->id;
@@ -58,12 +63,23 @@ class Locale {
         $this->code = $localeCode;
     }
 
+    public function getShortCode()
+    {
+        return $this->shortCode;
+    }
+
+    public function setShortCode($localeCode)
+    {
+        $this->shortCode = $localeCode;
+    }
+
     public function getData()
     {
         $keys = [
             'id',
             'code',
-            'name'
+            'name',
+            'shortCode'
         ];
         $data = [];
         foreach ($keys as $key) {

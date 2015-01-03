@@ -10,11 +10,12 @@ return array(
         'ZfcAdmin',
         'ZfcUserDoctrineORM',
         'BjyAuthorize',
+        'Api',
+        'Blog',
+        'Landing',
         'Application',
         'User',
         'Admin',
-        'Api',
-        'Blog'
     ),
 
     // These are various options for the listeners attached to the ModuleManager

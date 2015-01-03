@@ -37,13 +37,14 @@ class Module
         if (!$sessionContainer->offsetExists('locale')) {
             // if not use the browser locale
             if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])){
-                $localeCode = \Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+                $shortCode = \Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']);
                 $em = $sm->get('doctrine.entitymanager.orm_default');
 
                 // check if we support this language or not
-                $localeExist = $em->getRepository('Blog\Entity\Locale')->findOneBy(['name' => $localeCode]);
+                /** @var \Blog\Entity\Locale $localeExist */
+                $localeExist = $em->getRepository('Blog\Entity\Locale')->findOneBy(['shortCode' => $shortCode]);
                 if ($localeExist) {
-                    $sessionContainer->offsetSet('locale', $localeCode);
+                    $sessionContainer->offsetSet('locale', $localeExist->getCode());
                 } else{
                     $sessionContainer->offsetSet('locale', 'en_US');
                 }

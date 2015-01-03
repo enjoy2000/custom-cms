@@ -40,7 +40,13 @@ class Module
 
     public function selectLayout(MvcEvent $e)
     {
+
         $controller = $e->getTarget();
-        $controller->layout('layout/admin');
+        $config          = $e->getApplication()->getServiceManager()->get('config');
+        $controllerClass = get_class($controller);
+        $moduleNamespace = substr($controllerClass, 0, strpos($controllerClass, '\\'));
+        if (isset($config['module_layouts'][$moduleNamespace])) {
+            $controller->layout($config['module_layouts'][$moduleNamespace]);
+        }
     }
 }
