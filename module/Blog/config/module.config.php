@@ -73,7 +73,9 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Blog\Controller\Index' => 'Blog\Controller\IndexController'
+            'Blog\Controller\Index' => 'Blog\Controller\IndexController',
+            'Blog\Controller\Category' => 'Blog\Controller\CategoryController',
+            'Blog\Controller\Blog' => 'Blog\Controller\BlogController'
         ),
     ),
     'view_manager' => array(

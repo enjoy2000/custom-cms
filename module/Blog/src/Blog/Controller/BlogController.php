@@ -12,7 +12,7 @@ use Application\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Blog\Entity\Blog;
 
-class IndexController extends AbstractActionController {
+class CategoryController extends AbstractActionController {
     public function indexAction()
     {
         return new ViewModel();
