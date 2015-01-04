@@ -25,10 +25,6 @@ class BlogController extends AbstractActionController
         $blogs = $em->getRepository('Blog\Entity\Blog');
         $queryBuilder = $blogs->createQueryBuilder('b');
 
-        if (!$this->getCurrentUser() || !$this->getCurrentUser()->isModeratorOrAdmin()) {
-            $queryBuilder->andWhere('blog.published=true');
-        }
-
         // start filter
         if ($localeCode = $this->params()->fromQuery('locale')) {
             $locale = $this->findOneBy('Blog\Entity\Locale', ['name' => $localeCode]);

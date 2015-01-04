@@ -51,7 +51,8 @@ return [
 
                 /** For blog pages */
                 array('route' => 'blog', 'roles' => array('guest')),
-                array('route' => 'blog/news-ticker', 'roles' => array('guest')),
+                array('route' => 'news-ticker', 'roles' => array('guest')),
+                array('route' => 'blog/view', 'roles' => array('guest')),
             ),
         ),
     ),

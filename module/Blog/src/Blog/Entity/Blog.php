@@ -18,7 +18,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Blog
 {
     const DEFAULT_UPLOAD_PATH = '/uploads/blog-photo/';
-    const BLOG_ROUTE = 'blog';
+    const BLOG_ROUTE = 'news';
 
     /**
      * @var int

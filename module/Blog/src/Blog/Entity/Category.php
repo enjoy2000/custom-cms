@@ -131,4 +131,11 @@ class Category {
             $this->$key = $data[$key];
         }
     }
+
+    public function getUrl()
+    {
+        $url = '/' . \Blog\Entity\Blog::BLOG_ROUTE . '/' .$this->urlKey;
+
+        return $url;
+    }
 }

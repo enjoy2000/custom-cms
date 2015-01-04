@@ -10,10 +10,20 @@
 return array(
     'router' => array(
         'routes' => array(
+            'news-ticker' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/news-ticker',
+                    'defaults' => array(
+                        'controller' => 'Blog\Controller\Index',
+                        'action'     => 'news-ticker',
+                    ),
+                ),
+            ),
             'blog' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
-                    'route'    => '/blog',
+                    'route'    => '/news',
                     'defaults' => array(
                         'controller' => 'Blog\Controller\Index',
                         'action'     => 'index',
@@ -21,13 +31,16 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-                    'news-ticker' => array(
-                        'type'    => 'Literal',
+                    'view' => array(
+                        'type' => 'segment',
                         'options' => array(
-                            'route'    => '/news-ticker',
+                            'route' => '/[:slug]',
+                            'constraints' => array(
+                                'slug' => '[a-zA-Z0-9_-]+',
+                            ),
                             'defaults' => array(
-                                'controller' => 'Blog\Controller\Index',
-                                'action'     => 'news-ticker',
+                                'controller' => 'Blog\Controller\Blog',
+                                'action' => 'view',
                             ),
                         ),
                     ),

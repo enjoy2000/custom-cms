@@ -1,0 +1,36 @@
+<?php
+/** @var \Blog\Entity\Blog $blog */
+$blog = $this->blog;
+$cats = $blog->getCategories();
+
+/**
+ * Set meta data
+ */
+$this->headTitle($blog->getTitle());
+if ($blog->getMetaDescription()) {
+    $this->headMeta()->setName('description', $blog->getMetaDescription());
+}
+if ($blog->getMetaKeywords()) {
+    $this->headMeta()->appendName('keywords', $blog->getMetaKeywords());
+}
+?>
+<h1><?php echo $this->blog->getTitle() ?></h1>
+
+<div class="categories">
+<?php
+/** @var \Blog\Entity\Category $cat */
+foreach ($cats as $cat) :
+?>
+    <a class="btn btn-primary" href="<?php echo $cat->getUrl() ?>" title="<?php echo $cat->getName() ?>">
+        <?php echo $cat->getName() ?>
+    </a>
+<?php endforeach; ?>
+</div>
+<hr />
+<div class="blog-content">
+    <?php echo $blog->getContent(); ?>
+</div>
+<hr />
+<div class="blog-author">
+    <?php echo sprintf($this->translate('Written by %s'), $blog->getCreateUser()->getDisplayName()) ?>
+</div>

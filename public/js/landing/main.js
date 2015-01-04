@@ -22,7 +22,7 @@ $(document).ready(function(){
     });
 
     // news ticker
-    $.get('/blog/news-ticker', function($data){
+    $.get('/news-ticker', function($data){
         $('.news-ticker').html($data);
     });
 
