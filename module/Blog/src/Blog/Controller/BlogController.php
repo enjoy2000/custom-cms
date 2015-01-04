@@ -15,6 +15,13 @@ use Blog\Entity\Blog;
 class BlogController extends AbstractActionController {
     public function indexAction()
     {
+        $blogs = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
+            ->findBy(
+                ['published' => true],
+                ['id' => 'DESC'],
+                10,
+                0
+            );
         return new ViewModel();
     }
 }

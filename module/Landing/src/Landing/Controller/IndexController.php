@@ -11,12 +11,31 @@ namespace Landing\Controller;
 
 use Application\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\Session\Container;
 
 class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        // $this->getCurrentUser()->addRoleByRoleName($this, 'administrator');
-        return new ViewModel();
+        $localeSession = new Container('locale');
+        $locale = $this->findBy('Blog\Entity\Locale', ['code' => $localeSession->locale]);
+        $blogs = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
+            ->findBy(
+                ['published' => true, 'locale' => $locale],
+                ['id' => 'DESC'],
+                10,
+                0
+            );
+        $otherNews = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
+            ->findBy(
+                ['published' => true, 'locale' => $locale],
+                ['id' => 'DESC'],
+                4,
+                10
+            );
+        return new ViewModel([
+            'blogs' => array_chunk($blogs, 2),  // chunk array for render in news
+            'otherNews' => $otherNews,
+        ]);
     }
 }

@@ -1,0 +1,126 @@
+<h3 class="black-head">
+    <?php echo $this->translate('Main News') ?>
+</h3>
+
+
+<div id="news-carousel" class="carousel slide" data-ride="carousel">
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+    <?php foreach ($this->blogs as $chunk) : ?>
+        <?php
+        /** @var \Blog\Entity\Blog $blog1, $blog2 */
+        list($blog1, $blog2) = $chunk;
+        ?>
+        <div class="item clearfix <?php echo ($chunk == $blogs[0]) ? ' active' : '' ?>">
+            <div class="col-md-8 blog1">
+                <div class="col-md-5">
+                    <a class="title" href="<?php echo $blog1->getUrl() ?>">
+                        <h2><?php echo $blog1->getTitle() ?></h2></a>
+                    <p class="date"><?php echo $blog1->getDate() ?></p>
+                    <p class="short-description">
+                        <?php echo $blog1->getShortContent() ?>
+                    </p>
+                    <a class="read-more" href="<?php echo $blog1->getUrl() ?>">
+                        <?php echo $this->translate('Read more') ?></a>
+                </div>
+                <div class="col-md-7">
+                    <?php echo $blog1->renderPhoto() ?>
+                </div>
+            </div>
+            <div class="col-md-4 blog2">
+                <?php echo $blog1->renderPhoto() ?>
+                <a class="title" href="<?php echo $blog2->getUrl() ?>">
+                    <h2><?php echo $blog2->getTitle() ?></h2>
+                </a>
+
+                <a class="read-more" href="<?php echo $blog2->getUrl() ?>">
+                    <?php echo $this->translate('Read more') ?></a>
+            </div>
+        </div>
+    <?php endforeach; ?>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#news-carousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#news-carousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="row clearfix">
+    <div class="col-md-9 pull-left other-news">
+        <h3 class="black-head">
+            <?php echo $this->translate('Other News') ?>
+        </h3>
+        <?php
+        /** @var \Blog\Entity\Blog $blog */
+        foreach ($this->otherNews as $blog) :
+        ?>
+            <div class="col-md-3">
+                <?php echo $blog->renderPhoto() ?>
+                <h3><?php echo $blog->getTitle() ?></h3>
+                <div class="info clearfix">
+                    <a class="pull-left read-more" href="<?php echo $blog->getUrl() ?>">
+                        <?php echo $this->translate('Read more') ?></a>
+                    <span class="pull-right">
+                        <?php echo $blog->getDate() ?>
+                    </span>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="col-md-3 pull-right consular-services">
+        <h3 class="black-head">
+            <?php echo $this->translate('Consular Services') ?>
+        </h3>
+        <div class="service-row clearfix">
+            <div class="investment pull-left">
+                <a href="/trash/assets/investmentoverview.pdf" target="_blank"
+                   title="<?php echo $this->translate('Investment in IRAQ') ?>">
+                    <img src="/img/fe/aboutiq.jpg" alt="" />
+                    <span class="middle-text"><?php echo $this->translate('Investment in IRAQ') ?></span>
+                    <div class="hover-content">
+                        <div class="head text-center">
+                            <img src="/trash/images/investment.jpg" alt="" />
+                        </div>
+                        <div class="text">
+                            <p><?php echo $this->translate('Dear Investor') ?>,</p>
+                            <p>
+                                <?php echo $this->translate('The investment opportunities found in today’s Iraq vary in type, size, scope,sector, purpose, and structure. Potential investors will find an openlandscape to develop projects that will fill the needs of Iraq’s expanding and demanding population. Iraq’s location at the center of many historic andcurrent middle-east trade routes provides an undeniable advantage;combined with a variety of natural resources and a desire for advanced quality of life, this advantage creates many opportunities for builders,suppliers, transporters, developers, producers, providers, manufacturers,servicers, and financiers, all of whom will find many avenues by which to establish new relationships, build new operations, create new markets, and develop new mutually beneficial business connections.') ?>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="links pull-right">
+                <!-- TODO: missing link here -->
+                <a href="#" target="_blank"
+                   title="<?php echo $this->translate('Links') ?>">
+                    <img src="/img/fe/connection.jpg" alt="" />
+                    <span class="middle-text"><?php echo $this->translate('Links') ?></span>
+                </a>
+            </div>
+        </div>
+        <div class="service-row clear-fix">
+            <div class="departments pull-left">
+                <a href="<?php echo $this->url('ministry/ministry-departments') ?>" target="_blank"
+                   title="<?php echo $this->translate('Ministry Departments') ?>">
+                    <img src="/img/fe/departments.jpg" alt="" />
+                    <span class="middle-text"><?php echo $this->translate('Ministry Departments') ?></span>
+                </a>
+            </div>
+            <div class="faq pull-right">
+                <a href="<?php echo $this->url('ministry/faq') ?>" target="_blank"
+                   title="<?php echo $this->translate('Ministry Departments') ?>">
+                    <img src="/img/fe/question.jpg" alt="" />
+                    <span class="middle-text"><?php echo $this->translate('Ministry Departments') ?></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

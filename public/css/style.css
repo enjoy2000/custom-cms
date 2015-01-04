@@ -25,6 +25,8 @@
 .btn-success[disabled] {
   background-color: #57a900;
 }
+
+/** UNIQUE STYLES */
 .white-head {
     font-size: 20px;
     font-weight: bold;
@@ -32,11 +34,26 @@
     border-bottom: solid 3px #fff;
 }
 .black-head {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 18px;
     color: #000;
     border-bottom: solid 3px #000;
 }
+img {
+    max-width: 100%;
+}
+a.news-photo:hover > img {
+    opacity: 0.8;
+}
+a.news-photo {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+a.news-photo img {
+    width: 100%;
+}
+/** END UNIQUE */
+
 .btn-success:active, .btn-success.active {
   background-color: #57a900;
 }
@@ -49,6 +66,7 @@ div.container a.brand {
 
 div#main-content{
     min-height: 200px;
+    padding-bottom: 30px;
 }
 header {
     position: relative;
@@ -70,6 +88,9 @@ nav#top-nav {
     border: none;
     margin-bottom: 0;
 }
+nav#top-nav .container {
+    padding: 0;
+}
 nav#top-nav ul.nav li a {
     padding: 10px 15px;
     background-color: #fff;
@@ -85,7 +106,6 @@ nav#top-nav .collapse.navbar-collapse {
     margin-right: 30px;
 }
 #news-ticker {
-    margin: 0 15px;
     background-color: #3B93C9;
 }
 #news-ticker .title{
@@ -132,4 +152,117 @@ footer ul li a,
 footer p.site-title {
     color: #fff;
     font-size: 16px;
+}
+#news-carousel {
+    border: solid 1px #ccc;
+}
+#news-carousel div[class^="col-"],
+#news-carousel div[class*=" col-"]{
+    padding: 0;
+}
+#news-carousel .item {
+    padding: 5px;
+    color: #000;
+}
+#news-carousel .item {
+    margin: 5px;
+}
+#news-carousel .item .blog1 a.news-photo {
+    height: 220px;
+}
+#news-carousel .item .blog2 a.news-photo {
+    height: 180px;
+}
+#news-carousel .item .blog1 {
+    padding-right: 10px;
+}
+#news-carousel .item .blog1 h2 {
+    font-size: 20px;
+    color: #000;
+}
+#news-carousel .item .blog2 h2 {
+    font-size: 18px;
+    color: #000;
+}
+#news-carousel .item .blog2 .read-more{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+.read-more {
+    color: #FF0000;
+}
+#news-carousel a.carousel-control {
+    width: 30px;
+    background: #000010;
+    color: #fff;
+    top: 45%;
+    height: 50px;
+}
+#news-carousel a.carousel-control span.glyphicon {
+    left: 5px;
+    top: 12px;
+}
+#news-carousel a.left.carousel-control {
+    left: -30px;
+}
+#news-carousel a.right.carousel-control {
+    right: -30px;
+}
+div.other-news .col-md-3 {
+    padding: 0;
+}
+div.other-news .col-md-3 h3 {
+    font-size: 16px;
+    color: #000;
+    margin: 10px 0;
+    height: 55px;
+    overflow: hidden;
+}
+div.other-news .col-md-3 a.news-photo {
+    width: 98%;
+    height: 100px;
+}
+div.other-news .col-md-3 .info {
+    margin: 0 5px;
+}
+.service-row .investment a {
+    position: relative;
+}
+.service-row .investment a:hover .hover-content {
+    display: block;
+}
+div.hover-content {
+    display: none;
+    width: 500px;
+    border: solid 1px #ccc;
+    border-radius: 3px;
+    color: #000;
+    position: absolute;
+    right: 0;
+    bottom: -100%;
+    background-color: #fff;
+    padding: 15px;
+}
+div.hover-content .text {
+    margin-top: 15px;
+}
+div.consular-services .service-row+.service-row {
+    margin-top: 5px;
+}
+div.consular-services .service-row > div {
+    width: 49%;
+    text-align: center;
+}
+div.consular-services .service-row > div > a{
+    position: relative;
+}
+div.consular-services .service-row > div span.middle-text {
+    position: absolute;
+    text-align: center;
+    color: #000;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    font-weight: bold;
 }

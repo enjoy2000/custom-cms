@@ -35,4 +35,6 @@ $(document).ready(function(){
         autostart: 1,
         pauseOnHover: 1
     });
+
+    $('.fancybox').fancybox();
 });

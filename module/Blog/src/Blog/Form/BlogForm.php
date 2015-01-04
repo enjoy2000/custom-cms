@@ -15,6 +15,9 @@ use Zend\Mvc\Application;
 use Zend\Validator;
 use Zend\Filter;
 use Blog\Entity\Blog;
+use Zend\Validator\File\Size;
+use Zend\Validator\File\Extension;
+use Zend\Validator\File\MimeType;
 
 
 class BlogForm extends ZendForm {
@@ -193,13 +196,37 @@ class BlogForm extends ZendForm {
         // File Input
         $fileInput = new InputFilter\FileInput('photo');
         $fileInput->setRequired(true);
-        $fileInput->getFilterChain()->attachByName(
+        $fileInput->getFilterChain()
+            ->attachByName(
             'filerenameupload',
             array(
                 'target'    => './public' . \Blog\Entity\Blog::DEFAULT_UPLOAD_PATH . 'blog.png',
                 'randomize' => true,
-            )
-        );
+            ))
+            ->attach(new Size(array(
+                    'messageTemplates' => array(
+                        Size::TOO_BIG => 'The file supplied is over the allowed file size',
+                        Size::TOO_SMALL => 'The file supplied is too small',
+                        Size::NOT_FOUND => 'The file was not able to be found',
+                    ),
+                    'options' => array(
+                        'max' => 4000
+                    )
+                )
+            ))
+            ->attach(new MimeType(array(
+                    'messageTemplates' => array(
+                        MimeType::FALSE_TYPE => 'The file is not an allowed type',
+                        MimeType::NOT_DETECTED => 'The file type was not detected',
+                        MimeType::NOT_READABLE => 'The file type was not readable',
+                    ),
+                    'options' => array(
+                        'enableHeaderCheck' => true,
+                        'mimeType' => 'text/plain'
+                    )
+                )
+            ));
+
         $inputFilter->add($fileInput);
 
         $published = new InputFilter\Input('published');
