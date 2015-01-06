@@ -46,7 +46,9 @@ $(document).ready(function(){
                 });
                 console.log(catOptions);
                 $('#select-category').html(catOptions);
-                $('#select-category').val(originValCats);
+                if (originValCats) {
+                    $('#select-category').val(originValCats);
+                }
                 $('select#select-category').multiselect('rebuild');
             }
         })

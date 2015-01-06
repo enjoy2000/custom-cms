@@ -82,7 +82,7 @@ class BlogController extends AbstractActionController
         $em = $this->getEntityManager();
 
         $form = new BlogForm($this);
-        $form->getInputFilter()->remove('photo');
+        $form->getInputFilter()->get('photo')->setRequired(false);
         $form->setData($blog->getFormData());
 
         if ($this->getRequest()->isPost()) {

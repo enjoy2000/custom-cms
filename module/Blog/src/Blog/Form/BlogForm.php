@@ -202,29 +202,6 @@ class BlogForm extends ZendForm {
             array(
                 'target'    => './public' . \Blog\Entity\Blog::DEFAULT_UPLOAD_PATH . 'blog.png',
                 'randomize' => true,
-            ))
-            ->attach(new Size(array(
-                    'messageTemplates' => array(
-                        Size::TOO_BIG => 'The file supplied is over the allowed file size',
-                        Size::TOO_SMALL => 'The file supplied is too small',
-                        Size::NOT_FOUND => 'The file was not able to be found',
-                    ),
-                    'options' => array(
-                        'max' => 4000
-                    )
-                )
-            ))
-            ->attach(new MimeType(array(
-                    'messageTemplates' => array(
-                        MimeType::FALSE_TYPE => 'The file is not an allowed type',
-                        MimeType::NOT_DETECTED => 'The file type was not detected',
-                        MimeType::NOT_READABLE => 'The file type was not readable',
-                    ),
-                    'options' => array(
-                        'enableHeaderCheck' => true,
-                        'mimeType' => 'text/plain'
-                    )
-                )
             ));
 
         $inputFilter->add($fileInput);
@@ -279,13 +256,16 @@ class BlogForm extends ZendForm {
         foreach ($formData['categories'] as $catId) {
             $categories[] = $controller->find('Blog\Entity\Category', (int)$catId);
         }
-        if (isset($formData['tmp_name'])) {
-            $photo = explode('/', $formData['tmp_name']);
+        //var_dump($formData);die;
+        if (isset($formData['photo']['tmp_name'])) {
+            $photo = explode('/', $formData['photo']['tmp_name']);
             $photo = end($photo);
 
             // modify data
             $formData['photo'] = $photo;
         }
+
+        //var_dump($formData);die;
         $formData['categories'] = $categories;
         $formData['locale'] = $locale;
         if (!$formData['id']) {
@@ -326,6 +306,7 @@ class BlogForm extends ZendForm {
                     $formData['urlKey'] .= '-' . date('Ymdhis');
                 }
             }
+            unset($formData['id']);
             // save
             $oldData->setData($formData);
             $em->merge($oldData);

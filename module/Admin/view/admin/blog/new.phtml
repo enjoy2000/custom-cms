@@ -15,8 +15,15 @@
 <h1 class="text-center"><?php echo $this->translate('Add News') ?></h1>
 <?php
 /** @var \Blog\Form\BlogForm $form */
-$form = $this->form;
+$cats = $form->get('categories')->getValue();
 ?>
+<script type='text/javascript'>
+    <?php
+    $js_array = json_encode($cats);
+    echo "var originValCats = ". $js_array . ";\n";
+    ?>
+    console.log(originValCats);
+</script>
 <?php $form->prepare(); ?>
 <?php echo $this->form()->openTag($form); ?>
 
