@@ -12,6 +12,10 @@ use Application\Controller\AbstractActionController;
 use Doctrine\DBAL\Schema\View;
 use Zend\View\Model\ViewModel;
 use Blog\Entity\Blog;
+use Zend\Paginator\Paginator;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
+use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+
 
 class BlogController extends AbstractActionController {
 
@@ -54,8 +58,20 @@ class BlogController extends AbstractActionController {
     {
         $category = $this->params()->fromRoute('category');
 
+        $queryBuilder = $category->getActiveBlogs($this);
+
+        $adapter = new DoctrineAdapter(new ORMPaginator($queryBuilder));
+        $paginator = new Paginator($adapter);
+        $paginator->setDefaultItemCountPerPage(\Blog\Entity\Category::BLOGS_PER_PAGE);
+
+        $page = (int)$this->getRequest()->getQuery('page');
+        if ($page) {
+            $paginator->setCurrentPageNumber($page);
+        }
+
         return new ViewModel([
-            'category' => $category
+            'category' => $category,
+            'paginator' => $paginator,
         ]);
     }
 }

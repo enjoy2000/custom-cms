@@ -17,6 +17,9 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table(name="Category")
  */
 class Category {
+
+    const BLOGS_PER_PAGE = 5;
+
     /**
      * @var int
      * @ORM\Id
@@ -137,5 +140,16 @@ class Category {
         $url = '/' . \Blog\Entity\Blog::BLOG_ROUTE . '/' .$this->urlKey;
 
         return $url;
+    }
+
+    public function getActiveBlogs($controller) 
+    {
+        $em = $controller->getEntityManager();
+        $qb = $em->getRepository('Blog\Entity\Blog')->createQueryBuilder('b');
+        $queryBuilder  = $qb
+                    ->innerJoin('b.categories', 'c')
+                    ->where("c.id=" . $this->id)
+                    ->orderBy('b.id', 'DESC');
+        return $queryBuilder;
     }
 }

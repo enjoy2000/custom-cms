@@ -390,11 +390,16 @@ class Blog
 
     public function renderPhoto() {
         $html = '';
-        $html .= '<a class="fancybox news-photo" href="'.self::DEFAULT_UPLOAD_PATH
-                    . $this->photo .'" title="'.$this->title.'">';
+        $html .= '<a class="news-photo" href="' . $this->getUrl()
+                .'" title="'.$this->title.'">';
         $html .= '<img src="'.self::DEFAULT_UPLOAD_PATH . $this->photo .'" alt="" />';
         $html .= '</a>';
 
         return $html;
+    }
+
+    public function getExactCreateTime()
+    {
+        return $this->createTime->format('jS F, Y  h:i A');
     }
 }

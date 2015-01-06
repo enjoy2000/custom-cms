@@ -3,8 +3,8 @@
         width: 1000px;
     }
 }
-.zf-green {
-    color: #68b604;
+h1, h2, h3, h4, h5, h6 {
+    color: #3B93C9;
 }
 
 .btn-success {
@@ -183,11 +183,14 @@ footer p.site-title {
 #news-carousel .item .blog2 h2 {
     font-size: 18px;
     color: #000;
+    height: 37px;
+    overflow: hidden;
 }
 #news-carousel .item .blog2 .read-more{
     position: absolute;
     bottom: 5px;
     right: 5px;
+    background-color: #fff;
 }
 .read-more {
     color: #FF0000;
@@ -200,8 +203,12 @@ footer p.site-title {
     height: 50px;
 }
 #news-carousel a.carousel-control span.glyphicon {
-    left: 5px;
-    top: 12px;
+    left: -2px;
+    top: 24px;
+    position: absolute;
+}
+#news-carousel a.left.carousel-control span.glyphicon {
+    left: 14px;
 }
 #news-carousel a.left.carousel-control {
     left: -30px;
@@ -265,4 +272,23 @@ div.consular-services .service-row > div span.middle-text {
     left: 0;
     width: 100%;
     font-weight: bold;
+}
+body.blog.view a.news-photo {
+    height: 150px;
+}
+body.blog.view .well a h3 {
+    color: #3B93C9;
+    transition: color 0.3s ease-out;
+    -webkit-transition: color 0.3s ease-out;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+body.blog.view .well a:hover {
+    text-decoration: none;
+}
+body.blog.view .well a:hover h3 {
+    color: #000;
+}
+body.blog.view .author-date {
+    margin-top: 10px;
 }

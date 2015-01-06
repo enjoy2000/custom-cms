@@ -1,5 +1,54 @@
 <?php
 /** @var \Blog\Entity\Category $category */
 $category = $this->category;
+$this->headTitle($this->translate($category->getName()))
 ?>
 <h1 class="text-center"><?php echo $category->getName() ?></h1>
+<hr />
+<?php
+/** @var \Blog\Entity\Blog $blog */
+foreach ($this->paginator as $blog) :
+?>
+    <article class="well clearfix article article<?php echo $blog->getId() ?>">
+        <div class="media-object photo col-md-4 pull-left">
+            <?php echo $blog->renderPhoto() ?>
+        </div>
+        <div class="media-body col-md-8 pull-right">
+            <a href="<?php echo $blog->getUrl() ?>" class="media-heading" title="<?php echo $blog->getTitle() ?>">
+                <h3>
+                    <?php echo $blog->getTitle() ?>
+                </h3>
+            </a>
+            <div class="short-description">
+                <?php echo $blog->getShortContent() ?>
+            </div>
+            <div class="author-date">
+                <span class="date">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                    <?php echo $blog->getExactCreateTime() ?>
+                </span>
+                |
+                <span class="author">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <?php echo sprintf($this->translate('Written by %s'), $blog->getCreateUser()->getDisplayName()) ?>
+                </span>
+            </div>
+        </div>
+    </article>
+<?php endforeach; ?>
+
+<?php
+// add at the end of the file after the table
+echo $this->paginationControl(
+// the paginator object
+    $this->paginator,
+    // the scrolling style
+    'sliding',
+    // the partial to use to render the control
+    array('partial/paginator.phtml', 'Blog'),
+    // the route to link to when a user clicks a control link
+    array(
+        'route' => 'zfcadmin/blog'
+    )
+);
+?>
