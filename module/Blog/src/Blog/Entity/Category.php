@@ -55,6 +55,12 @@ class Category {
      */
     protected $moderators;
 
+    /**
+     * @var \Blog\Entity\Category
+     * @ORM\OneToOne(targetEntity="Blog\Entity\Category", nullable=true)
+     */
+    protected $category = null;
+
     public function __construct()
     {
         $this->moderators = new ArrayCollection();
@@ -119,7 +125,8 @@ class Category {
             'name' => $this->name,
             'locale' => $this->locale->getData(),
             'urlKey' => $this->urlKey,
-            'moderators' => $users
+            'moderators' => $users,
+            'category' => $this->category
         ];
     }
 
@@ -129,6 +136,7 @@ class Category {
             'name',
             'urlKey',
             'locale',
+            'category'
         ];
         foreach ($keys as $key) {
             $this->$key = $data[$key];
@@ -140,6 +148,16 @@ class Category {
         $url = '/' . \Blog\Entity\Blog::BLOG_ROUTE . '/' .$this->urlKey;
 
         return $url;
+    }
+
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    public function setCategory(\Blog\Entity\Category $category)
+    {
+        $this->category = $category;
     }
 
     public function getActiveBlogs($controller) 
