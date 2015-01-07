@@ -48,7 +48,7 @@
                     /** @var \Blog\Entity\Category $category */
                     foreach ($this->arCategories as $category) :
                     ?>
-                        <option<?php echo ($this->category && $category->getId() == $this->category->getCategory()->getId()) ? ' selected="selected"' : '' ?>
+                        <option<?php echo ($this->category && $category->getId() == $this->category->getId()) ? ' selected="selected"' : '' ?>
                             value="<?php echo $category->getId() ?>">
                             <?php echo $category->getName() ?>
                         </option>
