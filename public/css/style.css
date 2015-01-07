@@ -95,6 +95,12 @@ nav#top-nav ul.nav li a {
     padding: 10px 15px;
     background-color: #fff;
     color: #45494B;
+    transition: color 0.3s ease-out, background-color 0.3s ease-out;
+    -webkit-transition: color 0.3s ease-out, background-color 0.3s ease-out;
+}
+nav#top-nav ul.nav > li > a:hover {
+    background-color: #3B93C9;
+    color: #fff;
 }
 nav#top-nav ul.nav li.active > a {
     background: #3B93C9;
