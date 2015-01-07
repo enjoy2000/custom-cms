@@ -182,9 +182,16 @@ class CategoryController extends AbstractRestfulJsonController
             ]);
         }
         $em = $this->getEntityManager();
+        // remove check foreign key for temp delete category
+        $sql = $em->createQuery('SET FOREIGN_KEY_CHECKS=0');
+        $sql->getResult();
+        $sql->getResult();
         $category = $this->find('Blog\Entity\Category', $id);
         $em->remove($category);
         $em->flush();
+        // set foreign key check again for some security
+        $sql = $em->createQuery('SET FOREIGN_KEY_CHECKS=1');
+        $sql->getResult();
 
         return new JsonModel([
             'success' => true

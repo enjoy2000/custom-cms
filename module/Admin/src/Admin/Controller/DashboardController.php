@@ -17,10 +17,7 @@ class DashboardController extends AbstractActionController
     {
         // clone category
         $em = $this->getEntityManager();
-        $qb = $em->getRepository('Blog\Entity\Category')
-                        ->createQueryBuilder('c');
-        $qb->andWhere($qb->expr()->gt('id', 8));
-        $categories = $qb->getQuery()->getResult();
+        $categories = $em->getRepository('Blog\Entity\Category')->findAll();
         foreach ($categories as $cat) {
             $cat2 = new \Blog\Entity\Category();
             $cat2->setData([
