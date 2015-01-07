@@ -29,9 +29,14 @@ class CategoryController extends AbstractActionController
         $category = $this->find('Blog\Entity\Category', $id);
         $em = $this->getEntityManager();
 
+        // get arabic categories
+        $arLocale = $this->find('Blog\Entity\Locale', 2);
+        $arCategories = $this->findBy('Blog\Entity\Category', ['locale' => $arLocale]);
+
         if ($this->getRequest()->isPost()) {
             $data = $this->getRequest()->getPost();
             $data['locale'] = $this->find('Blog\Entity\Locale', (int)$data['locale']);
+            $data['category'] = $this->find('Blog\Entity\Category', (int)$data['category']);
 
             // if new slug exist add unique id
             if ($category->getUrlKey() != $data['urlKey']) {
@@ -52,7 +57,8 @@ class CategoryController extends AbstractActionController
 
         return new ViewModel([
             'category' => $category,
-            'locales' => $locales
+            'locales' => $locales,
+            'arCategories' => $arCategories
         ]);
     }
 }

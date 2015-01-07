@@ -139,7 +139,9 @@ class Category {
             'category'
         ];
         foreach ($keys as $key) {
-            $this->$key = $data[$key];
+            if (isset($data[$key])) {
+                $this->$key = $data[$key];
+            }
         }
     }
 

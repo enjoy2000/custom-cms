@@ -15,6 +15,7 @@ class DashboardController extends AbstractActionController
 {
     public function indexAction()
     {
+        /**
         // clone category
         $em = $this->getEntityManager();
         $categories = $em->getRepository('Blog\Entity\Category')->findAll();
@@ -30,9 +31,8 @@ class DashboardController extends AbstractActionController
             echo 'Finished clone category ' . $cat->getId() . '<br />';
         }
         echo 'finished all';die;
-        if (!$this->getCurrentUser()) {
-            return $this->redirect()->toUrl('/user/login?redirect=/admin');
-        }
+        */
+
         return new ViewModel();
     }
 }

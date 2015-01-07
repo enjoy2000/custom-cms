@@ -38,6 +38,26 @@
         </div>
     </div>
 
+    <?php if ($this->category->getId() == 1) :  // check category is english ?>
+        <div class="form-group">
+            <label class="control-label col-md-3" for="category">Translation of Category</label>
+            <div class="col-md-7">
+                <select class="form-control" name="category">
+                    <option value="">Please choose</option>
+                    <?php
+                    /** @var \Blog\Entity\Category $category */
+                    foreach ($this->arCategories as $category) :
+                    ?>
+                        <option<?php echo ($category->getId() == $this->category->getCategory()->getId()) ? ' selected="selected"' : '' ?>
+                            value="<?php echo $category->getId() ?>">
+                            <?php echo $category->getName() ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+    <?php endif; ?>
+
     <div class="form-group">
         <label class="control-label col-md-3" for="urlKey">&nbsp;</label>
         <div class="col-md-7">
