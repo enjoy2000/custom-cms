@@ -57,7 +57,7 @@ class Category {
 
     /**
      * @var \Blog\Entity\Category
-     * @ORM\OneToOne(targetEntity="Blog\Entity\Category", nullable=true)
+     * @ORM\OneToOne(targetEntity="Blog\Entity\Category")
      */
     protected $category = null;
 
