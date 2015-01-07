@@ -11,13 +11,9 @@ namespace Blog\Form;
 use Zend\Form\Form as ZendForm;
 use Zend\Form\Element;
 use Zend\InputFilter;
-use Zend\Mvc\Application;
 use Zend\Validator;
 use Zend\Filter;
 use Blog\Entity\Blog;
-use Zend\Validator\File\Size;
-use Zend\Validator\File\Extension;
-use Zend\Validator\File\MimeType;
 
 
 class BlogForm extends ZendForm {
@@ -263,6 +259,18 @@ class BlogForm extends ZendForm {
 
             // modify data
             $formData['photo'] = $photo;
+
+            // create thumbnail
+            $cacheImagePath   = 'public' . Blog::DEFAULT_CACHE_PATH . $photo;
+            if (!file_exists($cacheImagePath)) {
+                $thumbnailer = $controller->getServiceLocator()->get('WebinoImageThumb');
+                $imagePath   = 'public' . Blog::DEFAULT_UPLOAD_PATH . $photo;
+                $thumb       = $thumbnailer->create($imagePath, $options = array(), $plugins = array());
+
+                $thumb->resize(350, 0);
+
+                $thumb->save($cacheImagePath);
+            }
         }
 
         //var_dump($formData);die;
@@ -307,6 +315,13 @@ class BlogForm extends ZendForm {
                 }
             }
             unset($formData['id']);
+
+            // if upload new photo delete the old one
+            if (isset($formData['photo']) && is_string($formData['photo'])) {
+                unlink('./public' . \Blog\Entity\Blog::DEFAULT_UPLOAD_PATH . $oldData->getPhoto());
+                unlink('./public' . \Blog\Entity\Blog::DEFAULT_CACHE_PATH . $oldData->getPhoto());
+            }
+
             // save
             $oldData->setData($formData);
             $em->merge($oldData);

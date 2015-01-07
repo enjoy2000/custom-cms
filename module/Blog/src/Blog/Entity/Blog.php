@@ -18,6 +18,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Blog
 {
     const DEFAULT_UPLOAD_PATH = '/uploads/blog-photo/';
+    const DEFAULT_CACHE_PATH = '/uploads/blog-photo/thumbnail/';
     const BLOG_ROUTE = 'news';
 
     /**
@@ -116,6 +117,11 @@ class Blog
     protected $updateTime;
 
     /**
+     * @ORM\Column(type="integer")
+     */
+    protected $views = 0;
+
+    /**
      * Initialies the categories variable.
      */
     public function __construct()
@@ -131,6 +137,16 @@ class Blog
     public function prePersist()
     {
         $this->createTime = new \DateTime('now');
+    }
+
+    public function getThumbnail()
+    {
+        $cacheImagePath   = './public' . self::DEFAULT_CACHE_PATH . $this->photo;
+        if (file_exists($cacheImagePath)) {
+            return self::DEFAULT_CACHE_PATH . $this->photo;
+        } else {
+            return $this->getPhotoUrl();
+        }
     }
 
     public function getId()
@@ -174,7 +190,7 @@ class Blog
     }
 
     /**
-     * @param \Blog\Entity\Category $categories
+     * @param array $categories
      */
     public function setCategories(array $categories)
     {
@@ -300,6 +316,16 @@ class Blog
         $this->metaKeywords = $metaKeywords;
     }
 
+    public function getViews()
+    {
+        return $this->views;
+    }
+
+    public function increaseViews()
+    {
+        $this->views = $this->views + 1;
+    }
+
     public function getData()
     {
         $keys = [
@@ -317,7 +343,8 @@ class Blog
             'createUser',
             'createTime',
             'updateUser',
-            'updateTime'
+            'updateTime',
+            'views',
         ];
         $data = [];
         foreach ($keys as $key) {
@@ -392,7 +419,7 @@ class Blog
         $html = '';
         $html .= '<a class="news-photo" href="' . $this->getUrl()
                 .'" title="'.$this->title.'">';
-        $html .= '<img src="'.self::DEFAULT_UPLOAD_PATH . $this->photo .'" alt="" />';
+        $html .= '<img src="'. $this->getThumbnail() .'" alt="" />';
         $html .= '</a>';
 
         return $html;
@@ -401,5 +428,10 @@ class Blog
     public function getExactCreateTime()
     {
         return $this->createTime->format('jS F, Y  h:i A');
+    }
+
+    public function getPhotoUrl()
+    {
+        return self::DEFAULT_UPLOAD_PATH . $this->photo;
     }
 }

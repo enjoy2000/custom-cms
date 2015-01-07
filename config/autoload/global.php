@@ -53,6 +53,10 @@ return [
                 array('route' => 'blog', 'roles' => array('guest')),
                 array('route' => 'news-ticker', 'roles' => array('guest')),
                 array('route' => 'blog/view', 'roles' => array('guest')),
+
+                /** For htimg images caching pages */
+                array('route' => 'htimg', 'roles' => array('guest')),
+                array('route' => 'htimg/display', 'roles' => array('guest')),
             ),
         ),
     ),

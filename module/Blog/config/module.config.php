@@ -83,6 +83,7 @@ return array(
         'template_map' => array(
             'blog/index/index' => __DIR__ . '/../view/blog/index/index.phtml',
             //'blog/index/news-ticker' => __DIR__ . '/../view/blog/index/news-ticker.phtml',
+            'article_partial' => __DIR__ . '/../view/partial/article.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',

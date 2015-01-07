@@ -16,6 +16,13 @@ if ($blog->getMetaKeywords()) {
 ?>
 <h1><?php echo $this->blog->getTitle() ?></h1>
 
+<div class="blog-author">
+    <i class="glyphicon glyphicon-calendar"></i>
+    <?php echo $blog->getExactCreateTime() ?>
+    |
+    <i class="glyphicon glyphicon-user"></i>
+    <?php echo sprintf($this->translate('Written by %s'), $blog->getCreateUser()->getDisplayName()) ?>
+</div>
 <div class="categories">
 <?php
 /** @var \Blog\Entity\Category $cat */
@@ -31,6 +38,3 @@ foreach ($cats as $cat) :
     <?php echo $blog->getContent(); ?>
 </div>
 <hr />
-<div class="blog-author">
-    <?php echo sprintf($this->translate('Written by %s'), $blog->getCreateUser()->getDisplayName()) ?>
-</div>

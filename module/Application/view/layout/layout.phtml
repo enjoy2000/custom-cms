@@ -72,7 +72,7 @@ $modules = explode('/', $routeName);
                 </button>
             </div>
             <div class="collapse navbar-collapse">
-                <?php include('layout/navigation.phtml') ?>
+                <?php echo $this->partial('layout/navigation') ?>
             </div><!--/.nav-collapse -->
         </div>
     </nav>
@@ -105,7 +105,7 @@ $modules = explode('/', $routeName);
 </div> <!-- /container -->
 
 <footer>
-    <?php include('layout/footer.phtml') ?>
+    <?php echo $this->partial('layout/footer') ?>
 </footer>
 <?php echo $this->inlineScript() ?>
 </body>

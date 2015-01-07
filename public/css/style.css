@@ -276,6 +276,9 @@ div.consular-services .service-row > div span.middle-text {
 body.blog.view a.news-photo {
     height: 150px;
 }
+body.blog.view .well {
+    border: 1px solid #e3e3e3;
+}
 body.blog.view .well a h3 {
     color: #3B93C9;
     transition: color 0.3s ease-out;
