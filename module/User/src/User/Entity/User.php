@@ -97,7 +97,7 @@ class User implements UserInterface, ProviderInterface
      */
     public function setId($id)
     {
-        $this->id = (int) $id;
+        $this->id = (int)$id;
     }
 
     /**
@@ -233,21 +233,22 @@ class User implements UserInterface, ProviderInterface
     }
 
     /**
-    * Add role to user by role id
-    * @param $controller
-    * @param $roleName
-    * @return void
-    */
-    public function addRoleByRoleName($controller, $roleName = 'guest') {
+     * Add role to user by role id
+     * @param $controller
+     * @param $roleName
+     * @return void
+     */
+    public function addRoleByRoleName($controller, $roleName = 'guest')
+    {
         $role = $controller->getEntityManager()->getRepository('User\Entity\Role')->findOneBy(array('roleId' => $roleName));
         if ($role) {
             $this->addRole($role);
             $controller->getEntityManager()->merge($this);
             $controller->getEntityManager()->flush();
-            
+
             return $this;
         } else {
-            
+
             return false;
         }
     }

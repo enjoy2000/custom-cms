@@ -1,0 +1,60 @@
+<?php $this->headTitle('Moderators Manager') ?>
+<h1 class="text-center">Moderators Manager</h1>
+
+<?php
+// add at the end of the file after the table
+echo $this->paginationControl(
+// the paginator object
+    $this->paginator,
+    // the scrolling style
+    'sliding',
+    // the partial to use to render the control
+    array('partial/paginator.phtml', 'Blog'),
+    // the route to link to when a user clicks a control link
+    array(
+        'route' => 'zfcadmin/blog'
+    )
+);
+?>
+<table class="table table-consended">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Email</th>
+        <th>Display name</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    /** @var \User\Entity\User $moderator */
+    foreach ($this->paginator as $moderator) : ?>
+    <tr>
+        <td><?php echo $moderator->getId() ?></td>
+        <td><?php echo $moderator->getEmail() ?></td>
+        <td><?php echo $moderator->getDisplayName() ?></td>
+        <td>
+            <a class="btn btn-primary" title="Edit"
+               href="<?php echo $this->url('zfcadmin/moderator/edit', ['id' => $moderator->getId()]); ?>">
+                <i class="glyphicon glyphicon-edit"></i>
+            </a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+<?php
+// add at the end of the file after the table
+echo $this->paginationControl(
+// the paginator object
+    $this->paginator,
+    // the scrolling style
+    'sliding',
+    // the partial to use to render the control
+    array('partial/paginator.phtml', 'Blog'),
+    // the route to link to when a user clicks a control link
+    array(
+        'route' => 'zfcadmin/blog'
+    )
+);
+?>

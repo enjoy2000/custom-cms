@@ -142,7 +142,7 @@ return array(
                                 'options' => array(
                                     'route' => '/edit[/][:id]',
                                     'constraints' => array(
-                                        'slug' => '[0-9]+',
+                                        'id' => '[0-9]+',
                                     ),
                                     'defaults' => array(
                                         'action' => 'edit',

@@ -10,13 +10,24 @@ namespace Blog\Controller;
 
 use Application\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Zend\View\Model\JsonModel;
-use Blog\Entity\Blog;
+use Zend\Session\Container;
 
 class IndexController extends AbstractActionController {
     public function indexAction()
     {
-        return new ViewModel();
+        $locale = new Container('locale');
+        $locale = $this->findOneBy('Blog\Entity\Locale', ['code' => $locale->locale]);
+
+        // get categories based on current locale
+        $repository = $this->getEntityManager()->getRepository('Blog\Entity\Category');
+        $categories = $repository->findBy(
+                        ['locale' => $locale],
+                        ['name' => 'ASC']
+        );
+
+        return new ViewModel([
+            'categories' => $categories
+        ]);
     }
     public function newsTickerAction()
     {

@@ -25,6 +25,7 @@ return [
                 array('route' => 'zfcadmin/default', 'roles' => array('administrator')),
                 array('route' => 'zfcadmin/moderator', 'roles' => array('administrator')),
                 array('route' => 'zfcadmin/moderator/create', 'roles' => array('administrator')),
+                array('route' => 'zfcadmin/moderator/edit', 'roles' => array('administrator')),
 
                 /** For Landing Pages */
                 array('route' => 'ministry', 'roles' => array('guest')),
