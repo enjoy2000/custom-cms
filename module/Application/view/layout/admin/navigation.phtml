@@ -31,6 +31,17 @@ $module = isset($modules[1]) ? $modules[1] : null;
             </li>
         </ul>
     </li>
+    <li class="dropdown<?php echo ($module == 'moderator') ? ' active' : '' ?>">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Moderator <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="<?php echo $this->url('zfcadmin/moderator/create') ?>">Add Moderator</a>
+            </li>
+            <li>
+                <a href="<?php echo $this->url('zfcadmin/moderator') ?>">Moderators Manager</a>
+            </li>
+        </ul>
+    </li>
 </ul>
 
 <?php if ($this->zfcUserIdentity()) : ?>
