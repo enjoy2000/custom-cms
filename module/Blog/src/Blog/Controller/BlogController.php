@@ -23,6 +23,7 @@ class BlogController extends AbstractActionController {
     {
         $slug = $this->params()->fromRoute('slug');
         $category = $this->findOneBy('Blog\Entity\Category', ['urlKey' => $slug]);
+        /** @var \Blog\Entity\Blog $blog */
         $blog = $this->findOneBy('Blog\Entity\Blog', ['urlKey' => $slug]);
         //var_dump($slug);die;
         if ($category) {
@@ -32,6 +33,11 @@ class BlogController extends AbstractActionController {
             ));
         } else {
             if ($blog) {
+                // increase blog view
+                $blog->increaseViews();
+                $this->getEntityManager()->merge($blog);
+                $this->getEntityManager()->flush();
+
                 return $this->forward()->dispatch('Blog\Controller\Blog', array(
                     'action' => 'article',
                     'blog'   => $blog
