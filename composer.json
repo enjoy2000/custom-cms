@@ -24,6 +24,7 @@
         "bjyoungblood/bjy-authorize": "1.2.*",
         "doctrine/doctrine-module": "dev-master",
         "doctrine/doctrine-orm-module": "dev-master",
-        "webino/webino-image-thumb": "~1.0"
+        "webino/webino-image-thumb": "~1.0",
+        "slm/locale": "dev-master"
     }
 }

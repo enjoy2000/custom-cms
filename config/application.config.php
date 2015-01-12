@@ -11,6 +11,7 @@ return array(
         'ZfcUserDoctrineORM',
         'BjyAuthorize',
         'WebinoImageThumb',
+        'SlmLocale',
         'Api',
         'Application',
         'Blog',
