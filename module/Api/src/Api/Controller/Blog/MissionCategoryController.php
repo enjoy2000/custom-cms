@@ -8,26 +8,21 @@
 namespace Api\Controller\Blog;
 
 use Api\Controller\AbstractRestfulJsonController;
-use Blog\Entity\Category;
+use Mission\Entity\Category;
 use Zend\View\Model\JsonModel;
 use Zend\Paginator\Paginator;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
 use Zend\Session\Container;
 
-class CategoryController extends AbstractRestfulJsonController
+class MissionCategoryController extends AbstractRestfulJsonController
 {
 
     public function getList()
     {
         // create pager
         $em = $this->getEntityManager();
-        $categories = $em->getRepository('Blog\Entity\Category');
-
-        // add param to get categories from mission category
-        if ($this->params()->fromQuery('category') == 'mission') {
-            $categories = $em->getRepository('Mission\Entity\Category');
-        }
+        $categories = $em->getRepository('Mission\Entity\Category');
         $queryBuilder = $categories->createQueryBuilder('c');
 
         // start filter
@@ -41,7 +36,7 @@ class CategoryController extends AbstractRestfulJsonController
         $cats = $queryBuilder->getQuery()->getResult();
         $data = [];
         /**
-         * @var \Blog\Entity\Category $cat
+         * @var \Mission\Entity\Category $cat
          */
         foreach ($cats as $cat) {
             $data[] = $cat->getData();
@@ -73,7 +68,7 @@ class CategoryController extends AbstractRestfulJsonController
 
     public function get($id)
     {
-        $category = $this->find('Blog\Entity\Category', $id);
+        $category = $this->find('Mission\Entity\Category', $id);
 
         return new JsonModel([
             'category' => $category
@@ -101,14 +96,14 @@ class CategoryController extends AbstractRestfulJsonController
             $slug = \Application\Helper\Url::formatUrl($data['name']);
 
             // check slug exist
-            $slugExist = $this->findOneBy('Blog\Entity\Category', ['urlKey' => $slug]);
+            $slugExist = $this->findOneBy('Mission\Entity\Category', ['urlKey' => $slug]);
             if ($slugExist) {
                 $slug .= '-' . date('Ymdhis');
             }
             $data['urlKey'] = $slug;
         } else {
             // check slug exist
-            $slugExist = $this->findOneBy('Blog\Entity\Category', ['urlKey' => $data['urlKey']]);
+            $slugExist = $this->findOneBy('Mission\Entity\Category', ['urlKey' => $data['urlKey']]);
             if ($slugExist) {
                 $data['urlKey'] .= '-' . date('Ymdhis');
             }
@@ -136,7 +131,7 @@ class CategoryController extends AbstractRestfulJsonController
         $user = $this->getCurrentUser();
 
         $em = $this->getEntityManager();
-        $category = $this->find('Blog\Entity\Category', $id);
+        $category = $this->find('Mission\Entity\Category', $id);
 
         // update moderators
         if ($data['updateMods']) {
@@ -155,7 +150,7 @@ class CategoryController extends AbstractRestfulJsonController
 
         if ($data['urlKey']) {
             // check slug exist
-            $slugExist = $this->findOneBy('Blog\Entity\Category', ['urlKey' => $data['urlKey']]);
+            $slugExist = $this->findOneBy('Mission\Entity\Category', ['urlKey' => $data['urlKey']]);
             if ($slugExist) {
                 $data['urlKey'] .= '-' . date('Ymdhis');
             }
@@ -191,7 +186,7 @@ class CategoryController extends AbstractRestfulJsonController
         $sql = $em->createQuery('SET FOREIGN_KEY_CHECKS=0');
         $sql->getResult();
         $sql->getResult();
-        $category = $this->find('Blog\Entity\Category', $id);
+        $category = $this->find('Mission\Entity\Category', $id);
         $em->remove($category);
         $em->flush();
         // set foreign key check again for some security

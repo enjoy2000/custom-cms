@@ -151,6 +151,78 @@ return array(
                             ),
                         ),
                     ),
+
+                    // MISSION CATEGORY
+                    'mission-category' => array(
+                        'type' => 'literal',
+                        'options' => array(
+                            'route' => '/mission-category',
+                            'defaults' => array(
+                                'controller' => 'Admin\Controller\MissionCategory',
+                                'action' => 'index',
+                            ),
+                        ),
+                        'may_terminate' => true,
+                        'child_routes' => array(
+                            'new' => array(
+                                'type' => 'literal',
+                                'options' => array(
+                                    'route' => '/new',
+                                    'defaults' => array(
+                                        'action' => 'new',
+                                    ),
+                                ),
+                            ),
+                            'edit' => array(
+                                'type' => 'Segment',
+                                'options' => array(
+                                    'route' => '/edit[/][:id]',
+                                    'constraints' => array(
+                                        'slug' => '[0-9]+',
+                                    ),
+                                    'defaults' => array(
+                                        'action' => 'edit',
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
+
+                    // BLOG
+                    'mission-blog' => array(
+                        'type' => 'literal',
+                        'options' => array(
+                            'route' => '/mission-blog',
+                            'defaults' => array(
+                                'controller' => 'Admin\Controller\MissionBlog',
+                                'action' => 'index',
+                            ),
+                        ),
+                        'may_terminate' => true,
+                        'child_routes' => array(
+                            'new' => array(
+                                'type' => 'literal',
+                                'options' => array(
+                                    'route' => '/new',
+                                    'defaults' => array(
+                                        'action' => 'new',
+                                    ),
+                                ),
+                            ),
+                            'edit' => array(
+                                'type' => 'Segment',
+                                'options' => array(
+                                    'route' => '/edit[/][:id]',
+                                    'constraints' => array(
+                                        'slug' => '[0-9]+',
+                                    ),
+                                    'defaults' => array(
+                                        'action' => 'edit',
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
                 ),
             ),
         ),
@@ -179,6 +251,8 @@ return array(
             'Admin\Controller\Blog' => 'Admin\Controller\BlogController',
             'Admin\Controller\Category' => 'Admin\Controller\CategoryController',
             'Admin\Controller\Dashboard' => 'Admin\Controller\DashboardController',
+            'Admin\Controller\MissionBlog' => 'Admin\Controller\MissionBlogController',
+            'Admin\Controller\MissionCategory' => 'Admin\Controller\MissionCategoryController',
             'Admin\Controller\Moderator' => 'Admin\Controller\ModeratorController'
         ),
     ),

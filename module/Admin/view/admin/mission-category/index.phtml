@@ -1,0 +1,35 @@
+<?php $this->headTitle($this->translate('Mission Categories Manager')) ?>
+<?php $this->headScript()
+    ->prependFile('/js/admin/mission-category-index.js')
+    ->prependFile('/js/plugin/bootbox/bootbox.min.js')
+    ->prependFile('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js');
+?>
+<h1 class="text-center"><?php echo $this->translate('Categories Manager') ?></h1>
+<div ng-controller="CategoriesManagerController">
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th style="width: 10%">Id</th>
+                <th style="width: 40%">Name</th>
+                <th>Locale</th>
+                <th style="width: 20%">Moderators</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="categories-grid">
+            <tr ng-repeat="category in categories">
+                <td>{{category.id}}</td>
+                <td>{{category.name}}</td>
+                <td>{{category.locale.name}}</td>
+                <td>
+                    <multi-select
+                        input-model="moderators"
+                        button-label="displayName"
+                        item-label="displayName"
+                        >
+                    </multi-select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

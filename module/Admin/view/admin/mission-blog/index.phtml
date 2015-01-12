@@ -1,0 +1,85 @@
+<?php $this->headTitle($this->translate('News Manager')) ?>
+<?php $this->headScript()
+    ->prependFile('/js/admin/blog-index.js')
+    ->prependFile('/js/plugin/bootbox/bootbox.min.js')
+    ->prependFile('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js');
+?>
+<h1 class="text-center"><?php echo $this->translate('News Manager') ?></h1>
+
+<?php
+// add at the end of the file after the table
+echo $this->paginationControl(
+// the paginator object
+    $this->paginator,
+    // the scrolling style
+    'sliding',
+    // the partial to use to render the control
+    array('partial/paginator.phtml', 'Blog'),
+    // the route to link to when a user clicks a control link
+    array(
+        'route' => 'zfcadmin/blog'
+    )
+);
+?>
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Categories</th>
+            <th>Languages</th>
+            <th>Status</th>
+            <th>Create Time</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    <!-- Loop blogs -->
+    <?php
+    /** @var \Blog\Entity\Blog $blog */
+    foreach ($this->paginator as $blog) :
+    ?>
+        <tr>
+            <td><?php echo $blog->getId(); ?></td>
+            <td><?php echo $blog->getTitle(); ?></td>
+            <td>
+            <?php
+            /** @var \Blog\Entity\Category $category */
+            foreach ($blog->getCategories() as $category) : ?>
+                <?php echo $category->getName() . '<br />'; ?>
+            <?php endforeach; ?>
+            </td>
+            <td><?php echo $blog->getLocale()->getName(); ?></td>
+            <td valign="top">
+                <a style="font-size: 20px;" href="#" data-blog="<?php echo $blog->getId() ?>"
+                   class="toggle-active-blog text-<?php echo $blog->isPublished() ? 'success' : 'danger'; ?>"
+                   title="Toggle Blog Status">
+                    <i class="fa fa-toggle-<?php echo $blog->isPublished() ? 'on' : 'off'; ?>"></i>
+                </a>
+            </td>
+            <td><?php echo $blog->getCreateTime(); ?></td>
+            <td>
+                <a class="btn btn-primary" href="<?php echo $blog->getEditUrl() ?>" title="Edit Blog">
+                    <i class="fa fa-edit"></i></a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+
+<?php
+// add at the end of the file after the table
+echo $this->paginationControl(
+// the paginator object
+    $this->paginator,
+    // the scrolling style
+    'sliding',
+    // the partial to use to render the control
+    array('partial/paginator.phtml', 'Blog'),
+    // the route to link to when a user clicks a control link
+    array(
+        'route' => 'zfcadmin/blog'
+    )
+);
+?>

@@ -17,6 +17,7 @@ return array(
         'Landing',
         'User',
         'Admin',
+        'Mission',
     ),
 
     // These are various options for the listeners attached to the ModuleManager

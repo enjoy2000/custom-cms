@@ -1,0 +1,20 @@
+<?php $this->headTitle($this->translate('Iraq Ambassadors')) ?>
+<h1><?php echo $this->translate('Iraq Ambassadors') ?></h1>
+<hr />
+<table class="table table-consended">
+    <tr>
+<?php
+$i = 1;
+/** @var \Mission\Entity\Category $category */
+foreach ($this->categories as $category) : ?>
+    <td>
+        <a class="btn btn-success" href="<?php echo $category->getUrl() ?>" title="<?php echo $category->getName() ?>">
+            <?php echo $category->getName() ?>
+        </a>
+    </td>
+    <?php if ($i % 3 == 0 && $i != count($this->categories)) : ?>
+    </tr>
+    <?php endif; ?>
+<?php ++$i; endforeach; ?>
+    </tr>
+</table>

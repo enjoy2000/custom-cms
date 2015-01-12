@@ -31,6 +31,28 @@ $module = isset($modules[1]) ? $modules[1] : null;
             </li>
         </ul>
     </li>
+    <li class="dropdown<?php echo ($module == 'mission-category') ? ' active' : '' ?>">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Mission Category <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="<?php echo $this->url('zfcadmin/mission-category/new') ?>">Add a Category</a>
+            </li>
+            <li>
+                <a href="<?php echo $this->url('zfcadmin/mission-category') ?>">Categories Manager</a>
+            </li>
+        </ul>
+    </li>
+    <li class="dropdown<?php echo ($module == 'mission-blog') ? ' active' : '' ?>">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Mission Blog <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="<?php echo $this->url('zfcadmin/mission-blog/new') ?>">Add News</a>
+            </li>
+            <li>
+                <a href="<?php echo $this->url('zfcadmin/mission-blog') ?>">News Manager</a>
+            </li>
+        </ul>
+    </li>
     <li class="dropdown<?php echo ($module == 'moderator') ? ' active' : '' ?>">
         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Moderator <b class="caret"></b></a>
         <ul class="dropdown-menu">
