@@ -25,6 +25,23 @@ class Module
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
 
+        /**
+         * Set base url for multi languages
+         */
+        // Trigger after matched route & before authorization modules.
+        $eventManager->attach(
+            MvcEvent::EVENT_ROUTE,
+            array($this, 'setBaseUrl'),
+            -100
+        );
+
+        // Trigger before 404s are rendered.
+        $eventManager->attach(
+            MvcEvent::EVENT_RENDER,
+            array($this, 'setBaseUrl'),
+            -1000
+        );
+
         // service manager
         $sm = $e->getApplication()->getServiceManager();
 
@@ -32,7 +49,7 @@ class Module
         // session container
         $sessionContainer = new Container('locale');
 
-        $sessionContainer->offsetUnset('locale');
+        //$sessionContainer->offsetUnset('locale');
         // test if session language exists
         if (!$sessionContainer->offsetExists('locale')) {
             // if not use the browser locale
@@ -74,5 +91,20 @@ class Module
                 ),
             ),
         );
+    }
+
+    public function setBaseUrl(MvcEvent $e) {
+        $request = $e->getRequest();
+        $baseUrl = $request->getServer('APPLICATION_BASEURL');
+
+        if (!empty($baseUrl) && $request->getServer('HTTP_X_FORWARDED_FOR', false)) {
+            $router = $e->getApplication()->getServiceManager()->get('Router');
+            $router->setBaseUrl($baseUrl);
+            $request->setBaseUrl($baseUrl);
+
+            // fastcgi_param APPLICATION_BASEURL /ar/;
+            $sessionContainer = new Container('locale');
+            $sessionContainer->offsetSet('locale', 'ar_IQ');
+        }
     }
 }

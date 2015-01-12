@@ -1,153 +1,256 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ZendSkeletonApplication\n"
+"Project-Id-Version: CustomCMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-05 22:17-0700\n"
-"PO-Revision-Date: 2012-07-05 22:17-0700\n"
-"Last-Translator: Evan Coury <me@evancoury.com>\n"
-"Language-Team: ZF Contibutors <zf-devteam@zend.com>\n"
-"Language: \n"
+"POT-Creation-Date: 2015-01-12 14:00+0800\n"
+"PO-Revision-Date: 2015-01-12 14:00+0800\n"
+"Last-Translator: \n"
+"Language-Team: Hat Dao <enjoy3013@gmail.com>\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: translate\n"
-"X-Poedit-Language: English\n"
-"X-Poedit-Country: UNITED STATES\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-Basepath: /home/hat/Projects/custom-cms/module/\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ./Application\n"
 
-#: ../view/layout/layout.phtml:6
-#: ../view/layout/layout.phtml:33
-msgid "Skeleton Application"
-msgstr ""
-
-#: ../view/layout/layout.phtml:36
-msgid "Home"
-msgstr ""
-
-#: ../view/layout/layout.phtml:50
-msgid "All rights reserved."
-msgstr ""
-
-#: ../view/application/index/index.phtml:2
-#, php-format
-msgid "Welcome to %sZend Framework 2%s"
-msgstr ""
-
-#: ../view/application/index/index.phtml:3
-#, php-format
-msgid "Congratulations! You have successfully installed the %sZF2 Skeleton Application%s. You are currently running Zend Framework version %s. This skeleton can serve as a simple starting point for you to begin building your application on ZF2."
-msgstr ""
-
-#: ../view/application/index/index.phtml:4
-msgid "Fork Zend Framework 2 on GitHub"
-msgstr ""
-
-#: ../view/application/index/index.phtml:10
-msgid "Follow Development"
-msgstr ""
-
-#: ../view/application/index/index.phtml:11
-#, php-format
-msgid "Zend Framework 2 is under active development. If you are interested in following the development of ZF2, there is a special ZF2 portal on the official Zend Framework website which provides links to the ZF2 %swiki%s, %sdev blog%s, %sissue tracker%s, and much more. This is a great resource for staying up to date with the latest developments!"
-msgstr ""
-
-#: ../view/application/index/index.phtml:12
-msgid "ZF2 Development Portal"
-msgstr ""
-
-#: ../view/application/index/index.phtml:16
-msgid "Discover Modules"
-msgstr ""
-
-#: ../view/application/index/index.phtml:17
-#, php-format
-msgid "The community is working on developing a community site to serve as a repository and gallery for ZF2 modules. The project is available %son GitHub%s. The site is currently live and currently contains a list of some of the modules already available for ZF2."
-msgstr ""
-
-#: ../view/application/index/index.phtml:18
-msgid "Explore ZF2 Modules"
-msgstr ""
-
-#: ../view/application/index/index.phtml:22
-msgid "Help &amp; Support"
-msgstr ""
-
-#: ../view/application/index/index.phtml:23
-#, php-format
-msgid "If you need any help or support while developing with ZF2, you may reach us via IRC: %s#zftalk on Freenode%s. We'd love to hear any questions or feedback you may have regarding the beta releases. Alternatively, you may subscribe and post questions to the %smailing lists%s."
-msgstr ""
-
-#: ../view/application/index/index.phtml:24
-msgid "Ping us on IRC"
-msgstr ""
-
-#: ../view/error/index.phtml:1
+#: Application/view/error/index.phtml:1
 msgid "An error occurred"
 msgstr ""
 
-#: ../view/error/index.phtml:8
+#: Application/view/error/index.phtml:8 Application/view/error/404.phtml:54
 msgid "Additional information"
 msgstr ""
 
-#: ../view/error/index.phtml:11
-#: ../view/error/index.phtml:35
+#: Application/view/error/index.phtml:11 Application/view/error/index.phtml:35
+#: Application/view/error/404.phtml:57 Application/view/error/404.phtml:81
 msgid "File"
 msgstr ""
 
-#: ../view/error/index.phtml:15
-#: ../view/error/index.phtml:39
+#: Application/view/error/index.phtml:15 Application/view/error/index.phtml:39
+#: Application/view/error/404.phtml:61 Application/view/error/404.phtml:85
 msgid "Message"
 msgstr ""
 
-#: ../view/error/index.phtml:19
-#: ../view/error/index.phtml:43
-#: ../view/error/404.phtml:55
+#: Application/view/error/index.phtml:19 Application/view/error/index.phtml:43
+#: Application/view/error/404.phtml:65 Application/view/error/404.phtml:89
 msgid "Stack trace"
 msgstr ""
 
-#: ../view/error/index.phtml:29
+#: Application/view/error/index.phtml:29 Application/view/error/404.phtml:75
 msgid "Previous exceptions"
 msgstr ""
 
-#: ../view/error/index.phtml:58
+#: Application/view/error/index.phtml:58 Application/view/error/404.phtml:104
 msgid "No Exception available"
 msgstr ""
 
-#: ../view/error/404.phtml:1
+#: Application/view/error/404.phtml:1 Application/view/error/404.phtml:2
 msgid "A 404 error occurred"
 msgstr ""
 
-#: ../view/error/404.phtml:10
+#: Application/view/error/404.phtml:11
 msgid "The requested controller was unable to dispatch the request."
 msgstr ""
 
-#: ../view/error/404.phtml:13
-msgid "The requested controller could not be mapped to an existing controller class."
+#: Application/view/error/404.phtml:14
+msgid ""
+"The requested controller could not be mapped to an existing controller class."
 msgstr ""
 
-#: ../view/error/404.phtml:16
+#: Application/view/error/404.phtml:17
 msgid "The requested controller was not dispatchable."
 msgstr ""
 
-#: ../view/error/404.phtml:19
+#: Application/view/error/404.phtml:20
 msgid "The requested URL could not be matched by routing."
 msgstr ""
 
-#: ../view/error/404.phtml:22
+#: Application/view/error/404.phtml:23
 msgid "We cannot determine at this time why a 404 was generated."
 msgstr ""
 
-#: ../view/error/404.phtml:34
+#: Application/view/error/404.phtml:35
 msgid "Controller"
 msgstr ""
 
-#: ../view/error/404.phtml:41
+#: Application/view/error/404.phtml:42
 #, php-format
 msgid "resolves to %s"
 msgstr ""
 
-#: ../view/error/404.phtml:51
-msgid "Exception"
+#: Application/view/layout/layout.phtml:6
+msgid "Ministry of Foreign Affairs | Republic of Iraq"
 msgstr ""
 
+#: Application/view/layout/layout.phtml:47
+#: Application/view/layout/layout/footer.phtml:111
+msgid "Republic of Iraq"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:48
+#: Application/view/layout/layout/footer.phtml:112
+msgid "Ministry of Foreign Affairs"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:53
+msgid "Language"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:58
+#: Application/view/layout/layout/footer.phtml:99
+msgid "English"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:59
+msgid "Arabic"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:81
+#: Application/view/layout/layout/navigation.phtml:82
+#: Application/view/layout/layout/navigation.phtml:83
+msgid "News"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:86
+msgid "No news."
+msgstr ""
+
+#: Application/view/layout/layout.bk.phtml:6
+#: Application/view/layout/layout.bk.phtml:37
+msgid "Skeleton Application"
+msgstr ""
+
+#: Application/view/layout/layout.bk.phtml:41
+#: Application/view/layout/layout/footer.phtml:6
+#: Application/view/layout/layout/navigation.phtml:4
+msgid "Home"
+msgstr ""
+
+#: Application/view/layout/layout.bk.phtml:50
+msgid "All rights reserved."
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:3
+msgid "Site Map"
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:9
+#: Application/view/layout/layout/navigation.phtml:8
+msgid "The Ministry"
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:13
+#: Application/view/layout/layout/navigation.phtml:37
+msgid "Undersecretaries"
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:17
+#: Application/view/layout/layout/navigation.phtml:88
+msgid "Foreign Policy"
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:20
+#: Application/view/layout/layout/navigation.phtml:55
+msgid "About Iraq"
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:24
+#: Application/view/layout/layout/navigation.phtml:106
+msgid "Diplomatic Missions"
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:28
+#: Application/view/layout/layout/navigation.phtml:114
+msgid "Consular Services"
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:31
+#: Application/view/layout/layout/navigation.phtml:126
+#: Application/view/layout/layout/navigation.phtml:127
+msgid "Contact Us"
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:36
+msgid "Links"
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:41
+#: Application/view/layout/layout/navigation.phtml:66
+msgid "Iraq's Constitution"
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:45
+#: Application/view/layout/layout/footer.phtml:73
+msgid "Speeches"
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:49
+#: Application/view/layout/layout/footer.phtml:77
+#: Application/view/layout/layout/navigation.phtml:61
+msgid "Investment in Iraq"
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:53
+#: Application/view/layout/layout/footer.phtml:81
+#: Application/view/layout/layout/navigation.phtml:71
+msgid "Iraq Encyclopedia"
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:57
+#: Application/view/layout/layout/footer.phtml:85
+msgid "International organizations"
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:61
+#: Application/view/layout/layout/footer.phtml:89
+#: Application/view/layout/layout/navigation.phtml:43
+msgid "Ministry's Announcements"
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:69
+#: Application/view/layout/layout/navigation.phtml:48
+msgid "Ministry's Magazine"
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:96
+msgid "Languages"
+msgstr ""
+
+#: Application/view/layout/layout/footer.phtml:102
+msgid "عربي"
+msgstr ""
+
+#: Application/view/layout/layout/navigation.phtml:14
+msgid "FAQ's"
+msgstr ""
+
+#: Application/view/layout/layout/navigation.phtml:20
+msgid "Ministry Departments"
+msgstr ""
+
+#: Application/view/layout/layout/navigation.phtml:26
+msgid "The Minister"
+msgstr ""
+
+#: Application/view/layout/layout/navigation.phtml:32
+msgid "Speeches &amp; Interviews"
+msgstr ""
+
+#: Application/view/layout/layout/navigation.phtml:76
+msgid "Announcements"
+msgstr ""
+
+#: Application/view/layout/layout/navigation.phtml:94
+msgid "The New Iraq"
+msgstr ""
+
+#: Application/view/layout/layout/navigation.phtml:99
+msgid "International Organizations"
+msgstr ""
+
+#: Application/view/layout/layout/navigation.phtml:120
+msgid "Other Links"
+msgstr ""
