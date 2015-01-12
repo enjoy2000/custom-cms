@@ -31,11 +31,14 @@
 
 </head>
 <?php
-$routeName = $this->getHelperPluginManager()->getServiceLocator()->get('Application')
-    ->getMvcEvent()->getRouteMatch()->getMatchedRouteName();
-$modules = explode('/', $routeName);
+$routeMatch = $this->getHelperPluginManager()->getServiceLocator()->get('Application')
+    ->getMvcEvent()->getRouteMatch();
+if ($routeMatch) {
+    $routeName = $routeMatch->getMatchedRouteName();
+    $modules = explode('/', $routeName);
+}
 ?>
-<body class="<?php echo join(' ', $modules) ?>">
+<body class="<?php echo isset($modules) ? join(' ', $modules) : '' ?>">
 <div class="container">
     <header class="clearfix">
         <div class="logo pull-left">

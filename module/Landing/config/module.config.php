@@ -277,18 +277,7 @@ return array(
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
         'doctype'                  => 'HTML5',
-        'not_found_template'       => 'error/404',
-        'exception_template'       => 'error/index',
         'template_map' => array(
-            'landing/index/index' => __DIR__ . '/../view/landing/index/index.phtml',
-            'landing/index/freelancer' => __DIR__ . '/../view/landing/index/freelancer.phtml',
-            'landing/index/languages' => __DIR__ . '/../view/landing/index/languages.phtml',
-            'landing/index/order' => __DIR__ . '/../view/landing/index/order.phtml',
-            'landing/index/contact' => __DIR__ . '/../view/landing/index/contact.phtml',
-            'landing/index/terms' => __DIR__ . '/../view/landing/index/terms.phtml',
-            'landing/index/privacy' => __DIR__ . '/../view/landing/index/privacy.phtml',
-            'error/404'               => __DIR__ . '/../../Application/view/error/404.phtml',
-            'error/index'             => __DIR__ . '/../../Application/view/error/index.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
