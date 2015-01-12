@@ -25,6 +25,12 @@ class Module
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
 
+
+        // set language based on $_SERVER['HTTP_ACCEPT_LANGUAGE'] && session
+        // session container
+        $sessionContainer = new Container('locale');
+
+        $sessionContainer->offsetUnset('locale');
         /**
          * Set base url for multi languages
          */
@@ -44,12 +50,6 @@ class Module
 
         // service manager
         $sm = $e->getApplication()->getServiceManager();
-
-        // set language based on $_SERVER['HTTP_ACCEPT_LANGUAGE'] && session
-        // session container
-        $sessionContainer = new Container('locale');
-
-        //$sessionContainer->offsetUnset('locale');
         // test if session language exists
         if (!$sessionContainer->offsetExists('locale')) {
             // if not use the browser locale
