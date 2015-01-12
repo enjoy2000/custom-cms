@@ -13,7 +13,7 @@ $settings = array(
      *
      * Accepted is something else
      */
-    'default' => '',
+    //'default' => 'en-US',
 
     /**
      * Supported locales
@@ -22,7 +22,7 @@ $settings = array(
      *
      * Accepted is something else
      */
-    'supported' => array('', 'ar'),
+    'supported' => array('en', 'ar'),
 
     /**
      * Aliases for locales
@@ -31,7 +31,7 @@ $settings = array(
      *
      * Accepted is something else
      */
-    'aliases' => array('ar' => 'ar-IQ', '' => 'en-US'),
+    'aliases' => array('ar' => 'ar-IQ', 'en' => 'en-US'),
 
     /**
      * Strategies
