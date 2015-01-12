@@ -185,10 +185,10 @@ return array(
                     'press-releases' => array(
                         'type' => 'Literal',
                         'options' => array(
-                            'route'    => '/press-releases',
+                            'route'    => '/the-new-iraq',
                             'defaults' => array(
                                 'controller' => 'Landing\Controller\ForeignPolicy',
-                                'action'     => 'pressReleases',
+                                'action'     => 'theNewIraq',
                             ),
                         ),
                     ),

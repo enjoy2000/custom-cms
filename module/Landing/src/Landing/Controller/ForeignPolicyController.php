@@ -12,29 +12,22 @@ namespace Landing\Controller;
 use Application\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class AboutIraqController extends AbstractActionController
+class ForeignPolicyController extends AbstractActionController
 {
     public function indexAction()
     {
+        return $this->forward()->dispatch('Landing\Controller\ForeignPolicy', array(
+            'action' => 'theNewIraq',
+        ));
         return new ViewModel([]);
     }
 
-    public function investmentAction()
+    public function theNewIraqAction()
     {
         return new ViewModel([]);
     }
 
-    public function announcementsAction()
-    {
-        return new ViewModel([]);
-    }
-
-    public function constitutionAction()
-    {
-        return new ViewModel([]);
-    }
-
-    public function encyclopediaAction()
+    public function internationalOrganizationsAction()
     {
         return new ViewModel([]);
     }
