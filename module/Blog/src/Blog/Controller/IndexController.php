@@ -31,13 +31,23 @@ class IndexController extends AbstractActionController {
     }
     public function newsTickerAction()
     {
-        $blogs = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
-                            ->findBy(
-                                ['published' => true],
-                                ['id' => 'DESC'],
-                                10,
-                                0
-                            );
+        $locale = new Container('locale');
+        $locale = $this->findOneBy('Blog\Entity\Locale', ['code' => $locale->locale]);
+        $em = $this->getEntityManager();
+        $qb = $em->getRepository('Blog\Entity\Blog')->createQueryBuilder('b');
+        $qb
+            ->select('b')
+            ->where($qb->expr()->andX(
+                $qb->expr()->eq('b.published', ':published'),
+                $qb->expr()->eq('b.locale', ':locale')
+            ))
+            ->setParameter('published', true)
+            ->setParameter('locale', $locale)
+            ->orderBy('b.id', 'ASC')
+            ->setMaxResults(10)
+            ->setFirstResult(0)
+        ;
+        $blogs = $qb->getQuery()->getResult();
         $newsTickers = '';
         /** @var \Blog\Entity\Blog $blog */
         foreach ($blogs as $blog) {
