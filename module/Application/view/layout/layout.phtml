@@ -29,6 +29,14 @@
         ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
     ; ?>
 
+    <?php if ($this->locale == 'ar_IQ') : ?>
+        <!--
+        <link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/master/dist/cdnjs/3.3.1-rc2/css/bootstrap-rtl.min.css">
+        -->
+        <link rel="stylesheet" href="<?php echo $this->basePath() ?>/css/bootstrap-rtl.min.css">
+        <link rel="stylesheet" href="<?php echo $this->basePath() ?>/css/rtl.css">
+    <?php endif; ?>
+
 </head>
 <?php
 $routeMatch = $this->getHelperPluginManager()->getServiceLocator()->get('Application')
@@ -41,12 +49,12 @@ if ($routeMatch) {
 <body class="<?php echo isset($modules) ? join(' ', $modules) : '' ?>">
 <div class="container">
     <header class="clearfix">
-        <div class="logo pull-left">
+        <div class="logo pull-left flip">
             <a class="navbar-brand" href="<?php echo $this->url('home') ?>">
                 <img src="<?php echo $this->basePath('/trash/images/en_logo.jpg') ?>" alt="Republic of Iraq"/>&nbsp;
             </a>
         </div>
-        <div class="head-logo pull-left">
+        <div class="head-logo pull-left flip">
             <?php echo $this->translate('Republic of Iraq') ?><br />
             <?php echo $this->translate('Ministry of Foreign Affairs') ?>
         </div>
@@ -80,10 +88,10 @@ if ($routeMatch) {
         </div>
     </nav>
     <div id="news-ticker" class="clearfix">
-        <div class="title pull-left">
+        <div class="title pull-left flip">
             <?php echo $this->translate('News') ?>
         </div>
-        <div class="news-ticker-content pull-left">
+        <div class="news-ticker-content pull-left flip">
             <ul class="news-ticker">
                 <li>
                     <?php echo $this->translate('No news.') ?>

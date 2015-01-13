@@ -21,7 +21,7 @@
     	"zf-commons/zfc-user": "1.*",
         "zf-commons/zfc-admin": "0.*",
         "zf-commons/zfc-user-doctrine-orm": "dev-master",
-        "bjyoungblood/bjy-authorize": "1.2.*",
+        "bjyoungblood/bjy-authorize": "dev-master",
         "doctrine/doctrine-module": "dev-master",
         "doctrine/doctrine-orm-module": "dev-master",
         "webino/webino-image-thumb": "~1.0",

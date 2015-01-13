@@ -1,0 +1,256 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CustomCMS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-12 14:00+0800\n"
+"PO-Revision-Date: 2015-01-13 19:54+0700\n"
+"Last-Translator: \n"
+"Language-Team: Hat Dao <enjoy3013@gmail.com>\n"
+"Language: ar_IQ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: translate\n"
+"X-Poedit-Basepath: /home/hat/Projects/custom-cms/module/\n"
+"X-Generator: Poedit 1.7.3\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Poedit-SearchPath-0: ./Application\n"
+
+#: Application/view/error/index.phtml:1
+msgid "An error occurred"
+msgstr "خطأ في الإتصال"
+
+#: Application/view/error/index.phtml:8 Application/view/error/404.phtml:54
+msgid "Additional information"
+msgstr "معلومات اضافية"
+
+#: Application/view/error/index.phtml:11 Application/view/error/index.phtml:35
+#: Application/view/error/404.phtml:57 Application/view/error/404.phtml:81
+msgid "File"
+msgstr "ملف"
+
+#: Application/view/error/index.phtml:15 Application/view/error/index.phtml:39
+#: Application/view/error/404.phtml:61 Application/view/error/404.phtml:85
+msgid "Message"
+msgstr "رسالة"
+
+#: Application/view/error/index.phtml:19 Application/view/error/index.phtml:43
+#: Application/view/error/404.phtml:65 Application/view/error/404.phtml:89
+msgid "Stack trace"
+msgstr "تتبع المسار"
+
+#: Application/view/error/index.phtml:29 Application/view/error/404.phtml:75
+msgid "Previous exceptions"
+msgstr "الاستثناءات السابقة"
+
+#: Application/view/error/index.phtml:58 Application/view/error/404.phtml:104
+msgid "No Exception available"
+msgstr "لا توجد استثناءات"
+
+#: Application/view/error/404.phtml:1 Application/view/error/404.phtml:2
+msgid "A 404 error occurred"
+msgstr "حدث خطأ رقم 404"
+
+#: Application/view/error/404.phtml:11
+msgid "The requested controller was unable to dispatch the request."
+msgstr "لم يتمكن من ارسال طلب الى وحدة التحكم المطلوبة"
+
+#: Application/view/error/404.phtml:14
+msgid "The requested controller could not be mapped to an existing controller class."
+msgstr "لا يمكن تعيين وحدة التحكم المطلوبة لفئة التحكم القائمة"
+
+#: Application/view/error/404.phtml:17
+msgid "The requested controller was not dispatchable."
+msgstr "الطلب المرسل غير قابل للارسال"
+
+#: Application/view/error/404.phtml:20
+msgid "The requested URL could not be matched by routing."
+msgstr "لا يوجد تطابق ال URL من قبل الموجه"
+
+#: Application/view/error/404.phtml:23
+msgid "We cannot determine at this time why a 404 was generated."
+msgstr "لا يمكن في هذا الأثناء تحديد كيفية الحصول على خطأّ 404"
+
+#: Application/view/error/404.phtml:35
+msgid "Controller"
+msgstr "المراقب"
+
+#: Application/view/error/404.phtml:42
+#, php-format
+msgid "resolves to %s"
+msgstr "معالجتها الى %s"
+
+#: Application/view/layout/layout.phtml:6
+msgid "Ministry of Foreign Affairs | Republic of Iraq"
+msgstr "جمهورية العراق | وزارة الخارجية"
+
+#: Application/view/layout/layout.phtml:47
+#: Application/view/layout/layout/footer.phtml:111
+msgid "Republic of Iraq"
+msgstr "جمهورية العراق"
+
+#: Application/view/layout/layout.phtml:48
+#: Application/view/layout/layout/footer.phtml:112
+msgid "Ministry of Foreign Affairs"
+msgstr "وزارة الخارجية"
+
+#: Application/view/layout/layout.phtml:53
+msgid "Language"
+msgstr "اللغة"
+
+#: Application/view/layout/layout.phtml:58
+#: Application/view/layout/layout/footer.phtml:99
+msgid "English"
+msgstr "الأنجليزية"
+
+#: Application/view/layout/layout.phtml:59
+msgid "Arabic"
+msgstr "العربية"
+
+#: Application/view/layout/layout.phtml:81
+#: Application/view/layout/layout/navigation.phtml:82
+#: Application/view/layout/layout/navigation.phtml:83
+msgid "News"
+msgstr "الأخبار"
+
+#: Application/view/layout/layout.phtml:86
+msgid "No news."
+msgstr "لا توجد أخبار"
+
+#: Application/view/layout/layout.bk.phtml:6
+#: Application/view/layout/layout.bk.phtml:37
+msgid "Skeleton Application"
+msgstr "هيكلية البرنامج"
+
+#: Application/view/layout/layout.bk.phtml:41
+#: Application/view/layout/layout/footer.phtml:6
+#: Application/view/layout/layout/navigation.phtml:4
+msgid "Home"
+msgstr "الصفحة الرئيسية"
+
+#: Application/view/layout/layout.bk.phtml:50
+msgid "All rights reserved."
+msgstr "جميع الحقوق محفوظة"
+
+#: Application/view/layout/layout/footer.phtml:3
+msgid "Site Map"
+msgstr "خارطة الموقع"
+
+#: Application/view/layout/layout/footer.phtml:9
+#: Application/view/layout/layout/navigation.phtml:8
+msgid "The Ministry"
+msgstr "الوزارة"
+
+#: Application/view/layout/layout/footer.phtml:13
+#: Application/view/layout/layout/navigation.phtml:37
+msgid "Undersecretaries"
+msgstr "وكيل الوزارة"
+
+#: Application/view/layout/layout/footer.phtml:17
+#: Application/view/layout/layout/navigation.phtml:88
+msgid "Foreign Policy"
+msgstr "السياسة الخارجية"
+
+#: Application/view/layout/layout/footer.phtml:20
+#: Application/view/layout/layout/navigation.phtml:55
+msgid "About Iraq"
+msgstr "حول العراق"
+
+#: Application/view/layout/layout/footer.phtml:24
+#: Application/view/layout/layout/navigation.phtml:106
+msgid "Diplomatic Missions"
+msgstr "البعثات الدبلوماسية"
+
+#: Application/view/layout/layout/footer.phtml:28
+#: Application/view/layout/layout/navigation.phtml:114
+msgid "Consular Services"
+msgstr "الخدمات القنصلية"
+
+#: Application/view/layout/layout/footer.phtml:31
+#: Application/view/layout/layout/navigation.phtml:126
+#: Application/view/layout/layout/navigation.phtml:127
+msgid "Contact Us"
+msgstr "اتصل بنا"
+
+#: Application/view/layout/layout/footer.phtml:36
+msgid "Links"
+msgstr "وصلات سريعة"
+
+#: Application/view/layout/layout/footer.phtml:41
+#: Application/view/layout/layout/navigation.phtml:66
+msgid "Iraq's Constitution"
+msgstr "الدستور العراقي"
+
+#: Application/view/layout/layout/footer.phtml:45
+#: Application/view/layout/layout/footer.phtml:73
+msgid "Speeches"
+msgstr "خطابات السيد الوزير"
+
+#: Application/view/layout/layout/footer.phtml:49
+#: Application/view/layout/layout/footer.phtml:77
+#: Application/view/layout/layout/navigation.phtml:61
+msgid "Investment in Iraq"
+msgstr "الإستثمار في العراق"
+
+#: Application/view/layout/layout/footer.phtml:53
+#: Application/view/layout/layout/footer.phtml:81
+#: Application/view/layout/layout/navigation.phtml:71
+msgid "Iraq Encyclopedia"
+msgstr "موسوعة العراق"
+
+#: Application/view/layout/layout/footer.phtml:57
+#: Application/view/layout/layout/footer.phtml:85
+msgid "International organizations"
+msgstr "منظمات دولية"
+
+#: Application/view/layout/layout/footer.phtml:61
+#: Application/view/layout/layout/footer.phtml:89
+#: Application/view/layout/layout/navigation.phtml:43
+msgid "Ministry's Announcements"
+msgstr "اعلانات الوزارة"
+
+#: Application/view/layout/layout/footer.phtml:69
+#: Application/view/layout/layout/navigation.phtml:48
+msgid "Ministry's Magazine"
+msgstr "مجلة الوزارة"
+
+#: Application/view/layout/layout/footer.phtml:96
+msgid "Languages"
+msgstr "اللغات"
+
+#: Application/view/layout/layout/footer.phtml:102
+msgid "عربي"
+msgstr "عربي"
+
+#: Application/view/layout/layout/navigation.phtml:14
+msgid "FAQ's"
+msgstr "الاسئلة والمعلومات"
+
+#: Application/view/layout/layout/navigation.phtml:20
+msgid "Ministry Departments"
+msgstr "أقسام الوزارة"
+
+#: Application/view/layout/layout/navigation.phtml:26
+msgid "The Minister"
+msgstr "الوزارة"
+
+#: Application/view/layout/layout/navigation.phtml:32
+msgid "Speeches &amp; Interviews"
+msgstr "خطابات ومقابلات"
+
+#: Application/view/layout/layout/navigation.phtml:76
+msgid "Announcements"
+msgstr "بيان صحفي"
+
+#: Application/view/layout/layout/navigation.phtml:94
+msgid "The New Iraq"
+msgstr "العراق الجديد"
+
+#: Application/view/layout/layout/navigation.phtml:99
+msgid "International Organizations"
+msgstr "المنظمات الدولية"
+
+#: Application/view/layout/layout/navigation.phtml:120
+msgid "Other Links"
+msgstr "وصلات اخرى"

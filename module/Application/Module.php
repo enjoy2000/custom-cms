@@ -26,55 +26,35 @@ class Module
         $moduleRouteListener->attach($eventManager);
 
 
-        // set language based on $_SERVER['HTTP_ACCEPT_LANGUAGE'] && session
         // session container
         $sessionContainer = new Container('locale');
 
         $sessionContainer->offsetUnset('locale');
-        /**
-         * Set base url for multi languages
-         */
-        // Trigger after matched route & before authorization modules.
-        $eventManager->attach(
-            MvcEvent::EVENT_ROUTE,
-            array($this, 'setBaseUrl'),
-            -100
-        );
-
-        // Trigger before 404s are rendered.
-        $eventManager->attach(
-            MvcEvent::EVENT_RENDER,
-            array($this, 'setBaseUrl'),
-            -1000
-        );
-
-        // service manager
-        $sm = $e->getApplication()->getServiceManager();
         // test if session language exists
         if (!$sessionContainer->offsetExists('locale')) {
-            // if not use the browser locale
-            if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])){
-                $shortCode = \Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']);
-                $em = $sm->get('doctrine.entitymanager.orm_default');
-
-                // check if we support this language or not
-                /** @var \Blog\Entity\Locale $localeExist */
-                $localeExist = $em->getRepository('Blog\Entity\Locale')->findOneBy(['shortCode' => $shortCode]);
-                if ($localeExist) {
-                    $sessionContainer->offsetSet('locale', $localeExist->getCode());
-                } else{
-                    $sessionContainer->offsetSet('locale', 'en_US');
-                }
+            $shortCode = \Locale::getPrimaryLanguage(\Locale::getDefault());
+            if ($shortCode == 'ar') {
+                $locale = 'ar_IQ';
             } else {
-                $sessionContainer->offsetSet('locale', 'en_US');
+                $locale = 'en_US';
             }
-
+            $sessionContainer->offsetSet('locale', $locale);
         }
+        // service manager
+        $sm = $e->getApplication()->getServiceManager();
 
+        // TODO: why we need this line
+        $em = $sm->get('doctrine.entitymanager.orm_default');
+        // die('here');
         // translating system
         $translator = $sm->get('translator');
         $translator ->setLocale($sessionContainer->locale)
             ->setFallbackLocale('en_US');
+
+        // set variables to layout
+        $viewModel = $e->getApplication()->getMvcEvent()->getViewModel();
+        $viewModel->locale = $sessionContainer->locale;
+
     }
 
     public function getConfig()
@@ -91,20 +71,5 @@ class Module
                 ),
             ),
         );
-    }
-
-    public function setBaseUrl(MvcEvent $e) {
-        $request = $e->getRequest();
-        $baseUrl = $request->getServer('APPLICATION_BASEURL');
-
-        if (!empty($baseUrl) && $request->getServer('HTTP_X_FORWARDED_FOR', false)) {
-            $router = $e->getApplication()->getServiceManager()->get('Router');
-            $router->setBaseUrl($baseUrl);
-            $request->setBaseUrl($baseUrl);
-
-            // fastcgi_param APPLICATION_BASEURL /ar/;
-            $sessionContainer = new Container('locale');
-            $sessionContainer->offsetSet('locale', 'ar_IQ');
-        }
     }
 }
