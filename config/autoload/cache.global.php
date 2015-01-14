@@ -7,7 +7,7 @@ return [
                     'storage' => array(
                         'adapter' => 'Filesystem',
                         'options' => array(
-                            'cache_dir' => __DIR__ . '/../../../data/cache',
+                            'cache_dir' => __DIR__ . '/../../data/cache',
                             'ttl' => 3600
                         ),
                     ),
