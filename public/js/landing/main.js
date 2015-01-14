@@ -22,7 +22,7 @@ $(document).ready(function(){
     });
 
     // news ticker
-    $.get('/news-ticker', function($data){
+    $.get(newsTickerUrl, function($data){
         $('.news-ticker').html($data);
     });
 
@@ -35,6 +35,4 @@ $(document).ready(function(){
         autostart: 1,
         pauseOnHover: 1
     });
-
-    $('.fancybox').fancybox();
 });

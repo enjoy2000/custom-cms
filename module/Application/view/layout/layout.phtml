@@ -92,6 +92,9 @@ if ($routeMatch) {
             <?php echo $this->translate('News') ?>
         </div>
         <div class="news-ticker-content pull-left flip">
+            <script>
+                var newsTickerUrl = '<?php echo $this->url('news-ticker') ?>';
+            </script>
             <ul class="news-ticker">
                 <li>
                     <?php echo $this->translate('No news.') ?>
