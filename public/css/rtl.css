@@ -7,3 +7,6 @@ header #language-switcher {
     left: 0;
     right: auto;
 }
+#news-carousel a.left.carousel-control span.glyphicon {
+    left: -1px;
+}
