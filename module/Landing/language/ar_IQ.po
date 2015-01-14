@@ -1,0 +1,1802 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CustomCMS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-12 14:02+0800\n"
+"PO-Revision-Date: 2015-01-14 10:29+0800\n"
+"Last-Translator: Hat Dao <enjoy3013@gmail.com>\n"
+"Language-Team: Hat Dao <enjoy3013@gmail.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: translate\n"
+"X-Poedit-Basepath: /home/hat/Projects/custom-cms/module/\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ./Landing\n"
+
+#: Landing/view/landing/ministry/magazine.phtml:1
+#: Landing/view/landing/ministry/magazine.phtml:2
+msgid "Ministry's Magazine"
+msgstr "مجلة الوزارة"
+
+#: Landing/view/landing/ministry/magazine.phtml:16
+msgid ""
+"Quartely Magazine means in Foreign Affairs Service inside and outside Iraq..."
+msgstr "مجلة Quartely تعني في خدمة الشؤون الخارجية داخل العراق وخارجه ..."
+
+#: Landing/view/landing/ministry/magazine.phtml:25
+msgid "Sada Al-Kharidiya"
+msgstr "مجلة صدى الخليج"
+
+#: Landing/view/landing/ministry/magazine.phtml:28
+msgid "Read in this issue..."
+msgstr "اقرأ في هذا الإصدار"
+
+#: Landing/view/landing/ministry/magazine.phtml:38
+msgid ""
+"Baghdad Summit is a political and diplomatic\n"
+"                            success for Iraq."
+msgstr "قمة بغداد نجاح سياسي ودبلوماسي للعراق "
+
+#: Landing/view/landing/ministry/magazine.phtml:43
+msgid ""
+"Iraq and the United Nations Organizations in\n"
+"                            Rome."
+msgstr "العراق ومنظمات الأمم المتحدة في روما "
+
+#: Landing/view/landing/ministry/magazine.phtml:54
+msgid ""
+"The Third Iraqi Ambassadors Conference:<br>&nbsp; Serious revision of what "
+"has been\n"
+"                        achieved... and a new start to the future."
+"<br><br>Italian Ambassador to Baghdad:<br>&nbsp; Iraq\n"
+"                        would be the richest country in the Arab World over "
+"the next ten years."
+msgstr ""
+"مؤتمر سفراء العراق الثالث:مراجعة جدية لما تحقق...وأنطلاقة جديدةالى المستقبل."
+"السفير الايطالي في بغداد:العراق سيكون أغنى بلد  في العالم العربي خلال "
+"السنوات العشر المقبلة."
+
+#: Landing/view/landing/ministry/magazine.phtml:66
+msgid ""
+"Security Council adopted three Iraqi historic resolutions managed to get out "
+"of the\n"
+"                        provisions of Charter (7)<br><br>Ministry "
+"reconstrution... a struggle story between life makers\n"
+"                        and darkness bats<br><br>48 ambassadors engaged "
+"their representatives to Iraq around the globe"
+msgstr "مجلس الأمن يعتمد ثلاثة قرارات تأريخية تمكن العراق من الخروج ..."
+
+#: Landing/view/landing/ministry/magazine.phtml:79
+msgid ""
+"Secretary-General of the United Nations calling the neighboring countries to "
+"respect\n"
+"                        Iraq's sovereignty"
+msgstr "الأمين العام للأمم المتحدة يطالب دول الجوار بأحترام سيادة العراق."
+
+#: Landing/view/landing/ministry/magazine.phtml:91
+msgid ""
+"Facts relating to the exit of Iraq from 7th charter<br><br>Reconstruction "
+"operations\n"
+"                        defeat terror<br><br>Arab openness to Baghdad "
+"through Egyptians"
+msgstr "من أحكام الفصل السابع"
+
+#: Landing/view/landing/ministry/magazine.phtml:103
+msgid ""
+"The Ministry continues the recontruction for its ambassies "
+"abroad<br><br>Iraqi parliament\n"
+"                        approves designation of 57 new ambassador"
+msgstr "  الخارجية تواصل حملة الأعمار لسفاراتها في الخارج."
+
+#: Landing/view/landing/ministry/faq.phtml:1
+#: Landing/view/landing/ministry/faq.phtml:2
+#: Landing/view/landing/index/index.phtml:118
+#: Landing/view/landing/index/index.phtml:120
+msgid "FAQ's"
+msgstr "الاسئلة والمعلومات"
+
+#: Landing/view/landing/ministry/faq.phtml:13
+msgid ""
+"Q. Can an Iraqi Birth Certificate be issued to a child of a non-Iraqi\n"
+"                            father?"
+msgstr ""
+"س/ هل يمكن استخراج شهادة ولاده عراقيه ( بيان ولاده ) لطفل من أب عربي أو "
+"اجنبي وام عراقيه؟"
+
+#: Landing/view/landing/ministry/faq.phtml:17
+msgid ""
+"Ans. The Iraqi Birth certificate only can be issued to a child of an Iraqi "
+"father;\n"
+"                        it may not be issued in the event the child’s father "
+"is an Arab or a foreigner."
+msgstr ""
+"ج/ تصدر شهادة الولادة العراقيه للطفل من اب عراقي ولا يجوز اصدارها في حالة "
+"والد الطفل عربي او اجنبي."
+
+#: Landing/view/landing/ministry/faq.phtml:38
+msgid ""
+"Q. How the foreign marriage certificates / the judgments of divorce\n"
+"                            can be registered in the Civil Status registers "
+"of Iraq?"
+msgstr ""
+"س/ كيف يتم تسجيل عقود الزواج وقرارات الحكم بالطلاق الاجنبية في سجلات الاحوال "
+"المدنية في العراق؟"
+
+#: Landing/view/landing/ministry/faq.phtml:42
+msgid ""
+"The foreign bodies in the Iraq mission’s territory shall issue marriage\n"
+"                        certificates / judgments of divorce according to "
+"their relevant laws. To register such\n"
+"                        certificates / judgments in the Civil Status "
+"register of Iraq, according to the Law of Civil\n"
+"                        Status No. 65 for 1972, the following procedures "
+"shall be followed:<br>1-A counterpart of the\n"
+"                        marriage certificate, authenticated by the Embassy "
+"or the General Consulate, shall be sent\n"
+"                        together with authenticated copies of the Husband’s "
+"and the Wife’s Civil Status ID card to the\n"
+"                        Civil Status department which issued the Husband’s "
+"Civil Status ID card in order to record the\n"
+"                        marriage occurrence and open new separate family "
+"page. The divorce occurrence will be registered\n"
+"                        in the family’s page in the Civil Status register."
+"<br>2-If the marriage certificate / the\n"
+"                        judgment of divorce is in a foreign language, it "
+"shall be translated to Arabic by a certified\n"
+"                        translator and authenticated by the notary public "
+"and the Embassy.<br>3-The marriage c"
+msgstr ""
+"ج/ تصدر الجهات الاجنبية في ساحة عمل البعثة العراقية عقود زواج وقرارات حكم "
+"بالطلاق وفقاً لقوانينها الخاصة ولغرض تسجيل تلك العقود والقرارات في سجلات "
+"الاحوال المدنية في العراق وفقاً لاحكام قانون الاحوال المدنية (65) لسنة 1972 "
+"تتخذ الاجراءات التالية:1. يقوم المواطن بأرسال نسخة من عقد الزواج أو قرار "
+"الحكم بالطلاق مصدقة من السفارة او القنصلية العامة مرفق بهما صورة مصدقة من "
+"هوية الاحوال المدنية للزواج والزوجة الى دائرة الاحوال المدنية التي اصدرت "
+"هوية الاحوال المدنية للزوج لغرض تأشير واقعة الزواج وفتح صفحة جديدة مستقلة عن "
+"العائلة اما واقعة الطلاق فيتم تأشيرها في سجل الاحوال المدنية الخاص "
+"بالعائلة.2.يبلغ المواطن بترجمة عقد الزواج او حكم الطلاق الى اللغة العربية من "
+"قبل مترجم مجاز اذا كان باللغة الاجنبية وتصديقه من قبل كاتب العدل والسفارة.3."
+"يبلغ المواطن بضرورة تصديق عقد الزواج او حكم الطلاق من قبل الدائرة القنصلية / "
+"قسم التصديقات قبل تسليم المعالملة الى دائرة الاحوال المدنية للزوج."
+
+#: Landing/view/landing/ministry/faq.phtml:73
+msgid ""
+"Q. What are the procedures to provide a citizen with a confirmation\n"
+"                            over being unmarried?"
+msgstr ""
+"س/ ما هي الاجراءات لتزويد المواطن بتأييد كونه اعزب سواء كان رجلاً او أمرأة؟"
+
+#: Landing/view/landing/ministry/faq.phtml:77
+msgid ""
+"Ans. The citizen shall submit a Transcript of Record from the Civil Status\n"
+"                        department, authenticated by the Ministry of "
+"Internal and the Ministry of Foreign Affairs –\n"
+"                        Authentications, during the period of issuing the "
+"confirmation."
+msgstr ""
+"ج/ تقديم المواطن صورة قيد من دائرة الاحوال المدنية خلال فترة اصدار التأييد "
+"مصدق من وزارة الداخلية ووزارة الخارجية / قسم التصديقات."
+
+#: Landing/view/landing/ministry/faq.phtml:99
+msgid ""
+"Q. What is required from the citizen for obtaining a Civil Status ID\n"
+"                            card lost / damaged substitute?"
+msgstr ""
+"س/ ما هو المطلوب من الموطن في حالة طلب الحصول على هوية الاحوال المدنية بدل "
+"فاقد ابو بدل تالف؟"
+
+#: Landing/view/landing/ministry/faq.phtml:103
+msgid ""
+"Ans. –<br>1-A request to obtain a Civil Status ID card lost / damaged "
+"substitute\n"
+"                        shall be submitted.<br>2-The application form "
+"(available in the Embassy) shall be attached to\n"
+"                        the request.<br>3-The form shall be filled by the "
+"master of family, mistress of family, record\n"
+"                        holder, guardian or attorney at law, with their "
+"explicit signatures and full names.<br>4-The\n"
+"                        Consul shall note down the applicant’s statement on "
+"the reverse of the abovementioned form,\n"
+"                        state the full name of applicant and have his/her "
+"thumbprint placed thereon. The statement shall\n"
+"                        be signed by the Consul (whose name shall be stated "
+"in full) and sealed by the consular seal. If\n"
+"                        the request is for a damaged substitute, the "
+"original old ID card shall be attached to the form.\n"
+"                        If the request is for a lost substitute, the "
+"statement shall be noted down on the reverse of the\n"
+"                        form and a copy of the lost or his/her father’s or "
+"brother’s ID card, authenticated by the\n"
+"                        Embassy as True Copy, shall be attached thereto."
+"<br>5-Tw"
+msgstr ""
+"ج/ 1. تقديم طلب للحصول على هوية الاحوال المدنية بدل فاقد او تالف.2. ترفق مع "
+"الطلب الاستمارة الخاصة بالطلب (حسب النموذج الموجود في السفارة).3. يتم املاء "
+"الاستمارة من قبل رب الاسرة او ربة الاسرة او صاحب القيد او الوصي او الولي او "
+"الوكيل القانوني وبتوقيعهم الصريح واسمائهم الكاملة.4. يقوم القنصل بتدوين "
+"افادة صاحب الطلب على ظهر الاستمارة اعلاه وتثبيت الاسم الكامل وبصمة الابهام "
+"لصاحب الطلب وتوقع الافادة من قبل القنصل وتثبيت اسمه الكامل وتختم بالختم "
+"القنصلي وترفق مع الاستمارة اصل الهوية القديمة التالفه اذا كان طلب المواطن "
+"هوية احوال بدل تالف اما اذا كان طلب المواطن هوية احوال بدل فاقد فتثبت "
+"الافادة على ظهر الاستمارة وترفق بها صورة من هوية الاحوال المفقودة او صورة من "
+"هوية احوال والده او شقيقه مصدقة من قبل السفارة كونها طبق الاصل.5. ترفق مع "
+"الطلب صورتان حديثتان قياس (3*2سم ) لكل شخص.6.ترفق مع الطلب اي وثيقة رسمية "
+"تؤيد شخصية مقدم الطلب."
+
+#: Landing/view/landing/ministry/faq.phtml:134
+msgid ""
+"Q. What are the procedures required prior to a citizen’s request for\n"
+"                            obtaining Civil Status ID cards for his/her "
+"children?"
+msgstr ""
+"س/ما هي الاجراءات المطلوبه قبل ان يقدم المواطن طلباً للحصول على هوية الاحوال "
+"المدنية لابنائه؟"
+
+#: Landing/view/landing/ministry/faq.phtml:138
+msgid ""
+"Ans. –<br>1-He/she should have registered his/her marriage occurrence with "
+"the\n"
+"                        Civil Status department.<br>2-He/she should have "
+"indicated the birth occurrence of the newborn\n"
+"                        with the Civil Status department.<br>3-After "
+"realizing the above, a request may be submitted by\n"
+"                        the citizen to the Embassy for obtaining a Civil "
+"Status ID card for his/her child, within the\n"
+"                        disciplines notified to the Embassy."
+msgstr ""
+"ج/ 1. ان يكون المواطن قد ثبت واقعة زواجه لدى دائرة الاحوال المدنية في السجل "
+"الخاص به.2. ان يكون الموطن قد اشر واقعة الولادة للوليد الجديد لدى دائرة "
+"الاحوال المدنية للعائلة.3. بعد تحقق ما جاء في القوانين اعلاه بأمكان المواطن "
+"تقديم طلب الى السفارة للحصول على هوية الاحوال المدنية لابنه وضمن السياقات "
+"المبلغة بها السفارة."
+
+#: Landing/view/landing/ministry/faq.phtml:162
+msgid ""
+"Q. What are the procedures required by a citizen to obtain an Iraqi\n"
+"                            Nationality Certificate lost / damaged "
+"substitute?"
+msgstr ""
+"س/ ما هي الاجراءات المطلوبة من الموطن للحصول على شهادة الجنسية العراقية بدل "
+"فاقد او بدل تالف؟"
+
+#: Landing/view/landing/ministry/faq.phtml:166
+msgid ""
+"1-A request to obtain an Iraqi Nationality Certificate lost / damaged "
+"substitute\n"
+"                        shall be submitted.<br>2-The application form "
+"(available in the Embassy) shall be filled and\n"
+"                        attached to the request.<br>3-The Consul shall note "
+"down the applicant’s statement on the\n"
+"                        reverse of the abovementioned form, state the full "
+"name of applicant and have his/her thumbprint\n"
+"                        placed thereon. The statement shall be signed by the "
+"Consul and sealed by the consular seal. If\n"
+"                        the request is for a damaged substitute, the "
+"original old Nationality Certificate shall be\n"
+"                        attached to the form. If the request is for a lost "
+"substitute, a copy of the father’s or\n"
+"                        brother’s Nationality Certificate, authenticated by "
+"the Embassy as True Copy, shall be attached.<br>4-4\n"
+"                        recent photos shall be attached to the request.<br>5-"
+"A copy of the applicant’s, father’s and\n"
+"                        mother’s passport shall be attached, sealed by the "
+"consular seal and authenticated by the Consul\n"
+"                        as True Copy.<br>6-An amount of 2 USD, representing "
+"the cer"
+msgstr ""
+"ج/ 1.تقديم طلب للحصول على شهادة الجنسية العراقية بدل فاقد.2.املاء التصريح "
+"الخاص بطلب الحصول على شهادة الجنسية العراقية (حسب النموذج الموجود في "
+"السفارة). 3.تدوين افادة صاحب الطلب على ظهر التصريح اعلاه وتثبيت اسمه الكامل "
+"وبصمة ابهامه وتوقع من قبل القنصل وتختم بالختم القنصلي وترفق مع الاستمارة اصل "
+"الشهادة التالفه في حالة طلب هوية بدل تالف اما اذا كان الطلب بدل فاقد ترفق "
+"صورة من شهادة الجنسية الاب او الشقيق مصدقة من قبل السفارة كونها طبق الاصل.4."
+"ترفق مع المعاملة صور شخصية حديثة عدد (4).5.ترفق نسخة مصورة من جواز السفر "
+"لطالب الشهادة ووالده ووالدته وتختم بالختم القنصلي وتؤيد من قبل القنصل بكونها "
+"طبق الاصل.6.يستوفي مبلغ دولارين كرسم لاصدار الشهادة.7.تخويل احد الاقرباء من "
+"ذوي اصحاب المعاملة الموجودين في العراق لغرض مراجعة مديرية شؤون الجنسية "
+"ومديرية شؤون الاحوال المدنية لاكمال الاجراءات القانونية داخل العراق"
+
+#: Landing/view/landing/ministry/faq.phtml:197
+msgid ""
+"Q. What are the required procedures to authenticate a Police Clearance\n"
+"                            Certificate?"
+msgstr "س/ ما هي الاجراءات المطلوبة لتصديق شهادة عدم المحكومية؟"
+
+#: Landing/view/landing/ministry/faq.phtml:201
+msgid ""
+"Ans. –<br>1-When a request is submitted to obtain a Police Clearance "
+"Certificate\n"
+"                        from an Embassy or a General Consulate, and the "
+"applicant came to Iraq after he/she obtained\n"
+"                        such certificate, then he/she may have the same "
+"authenticated by the Ministry of Internal and\n"
+"                        the Ministry of Foreign Affairs and then by the "
+"Embassy.<br>2-If the applicant is abroad, the\n"
+"                        Ministry of Internal does not authenticate such "
+"certificate when issued. In this case, the\n"
+"                        Embassy or the General Consulate may authenticate "
+"the thumbprint of the certificate\n"
+"                        holder."
+msgstr ""
+"ج/ 1.عند تقديم طلب للحصول على شهادة عدم المحكومية من احدى سفاراتنا او "
+"قنصلياتنا العامة وحضر صاحب الطلب الى العراق بعد حصوله على الشهادة فبأمكانه "
+"تصديق الشهادة من وزارة الداخلية ووزارة الخارجية ومن ثم من قبل السفارة.2. في "
+"حالة كون المواطن متواجد في الخارج فوزارة الداخلية لا تصدق على الشهادة بعد ان "
+"يتم اصدارها. وفي هذه الحالة بأمكان السفارة او القنصلية العامة التصديق على "
+"بصمة ابهام صاحب الشهادة."
+
+#: Landing/view/landing/ministry/faq.phtml:227
+msgid ""
+"Q. What are the required procedures if a citizen was unable to attend\n"
+"                            at the Embassy or the Consulate to submit a "
+"request for obtaining a Certificate of Life due\n"
+"                            to illness or disability and his/her r"
+msgstr ""
+"س/ ما هي الاجراءات المطلوبة في حالة عدم تمكن المواطن من الحضور الى السفارة "
+"او القنصلية لتقديم طلب الحصول على شهادة الحياة بسبب كونه مريض او مقعد ويسكن "
+"في مدينة او ولاية بعيده عن مقر السفارة او القنصلي"
+
+#: Landing/view/landing/ministry/faq.phtml:232
+msgid ""
+"Ans. In such case, the following procedures shall be followed:<br>1-A "
+"confirmation\n"
+"                        from the official authorities in the country of "
+"residence, showing that he/she is still alive,\n"
+"                        shall be submitted in the month he wants to obtain "
+"the official certificate of life from the\n"
+"                        Embassy or the General Consulate. The official form "
+"of the Certificate of Life, sent to him/her\n"
+"                        by the Embassy or the General Consulate and "
+"published at Ministry of Foreign Affairs’ or the\n"
+"                        Embassy’s website, shall be filled completely, his/"
+"her photo attached thereto and signed by\n"
+"                        him/her and then attached to the confirmation. It "
+"shall be mailed to the Embassy where the\n"
+"                        Consul shall sign and seal it and state his full "
+"name thereon. A counterpart of the Certificate\n"
+"                        of Life and the competent authorities’ confirmation "
+"shall be retained with the certificates of\n"
+"                        life dossier."
+msgstr ""
+"ج/ في هذه الحالة تتخذ الاجراءات التالية: تقديم تأييد من الجهات الرسمية في "
+"دولة الاقامة يوضج بانه لا يزال على قيد الحياة في الشهر الذي يرغب فيه الحصول "
+"على شهادة الحياة الرسمية من السفارة او القنصلية العامة وان يرفق مع التأييد "
+"النموذج الرسمي لشهادة الحياة الرسمية المرسلة اليه من قبل السفارة او القنصلية "
+"العامة والمنشورة على موقع الوزارة او السفارة بعد املائها بالكامل ووضع صورته "
+"وتوقعيه وارسالها الى السفارة عن طريق البريد ثم يقوم القنصل بختمها وتثبيت "
+"توقيعه واسمه الكامل في المكان المخصص لذلك ويحتفظ بنسخة من شهادة الحياة "
+"وتأييد الجهات الرسمية في الاضبارة الخاصة بشهادات الحياة."
+
+#: Landing/view/landing/ministry/faq.phtml:261
+msgid ""
+"Q. What are the procedures required from a citizen if he was unable to\n"
+"                            send its original valid passport, due to damage "
+"or lost, for the purpose of obtaining a\n"
+"                            decision from the Nationality Directorate"
+msgstr ""
+"س/ ما هي الاجراءات المطلوبه من المواطن في حالة عدم تمكنه من ارسال اصل جواز "
+"سفره العراقي النافذ المفعول بسبب تمزيقه او فقدانه لغرض استحصال قرار من "
+"مديرية شؤون الجنسية بالتخلي عن جنسيته العراقية؟"
+
+#: Landing/view/landing/ministry/faq.phtml:266
+msgid ""
+"Ans. In such case, the following procedures shall be followed:<br>1-A "
+"confirmation\n"
+"                        issued by the residence authorities and "
+"authenticated by the Ministry of Foreign Affairs of the\n"
+"                        country of residence, stating that he/she does not "
+"hold a passport, shall be submitted.<br>2-The\n"
+"                        personal photo shall be sealed by the Embassy’s seal."
+"<br>3-A written undertaking (according to\n"
+"                        the form available in the Embassy), pursuant to "
+"which he/she shall undertakes that he/she does\n"
+"                        not hold a passport, shall be submitted.<br>4-The "
+"Directorate of Nationality shall approach the\n"
+"                        Directorate of Passports to incorporate his/her full "
+"name, date and place of birth, mother’s\n"
+"                        name, Civil Status ID card Register and Pg. Numbers "
+"and Iraqi Nationality Certificate number and\n"
+"                        date, so as not to obtain an Iraqi passport, in "
+"addition to other Iraqi documents."
+msgstr ""
+"ج/ في هذه الحالة تتخذ الاجراءات التالية:1. يقدم المواطن تأييد صادر من دوائر "
+"الاقامة ومصدق من قبل وزارة خارجية دولة الاقامة يؤكد عدم امتلاكه جواز سفر.2. "
+"تختم الصورة الشخصية يختم السفارة.3. تقديم تعهد خطي من قبل المواطن ( وفق "
+"النموذج الموجود في السفارة ). يتعهد بموجبه عدم امتلاكه جواز سفر.4. تقوم "
+"مديرية شؤون الجنسية بمفاتحة مديرية شؤون الجوازات بدرج اسمه الكامل ومحل "
+"وتاريخ ولادته واسم والدته ورقم السجل والصحيفة لهوية الاحوال المدنية ورقم "
+"وتاريخ شهادة جنسيته العراقية بغية عدم حصوله على جواز سفر عراقي وكذلك وثائق "
+"عراقية اخرى."
+
+#: Landing/view/landing/ministry/faq.phtml:294
+msgid ""
+"Q. What is required from the citizen in the former Rafha Camp in Saudi\n"
+"                            Arabia, who holds what is called a (Statement of "
+"Birth), of Saudi Arabia, which is not a\n"
+"                            Birth Certificate; as the Saudi birth ce"
+msgstr ""
+"س/ ما هي الاجراءات المطلوبة من المواطنين من سكنة مخيم رفحا في السعودية سابقاً "
+"الذين لديهم ما يسمى (تبليغ ولادة) السعودي وهو ليس بشهادة ولادة لانها شهادة "
+"الولادة السعودية لا تعطي ألا بموجب اقامة نظامية"
+
+#: Landing/view/landing/ministry/faq.phtml:299
+msgid ""
+"Ans. In this case, the Embassy shall approach the Saudi Embassy through an "
+"official\n"
+"                        letter to authenticate the said document. In the "
+"event the Embassy of Saudi refused to\n"
+"                        authenticate, the ministry of foreign affairs shall "
+"be approached about the matter so that it\n"
+"                        shall be referred to the competent bodies and take "
+"the appropriate decision in this respect.<br>-For\n"
+"                        the religious marriage contracts, they may be "
+"authenticated by Ministry of Foreign Affairs in\n"
+"                        the country accrediting the Embassy. Thereafter, the "
+"Embassy shall authenticate the Seal of the\n"
+"                        Ministry of Foreign Affairs in the mission’s "
+"territory."
+msgstr ""
+"ج/ في هذه الحالة تقوم السفارة بمفاتحة السفارة السعودية بطرفها بمذكرة رسمية "
+"لتصديق هذه الوثيقة وفي حالة رفض السفارة السعودية التصديق فبأمكان مفاتحة "
+"المركز بشأن الموضوع لعرضه على الجهات المختصة واتخاذ القرار المناسب بشأنه.- "
+"بالنسبة لعقود الزواج الدينية فبأمكان المواطن تصديقها من قبل وزارة خارجية "
+"الدولة المعتمدة فيها السفارة ومن ثم تقوم السفارة بالمصادقة على ختم وزارة "
+"الخارجية في ساحة عمل البعثة."
+
+#: Landing/view/landing/ministry/faq.phtml:325
+msgid ""
+"Q. Who are covered by the exemption from the condition of obtaining a\n"
+"                            visa to enter Iraq?"
+msgstr ""
+"س/ من هم المشمولين بالاعفاء من شرط الحصول على تأشيرة الدخول الى العراق؟"
+
+#: Landing/view/landing/ministry/faq.phtml:329
+msgid ""
+"Ans. H.E. Minister of Internal has approved on exempting Arabs and "
+"foreigners, of\n"
+"                        Iraqi origins, who hold foreign passports, from the "
+"condition of obtaining a visa to enter Iraq.\n"
+"                        However, this does not mean to discontinue granting "
+"those visas, if they applied for, rather\n"
+"                        they and their family members shall be granted visas "
+"without fees."
+msgstr ""
+"ج/ حصلت موافقة معالي وزير الداخلية على اعفاء العرب والاجانب من الاصول "
+"العراقية الحائزين على جوازات سف اجنبية من شرط الحصول على سمة الدخول في حالة "
+"دخولهم الاراضي العراقية، وهذا لا يعني التوقف عن منحهم التأشيرة عند طلبهم ذلك "
+"بل يمنحون وافراد عوائلهم تأشيرة الدخول معفاة من الرسوم."
+
+#: Landing/view/landing/ministry/faq.phtml:352
+msgid ""
+"Q. Are the Iraq born Foreigners, and their family members, covered by\n"
+"                            the exemption from the condition of obtaining "
+"visas to enter Iraq?"
+msgstr ""
+"س/ هل الاجنبي المولود في العراق وافراد عائلته مشمولين بالاعفاء من شرط الحصول "
+"على تأشيرة الدخول؟"
+
+#: Landing/view/landing/ministry/faq.phtml:356
+msgid ""
+"Ans. H.E. Minister of Internal has approved on granting the Iraq born "
+"foreigner,\n"
+"                        and his/her family members, visas by our missions "
+"abroad, without approaching the ministry of\n"
+"                        foreign affairs, against a fee from only the family "
+"members, provided that the Iraq born\n"
+"                        foreigner should be among the visiting family."
+msgstr ""
+"ج/ حصلت موافقة معالي وزير الداخلية على منح الاجنبي المولود في العراق وافراد "
+"عائلته سمة الدخول من قبل بعثاتنا في الخارج دون الرجوع للمركز مقابل رسم "
+"لافراد العائلة فقط شرط ان يكون الاجنبي المولود في العراق ضمن العائلة الوافدة."
+
+#: Landing/view/landing/ministry/faq.phtml:379
+msgid ""
+"Q. What is the competence of our missions abroad to grant visa without\n"
+"                            approaching the ministry of foreign affairs?"
+msgstr ""
+"س/ ما هي الصلاحية بعثاتنا في الخارج بمنح تأشيرات الدخول دون الرجوع للمركز؟"
+
+#: Landing/view/landing/ministry/faq.phtml:383
+msgid ""
+"Ans. –<br>1-Arab and foreigner wives of Iraqis, and their children, shall "
+"be\n"
+"                        directly granted visas to enter Iraq, without fees."
+"<br>2-Holders of diplomatic, service and\n"
+"                        private passports, after submitting the letter of "
+"the Ministry of Foreign Affairs in the country\n"
+"                        accrediting the mission, considering the Ethic of "
+"Reciprocity and notifying the Ceremonies\n"
+"                        Department after granting visa.<br>3-Students who "
+"study in Iraq after submitting what confirms\n"
+"                        that they are admitted and continuing studying in "
+"Iraq. This covers the students of schools,\n"
+"                        institutes and universities of only the Ministry of "
+"Education and the Ministry of Higher\n"
+"                        Education and Scientific Research.<br>4-The "
+"journalists, as the missions shall first call the\n"
+"                        press agency so that it will perform its roll and "
+"notify the Consular Department to authorize it\n"
+"                        to grant visas."
+msgstr ""
+"ج/ 1. زوجات العراقين من العربيات والاجنبيات واولادهن يتم منحهم تأشيرات "
+"الدخول الى العراق مباشرة ومعفاة من الرسموم.2. حاملي جوازات السفر الدبلوماسية "
+"والخدمة والجوازات الخاصة بعد تقديم مذكرة وزارة خارجية البلد المعتمدة فيه مع "
+"مراعاة مبدأ (المعالمة بالمثل ) واشعار دائرة المراسم بعد منح السمة.3. الطلبة "
+"الدارسون في العراق بعد تقديم ما يؤيد قبولهم واستمرارهم في الدراسة في العراق "
+"وهذا يشمل المدارس والمعاهد والجامعات المرتبطة بوزارة التربية ووزراة التعليم "
+"العالي والبحث العلمي فقط.4. الصحفيون تقوم البعثات بمخاطبة الدائرة الصحفية "
+"اولا لتقوم بدورها بأشهار الدائرة القنصلية لغرض تخويلها منح التأشيرات."
+
+#: Landing/view/landing/ministry/faq.phtml:412
+msgid ""
+"Q. What is the mechanism of obtaining approvals on granting visas to\n"
+"                            the Arab and foreigner investors?"
+msgstr "س/ ما هي الية استحصال موافقات منح التأشيرات للمستثمرين العرب والاجانب؟"
+
+#: Landing/view/landing/ministry/faq.phtml:416
+msgid ""
+"Ans. The Arab and foreigner investors are required to contact the National\n"
+"                        Investment Commission of the Cabinet Presidency, "
+"which e-mail and website are stated, about our\n"
+"                        circular above. All our missions abroad are required "
+"to affix these information on the bulletin\n"
+"                        board on the frontage of the mission premises for "
+"information. The Investment Commission shall\n"
+"                        obtain the approvals during 72 hours and contact us "
+"in this respect to authorize our missions to\n"
+"                        grant visas."
+msgstr ""
+"ج/ ضرورة قيام المستثمرين العرب والاجانب مخاطبة الهيئة الوطنية للاستثمار "
+"التابعة لرئاسة الوزراء والمثبت عنوان بريدها الالكتروني وموقعها على شبكة "
+"الانترنت بأعمامنا اعلاه وضرورة قيام بعثاتنا في الخارج كافة بتثبيت هذه "
+"المعلومات في لوحة الاعلانات في واجهة بناية البعثة للاطلاع حيث ان هيئة "
+"الاستثمار تقوم بأستحصال الموافقات خلال (72) ساعة وتخاطبنا بذلك لتخويل "
+"بعثاتنا لمنح التأشيرات."
+
+#: Landing/view/landing/ministry/faq.phtml:441
+msgid ""
+"Q. What are the instructions for granting group visas for the\n"
+"                            religious tourism groups?"
+msgstr "س/ ما هي تعليمات منح السمات الجماعية للمجاميع السياحية الدينية؟"
+
+#: Landing/view/landing/ministry/faq.phtml:445
+msgid ""
+"Ans. The group visa is granted to a group of 10 members or more. Their names "
+"shall\n"
+"                        be arranged in lists (manifests) by the Iraqi tour "
+"and travel companies and the companies in the\n"
+"                        countries requiring to group visitors. The Iraqi "
+"receiving company shall contact the tourism\n"
+"                        board to obtain the approval over granting visas and "
+"then approach the Consular Department to\n"
+"                        authorize our missions abroad to grant visas. This "
+"is in normal cases, yet sometimes there are\n"
+"                        exemptions to be issued in the religious events, "
+"where the approval of the Ministry of Internal,\n"
+"                        over authorizing our missions abroad and the border "
+"points to grant visas, is obtained. The\n"
+"                        validity period of approval shall be for a limited "
+"time."
+msgstr ""
+"ج/ السمة الجماعية تمنح لمجموعة يتجاوز عدد افرادها العشرة أشخاص فأكثر يتم "
+"تنظيم اسمائهم بقوائم او ما يسمى بالمنفيست وهذا الدور تقوم به شركات السياحية "
+"والسفر في العراق والشركات في البلدان التي ترغب بتفويج الزوار حيث تقوم الشركة "
+"العراقية المستقبلة بمخاطبة هيئة السياحة لاستحصال الموافقات على منح السمات "
+"وثم مفاتحة الدائرة القنصلية لتخويل بعثاتنا في الخارج لمنح التأشيرات ، هذا في "
+"الحالات الاعتيادية الا ان بعض الاحيان تصدر استثناءات في المناسبات الدينية "
+"تحصل فيها موافقة معالي وزير الداخلية على تخويل بعثاتنا في الخارج والمنافذ "
+"الحدودية منح تأشيرات الدخول ويكون سريان مدة الموافقة لفترة محدودة."
+
+#: Landing/view/landing/ministry/faq.phtml:472
+msgid ""
+"Q. Can the applications, for granting foreigner workers visas to enter\n"
+"                            Iraq, be processed?"
+msgstr ""
+"س/ هل بالامكان ترويج معاملات منح تأشيرات الدخول الى العراق للعمالة الاجنبية؟"
+
+#: Landing/view/landing/ministry/faq.phtml:476
+msgid ""
+"Ans. This applications for granting foreigner workers visas to enter Iraq "
+"are to be\n"
+"                        stopped, except for housekeepers."
+msgstr ""
+"ج/ ايقاف ترويج معاملات منح تأشيرات الدخول للعمالة الاجنبية بأستثناء مدبرات "
+"المنزل ومن الاناث فقط."
+
+#: Landing/view/landing/ministry/speeches-interviews.phtml:1
+#: Landing/view/landing/ministry/speeches-interviews.phtml:2
+msgid "Speeches & Interviews"
+msgstr "خطابات ومقابلات الوزير"
+
+#: Landing/view/landing/ministry/index.phtml:11
+#: Landing/view/landing/ministry/the-minister.phtml:13
+msgid "Name: Dr. Ibrahim al-Jaafari"
+msgstr "الأسم: الدكتور ابراهيم الجعفري"
+
+#: Landing/view/landing/ministry/index.phtml:13
+#: Landing/view/landing/ministry/the-minister.phtml:15
+msgid "Iraqi Foreign Ministry."
+msgstr "وزارة الخارجية العراقية"
+
+#: Landing/view/landing/ministry/index.phtml:14
+#: Landing/view/landing/ministry/the-minister.phtml:16
+msgid "Former Iraqi Prime Minister."
+msgstr "وزير الخارجية العراقية"
+
+#: Landing/view/landing/ministry/index.phtml:19
+#: Landing/view/landing/ministry/the-minister.phtml:21
+msgid "Date"
+msgstr "التاريخ"
+
+#: Landing/view/landing/ministry/index.phtml:20
+#: Landing/view/landing/ministry/the-minister.phtml:22
+msgid "Curriculum Vitae"
+msgstr "السيرة الذاتية"
+
+#: Landing/view/landing/ministry/index.phtml:26
+#: Landing/view/landing/ministry/the-minister.phtml:28
+msgid ""
+"Ibrahim &nbsp;Al Ashaiqer, surnamed (Jaafari), Foreign Minister,born in the "
+"holy city of\n"
+"                        Karbala."
+msgstr ""
+"1947 وُلِد السيد وزير الخارجية إبراهيم الأشيقر الملقب بـ(الجعفري)في مدينة "
+"كربلاء المقدسة.                 1966 انخرط في صفوف حزب الدعوة الاسلامية. "
+"1966 حصل على اعلى معدل على مستوى المحافظة أهله لدخول كلية الطب في جامعة "
+"الموصل. 1974 تزوج الجعفري وانجب ولدين وثلاث بنات. 1980 غادر العراق مع عائلته "
+"في شهر شباط متوجهاً الى سورية، ومنها الى ايران حتى عام 1990. 1980 انتُخِب عضواً "
+"في قيادة حزب الدعوة الاسلامية. 1982 شارك في تاسيس المجلس الاعلى الاسلامي، "
+"وتصدى لمسؤولية رئاسة المكتب التنفيذي واللجنة التنفيذية. 1990 قطن في لندن حتى "
+"عام 2003. 1991 شارك في تشكيل وقيادة(لجنة العمل المشترك للمعارضة العراقية). "
+"1991 شارك في المؤتمرات السياسية العراقية، مثل:(مؤتمر بيروت). 1992 شارك في "
+"تشكيل وقيادة (المؤتمر الوطني العراقي الموحد). 1996 انتخب ناطقاً رسميا لحزب "
+"الدعوة الاسلامية. 2002 دعا الى تشكيل (ائتلاف القوى الوطنية العراقية)، الذي "
+"انضمت اليه (17) من القوى السياسية الى جانب (33) شخصية سياسية عراقية بمثابة "
+"(الهيئة العامة). 2003 بعد سقوط نظام صدام، شغل الدكتور الجعفري منصب اول رئيس "
+"لمجلس الحكم في اب 2003م, ومن ابرز المنجزات:تشكيل لجنة إعداد مسودة "
+"الدستورالعراقي الجديد من 25 عضواً، واسس لعلاقات سياسية للعراق الجديد حيث زار "
+"سبع دول عربية في سبعة ايام، اضافة الى زيارتة للجامعة العربية في القاهرة، حيث "
+"القى خطابا مميزا على منبرها، كما شكل الجعفري اول حكومة عراقية في العهد "
+"الجديد. 2004 شغل الدكتور الجعفري منصب نائب رئيس الجمهورية، اذا ساهم بفعالية "
+"في تعزيز التوافق والانسيابية في العمل الحكومي بين رئاسة الجمهورية ورئاسة "
+"الوزراء، ووجد في عمله كنائب لرئيس الجمهورية فرصة لترسيخ العلاقات العراقية - "
+"الاقليمية عامة، والعلاقات العراقية - العربية خاصة. 2005 شغل منصب رئيس "
+"الوزراء كأول رئيس وزراء منتخب للعراق، إثر الانتخابات العامة التي شارك فيها "
+"الشعب العراقي بكثافة في الــ30 من كانون الثاني 2005م.واستطاع الجعفري ان يحقق "
+"منجزات كبيرة خلال الحكومة الانتقالية، بالبدء بوضع المشاريع التنموية "
+"والواسعة؛ للنهوض بالبنى التحتية المنهارة، وتجاوز التركة الثقيلة التي خلفها "
+"النظام المقبور، إضافة إلى تهيئة مستلزمات اعداد وإقرار(الدستور الدائم) "
+"للعراق، وانتخاب (مجلس النواب)الدائم بنجاح في اجراءات امنية ناجحة ايضاً فضلاً "
+"عن اهتمامه الكبير بالاعلاميين والشعراء والفنانين والأدباء والرياضيين، كما "
+"ارسى دعائم دولة القانون، وساهم في ترسيخ أسس الدولة العراقية الجديدة. 2006 "
+"اصبح عضوا لمجلس النواب لدورتيين من 2006 ولغاية 2010، ومن 2010 لغاية 2014، "
+"فضلا عن رئاسته للتحالف الوطني. 2008 أعلن عن انطلاق تيار الاصلاح الوطني في "
+"2008/5/31م ، والذي شارك في أول موسم انتخابي لمجالس المحافظات في كانون الثاني "
+"2009م. 2010 شغل منصب رئيس التحالف الوطني العراقي، وقد لعب دورا محورياً كبيراً "
+"في تقريب وجهات النظر والمساهمة في حل الخلافات السياسية، وتشكيل الحكومة "
+"العراقية. 2014 شغل منصب وزير الخارجية في حكومة الدكتور حيدر العبادي 2014م. "
+
+#: Landing/view/landing/ministry/index.phtml:31
+#: Landing/view/landing/ministry/the-minister.phtml:33
+msgid "Joined the Islamic Dawa Party."
+msgstr "انضم الى حزب الدعوة الاسلامية"
+
+#: Landing/view/landing/ministry/index.phtml:35
+#: Landing/view/landing/ministry/the-minister.phtml:37
+msgid ""
+"Got the highest secondary school grade at Mosul City that enabled him to "
+"join the Faculty of\n"
+"                        Medicine, University of Mosul."
+msgstr ""
+"حصل على اعلى معدل على مستوى المحافظة أهله لدخول كلية الطب في جامعة الموصل."
+
+#: Landing/view/landing/ministry/index.phtml:40
+#: Landing/view/landing/ministry/the-minister.phtml:42
+msgid "Mr. Jaafari got married, with two sons and three daughters."
+msgstr "تزوج الجعفري وانجب ولدين وثلاث بنات."
+
+#: Landing/view/landing/ministry/index.phtml:44
+#: Landing/view/landing/ministry/the-minister.phtml:46
+msgid ""
+"February, Left Iraq with his family, heading to Syria, and from there to "
+"Iran until 1990. "
+msgstr ""
+"غادر العراق مع عائلته في شهر شباط متوجهاً الى سورية، ومنها الى ايران حتى عام "
+"1990."
+
+#: Landing/view/landing/ministry/index.phtml:49
+#: Landing/view/landing/ministry/the-minister.phtml:51
+msgid "He was elected a member of the Islamic Dawa Party."
+msgstr "انخرط في صفوف حزب الدعوة الاسلامية."
+
+#: Landing/view/landing/ministry/index.phtml:53
+#: Landing/view/landing/ministry/the-minister.phtml:55
+msgid ""
+"Participated in founding the Islamic Supreme Council, and be in charge of "
+"the Executive Office\n"
+"                        and the Executive Committee."
+msgstr ""
+"شارك في تاسيس المجلس الاعلى الاسلامي، وتصدى لمسؤولية رئاسة المكتب التنفيذي "
+"واللجنة التنفيذية."
+
+#: Landing/view/landing/ministry/index.phtml:58
+#: Landing/view/landing/ministry/the-minister.phtml:60
+msgid "Resided at London until 2003."
+msgstr "قطن في لندن حتى عام 2003."
+
+#: Landing/view/landing/ministry/index.phtml:62
+#: Landing/view/landing/ministry/the-minister.phtml:64
+msgid ""
+"Participated in the formation and leadership of (The Joint Action Committee "
+"of the Iraqi\n"
+"                        Opposition)."
+msgstr "شارك في تشكيل وقيادة(لجنة العمل المشترك للمعارضة العراقية)."
+
+#: Landing/view/landing/ministry/index.phtml:67
+#: Landing/view/landing/ministry/the-minister.phtml:69
+msgid ""
+"Participated in the Iraqi political conferences, such as the (Beirut "
+"Conference)."
+msgstr "شارك في المؤتمرات السياسية العراقية، مثل:(مؤتمر بيروت)."
+
+#: Landing/view/landing/ministry/index.phtml:71
+#: Landing/view/landing/ministry/the-minister.phtml:73
+msgid ""
+"Participated in the formation and leadership of the (United National "
+"Congress)."
+msgstr "شارك في تشكيل وقيادة (المؤتمر الوطني العراقي الموحد)."
+
+#: Landing/view/landing/ministry/index.phtml:75
+#: Landing/view/landing/ministry/the-minister.phtml:77
+msgid "Elected officially as a Spokesman for the Islamic Dawa Party."
+msgstr "انتخب ناطقاً رسميا لحزب الدعوة الاسلامية."
+
+#: Landing/view/landing/ministry/index.phtml:79
+#: Landing/view/landing/ministry/the-minister.phtml:81
+msgid ""
+"Called to form the (Coalition of the Iraqi National Powers) which includes "
+"17 political forces,\n"
+"                        along with 33 Iraqi figures representing the "
+"(Plenary Session)."
+msgstr ""
+"دعا الى تشكيل (ائتلاف القوى الوطنية العراقية)، الذي انضمت اليه (17) من القوى "
+"السياسية الى جانب (33) شخصية سياسية عراقية بمثابة (الهيئة العامة)."
+
+#: Landing/view/landing/ministry/index.phtml:84
+#: Landing/view/landing/ministry/the-minister.phtml:86
+msgid ""
+"2003 After the fall of Saddam's regime, in August 2003, Dr. Jaafari became "
+"the first president\n"
+"                        of the Governing Council. The most prominent "
+"achievements were: forming a 25 members committee\n"
+"                        to prepare the draft new Iraqi constitution. He set "
+"up basis for the political relations of the\n"
+"                        new Iraq and visited seven Arab countries in seven "
+"days, in addition to his visit to the League\n"
+"                        of Arabic States in Cairo, where he delivered a "
+"distinctive speech. He formed the first Iraqi\n"
+"                        government in the new testament."
+msgstr ""
+"بعد سقوط نظام صدام، شغل الدكتور الجعفري منصب اول رئيس لمجلس الحكم في اب "
+"2003م, ومن ابرز المنجزات:تشكيل لجنة إعداد مسودة الدستورالعراقي الجديد من 25 "
+"عضواً، واسس لعلاقات سياسية للعراق الجديد حيث زار سبع دول عربية في سبعة ايام، "
+"اضافة الى زيارتة للجامعة العربية في القاهرة، حيث القى خطابا مميزا على "
+"منبرها، كما شكل الجعفري اول حكومة عراقية في العهد الجديد."
+
+#: Landing/view/landing/ministry/index.phtml:93
+#: Landing/view/landing/ministry/the-minister.phtml:95
+msgid ""
+"Dr. Ibrahim Al Jaafari occupied the Vice-President post of the Republic of "
+"Iraq. He contributed\n"
+"                        effectively to enhance compatibility and smooth flow "
+"in government work between the presidency\n"
+"                        and the cabinet. He found in his work as Vice-"
+"President a chance to enhance general Iraq's\n"
+"                        relations and Iraqi - Arab relations in particular."
+msgstr ""
+"شغل الدكتور الجعفري منصب نائب رئيس الجمهورية، اذا ساهم بفعالية في تعزيز "
+"التوافق والانسيابية في العمل الحكومي بين رئاسة الجمهورية ورئاسة الوزراء، "
+"ووجد في عمله كنائب لرئيس الجمهورية فرصة لترسيخ العلاقات العراقية - الاقليمية "
+"عامة، والعلاقات العراقية - العربية خاصة."
+
+#: Landing/view/landing/ministry/index.phtml:100
+#: Landing/view/landing/ministry/the-minister.phtml:102
+msgid ""
+"occupied the Prime Minister post, as the first elected Prime Minister of "
+"Iraq, following the\n"
+"                        general elections which the Iraqi people "
+"participated in heavily January 30, 2005. He managed to\n"
+"                        achieve significant achievements during the "
+"transitional government time, by starting the wide\n"
+"                        development projects; to promote collapsed "
+"infrastructure, overcome the heavy legacy of the\n"
+"                        previous regime, in addition to the creation of the "
+"preparation and approval requirements of the\n"
+"                        (permanent constitution) of Iraq, and the successful "
+"election the permanent (House of\n"
+"                        Representatives) in under successful security, as "
+"well as paying great attention to the media,\n"
+"                        poets, artists, writers and athletes. He also laid "
+"the foundations of the rule of law and\n"
+"                        contributed to the consolidation of the foundations "
+"of the new Iraqi state."
+msgstr ""
+"شغل منصب رئيس الوزراء كأول رئيس وزراء منتخب للعراق، إثر الانتخابات العامة "
+"التي شارك فيها الشعب العراقي بكثافة في الــ30 من كانون الثاني 2005م."
+"\rواستطاع الجعفري ان يحقق منجزات كبيرة خلال الحكومة الانتقالية، بالبدء بوضع "
+"المشاريع التنموية والواسعة؛ للنهوض بالبنى التحتية المنهارة، وتجاوز التركة "
+"الثقيلة التي خلفها النظام المقبور، إضافة إلى تهيئة مستلزمات اعداد "
+"وإقرار(الدستور الدائم) للعراق، وانتخاب (مجلس النواب)الدائم بنجاح في اجراءات "
+"امنية ناجحة ايضاً فضلاً عن اهتمامه الكبير بالاعلاميين والشعراء والفنانين "
+"والأدباء والرياضيين، كما ارسى دعائم دولة القانون، وساهم في ترسيخ أسس الدولة "
+"العراقية الجديدة."
+
+#: Landing/view/landing/ministry/index.phtml:112
+#: Landing/view/landing/ministry/the-minister.phtml:114
+msgid ""
+"2006 Jaafari became a member of the House of Representatives for two terms; "
+"2006 until 2010, and\n"
+"                        2010 until 2014, in addition to the presidency of "
+"the National Alliance."
+msgstr ""
+"اصبح عضوا لمجلس النواب لدورتيين من 2006 ولغاية 2010، ومن 2010 لغاية 2014، "
+"فضلا عن رئاسته للتحالف الوطني."
+
+#: Landing/view/landing/ministry/index.phtml:117
+#: Landing/view/landing/ministry/the-minister.phtml:119
+msgid ""
+"2008 He announced the establishment of the National Reform Trend on May 31, "
+"2008 and\n"
+"                        participated in the first provincial elections on "
+"January 2009."
+msgstr ""
+"أعلن عن انطلاق تيار الاصلاح الوطني في 2008/5/31م ، والذي شارك في أول موسم "
+"انتخابي لمجالس المحافظات في كانون الثاني 2009م."
+
+#: Landing/view/landing/ministry/index.phtml:122
+#: Landing/view/landing/ministry/the-minister.phtml:124
+msgid ""
+"2010 He was elected as President of the Iraqi National Alliance, played a "
+"pivotal role in the\n"
+"                        convergence of views and solving political "
+"differences, and the formation of the Iraqi\n"
+"                        government."
+msgstr ""
+"شغل منصب رئيس التحالف الوطني العراقي، وقد لعب دورا محورياً كبيراً في تقريب "
+"وجهات النظر والمساهمة في حل الخلافات السياسية، وتشكيل الحكومة العراقية."
+
+#: Landing/view/landing/ministry/index.phtml:128
+#: Landing/view/landing/ministry/the-minister.phtml:130
+msgid "Foreign Minister, Incumbent, in the government of Dr. Haider Al Abadi."
+msgstr "شغل منصب وزير الخارجية في حكومة الدكتور حيدر العبادي 2014م."
+
+#: Landing/view/landing/ministry/index.phtml:132
+#: Landing/view/landing/ministry/the-minister.phtml:134
+msgid ""
+"Has several books, studies, and researches, including (State\n"
+"                Approach),(Experience of Rule),(Woman .. the Battle of "
+"Identity),(Art .. Pulse of Life),(Youth Between\n"
+"                Authenticity and Innovation),(Students Makers of Life).<br> "
+"Several books were written about him: (Ring\n"
+"                of Fire),(Iraqi Labor),(For A Better Tomorrow),(Kings and "
+"Message)."
+msgstr ""
+"- له عدة بحوث ومؤلفات ودراسات، منها(خطاب الدولة) ، (تجربة الحكم) ، (المرأة "
+"معركة الهوية) ، (الفن نبضة حياة) ، (الشباب بين الاصالة والتجديد) ، (الطلبة "
+"صناع الحياة).- كتبت عنه عدة كتب منها (حزام النار) ، (المخاض العراقي) ، (لغد "
+"افضل) ، (ومن الملوك رسالة)."
+
+#: Landing/view/landing/ministry/the-minister.phtml:1
+#: Landing/view/landing/ministry/the-minister.phtml:2
+msgid "The Minister"
+msgstr "السيد الوزير"
+
+#: Landing/view/landing/ministry/announcements.phtml:1
+#: Landing/view/landing/ministry/announcements.phtml:2
+msgid "Ministry's Announcements"
+msgstr "اعلانات الوزارة"
+
+#: Landing/view/landing/ministry/announcements.phtml:16
+msgid "Ministry of Foreign Affairs Receives Health Insurance Offers"
+msgstr ""
+"عروض برامج التأمين الصحي لموظفي البعثات الدبلوماسية والقنصلية في الخارج"
+
+#: Landing/view/landing/ministry/announcements.phtml:30
+#: Landing/view/landing/ministry/announcements.phtml:102
+#: Landing/view/landing/ministry/announcements.phtml:138
+#: Landing/view/landing/about-iraq/announcements.phtml:21
+#: Landing/view/landing/about-iraq/announcements.phtml:47
+msgid "more details"
+msgstr "تفاصيل أكثر"
+
+#: Landing/view/landing/ministry/announcements.phtml:31
+msgid ""
+"ownload More\n"
+"                            details"
+msgstr "تفاصيل أكثر"
+
+#: Landing/view/landing/ministry/announcements.phtml:47
+msgid "Announcement"
+msgstr "اعلان الدائرة القنصلية"
+
+#: Landing/view/landing/ministry/announcements.phtml:52
+msgid ""
+"information about the property or documents belonging to the State of\n"
+"                            Kuwait to contact our ministry in order to "
+"return them to Kuwait... "
+msgstr "اعلان عن ممتلكات او وثائق تعود لدولة الكويت الشقيقة "
+
+#: Landing/view/landing/ministry/announcements.phtml:67
+#: Landing/view/landing/ministry/announcements.phtml:103
+#: Landing/view/landing/ministry/announcements.phtml:139
+#: Landing/view/landing/about-iraq/announcements.phtml:22
+msgid ""
+"Download More\n"
+"                            details"
+msgstr "تحميل االمزيد"
+
+#: Landing/view/landing/ministry/announcements.phtml:88
+msgid ""
+"Announcement on Missing People during the War in Kuwait and their\n"
+"                            Whereabouts"
+msgstr "اعلان عن المفقودين في حرب الكويت او على رفاتهم"
+
+#: Landing/view/landing/ministry/announcements.phtml:119
+msgid "Promotions for health insurance<"
+msgstr ""
+"عروض برامج التأمين الصحي لموظفي البعثات الدبلوماسية والقنصلية في الخارج"
+
+#: Landing/view/landing/ministry/announcements.phtml:124
+msgid ""
+"Promotions for health insurance programs for mofa employee in\n"
+"                            missions and consulates"
+msgstr ""
+"عروض برامج التأمين الصحي لموظفي البعثات الدبلوماسية والقنصلية في الخارج"
+
+#: Landing/view/landing/index/index.phtml:2
+msgid "Main News"
+msgstr "الأخبار الرئيسية"
+
+#: Landing/view/landing/index/index.phtml:25
+#: Landing/view/landing/index/index.phtml:38
+#: Landing/view/landing/index/index.phtml:69
+msgid "Read more"
+msgstr "اقرأ المزيد"
+
+#: Landing/view/landing/index/index.phtml:58
+msgid "Other News"
+msgstr "المزيد من الأخبار"
+
+#: Landing/view/landing/index/index.phtml:79
+msgid "Consular Services"
+msgstr "الخدمات القنصلية"
+
+#: Landing/view/landing/index/index.phtml:85
+msgid "Investment in IRAQ"
+msgstr "الإستثمار في العراق"
+
+#: Landing/view/landing/index/index.phtml:91
+msgid "Dear Investor"
+msgstr "عزيزي المستثمر"
+
+#: Landing/view/landing/index/index.phtml:93
+msgid ""
+"The investment opportunities found in today’s Iraq vary in type, size, scope,"
+"sector, purpose, and structure. Potential investors will find an "
+"openlandscape to develop projects that will fill the needs of Iraq’s "
+"expanding and demanding population. Iraq’s location at the center of many "
+"historic andcurrent middle-east trade routes provides an undeniable "
+"advantage;combined with a variety of natural resources and a desire for "
+"advanced quality of life, this advantage creates many opportunities for "
+"builders,suppliers, transporters, developers, producers, providers, "
+"manufacturers,servicers, and financiers, all of whom will find many avenues "
+"by which to establish new relationships, build new operations, create new "
+"markets, and develop new mutually beneficial business connections."
+msgstr ""
+
+#: Landing/view/landing/index/index.phtml:102
+#: Landing/view/landing/index/index.phtml:104
+msgid "Links"
+msgstr "روابط"
+
+#: Landing/view/landing/index/index.phtml:111
+#: Landing/view/landing/index/index.phtml:113
+msgid "Ministry Departments"
+msgstr "أقسام الوزارة"
+
+#: Landing/view/landing/about-iraq/constitution.phtml:1
+#: Landing/view/landing/about-iraq/constitution.phtml:2
+msgid "Constitution"
+msgstr "الدستور العراقي"
+
+#: Landing/view/landing/about-iraq/constitution.phtml:4
+msgid ""
+"In the name of God, the Most merciful, the&nbsp;Most &nbsp;compassionate "
+"\"We have honored the sons of Adam\" Preamble"
+msgstr ""
+
+#: Landing/view/landing/about-iraq/constitution.phtml:7
+msgid ""
+"We, the people of Mesopotamia, the&nbsp;homeland of the apostles and "
+"prophets, resting&nbsp;place of the virtuous imams, cradle of civilization,"
+"&nbsp;crafters of writing, and home of numeration. Upon&nbsp;our land the "
+"first law made by man was passed,&nbsp;and the oldest pact of just "
+"governance was&nbsp;inscribed, and upon our soil the &nbsp;saints and&nbsp;"
+"companions of the Prophet prayed, philosophers&nbsp;and scientists "
+"theorized, and writers and poets&nbsp;excelled;&nbsp;Acknowledging God’s "
+"right over us, and infulfillment of the call of our homeland and citizens,"
+"&nbsp;and in a response to the call of our religious and&nbsp;national "
+"leaderships and the determination of our&nbsp;great authorities and of our "
+"leaders and politicians,&nbsp;and in the &nbsp;midst of international "
+"support from our&nbsp;friends and those who love us, marched for the "
+"first&nbsp;time in our history towards the ballot boxes by themillions, men "
+"and women, young and old, on the&nbsp;thirtieth of January 2005, invoking "
+"the pains of&nbsp;sectarian oppression inflicted by the autocratic&nbsp;"
+"clique and inspired by the tragedies of Iraq’s&nbsp;martyrs, Shiite and "
+"Sunni, Arabs and Kurds &nbsp; &nbsp;and&nbsp;Turkmen and from all other "
+"components of the&nbsp;people, and recollecting the darkness of the&nbsp;"
+"ravage of the holy cities and the South in the&nbsp;Sha’abaniyya uprising "
+"and burnt by the flames of&nbsp;grief of the mass graves, the marshes, Al-"
+"Dujail&nbsp;\n"
+"and others and articulating the sufferings of racial&nbsp;oppression in the "
+"massacres of Halabcha, Barzan,&nbsp;Anfal and the Fayli Kurds and inspired "
+"by the&nbsp;ordeals of the Turkmen in Bashir and the sufferings&nbsp;of the "
+"people of the western region, as is the case&nbsp;in the remaining areas of "
+"Iraq where the people&nbsp;\n"
+"suffered from the liquidation of their leaders,&nbsp;symbols, and Sheiks and "
+"from the displacement of&nbsp;their skilled individuals and from drying out "
+"of its&nbsp;cultural and intellectual wells, so we sought hand&nbsp;in hand "
+"and shoulder to shoulder to create our new&nbsp;Iraq, the Iraq of the "
+"future, free from sectarianism,\n"
+"racism, complex of regional attachment,&nbsp;discrimination, and exclusion."
+"&nbsp;Accusations of being infidels, and terrorismdid not stop us from "
+"marching forward to build a&nbsp;nation of law. Sectarianism and racism have "
+"not&nbsp;stopped us from marching together to strengthen&nbsp;our national "
+"unity, following the path of peaceful&nbsp;transfer of power, adopting the "
+"course of just&nbsp;distribution of resources, and providing equal&nbsp;"
+"opportunity for all.&nbsp;We, the people of Iraq, who have just risenfrom "
+"our stumble, and who are looking with&nbsp;\n"
+"confidence to the future through a republican,&nbsp;federal, democratic, "
+"pluralistic system, have&nbsp;resolved with the determination of our men,"
+"&nbsp;women, elderly, and youth to respect the rule of&nbsp;law, to "
+"establish justice and equality, to cast aside&nbsp;the politics of "
+"aggression, to pay attention to\n"
+"women and their rights, the elderly and their&nbsp;concerns, and children "
+"and their affairs, to spread&nbsp;the culture of diversity, and to defuse "
+"terrorism.&nbsp;We, the people of Iraq, of all componentsand across the "
+"spectrum, have taken upon\n"
+"ourselves to decide freely and by choice to unite&nbsp;our future, to take "
+"lessons from yesterday for&nbsp;tomorrow, and to enact this permanent&nbsp;"
+"Constitution, through the values and ideals of theheavenly messages and the "
+"findings of science&nbsp;and man’s civilization. The adherence to this&nbsp;"
+"Constitution preserves for Iraq its free union of&nbsp;people, of land, and "
+"of sovereignty."
+msgstr ""
+
+#: Landing/view/landing/about-iraq/constitution.phtml:16
+msgid "Section one"
+msgstr "البند الأول"
+
+#: Landing/view/landing/about-iraq/constitution.phtml:17
+msgid "Section two"
+msgstr "البند الثاني"
+
+#: Landing/view/landing/about-iraq/constitution.phtml:18
+msgid "section three"
+msgstr "البند الثالث"
+
+#: Landing/view/landing/about-iraq/constitution.phtml:19
+msgid "section four"
+msgstr "البند الرابع"
+
+#: Landing/view/landing/about-iraq/constitution.phtml:20
+msgid "section five"
+msgstr "البند الخامس"
+
+#: Landing/view/landing/about-iraq/constitution.phtml:21
+msgid "section six"
+msgstr "البند السادس"
+
+#: Landing/view/landing/about-iraq/index.phtml:1
+#: Landing/view/landing/about-iraq/index.phtml:2
+msgid "About Iraq"
+msgstr "حول العراق"
+
+#: Landing/view/landing/about-iraq/index.phtml:8
+msgid "The official name"
+msgstr "الأسم الرئيسي"
+
+#: Landing/view/landing/about-iraq/index.phtml:11
+msgid "Republic of Iraq"
+msgstr "جمهورية العراق"
+
+#: Landing/view/landing/about-iraq/index.phtml:17
+msgid "Flag"
+msgstr "العلم"
+
+#: Landing/view/landing/about-iraq/index.phtml:26
+msgid "Logo"
+msgstr "الأيقونه"
+
+#: Landing/view/landing/about-iraq/index.phtml:33
+msgid "President"
+msgstr "الرئيس "
+
+#: Landing/view/landing/about-iraq/index.phtml:36
+msgid "Fuad Masum"
+msgstr "فؤاد معصوم"
+
+#: Landing/view/landing/about-iraq/index.phtml:40
+msgid "The Prime Minister"
+msgstr "السيد رئيس الوزراء"
+
+#: Landing/view/landing/about-iraq/index.phtml:42
+msgid "Haider al-Abadi"
+msgstr "حيدر العبادي"
+
+#: Landing/view/landing/about-iraq/index.phtml:46
+msgid "National Anthem"
+msgstr "النشيد الوطني"
+
+#: Landing/view/landing/about-iraq/index.phtml:49
+msgid "Mawtini"
+msgstr "موطني"
+
+#: Landing/view/landing/about-iraq/index.phtml:59
+msgid "Other major cities"
+msgstr " المدن الرئيسية الاخرى"
+
+#: Landing/view/landing/about-iraq/index.phtml:62
+msgid "Mosal, Basra, Erbil, Karkok, Babil"
+msgstr "الموصل, البصرة, اربيل, كركوك, اربيل"
+
+#: Landing/view/landing/about-iraq/index.phtml:66
+msgid "Area<"
+msgstr "المساحة"
+
+#: Landing/view/landing/about-iraq/index.phtml:72
+msgid "Geographicallocation"
+msgstr "الموقع الجغرافي"
+
+#: Landing/view/landing/about-iraq/index.phtml:75
+msgid ""
+"It's located in west Asia and It's partof middle east, Jordan and Syria are "
+"to it's west ,Turkey to It’s north ,Iran to it's ast and Kuwait and Saudi "
+"Arabia to it's south ."
+msgstr ""
+" يقع العراق في منطقة الشرق الاوسط في القسم الغربي من قارة اسيا, يحده من "
+"الغرب الاردن وسوريا, ومن الشمال تركيا ومن الشرق ايران, ومن الجنوب الكويت "
+"والسعودية"
+
+#: Landing/view/landing/about-iraq/index.phtml:80
+msgid "Population"
+msgstr "  تعداد السكان"
+
+#: Landing/view/landing/about-iraq/index.phtml:83
+msgid ""
+"33330000 Based on estimations of central of statistics with in the "
+"ministryof planning of 2011 <a href=\"/documents/about-"
+"iraq/129864794138480018.pdf\" target=\"_self\">for more details...</a>"
+msgstr ""
+"33330000 نسمة حسب تقديرات الجهاز المركزي للأحصاء في وزارة التخطيط عام 2011."
+
+#: Landing/view/landing/about-iraq/index.phtml:87
+msgid "Language"
+msgstr "اللغة"
+
+#: Landing/view/landing/about-iraq/index.phtml:89
+msgid ""
+"The official languages are Arabic and Kurdish <a href=\"/documents/about-"
+"iraq/129912295460517064.pdf\" target=\"_self\">see section-4 of Iraqi "
+"constitution</a>"
+msgstr " اللغة"
+
+#: Landing/view/landing/about-iraq/index.phtml:93
+msgid "Topography"
+msgstr "التضاريس"
+
+#: Landing/view/landing/about-iraq/index.phtml:96
+msgid ""
+"Iraq is featured by the plains of Tigris and Euphrates, the marshes are to "
+"the south east, the mountains are in Kurdistan region at the borders with "
+"Iran to the east and turkey to the north"
+msgstr ""
+"يتألف سطح العراق من سهول دجلة والفرات, كما توجد الاهوار في الجنوب الشرقي , "
+"وتقع المرتفعات الجبلية في كوردستان العراق وشرقي البلاد على الحدود مع ايران "
+"وتركيا"
+
+#: Landing/view/landing/about-iraq/index.phtml:100
+msgid "Climate"
+msgstr " المناخ"
+
+#: Landing/view/landing/about-iraq/index.phtml:103
+msgid ""
+"The western parts have typical desert climate of extreme heat in the summer "
+"and extreme cold in the winter ,while the central and southern parts have a "
+"hot summer and a moderate winter"
+msgstr ""
+"يختلف المناخ من منطقة الى اخرى, فالمناطق الغربية والغربية الجنوبية مناخها "
+"صحراوي قاري شديد الحرارة صيفا وبارد قليل الامطار شتاءً, والمناطق الوسطى "
+"والجنوبية ذات مناخ حار صيفا معتدل الحرارة شتاءً, اما المناطق الشمالية فمعتدلة "
+"الحرارة صيفاً وغزيرة الامطار شتاءً مع تساقط الثلوج فوق المرتفعات واحيانا تسقط "
+"الامطار في فصل الصيف"
+
+#: Landing/view/landing/about-iraq/index.phtml:108
+msgid "The Major National Resources"
+msgstr "اهم الموارد الطبيعية"
+
+#: Landing/view/landing/about-iraq/index.phtml:111
+msgid "Petrol , Phosphate , Natural Gas and Sulfur"
+msgstr "بترول , غاز طبيعي , فوسفات , زيت خام وكبريت."
+
+#: Landing/view/landing/about-iraq/index.phtml:116
+msgid "Currency"
+msgstr "العملة"
+
+#: Landing/view/landing/about-iraq/index.phtml:118
+msgid "Iraqi Dinar"
+msgstr " الدينار العراقي"
+
+#: Landing/view/landing/about-iraq/index.phtml:122
+msgid "Iraq's provinces"
+msgstr " المحافظات"
+
+#: Landing/view/landing/about-iraq/index.phtml:125
+msgid ""
+"Baghdad, Mousel, Basrah, Salahddin, Duhok, Erbil, Sulimania, Dyala, Wassit, "
+"Missan, Thiqar, Muthana, Babil, karbala, Najaf, Al-qadisiyyah,Anbar, karkuk. "
+msgstr ""
+"بغداد - الموصل - البصرة  - صلاح الدين - دهوك - اربيل - السليمانية - ديالى - "
+"واسط - ميسان- ذي قار- المثنى - بابل- كربلاء - النجف - الانبار- القادسية- "
+"كركوك ."
+
+#: Landing/view/landing/about-iraq/index.phtml:130
+msgid "Timing"
+msgstr "فرق التوقيت"
+
+#: Landing/view/landing/about-iraq/index.phtml:136
+msgid "Internet ID"
+msgstr " GMT + 3:00"
+
+#: Landing/view/landing/about-iraq/index.phtml:142
+msgid "International phone code"
+msgstr " رمز الهاتف الدولي"
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:1
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:2
+msgid "Iraq's Encyclopedia"
+msgstr "IQ "
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:7
+msgid ""
+"DAILY AVERAGE OF TEMPERATURES (CENTIGRADE) AND RELATIVE HUMIDITY FOR BAGHDAD "
+"CITY BY MONTH FOR THE YEAR 2009"
+msgstr ""
+"المعدلات الیومیة لدرجات الحرارة (بالمقیاس المئوي) والرطوبة النسبیة لمدینة "
+"بغداد حسب الشھر لسنة 2009."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:12
+msgid ""
+"RAINFALL, ANNUAL AVERAGE OF RELATIVE HUMIDITY AND TEMPERATURES FOR THE YEARS "
+"1999-2009."
+msgstr ""
+"الأمطار والمعدل السنوي لدرجات الحرارة والرطوبة النسبية للسنوات 1999 - 2009. "
+"سكان العراق للسنوات 1977-2011."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:17
+msgid "POPULATION OF IRAQ FOR THE YEARS 1977 - 2011."
+msgstr " سكان العراق للسنوات 1977-2011."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:22
+msgid "AREA, YIELD AND PRODUCTION FOR CROPS AND VEGETABLES FOR THE YEAR 2010."
+msgstr "المساحة والغلة والإنتاج للمحاصیل والخضراوات لسنة 2010."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:27
+msgid ""
+"No. OF HOLDINGS AND PALMS BY SEX ON NATIONAL LEVEL AND GOVERNORATES "
+"ACCORDING TO THE AGRICULTURAL CENSUSES FOR THEYEAR 2001."
+msgstr ""
+"عدد الحیازات و عدد اشجار النخیل حسب الجنس على مستوى العراق حسب نتائج التعداد "
+"الزراعي لسنة 2001 ( العدد : نخلة )."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:32
+msgid "PRODUCTION OF DATES BY KINDS FOR THE YEARS 2000 -2010 (10 Ton)."
+msgstr ""
+"عدد الحیازات و عدد اشجار النخیل حسب الجنس على مستوى العراق حسب نتائج التعداد "
+"الزراعي لسنة 2001 ( العدد : نخلة )."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:37
+msgid "LIVESTOCK PRODUCTS FOR THE YEARS 1999 - 2010."
+msgstr "إنتاج التمور حسب الاصناف للسنوات 2000-2010."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:43
+msgid ""
+"SUMMARY OF THE ANNUAL INDUSTRIAL STATISTIC FOR LARGE ESTABLISHMENTS (Value "
+"of production , wages &amp; benefits)FOR THE YEARS 2005 - 2009."
+msgstr " المنتجات الحیوانیة للسنوات 1999-2010."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:48
+msgid ""
+"NUMBER OF STUDENTS GRADUATED FROM UNIVERSITIES, TECHNICAL EDUCATION "
+"COMMISSION AND PRIVITE COLLEGES FOR THEACADEMIC YEARS 1992/1993 - 2009/2010"
+msgstr ""
+"خلاصة نتائج الإحصاء الصناعي السنوي للمنشات الكبیرة (القیمة والأجور والمزایا) "
+"للسنوات 2005-2009."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:53
+msgid ""
+"NUMBER OF STUDENTS ADMITTED IN HIGHER STUDIES BY UNIVERSITY, DEGREE, GENDER "
+"AND FOR THE ACADEMIC YEAR 2009/2010."
+msgstr ""
+"عدد الطلبة المتخرجین من الجامعات وھیئة التعلیم التقني والكلیات الأھلیة "
+"للسنوات الدراسیة 1992/1993-2009/2010."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:58
+msgid ""
+"NUMBER OF HOSPITALS, PUBLIC MEDICAL CLINICS AND OTHER HEALTH INSTITUTIONS BY "
+"GOVERNORATE FOR THE YEAR2010."
+msgstr ""
+"عدد الطلبة الموجودین في الدراسات العلیا حسب الجامعة والشھادة والجنس للسنة "
+"الدراسیة 2012/2009."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:63
+msgid ""
+"NUMBER OF COUNTRIES PARTICIPATED IN BAGHDAD INTERNATIONAL FAIR FOR TWO YEARS "
+"2009-2010."
+msgstr ""
+"عدد المستشفیات والمؤسسات الصحیة الأخرى والعیادات الطبیة الشعبیة حسب المحافظة "
+"لسنة 2010."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:68
+msgid "Total Imports For (2009-2010)."
+msgstr " عدد الدول المشاركة في معرض بغداد الدولي لسنتي 2009-.2010"
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:73
+msgid "TOTAL EXPORTS FOR 2009-2010Table."
+msgstr "اجمالي الاستیرادات للسنوات 2009-2010."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:78
+msgid ""
+"THE USE OF AGRICULTURAL LAND IN IRAQ, ACCORDING TO WATER BALANCE FOR THEYEAR "
+"2009"
+msgstr " اجمالي الصادرات لسنتي 2009-2010."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:83
+msgid ""
+"QUANTITY OF REFINED WATER PRODUCED AND CONSUMED AND PER CAPITA CONSUMPTION* "
+"FOR THE YEARS 2002-2009."
+msgstr "إستخدام الاراضي الزراعیة في العراق حسب الموازنة المائیة لسنة 2009."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:88
+msgid "PRODUCTION AND EXPORT OF CRUDE OIL IN IRAQ FOR THE YEARS 1990-2010."
+msgstr ""
+"كمیة الماء الصافي المنتج والمستھلك ونصیب الفرد من الماء الصافي المستھلك "
+"للسنوات 2002-2009."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:94
+msgid ""
+"QUANTITY OF PRODUCED, USED AND FLARED NATURAL GAS IN IRAQ FOR THE YEARS 1989 "
+"- 2009 (millionstandard)."
+msgstr "إنتاج وصادرات النفط الخام في العراق للسنوات1990-2010."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:99
+msgid ""
+"WOMEN SHARE IN WAGE EMPLOYMENT IN THE NON- AGRICULTURAL SECTOR FOR THE "
+"YEARS(1990,2004,2006,2008)."
+msgstr ""
+" كمیة الغاز الطبیعي المنتج والمستھلك والمحروق في العراق للسنوات 1989-2009."
+
+#: Landing/view/landing/about-iraq/encyclopedia.phtml:104
+msgid "NUMBER OF PARLIAMENT MEMBERS BY GENDER FOR THE YEARS 2004-2010."
+msgstr ""
+"نسبة المقاعد التي تشغلھا النساء في البرلمانات الوطنیة للسنوات "
+"(1990-1995-1997-2003-2006-2010)."
+
+#: Landing/view/landing/about-iraq/investment.phtml:1
+#: Landing/view/landing/about-iraq/investment.phtml:2
+msgid "Investment"
+msgstr "الإستثمارات"
+
+#: Landing/view/landing/about-iraq/investment.phtml:6
+msgid "Investment Overview"
+msgstr "نظرة عامة"
+
+#: Landing/view/landing/about-iraq/investment.phtml:9
+msgid "Investor Guide"
+msgstr "دليل المستثمر الى العراق"
+
+#: Landing/view/landing/about-iraq/investment.phtml:12
+msgid "NIC Projects Dec 09 v4"
+msgstr "الهيئة الوطنية للإستثمار"
+
+#: Landing/view/landing/about-iraq/announcements.phtml:1
+#: Landing/view/landing/about-iraq/announcements.phtml:2
+msgid "Announcements"
+msgstr "اعلانات"
+
+#: Landing/view/landing/about-iraq/announcements.phtml:12
+msgid "Tendor"
+msgstr "اتجاه"
+
+#: Landing/view/landing/about-iraq/announcements.phtml:17
+msgid ""
+"Rehabilitation works of the new Iraqi consulate building in\n"
+"                            Manchester city centre"
+msgstr ""
+
+#: Landing/view/landing/about-iraq/announcements.phtml:43
+msgid ""
+"Supply the Ministry Center with internet service through the Optical\n"
+"                            cable"
+msgstr ""
+"اعلان مناقصة تجهيز مركز الوزارة بخدمة أنترنيت عن طريق الكابل الضوئي المتصل "
+"بشبكة IZFN"
+
+#: Landing/view/landing/about-iraq/announcements.phtml:48
+msgid ""
+"Download\n"
+"                            More details"
+msgstr "للمزيد من المعلومات"
+
+#: Landing/view/landing/foreign-policy/the-new-iraq.phtml:1
+#: Landing/view/landing/foreign-policy/the-new-iraq.phtml:2
+msgid "The New Iraq"
+msgstr "العراق الجديد"
+
+#: Landing/view/landing/foreign-policy/the-new-iraq.phtml:5
+msgid ""
+"•The new Iraq inherited a heavy legacy of hostility and distrust as a result "
+"of the irresponsible policies of the\n"
+"    former regime towards the neighboring and far countries which led to a "
+"decline in the country's position in the\n"
+"    international community."
+msgstr ""
+"• ورث العراق الجديد تركة ثقيلة من العداء وانعدام الثقة نتيجة لسياسات النظام "
+"السابق غير المسؤولة أتجاه القاصي والداني التي ادت الى تراجع مكانة البلاد في "
+"المجتمع الدولي."
+
+#: Landing/view/landing/foreign-policy/the-new-iraq.phtml:9
+msgid ""
+"•The Foreign Ministry in the new Iraq faced these challenges and still, to\n"
+"    address that legacy in a bid to retrieve 's position that befits rich "
+"civilization heritage and its people and\n"
+"    its riches. "
+msgstr ""
+"• واجهت وزراة الخارجية في العراق الجديد تلك التحديات وماتزال، لمعالجة ذلك "
+"الارث سعيا لأعادة العراق الى مكانته التي تليق بأرثه الحضاري الثري وبشعبه "
+"الكريم وبثرواته الزاخرة."
+
+#: Landing/view/landing/foreign-policy/the-new-iraq.phtml:13
+msgid ""
+"•As representatives of the new Iraq, we have actively and successfully "
+"worked on\n"
+"    removing the isolation condition to achieve the goals of our foreign "
+"policy in a responsible vision in accordance\n"
+"    with the following:"
+msgstr ""
+"• وبصفتنا ممثلين للعراق الجديد، عملنا بنشاط ونجاح على ازالة حالة العزلة "
+"مواصلين تحقيق اهداف سياستنا الخارجية برؤية مسؤولة وفق الاتي:"
+
+#: Landing/view/landing/foreign-policy/the-new-iraq.phtml:17
+msgid ""
+"1-To protect Iraq's security and promote stability and preserve the unity "
+"and\n"
+"    harmony of society."
+msgstr " 1. حماية امن العراق وتعزيز استقراره والحفاظ على وحدته ووئام مجتمعه."
+
+#: Landing/view/landing/foreign-policy/the-new-iraq.phtml:20
+msgid ""
+"2-To move forward in the expansion of bilateral diplomatic relations area "
+"with the\n"
+"    world countries and bring the international community to contribute in "
+"the reconstruction of Iraq and its\n"
+"    infrastructure and development."
+msgstr ""
+" 2. المضي قدماً في توسيع مساحة العلاقات الدبلوماسية الثنائية مع دول العالم "
+"مشاركة المجتمع الدولي في عملية اعادة اعمار العراق وبناه التحتية وتطويرها."
+
+#: Landing/view/landing/foreign-policy/the-new-iraq.phtml:24
+msgid ""
+"3-Contribute to building the economy in a thoughtful way that ensures\n"
+"    raising the standard of the Iraqi people's living."
+msgstr ""
+" 3. المساهمة في بناء الاقتصاد على نحو مدروس وبما يضمن رفع المستوى المعاشي "
+"للشعب العراقي الكريم."
+
+#: Landing/view/landing/foreign-policy/the-new-iraq.phtml:27
+msgid ""
+"4-Promoting the activity of the Iraqi diplomatic\n"
+"    missions and enhances Iraq's interests in political, economic, social "
+"and cultural spheres."
+msgstr ""
+" 4. تدعيم نشاط البعثات الدبلوماسية العراقية وتعزيز مصالح العراق للارتقاء بها "
+"في جميع الميادين السياسية والاقتصادية والاجتماعية والثقافية."
+
+#: Landing/view/landing/foreign-policy/the-new-iraq.phtml:30
+msgid ""
+"5-Continue the\n"
+"    support of Iraq's role in multilateral bodies towards a more active "
+"work, and strive to expand Iraq's international\n"
+"    participation by joining more of those bodies, particularly the economic "
+"ones."
+msgstr ""
+" 5. مواصلة العمل على دعم دورالعراق في الهيئات متعددة الاطراف نحو مزيد من "
+"النشاط الفاعل، والسعي لتوسيع مشاركته الدولية عبر الانضمام الى مزيد من تلك "
+"الهيئات وبصفة خاصة الاقتصادية منها."
+
+#: Landing/view/landing/foreign-policy/the-new-iraq.phtml:34
+msgid ""
+"6-Continue upgrading the\n"
+"    work of the Ministry of Foreign Affairs and the level of performance, "
+"guided by the constitutional basis and legal\n"
+"    controls designed to achieve Iraq's vision in a way that matches its "
+"prestigious stature as a civilization and\n"
+"    people."
+msgstr ""
+" 6. الاستمرار بالارتقاء بعمل وزارة الخارجية ومستوى ادائها مسترشدين بالاسس "
+"الدستورية والضوابط القانونية الهادفة لتحقيق رؤية العراق بما يليق بمكانته "
+"المرموقة حضارة وشعبا."
+
+#: Landing/view/landing/foreign-policy/the-new-iraq.phtml:39
+msgid ""
+"7-Strengthen the foundations of democracy within the framework of "
+"sovereignty, unity and equality\n"
+"    among citizens."
+msgstr ""
+" 7. تعزيز دعائم الديمقراطية في اطار السيادة والوحدة والمساواة بين المواطنين."
+
+#: Landing/view/landing/foreign-policy/the-new-iraq.phtml:42
+msgid ""
+"•Iraq confirms its peaceful foreign policy aiming at normalization of "
+"diplomatic\n"
+"    relations with the international community on the basis of cooperation "
+"and respect for mutual interests and\n"
+"    sponsoring them in accordance with the international law and stand at "
+"the same distance from all international\n"
+"    parties in an equitable manner."
+msgstr ""
+"• يؤكد العراق على سلمية سياسته الخارجية الرامية الى تطبيع علاقاته "
+"الدبلوماسية مع المجتمع الدولي على اسس التعاون واحترام المصالح المتبادلة "
+"ورعايتها وفق القانون الدولي والوقوف على مسافة واحدة من جميع الاطراف الدولية "
+"على نحو عادل."
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:1
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:2
+msgid "International Organizations"
+msgstr "المنظمات الدولية"
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:4
+msgid ""
+"Iraq continues to increase its representation in international organisations "
+"and since September 2003, we have\n"
+"    successfully re-established our seat in most multilateral bodies "
+"including:"
+msgstr ""
+"يستمر تمثيل العراق في المنظمات الدولية، ومنذ آيلول 2003 نجح العراق في "
+"أستعادة مكانته في معظم الهيئات المتعددة الاطراف والتي تشمل الآتي:- "
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:7
+msgid "Arab League"
+msgstr "جامعة الدول العربية "
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:8
+msgid "United Nations General Assembly"
+msgstr "الجمعية العامة للأمم المتحدة"
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:9
+msgid "Organization of Islamic cooperation"
+msgstr "منظمة التعاون الأسلامي "
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:10
+msgid "Non-Aligned Movement"
+msgstr "حركة عدم الانحياز "
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:11
+msgid "G77"
+msgstr " مجموعة الـ77 (G77)"
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:12
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:41
+msgid "International Monetary Fund"
+msgstr "صندوق النقد الدولي "
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:13
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:45
+msgid "World Bank"
+msgstr "البنك الدولي "
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:14
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:48
+msgid "UNESCO"
+msgstr "منظمة اليونسكو (UNESCO) "
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:15
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:51
+msgid "UNCTAD"
+msgstr "منظمة الأونكتاد (UNCTAD)  "
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:16
+msgid "World Trade Organization"
+msgstr "منظمة التجارة العالمية (WTO) "
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:17
+msgid "OPEC"
+msgstr " منظمة الأوبك (OPEC)"
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:20
+msgid "League of Arab States"
+msgstr "العراق وجامعة الدول العربية"
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:23
+msgid "General Assembly of the United Nations"
+msgstr "العراق ومنظمة الامم المتحدة"
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:24
+msgid ""
+"The General Assembly is the main deliberative, policy making and "
+"representative organ of the United Nations. Comprising all&nbsp;193 Members "
+"of the United Nations, it provides a unique forum for multilateral "
+"discussion of the full spectrum of international issues covered by the "
+"Charter."
+msgstr ""
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:25
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:35
+msgid ""
+"For\n"
+"    more details..."
+msgstr "لمزيد من التفاصيل"
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:28
+msgid "Organization of the Islamic Cooperation"
+msgstr "منظمة التعاون الأسلامي "
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:29
+msgid ""
+"The organization of the Islamic cooperation (OIC) is the second largest "
+"inter-governmental organization after the United Nations which has "
+"membership of (57) states spread over four countries. The organization is "
+"the collective voice of the Muslim word and ensuring to safeguard and "
+"protect the interests of the Muslim world in the spirit of promoting "
+"international peace and harmony among various people of the world."
+msgstr ""
+"منظمـة التعـاون الاسـلامــيOrganization of Islamic Cooperation        تعتبر "
+"منظمة التعاون الإسلامي ثاني أكبر منظمة حكومية دولية بعد الأمم المتحدة، وتضم "
+"في عضويتها سبعا وخمسين (57) دولة عضوا موزعة على أربع قارات. وتعتبر المنظمة "
+"الصوت الجماعي للعالم الإسلامي وتسعى لصون مصالحه والتعبير عنها تعزيزا للسلم "
+"والتناغم الدوليين بين مختلف شعوب العالم. للمزيد من المعلومات..."
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:30
+msgid ""
+"For more\n"
+"    details..."
+msgstr "لمزيد من التفاصيل"
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:33
+msgid "Non - Aligned Movement"
+msgstr "حركة عدم الانحياز"
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:34
+msgid ""
+"The Non - Aligned Movement is one of the results of the Second World War "
+"(1939 - 1945)&nbsp;and as a result more directly of the cold war, which "
+"escalated between the Western camp (United States of America and NATO) and "
+"the Eastern bloc (The Soviet Union and the Warsaw Pact) at the end of the "
+"Second World War and the destruction of the Axis powers. The goal of the "
+"movement was to move away from the Cold War policies."
+msgstr ""
+"حركة عدم الانحيازNon Aligned Movement        حركة عدم الانحياز واحدة من "
+"نتائج الحرب العالمية الثانية (1939-1945) ونتيجة مباشرة أكثر للحرب الباردة "
+"التي تصاعدت بين المعسكر الغربي (الولايات المتحدة الأمريكية وحلف الناتو) وبين "
+"المعسكر الشرقي (الإتحاد السوفيتي وحلف وارسو) حال نهاية الحرب العالمية "
+"الثانية وتدمير دول المحور، وكان هدف الحركة هو الإبتعاد عن سياسات الحرب "
+"الباردة. للمزيد من المعلومات..."
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:38
+msgid "The Group of 77"
+msgstr "مجمـوعة الــ77"
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:39
+msgid ""
+"The G77 &nbsp;is an alliance group of developing nations, designed to prompt "
+"its members' collective economic interests and create an enhanced joint "
+"negotiating capacity in the United Nations."
+msgstr ""
+"مجمـوعة الــ77The Group of 77        هي تحالف مجموعة من الدول النامية. وهدف "
+"هذه المجموعة هو ترقية المصالح الاقتصادية لأعضائها مجتمعة، بالإضافة إلى خلق "
+"قدرة تفاوضية مشتركة ضمن نطاق الأمم المتحدة. للمزيد من المعلومات..."
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:42
+msgid ""
+"The International Monetary Fund is a specialized agency of the Bretton Woods "
+"Conference was established under an international treaty in (1945) to work "
+"on enhancing the safety of the global economy. Its headquarter is in "
+"Washington, D.C. , United States. It is managed by its members who include "
+"almost all countries of the world's (186) countries."
+msgstr ""
+"صنـدوق النقــد الدولـيInternational Monetary Fund        هو وكالة متخصصة من "
+"منظومة بريتون وودز أنشئ بموجب معاهدة دولية في عام 1945 للعمل على تعزيز سلامة "
+"الاقتصاد العالمي. يقع مقر الصندوق في واشنطن العاصمة، ويديره أعضاؤه الذين "
+"يشملون جميع بلدان العالم تقريبا البالغ (186) بلدا. للمزيد من المعلومات...  "
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:43
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:47
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:50
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:56
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:61
+msgid "For more details..."
+msgstr "لمزيد من التفاصيل"
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:46
+msgid ""
+"The World Bank is one of the specialized agencies of the United Nations, "
+"which dealing with development. It has started its activities to assist in "
+"the reconstruction of Europe after the Second World War."
+msgstr ""
+"البنـك الدولــيThe World Bank        هو احد الوكالات المتخصصة في الأمم "
+"المتحدة التي تعنى بالتنمية. وقد بدأ نشاطه بالمساعدة في اعمار اوربا بعد الحرب "
+"العالمية الثانية. للمزيد من المعلومات..."
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:49
+msgid ""
+"UNESCO works, since its founding in (1945), to create the appropriate "
+"conditions for dialogue among civilization, cultures, and peoples, based "
+"upon respect for commonly shared values. Its headquarter is in Paris - "
+"France."
+msgstr ""
+"منظمة الامم المتحدة للتربية والثقافة والعلوم (UNESCO)                تعمل "
+"اليونسكو منذ تأسيسها عام 1945 والتي تتخذ من باريس مقراً لها، على إيجاد الشروط "
+"الملائمة لإطلاق حوار بين الحضارات والثقافات والشعوب على أسس احترام القيم "
+"المشتركة. للمزيد من المعلومات..."
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:52
+msgid ""
+"The UNCTAD provides, as part of its technical field cooperation, assistance "
+"to the needs of developing countries, with special attentions to the needs "
+"of the least developed countries and the developing countries most in need."
+msgstr ""
+"منظمة الاونكتاد (UNCTAD)                 يقدم الاونكتاد، في اطار انشطته في "
+"مجال التعاون التقني، مساعدة مكيفة على احتياجات البلدان النامية، مع ايلاء "
+"اهتمام خاص لاحتياجات أقل البلدان نمواً والبلدان النامية الأكثر احتياجاً. "
+"للمزيد من المعلومات..."
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:54
+msgid "World Trade Organization (WTO)"
+msgstr "منظمـة التجـارة العـالميـة"
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:55
+msgid ""
+"The World Trade Organization is an international organization whose main "
+"task is to ensure that trade flows as smoothly as the convenience and "
+"freedom. As it is the only international organization relevant to "
+"international lows on trade between the nations. The World Trade "
+"Organization has (157) member countries of the world. Its headquarter is in "
+"Geneva - Switzerland."
+msgstr ""
+"منظمـة التجـارة العـالميـةThe World Trade Organization - WTO        هي منظمة "
+"عالمية، مقرها مدينة جينيف في سويسرا، مهمتها الاساسية هي ضمان انسياب التجارة "
+"بأكبر قدر من السلاسة واليسر والحرية. وهي المنظمة العالمية الوحيدة المختصة "
+"بالقوانين الدولية المعنية بالتجارة مابين الامم. تضم منظمة التجارة العالمية "
+"(157) عضوا من دول العالم. للمزيد من المعلومات..."
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:57
+msgid "Organization of the Petroleum Exporting Countries (OPEC)"
+msgstr "منظمة الدول المصدرة للنفط"
+
+#: Landing/view/landing/foreign-policy/international-organizations.phtml:60
+msgid ""
+"OPEC is an international organization, which has (12) countries, depends on "
+"its oil exports to achieve their income. The OPEC members work to increase "
+"revenues from the sale of oil in the world market. It was founded in Baghdad "
+"in (1960), by Saudi Arabia, Iran, Iraq, Kuwait, and Venezuela. Its "
+"headquarter is in Vienna - Austria."
+msgstr ""
+"منظمة الدول المصدرة للنفطOrganization of the Petroleum Exporting Countries - "
+"OPEC        هي منظّمة عالمية تضم إثناعشرة دولة تعتمد على صادراتها النفطية "
+"اعتمادا كبيرا لتحقيق مدخولها. ويختصر اسمها إلى منظمة الأوبك ويعمل أعضاء "
+"الأوبك لزيادة العائدات من بيع النّفط في السّوق العالمية. تأسست في بغداد عام "
+"1960، من طرف السعودية، إيران، العراق، الكويت وفنزويلا، ومقرّها في فيينا. "
+"للمزيد من المعلومات..."
