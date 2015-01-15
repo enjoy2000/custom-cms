@@ -23,6 +23,8 @@ trait ControllerMethods{
 
     protected $_locale = null;
 
+    protected $_router = null;
+
     /**
      * Dispatch a request
      *
@@ -32,7 +34,20 @@ trait ControllerMethods{
      * @return Response|mixed
      */
     public function dispatch(Request $request, Response $response = null){
+
+        $config = $this->getServiceLocator()->get('config');
+        $routes = $config['router']['routes'];
+        $this->_router = $routes;
+        //var_dump($request);die;
         return parent::dispatch($request, $response);
+    }
+
+    /**
+     * @return \Zend\Mvc\Router\Http\TreeRouteStack
+     */
+    public function getRouter($route)
+    {
+        return $this->_router[$route];
     }
 
     /**

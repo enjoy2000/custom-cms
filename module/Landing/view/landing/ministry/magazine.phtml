@@ -1,4 +1,8 @@
 <?php $this->headTitle($this->translate('Ministry\'s Magazine')) ?>
+<div class="sidebar col-md-4">
+    <?php echo $this->partial('sidebar', ['routes' => $this->routes]) ?>
+</div>
+<div class="col-md-8">
 <h1><?php echo $this->translate('Ministry\'s Magazine') ?></h1>
 <table class="table">
     <tbody>
@@ -111,3 +115,4 @@
     </tr>
     </tbody>
 </table>
+</div>

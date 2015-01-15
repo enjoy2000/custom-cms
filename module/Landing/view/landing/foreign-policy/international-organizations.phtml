@@ -1,4 +1,8 @@
 <?php echo $this->headTitle($this->translate('International Organizations')) ?>
+<div class="sidebar col-md-4">
+    <?php echo $this->partial('sidebar', ['routes' => $this->routes]) ?>
+</div>
+<div class="col-md-8">
 <h1><?php echo $this->translate('International Organizations') ?></h1>
 
 <p><?php echo $this->translate('Iraq continues to increase its representation in international organisations and since September 2003, we have
@@ -60,3 +64,4 @@
 &nbsp; &nbsp;<?php echo $this->translate('OPEC is an international organization, which has (12) countries, depends on its oil exports to achieve their income. The OPEC members work to increase revenues from the sale of oil in the world market. It was founded in Baghdad in (1960), by Saudi Arabia, Iran, Iraq, Kuwait, and Venezuela. Its headquarter is in Vienna - Austria.') ?>
 <a href="/documents/international-organizations/130171515585344412.pdf" target="_blank"><?php echo $this->translate('For more details...') ?></a></p>
 <p></p>
+</div>

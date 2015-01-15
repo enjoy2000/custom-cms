@@ -1,0 +1,28 @@
+<?php
+use Application\Helper\Common;
+
+//var_dump($this->routes);die;
+$routeName = $this->getHelperPluginManager()->getServiceLocator()->get('Application')
+    ->getMvcEvent()->getRouteMatch()->getMatchedRouteName();
+
+$parentRoute = substr($this->routes['options']['route'], 1);
+
+?>
+<div class="list-group panel default-panel">
+    <div class="panel-heading">
+        <a href="<?php echo $this->url($parentRoute) ?>"
+           title="<?php echo $this->translate(Common::getNameFromRoute($parentRoute)) ?>">
+            <?php echo $this->translate(Common::getNameFromRoute($parentRoute)) ?>
+        </a>
+    </div>
+    <?php
+    foreach ($this->routes['child_routes'] as $k => $route) :
+    $currentRoute = $parentRoute . '/' . $k;
+    ?>
+        <a class="list-group-item<?php echo ($routeName == $currentRoute) ? ' active' : '' ?>"
+           href="<?php echo $this->url($currentRoute) ?>"
+           title="<?php echo $this->translate(Common::getNameFromRoute($route['options']['route'])) ?>">
+            <?php echo $this->translate(Common::getNameFromRoute($route['options']['route'])) ?>
+        </a>
+    <?php endforeach; ?>
+</div>

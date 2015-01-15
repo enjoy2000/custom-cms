@@ -11,46 +11,48 @@ namespace Landing\Controller;
 
 use Application\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\Mvc\MvcEvent;
 
 class MinistryController extends AbstractActionController
 {
+
     public function indexAction()
     {
-        return new ViewModel([]);
+        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
     }
 
     public function theMinisterAction()
     {
-        return new ViewModel([]);
+        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
     }
 
     public function ministryDepartmentsAction()
     {
-        return new ViewModel([]);
+        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
     }
 
     public function faqAction()
     {
-        return new ViewModel([]);
+        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
     }
 
     public function speechesInterviewsAction()
     {
-        return new ViewModel([]);
+        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
     }
 
     public function undersecretariesAction()
     {
-        return new ViewModel([]);
+        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
     }
 
     public function announcementsAction()
     {
-        return new ViewModel([]);
+        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
     }
 
     public function magazineAction()
     {
-        return new ViewModel([]);
+        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
     }
 }

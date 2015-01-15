@@ -19,16 +19,15 @@ class ForeignPolicyController extends AbstractActionController
         return $this->forward()->dispatch('Landing\Controller\ForeignPolicy', array(
             'action' => 'theNewIraq',
         ));
-        return new ViewModel([]);
     }
 
     public function theNewIraqAction()
     {
-        return new ViewModel([]);
+        return new ViewModel(['routes' => $this->getRouter('foreign-policy')]);
     }
 
     public function internationalOrganizationsAction()
     {
-        return new ViewModel([]);
+        return new ViewModel(['routes' => $this->getRouter('foreign-policy')]);
     }
 }

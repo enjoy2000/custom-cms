@@ -1,4 +1,8 @@
 <?php echo $this->headTitle($this->translate('Constitution')) ?>
+<div class="sidebar col-md-4">
+    <?php echo $this->partial('sidebar', ['routes' => $this->routes]) ?>
+</div>
+<div class="col-md-8">
 <h1><?php echo $this->translate('Constitution') ?></h1>
 
 <p class="text-center"><strong><?php echo $this->translate('In the name of God, the Most merciful, the&nbsp;Most &nbsp;compassionate "We have honored the sons of Adam" Preamble') ?></strong></p>
@@ -20,3 +24,4 @@ ourselves to decide freely and by choice to unite&nbsp;our future, to take lesso
     <li><a href="/documents/constitution/129922592883886759.pdf" target="_self"><?php echo $this->translate('section five') ?></a></li>
     <li><a href="/documents/constitution/129922667058916534.pdf" target="_self"><?php echo $this->translate('section six') ?></a></li>
 </ul>
+</div>

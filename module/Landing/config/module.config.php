@@ -35,7 +35,7 @@ return array(
                     ),
                 ),
             ),
-            'ministry' => array(
+            'the-ministry' => array(
                 'type' => 'Literal',
                 'options' => array(
                     'route'    => '/the-ministry',
@@ -82,7 +82,7 @@ return array(
                             'route'    => '/speeches-interviews',
                             'defaults' => array(
                                 'controller' => 'Landing\Controller\Ministry',
-                                'action'     => 'speechesInterViews',
+                                'action'     => 'speechesInterviews',
                             ),
                         ),
                     ),
@@ -278,6 +278,7 @@ return array(
         'display_exceptions'       => true,
         'doctype'                  => 'HTML5',
         'template_map' => array(
+            'sidebar' => __DIR__ . '/../view/partial/sidebar.phtml'
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
