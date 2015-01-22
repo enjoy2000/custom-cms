@@ -4,7 +4,7 @@ return [
         'Application' => 'layout/admin',
         'User' => 'layout/admin',
         'Admin' => 'layout/admin',
-        'Landing' => 'layout/layout',
+        'Landing' => 'layout/3columns',
         'Blog' => 'layout/layout',
     ],
 ];

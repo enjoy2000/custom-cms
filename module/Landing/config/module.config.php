@@ -129,13 +129,13 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-                    'investment' => array(
+                    'announcements' => array(
                         'type' => 'Literal',
                         'options' => array(
-                            'route'    => '/investment',
+                            'route'    => '/announcements',
                             'defaults' => array(
                                 'controller' => 'Landing\Controller\AboutIraq',
-                                'action'     => 'investment',
+                                'action'     => 'announcements',
                             ),
                         ),
                     ),
@@ -159,13 +159,33 @@ return array(
                             ),
                         ),
                     ),
-                    'announcements' => array(
+                    'investment' => array(
                         'type' => 'Literal',
                         'options' => array(
-                            'route'    => '/announcements',
+                            'route'    => '/investment',
                             'defaults' => array(
                                 'controller' => 'Landing\Controller\AboutIraq',
-                                'action'     => 'announcements',
+                                'action'     => 'investment',
+                            ),
+                        ),
+                    ),
+                    'the-virtual-museum-of-iraq' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/the-virtual-museum-of-iraq',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\AboutIraq',
+                                'action'     => 'the-virtual-museum-of-iraq',
+                            ),
+                        ),
+                    ),
+                    'tourist-guide' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/tourist-guide',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\AboutIraq',
+                                'action'     => 'tourist-guide',
                             ),
                         ),
                     ),

@@ -1,0 +1,44 @@
+﻿ .slide_big_item_panel
+        {
+            border-top: solid 1px #dbe1e6;
+            border-left: solid 1px #dbe1e6;
+            border-right: solid 1px #dbe1e6;
+            padding: 2px;
+        }
+        .slide_small_item_panel
+        {
+            background-image: url('/Siteimages/small_item_bg.gif');
+            background-repeat: repeat-x;
+            border-left: solid 1px #dbe1e6;
+            border-right: solid 1px #dbe1e6;
+            cursor: pointer;
+            cursor: hand;
+        }
+        .slide_nav_panel
+        {
+            background-color: #f9fafa;
+            padding: 3px 5px 3px 5px;
+            border: solid 1px #dbe1e6;
+        }
+        .slide_small_item a
+        {
+            color: #1770a1;
+            text-decoration:none;
+            
+        }
+        .slide_small_item_hover
+        {
+            background-image: url('/Siteimages/small_item_bgh2.gif');
+            color:#ffffff;
+        }
+        .slide_small_item_hover a
+        {
+            color:#ffffff;
+            text-decoration:none
+        }
+        .slide_item_number
+        {
+            font-family: Arial;
+            font-size: 12px;
+            color: #6c717a;
+        }

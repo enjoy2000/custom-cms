@@ -72,4 +72,19 @@ class Module
             ),
         );
     }
+
+    public function getViewHelperConfig()
+    {
+        return array(
+            'factories' => array(
+                'config' => function ($helperPluginManager) {
+                    $serviceLocator = $helperPluginManager->getServiceLocator();
+                    $viewHelper = new View\Helper\Config();
+                    $viewHelper->setServiceLocator($serviceLocator);
+
+                    return $viewHelper;
+                }
+            ),
+        );
+    }
 }

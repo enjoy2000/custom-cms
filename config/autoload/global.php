@@ -47,6 +47,8 @@ return [
                 array('route' => 'about-iraq/constitution', 'roles' => array('guest')),
                 array('route' => 'about-iraq/encyclopedia', 'roles' => array('guest')),
                 array('route' => 'about-iraq/announcements', 'roles' => array('guest')),
+                array('route' => 'about-iraq/the-virtual-museum-of-iraq', 'roles' => array('guest')),
+                array('route' => 'about-iraq/tourist-guide', 'roles' => array('guest')),
                 array('route' => 'foreign-policy', 'roles' => array('guest')),
                 array('route' => 'foreign-policy/press-releases', 'roles' => array('guest')),
                 array('route' => 'foreign-policy/international-organizations', 'roles' => array('guest')),

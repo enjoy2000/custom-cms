@@ -412,7 +412,13 @@ class Blog
 
     public function getUrl()
     {
-        return '/' . self::BLOG_ROUTE . '/' . $this->urlKey;
+        if ($this->locale->getShortCode() == 'en') {
+            $url = '/' . self::BLOG_ROUTE . '/' . $this->urlKey;
+        } else {
+            $url = '/ar/' . self::BLOG_ROUTE . '/' . $this->urlKey;
+        }
+
+        return $url;
     }
 
     public function renderPhoto() {

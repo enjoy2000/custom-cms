@@ -38,4 +38,14 @@ class AboutIraqController extends AbstractActionController
     {
         return new ViewModel(['routes' => $this->getRouter('about-iraq')]);
     }
+
+    public function theVirtualMuseumOfIraqAction()
+    {
+        return new ViewModel(['routes' => $this->getRouter('about-iraq')]);
+    }
+
+    public function touristGuideAction()
+    {
+        return new ViewModel(['routes' => $this->getRouter('about-iraq')]);
+    }
 }
