@@ -33,6 +33,7 @@ class IndexController extends AbstractActionController
                 4,
                 10
             );
+
         return new ViewModel([
             'blogs' => array_chunk($blogs, 2),  // chunk array for render in news
             'otherNews' => $otherNews,

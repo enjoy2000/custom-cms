@@ -5,6 +5,7 @@ return [
         'User' => 'layout/admin',
         'Admin' => 'layout/admin',
         'Landing' => 'layout/3columns',
+        'Landing/index' => 'layout/layout',
         'Blog' => 'layout/layout',
     ],
 ];

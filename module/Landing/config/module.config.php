@@ -258,13 +258,253 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-                    'other-links' => array(
+                    'approving-corpse-entry-to-iraq' => array(
                         'type' => 'Literal',
                         'options' => array(
-                            'route'    => '/other-links',
+                            'route'    => '/approving-corpse-entry-to-iraq',
                             'defaults' => array(
-                                'controller' => 'Landing\Controller\ForeignPolicy',
-                                'action'     => 'otherLinks',
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'approving-corpse-entry-to-iraq',
+                            ),
+                        ),
+                    ),
+                    'authorization' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/authorization',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'authorization',
+                            ),
+                        ),
+                    ),
+                    'birth-certificate' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/birth-certificate',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'birth-certificate',
+                            ),
+                        ),
+                    ),
+                    'certificate-of-origin' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/certificate-of-origin',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'certificate-of-origin',
+                            ),
+                        ),
+                    ),
+                    'death-certificate' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/death-certificate',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'death-certificate',
+                            ),
+                        ),
+                    ),
+                    'extension-of-passports' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/extension-of-passports',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'extension-of-passports',
+                            ),
+                        ),
+                    ),
+                    'faq' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/faq',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'faq',
+                            ),
+                        ),
+                    ),
+                    'fees' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/fees',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'fees',
+                            ),
+                        ),
+                    ),
+                    'forms' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/forms',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'forms',
+                            ),
+                        ),
+                    ),
+                    'general-affairs' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/general-affairs',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'general-affairs',
+                            ),
+                        ),
+                    ),
+                    'indigent-deportation' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/indigent-deportation',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'indigent-deportation',
+                            ),
+                        ),
+                    ),
+                    'lawsuits' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/lawsuits',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'lawsuits',
+                            ),
+                        ),
+                    ),
+                    'life-certificate' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/life-certificate',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'life-certificate',
+                            ),
+                        ),
+                    ),
+                    'loss-of-passports' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/loss-of-passports',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'loss-of-passports',
+                            ),
+                        ),
+                    ),
+                    'marriage-divorces-registration' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/marriage-divorces-registration',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'marriage-divorces-registration',
+                            ),
+                        ),
+                    ),
+                    'nationality-cert' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/nationality-cert',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'nationality-cert',
+                            ),
+                        ),
+                    ),
+                    'non-conviction-certificate' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/non-conviction-certificate',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'non-conviction-certificate',
+                            ),
+                        ),
+                    ),
+                    'palestinian-travel-documents' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/palestinian-travel-documents',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'palestinian-travel-documents',
+                            ),
+                        ),
+                    ),
+                    'pass-doc' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/pass-doc',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'pass-doc',
+                            ),
+                        ),
+                    ),
+                    'passport-system' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/passport-system',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'passport-system',
+                            ),
+                        ),
+                    ),
+                    'passports-issuance' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/passports-issuance',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'passports-issuance',
+                            ),
+                        ),
+                    ),
+                    'patrimonies' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/patrimonies',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'patrimonies',
+                            ),
+                        ),
+                    ),
+                    'ratifications' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/ratifications',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'ratifications',
+                            ),
+                        ),
+                    ),
+                    'the-civil-status-id' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/the-civil-status-id',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'the-civil-status-id',
+                            ),
+                        ),
+                    ),
+                    'visa' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/visa',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ConsularServices',
+                                'action'     => 'visa',
                             ),
                         ),
                     ),

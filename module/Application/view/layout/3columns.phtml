@@ -104,11 +104,11 @@ if ($routeMatch) {
     </div>
 
     <!-- Main content -->
-    <div id="main-content">
+    <div id="main-wrapper">
         <div class="col-md-3">
             <?php echo $this->partial('left-sidebar') ?>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" id="main-content">
             <?php echo $this->content; ?>
         </div>
         <div class="col-md-3">
