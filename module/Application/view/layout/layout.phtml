@@ -48,60 +48,7 @@ if ($routeMatch) {
 ?>
 <body class="<?php echo isset($modules) ? join(' ', $modules) : '' ?>">
 <div class="container">
-    <header class="clearfix">
-        <div class="logo pull-left flip">
-            <a class="navbar-brand" href="<?php echo $this->url('home') ?>">
-                <img src="<?php echo $this->basePath('/trash/images/en_logo.jpg') ?>" alt="Republic of Iraq"/>&nbsp;
-            </a>
-        </div>
-        <div class="head-logo pull-left flip">
-            <?php echo $this->translate('Republic of Iraq') ?><br />
-            <?php echo $this->translate('Ministry of Foreign Affairs') ?>
-        </div>
-        <div id="language-switcher">
-            <div class="dropdown">
-                <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?php echo $this->translate('Language') ?>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                    <li>
-                        <a href="/" title="<?php echo $this->translate('English') ?>"><?php echo $this->translate('English') ?></a>
-                        <a href="/ar/" title="<?php echo $this->translate('Arabic') ?>"><?php echo $this->translate('Arabic') ?></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header>
-    <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse">
-                <?php echo $this->partial('layout/navigation') ?>
-            </div><!--/.nav-collapse -->
-        </div>
-    </nav>
-    <div id="news-ticker" class="clearfix">
-        <div class="title pull-left flip">
-            <?php echo $this->translate('News') ?>
-        </div>
-        <div class="news-ticker-content pull-left flip">
-            <script>
-                var newsTickerUrl = '<?php echo $this->url('news-ticker') ?>';
-            </script>
-            <ul class="news-ticker">
-                <li>
-                    <?php echo $this->translate('No news.') ?>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php echo $this->partial('layout/header') ?>
 
     <!-- Main content -->
     <div id="main-content">
