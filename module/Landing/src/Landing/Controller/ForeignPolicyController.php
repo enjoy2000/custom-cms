@@ -30,4 +30,49 @@ class ForeignPolicyController extends AbstractActionController
     {
         return new ViewModel(['routes' => $this->getRouter('foreign-policy')]);
     }
+
+    public function arabLeagueAction()
+    {
+        return new ViewModel([]);
+    }
+
+    public function economicRehabilitationAction()
+    {
+        return new ViewModel([]);
+    }
+
+    public function humanRightsAction()
+    {
+        return new ViewModel([]);
+    }
+
+    public function iraqAndTheUnitedNationsAction()
+    {
+        return new ViewModel([]);
+    }
+
+    public function iraqSDiplomaticMissionsAction()
+    {
+        return new ViewModel([]);
+    }
+
+    public function iraqSSecurityAction()
+    {
+        return new ViewModel([]);
+    }
+
+    public function iraqiTreatiesAction()
+    {
+        return new ViewModel([]);
+    }
+
+    public function reformingTheMinistryAction()
+    {
+        return new ViewModel([]);
+    }
+
+    public function securityCouncilResolutionsAction()
+    {
+        return new ViewModel([]);
+    }
 }
