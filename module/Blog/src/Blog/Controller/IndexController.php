@@ -10,6 +10,7 @@ namespace Blog\Controller;
 
 use Application\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\View\Model\JsonModel;
 use Zend\Session\Container;
 
 class IndexController extends AbstractActionController {
@@ -29,6 +30,7 @@ class IndexController extends AbstractActionController {
             'categories' => $categories
         ]);
     }
+
     public function newsTickerAction()
     {
         $locale = new Container('locale');
@@ -61,5 +63,28 @@ class IndexController extends AbstractActionController {
         $response->setStatusCode(200);
         $response->setContent($newsTickers);
         return $response;
+    }
+
+    public function latestNewsAction()
+    {
+        $localeSession = new Container('locale');
+        $locale = $this->findBy('Blog\Entity\Locale', ['code' => $localeSession->locale]);
+        $blogs = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
+            ->findBy(
+                ['published' => true, 'locale' => $locale],
+                ['id' => 'DESC'],
+                5,
+                0
+            );
+
+        $blogsData = [];
+        /** @var \Blog\Entity\Blog $blog */
+        foreach ($blogs as $blog) {
+            $blogsData[] = $blog->getData();
+        }
+
+        return new JsonModel([
+            'blogs' => $blogsData,
+        ]);
     }
 }

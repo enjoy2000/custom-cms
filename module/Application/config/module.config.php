@@ -83,6 +83,7 @@ return array(
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
             'left-sidebar'             => __DIR__ . '/../view/partial/left-sidebar.phtml',
             'right-sidebar'             => __DIR__ . '/../view/partial/right-sidebar.phtml',
+            'dropdown-menu'             => __DIR__ . '/../view/partial/dropdown.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',

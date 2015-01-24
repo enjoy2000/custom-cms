@@ -20,6 +20,7 @@
 
     <!-- Scripts -->
     <?php echo $this->headScript()
+        ->prependFile($this->basePath() . '/js/layout/right-sidebar.js')
         ->prependFile($this->basePath() . '/js/landing/main.js')
         //->prependFile('https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js')
         ->prependFile($this->basePath() . '/js/plugin/newsTicker/jquery.newsTicker.min.js')
@@ -111,7 +112,11 @@ if ($routeMatch) {
         <div class="col-md-6" id="main-content">
             <?php echo $this->content; ?>
         </div>
-        <div class="col-md-3">
+        <script>
+            var latestNewsUrl = '<?php echo $this->url('latest-news') ?>';
+            var readMoreText = '<?php echo $this->translate('Read more') ?>';
+        </script>
+        <div id="right-sidebar" class="col-md-3">
             <?php echo $this->partial('right-sidebar') ?>
         </div>
     </div>

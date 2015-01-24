@@ -45,7 +45,7 @@ class Module
         $config          = $e->getApplication()->getServiceManager()->get('config');
         $controllerClass = get_class($controller);
         $controllers = explode('\\', $controllerClass);
-        $action = strtolower(str_replace('Controller', '', $controllers[2]));
+        $action = str_replace('Controller', '', $controllers[2]);
         $moduleNamespace = substr($controllerClass, 0, strpos($controllerClass, '\\'));
         if (isset($config['module_layouts'][$moduleNamespace])) {
             $controller->layout($config['module_layouts'][$moduleNamespace]);

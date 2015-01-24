@@ -26,6 +26,7 @@ class IndexController extends AbstractActionController
                 10,
                 0
             );
+
         $otherNews = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
             ->findBy(
                 ['published' => true, 'locale' => $locale],
@@ -34,9 +35,19 @@ class IndexController extends AbstractActionController
                 10
             );
 
+
+        $restNews = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
+            ->findBy(
+                ['published' => true, 'locale' => $locale],
+                ['id' => 'DESC'],
+                5,
+                14
+            );
+
         return new ViewModel([
             'blogs' => array_chunk($blogs, 2),  // chunk array for render in news
             'otherNews' => $otherNews,
+            'restNews' => $restNews,
         ]);
     }
 }

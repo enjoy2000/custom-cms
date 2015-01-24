@@ -1,30 +1,3 @@
-<?php
-use Application\Helper\Common;
-
-//var_dump($this->routes);die;
-$routeName = $this->getHelperPluginManager()->getServiceLocator()->get('Application')
-    ->getMvcEvent()->getRouteMatch()->getMatchedRouteName();
-
-$currentRoute = explode('/', $routeName);
-$parentRoute = $currentRoute[0];
-$routes = $this->config('router')['routes'][$parentRoute];
-
-?>
-<div class="list-group panel default-panel">
-    <div class="panel-heading">
-        <a href="<?php echo $this->url($parentRoute) ?>"
-           title="<?php echo $this->translate(Common::getNameFromRoute($parentRoute)) ?>">
-            <?php echo $this->translate(Common::getNameFromRoute($parentRoute)) ?>
-        </a>
-    </div>
-    <?php
-    foreach ($routes['child_routes'] as $k => $route) :
-        $currentRoute = $parentRoute . '/' . $k;
-        ?>
-        <a class="list-group-item<?php echo ($routeName == $currentRoute) ? ' active' : '' ?>"
-           href="<?php echo $this->url($currentRoute) ?>"
-           title="<?php echo $this->translate(Common::getNameFromRoute($route['options']['route'])) ?>">
-            <?php echo $this->translate(Common::getNameFromRoute($route['options']['route'])) ?>
-        </a>
-    <?php endforeach; ?>
+<div style="margin-top: 20px;" class="text-center loading">
+    <i class="glyphicon glyphicon-refresh spinning"></i>
 </div>

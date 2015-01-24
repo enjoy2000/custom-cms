@@ -54,6 +54,21 @@ a.news-photo {
 a.news-photo img {
     width: 100%;
 }
+.glyphicon.spinning {
+    -animation: spin 1s infinite linear;
+    -webkit-animation: spin2 1s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
 /** END UNIQUE */
 
 .btn-success:active, .btn-success.active {
@@ -104,7 +119,14 @@ nav#top-nav ul.nav li a {
     transition: color 0.3s ease-out, background-color 0.3s ease-out;
     -webkit-transition: color 0.3s ease-out, background-color 0.3s ease-out;
 
+}
+nav#top-nav ul.dropdown-menu li a {
+    padding: 3px 10px;
 
+}
+nav#top-nav ul.dropdown-menu li a:hover {
+    background-color: #3B93C9;
+    color: #fff;
 }
 nav#top-nav ul.nav > li > a:hover {
     background-color: #3B93C9;

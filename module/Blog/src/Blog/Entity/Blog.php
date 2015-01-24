@@ -350,6 +350,7 @@ class Blog
         foreach ($keys as $key) {
             $data[$key] = $this->$key;
         }
+        $data['blogUrl'] = $this->getUrl();
 
         return $data;
     }

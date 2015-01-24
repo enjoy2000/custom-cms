@@ -120,4 +120,14 @@
             </div>
         </div>
     </div>
+
+    <!-- Rest News from 15-20 -->
+    <div id="rest-news" class="col-md-9">
+        <?php
+        /** @var \Blog\Entity\Blog $blog */
+        foreach ($this->restNews as $blog) :
+            ?>
+            <?php echo $this->partial('article_partial', ['blog' => $blog]) ?>
+        <?php endforeach; ?>
+    </div><!-- End Rest News -->
 </div>

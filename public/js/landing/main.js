@@ -13,6 +13,11 @@ $(document).ready(function(){
         function(){
             $(this).removeClass('open active');
             $(this).find('.toggle-dropdown').dropdown('toggle');
+
+            // for current menu item
+            if ($(this).hasClass('current-menu-item')) {
+                $(this).addClass('active');
+            }
         }
     );
     $('#top-nav .dropdown > a').click(function(e){

@@ -202,13 +202,33 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-                    'press-releases' => array(
+                    'arab-league' => array(
                         'type' => 'Literal',
                         'options' => array(
-                            'route'    => '/the-new-iraq',
+                            'route'    => '/arab-league',
                             'defaults' => array(
                                 'controller' => 'Landing\Controller\ForeignPolicy',
-                                'action'     => 'theNewIraq',
+                                'action'     => 'arab-league',
+                            ),
+                        ),
+                    ),
+                    'economic-rehabilitation' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/economic-rehabilitation',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ForeignPolicy',
+                                'action'     => 'economic-rehabilitation',
+                            ),
+                        ),
+                    ),
+                    'human-rights' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/human-rights',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ForeignPolicy',
+                                'action'     => 'human-rights',
                             ),
                         ),
                     ),
@@ -219,6 +239,76 @@ return array(
                             'defaults' => array(
                                 'controller' => 'Landing\Controller\ForeignPolicy',
                                 'action'     => 'internationalOrganizations',
+                            ),
+                        ),
+                    ),
+                    'iraq-and-the-united-nations' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/iraq-and-the-united-nations',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ForeignPolicy',
+                                'action'     => 'iraq-and-the-united-nations',
+                            ),
+                        ),
+                    ),
+                    'iraq-s-diplomatic-missions' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/iraq-s-diplomatic-missions',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ForeignPolicy',
+                                'action'     => 'iraq-s-diplomatic-missions',
+                            ),
+                        ),
+                    ),
+                    'iraq-s-security' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/iraq-s-security',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ForeignPolicy',
+                                'action'     => 'iraq-s-security',
+                            ),
+                        ),
+                    ),
+                    'iraqi-treaties' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/iraqi-treaties',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ForeignPolicy',
+                                'action'     => 'iraqi-treaties',
+                            ),
+                        ),
+                    ),
+                    'reforming-the-ministry' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/reforming-the-ministry',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ForeignPolicy',
+                                'action'     => 'reforming-the-ministry',
+                            ),
+                        ),
+                    ),
+                    'security-council-resolutions' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/security-council-resolutions',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ForeignPolicy',
+                                'action'     => 'security-council-resolutions',
+                            ),
+                        ),
+                    ),
+                    'the-new-iraq' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/the-new-iraq',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\ForeignPolicy',
+                                'action'     => 'theNewIraq',
                             ),
                         ),
                     ),

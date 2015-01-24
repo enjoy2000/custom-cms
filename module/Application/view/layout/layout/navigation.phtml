@@ -1,128 +1,49 @@
-
+<?php
+$routeName = $this->getHelperPluginManager()->getServiceLocator()->get('Application')
+    ->getMvcEvent()->getRouteMatch()->getMatchedRouteName();
+?>
 <ul class="nav navbar-nav">
-    <li class="active">
+    <li<?php echo ($routeName == 'home') ? ' class="active current-menu-item"' : '' ?>>
         <a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a>
     </li>
-    <li class="dropdown">
-        <a data-toggle="dropdown" href="<?php echo $this->url('the-ministry') ?>">
-            <?php echo $this->translate('The Ministry') ?>
-            <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu" role="menu">
-            <li>
-                <a href="<?php echo $this->url('the-ministry/faq') ?>">
-                    <?php echo $this->translate('FAQ\'s') ?>
-                </a>
-            </li>
-            <!--
-            <li>
-                <a href="<?php echo $this->url('the-ministry/ministry-departments') ?>">
-                    <?php echo $this->translate('Ministry Departments') ?>
-                </a>
-            </li>
-            -->
-            <li>
-                <a href="<?php echo $this->url('the-ministry/the-minister') ?>">
-                    <?php echo $this->translate('The Minister') ?>
-                </a>
-            </li>
-            <!--
-            <li>
-                <a href="<?php echo $this->url('the-ministry/speeches-interviews') ?>">
-                    <?php echo $this->translate('Speeches &amp; Interviews') ?>
-                </a>
-            </li>
-            <li>
-                <a href="<?php echo $this->url('the-ministry/undersecretaries') ?>">
-                    <?php echo $this->translate('Undersecretaries') ?>
-                </a>
-            </li>
-            -->
-            <li>
-                <a href="<?php echo $this->url('the-ministry/announcements') ?>">
-                    <?php echo $this->translate('Ministry\'s Announcements') ?>
-                </a>
-            </li>
-            <li>
-                <a href="<?php echo $this->url('the-ministry/magazine') ?>">
-                    <?php echo $this->translate('Ministry\'s Magazine') ?>
-                </a>
-            </li>
-        </ul>
-    </li>
-    <li class="dropdown">
-        <a data-toggle="dropdown" href="<?php echo $this->url('about-iraq') ?>">
-            <?php echo $this->translate('About Iraq') ?>
-            <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu" role="menu">
-            <li>
-                <a href="<?php echo $this->url('about-iraq/investment') ?>">
-                    <?php echo $this->translate('Investment in Iraq') ?>
-                </a>
-            </li>
-            <li>
-                <a href="<?php echo $this->url('about-iraq/constitution') ?>">
-                    <?php echo $this->translate('Iraq\'s Constitution') ?>
-                </a>
-            </li>
-            <li>
-                <a href="<?php echo $this->url('about-iraq/encyclopedia') ?>">
-                    <?php echo $this->translate('Iraq Encyclopedia') ?>
-                </a>
-            </li>
-            <li>
-                <a href="<?php echo $this->url('about-iraq/announcements') ?>">
-                    <?php echo $this->translate('Announcements') ?>
-                </a>
-            </li>
-        </ul>
-    </li>
-    <li>
+
+    <!-- the-ministry -->
+    <?php echo $this->partial('dropdown-menu', ['route' => 'the-ministry']) ?>
+
+    <!-- about-iraq -->
+    <?php echo $this->partial('dropdown-menu', ['route' => 'about-iraq']) ?>
+
+    <li<?php echo ($routeName == 'blog') ? ' class="active current-menu-item"' : '' ?>>
         <a href="<?php echo $this->url('blog') ?>" title="<?php echo $this->translate('News') ?>">
             <?php echo $this->translate('News') ?>
         </a>
     </li>
-    <li class="dropdown">
-        <a data-toggle="dropdown" href="<?php echo $this->url('foreign-policy') ?>">
-            <?php echo $this->translate('Foreign Policy') ?>
-            <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu" role="menu">
-            <li>
-                <a href="<?php echo $this->url('foreign-policy/press-releases') ?>">
-                    <?php echo $this->translate('The New Iraq') ?>
-                </a>
-            </li>
-            <li>
-                <a href="<?php echo $this->url('foreign-policy/international-organizations') ?>">
-                    <?php echo $this->translate('International Organizations') ?>
-                </a>
-            </li>
-        </ul>
-    </li>
-    <li>
+
+    <!-- foreign-policy -->
+    <?php echo $this->partial('dropdown-menu', ['route' => 'foreign-policy']) ?>
+
+    <li<?php echo ($routeName == 'mission') ? ' class="active current-menu-item"' : '' ?>>
         <a href="<?php echo $this->url('mission') ?>">
             <?php echo $this->translate('Diplomatic Missions') ?>
             <!--
             <span class="caret"></span>
             -->
         </a>
-    </li>
-    <li class="dropdown">
-        <a data-toggle="dropdown" href="<?php echo $this->url('consular-services') ?>">
-            <?php echo $this->translate('Consular Services') ?>
-            <span class="caret"></span>
-        </a>
+
         <ul class="dropdown-menu" role="menu">
-            <li>
-                <a href="<?php echo $this->url('consular-services') ?>">
-                    <?php echo $this->translate('Other Links') ?>
-                </a>
+
+            <li<?php echo ($routeName == 'diplomatic-missions') ? ' class="active"' : '' ?>>
+                    <a href="<?php echo $this->url('diplomatic-missions') ?>">
+                        <?php echo $this->translate('Diplomatic Missions') ?>
+                    </a>
             </li>
         </ul>
     </li>
-    <li>
+
+    <!-- consular-services -->
+    <?php echo $this->partial('dropdown-menu', ['route' => 'consular-services']) ?>
+
+    <li<?php echo ($routeName == 'contact-us') ? ' class="active current-menu-item"' : '' ?>>
         <a href="<?php echo $this->url('contact-us') ?>" title="<?php echo $this->translate('Contact Us') ?>">
             <?php echo $this->translate('Contact Us') ?>
         </a>
