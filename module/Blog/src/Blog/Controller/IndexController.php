@@ -45,7 +45,7 @@ class IndexController extends AbstractActionController {
             ))
             ->setParameter('published', true)
             ->setParameter('locale', $locale)
-            ->orderBy('b.id', 'ASC')
+            ->orderBy('b.id', 'DESC')
             ->setMaxResults(10)
             ->setFirstResult(0)
         ;
@@ -67,24 +67,35 @@ class IndexController extends AbstractActionController {
 
     public function latestNewsAction()
     {
-        $localeSession = new Container('locale');
-        $locale = $this->findBy('Blog\Entity\Locale', ['code' => $localeSession->locale]);
-        $blogs = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
-            ->findBy(
-                ['published' => true, 'locale' => $locale],
-                ['id' => 'DESC'],
-                5,
-                0
-            );
+        $key = 'latest-news';
+        /** @var \Zend\Cache\Storage\Adapter\Redis $cache */
+        $cache = $this->getServiceLocator()->get('Cache\Transient');
 
-        $blogsData = [];
-        /** @var \Blog\Entity\Blog $blog */
-        foreach ($blogs as $blog) {
-            $blogsData[] = $blog->getData();
+        if (!$cache->hasItem($key)) {
+            $localeSession = new Container('locale');
+            $locale = $this->findBy('Blog\Entity\Locale', ['code' => $localeSession->locale]);
+            $blogs = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
+                ->findBy(
+                    ['published' => true, 'locale' => $locale],
+                    ['id' => 'DESC'],
+                    5,
+                    0
+                );
+
+            $blogsData = [];
+            /** @var \Blog\Entity\Blog $blog */
+            foreach ($blogs as $blog) {
+                $blogsData[] = [
+                    'blogUrl' => $blog->getUrl(),
+                    'title' => $blog->getTitle(),
+                ];
+            }
+
+            $cache->setItem($key, $blogsData);
         }
 
         return new JsonModel([
-            'blogs' => $blogsData,
+            'blogs' => $cache->getItem($key),
         ]);
     }
 }

@@ -12,6 +12,8 @@ return array(
         'WebinoImageThumb',
         'SlmLocale',
         'BjyAuthorize',
+
+        //custom modules
         'Api',
         'Application',
         'Blog',
