@@ -67,13 +67,18 @@ class IndexController extends AbstractActionController {
 
     public function latestNewsAction()
     {
-        $key = 'latest-news';
+        $localeSession = new Container('locale');
+        /** @var \Blog\Entity\Locale $locale */
+        $locale = $this->findBy('Blog\Entity\Locale', ['code' => $localeSession->locale]);
+        if ($locale->getShortCode() == 'en') {
+            $key = 'latest-news';
+        } else {
+            $key = 'latest-news-ar';
+        }
         /** @var \Zend\Cache\Storage\Adapter\Redis $cache */
         $cache = $this->getServiceLocator()->get('Cache\Transient');
 
         if (!$cache->hasItem($key)) {
-            $localeSession = new Container('locale');
-            $locale = $this->findBy('Blog\Entity\Locale', ['code' => $localeSession->locale]);
             $blogs = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
                 ->findBy(
                     ['published' => true, 'locale' => $locale],
