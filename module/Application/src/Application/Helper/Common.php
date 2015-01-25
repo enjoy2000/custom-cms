@@ -27,7 +27,7 @@ class Common {
         $route = str_replace('-', ' ', $route);
         $route = str_replace('/', '', $route);
         $route = str_replace(' s ', '\'s ', $route);
-        ucwords($route);
+        $route = ucwords($route);
         $route = str_replace(' Of ', ' of ', $route);
 
         return $route;
