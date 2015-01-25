@@ -34,6 +34,9 @@ foreach ($cats as $cat) :
 <?php endforeach; ?>
 </div>
 <hr />
+<div class="article-photo text-center">
+    <img src="<?php echo $blog->getPhotoUrl() ?>" alt="" />
+</div>
 <div class="blog-content">
     <?php echo $blog->getContent(); ?>
 </div>
