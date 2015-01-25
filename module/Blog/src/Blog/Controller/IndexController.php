@@ -69,7 +69,7 @@ class IndexController extends AbstractActionController {
     {
         $localeSession = new Container('locale');
         /** @var \Blog\Entity\Locale $locale */
-        $locale = $this->findBy('Blog\Entity\Locale', ['code' => $localeSession->locale]);
+        $locale = $this->findOneBy('Blog\Entity\Locale', ['code' => $localeSession->locale]);
         if ($locale->getShortCode() == 'en') {
             $key = 'latest-news';
         } else {
