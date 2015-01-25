@@ -9,3 +9,6 @@ header #language-switcher {
 #news-carousel a.left.carousel-control span.glyphicon {
     left: -1px;
 }
+header .head-logo {
+    padding-top: 0;
+}

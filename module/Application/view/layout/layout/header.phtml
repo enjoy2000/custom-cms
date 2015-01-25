@@ -5,8 +5,12 @@
         </a>
     </div>
     <div class="head-logo pull-left flip">
-        <?php echo $this->translate('Republic of Iraq') ?><br />
-        <?php echo $this->translate('Ministry of Foreign Affairs') ?>
+        <?php if ($this->locale == 'en_US'): ?>
+            <?php echo $this->translate('Republic of Iraq') ?><br />
+            <?php echo $this->translate('Ministry of Foreign Affairs') ?>
+        <?php else : ?>
+            <img src="<?php echo $this->basePath() ?>/trash/images/logo_ar.jpg" alt="" />
+        <?php endif; ?>
     </div>
     <div id="language-switcher">
         <div class="dropdown">
