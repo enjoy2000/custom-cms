@@ -1,6 +1,11 @@
 <?php
-$routeName = $this->getHelperPluginManager()->getServiceLocator()->get('Application')
-    ->getMvcEvent()->getRouteMatch()->getMatchedRouteName();
+$routeMatch = $this->getHelperPluginManager()->getServiceLocator()->get('Application')
+    ->getMvcEvent()->getRouteMatch();
+if ($routeMatch) {
+    $routeName = $routeMatch->getMatchedRouteName();
+} else {
+    $routeName = '404';
+}
 ?>
 <ul class="nav navbar-nav">
     <li<?php echo ($routeName == 'home') ? ' class="active current-menu-item"' : '' ?>>

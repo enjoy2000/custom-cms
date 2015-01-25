@@ -1,9 +1,13 @@
 <?php
 use Application\Helper\Common;
 
-//var_dump($this->routes);die;
-$routeName = $this->getHelperPluginManager()->getServiceLocator()->get('Application')
-    ->getMvcEvent()->getRouteMatch()->getMatchedRouteName();
+$routeMatch = $this->getHelperPluginManager()->getServiceLocator()->get('Application')
+    ->getMvcEvent()->getRouteMatch();
+if ($routeMatch) {
+    $routeName = $routeMatch->getMatchedRouteName();
+} else {
+    $routeName = '404';
+}
 $currentRoute = explode('/', $routeName);
 $currentParentRoute = $currentRoute[0];
 $parentRoute = $this->route;
