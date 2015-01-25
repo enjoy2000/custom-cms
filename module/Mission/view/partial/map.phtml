@@ -1,22 +1,11 @@
-<style type="text/css">
-    #chartdiv {
-        background: #fbfbfb;
-        color: #7a738d;
-        width: 100%;
-        height: 800px;
-    }
-</style>
 <!-- BEGIN Interactive Map Container -->
 <div id="map-container">
     <div id="chartdiv"></div>
 </div>
-<!-- END Interactive Map Container -->
-<!-- BEGIN Interactive Map Scripts -->
-<script type="text/javascript" src="http://www.amcharts.com/lib/3/ammap.js"></script>
-<script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
-<script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/worldHigh.js"></script>
-<script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/dark.js"></script>
-<script type="text/javascript">
+<?php
+$this->inlineScript()
+    ->prependScript('
+$(document).ready(function(){
     var map = AmCharts.makeChart("chartdiv", {
 
         "type": "map",
@@ -83,7 +72,7 @@
                 {id: "BZ", title: "<strong>Belize</strong><br/> Under Development "},
                 {
                     id: "CL",
-                    title: "<strong>Chile</strong><br/>     Embassy oF Republic oF Iraq in Santiago<br/>		     Head of Mission:Charge d'affairs Amer Al-Fatlawi <br/>Address: Enrique Foster Sur306y 405 lasCondes, santiago<br/>Telephone:005629845147<br/>Fax:0091-11-26535236 <br/>E-mail:sanemb@mofa.gov.iq <br/>            "
+                    title: "<strong>Chile</strong><br/>     Embassy oF Republic oF Iraq in Santiago<br/>		     Head of Mission:Charge d\'affairs Amer Al-Fatlawi <br/>Address: Enrique Foster Sur306y 405 lasCondes, santiago<br/>Telephone:005629845147<br/>Fax:0091-11-26535236 <br/>E-mail:sanemb@mofa.gov.iq <br/>            "
                 },
                 {id: "CR", title: "<strong>Costa Rica</strong><br/> Under Development "},
                 {id: "CU", title: "<strong>Cuba</strong><br/> Under Development "},
@@ -138,7 +127,7 @@
                 {id: "AM", title: "<strong>Armenia</strong><br/> Under Development "},
                 {
                     id: "AT",
-                    title: "<strong>Austria</strong><br/>      Embassy of Republic of Iraq in Austria<br/>	           Head of Mission: Dr.Srood Rashid Najib<br/>Address: Laurenzerberg 2, 1's Floor. 1010 Vienna. <br/>Telephone:(+431)7138195<br/>Fax:(+431)7138208 <br/>E-mail:ven1emb@mofa.gov.iq <br/>            "
+                    title: "<strong>Austria</strong><br/>      Embassy of Republic of Iraq in Austria<br/>	           Head of Mission: Dr.Srood Rashid Najib<br/>Address: Laurenzerberg 2, 1\'s Floor. 1010 Vienna. <br/>Telephone:(+431)7138195<br/>Fax:(+431)7138208 <br/>E-mail:ven1emb@mofa.gov.iq <br/>            "
                 },
                 {
                     id: "BY",
@@ -180,7 +169,7 @@
                 },
                 {
                     id: "PT",
-                    title: "<strong>Portugal</strong><br/>   Embasy of Republic of Iraq in Lisboa <br/>	        Head of Mission: Charge d'affairs Rest Noori shawis  <br/>Address: Rua da arriaga,9-alapa 1200-608-Lisboa Portugal <br/>Telephone:00351213933310-8 <br/>Fax:00351213911052 <br/>E-mail:lisemb@mofa.gov.iq <br/>            "
+                    title: "<strong>Portugal</strong><br/>   Embasy of Republic of Iraq in Lisboa <br/>	        Head of Mission: Charge d\'affairs Rest Noori shawis  <br/>Address: Rua da arriaga,9-alapa 1200-608-Lisboa Portugal <br/>Telephone:00351213933310-8 <br/>Fax:00351213911052 <br/>E-mail:lisemb@mofa.gov.iq <br/>            "
                 },
                 {
                     id: "RS",
@@ -222,7 +211,7 @@
                 },
                 {
                     id: "QA",
-                    title: "<strong>Qatar</strong><br/> Embassy of Republic of Iraq in Doha<br/>          Head of mission:Charge d'affairs Nawar Sadiq Jawad<br/>Address:St-509, Housing No.5 ,New Doha,Aldafa, Diplomatic region.<br/>Telephone:009744216730 - 0074416146<br/>Fax:00974216152<br/>E-mail:dohemb@mofa.gov.iq<br/>            "
+                    title: "<strong>Qatar</strong><br/> Embassy of Republic of Iraq in Doha<br/>          Head of mission:Charge d\'affairs Nawar Sadiq Jawad<br/>Address:St-509, Housing No.5 ,New Doha,Aldafa, Diplomatic region.<br/>Telephone:009744216730 - 0074416146<br/>Fax:00974216152<br/>E-mail:dohemb@mofa.gov.iq<br/>            "
                 },
                 {id: "SA", title: "<strong>Saudi Arabia</strong><br/> Under Development "},
                 {id: "AE", title: "<strong>United Arab Emirates</strong><br/> Under Development "},
@@ -350,7 +339,7 @@
                 {id: "ZW", title: "<strong>Zimbabwe</strong><br/> Under Development "},
                 {
                     id: "AU",
-                    title: "<strong>Australia</strong><br/>  Embassy of Republic of Iraq in canberra<br/>	      Head of Mission: Mouayed M. Issa M. Saleh <br/>Address: 48 Culgoa Circuit O'Malley ACT 2606 Australia<br/>Telephone: +61 - 2 - 6286 2744<br/>Fax: +61 - 2 - 6290 2993 <br/>Email:cnbemb@mofa.gov.iq  <br/>            "
+                    title: "<strong>Australia</strong><br/>  Embassy of Republic of Iraq in canberra<br/>	      Head of Mission: Mouayed M. Issa M. Saleh <br/>Address: 48 Culgoa Circuit O\'Malley ACT 2606 Australia<br/>Telephone: +61 - 2 - 6286 2744<br/>Fax: +61 - 2 - 6290 2993 <br/>Email:cnbemb@mofa.gov.iq  <br/>            "
                 },
                 {
                     id: "MY",
@@ -543,12 +532,18 @@
             ]
         },
         "areasSettings": {
-            "autoZoom": true,
+    "autoZoom": true,
             "unlistedAreasColor": "#ffffff",
             "color": "#ffffff",
             "rollOverColor": "#3b93c9",
             "selectedColor": "#3b93c9"
         }
     });
-</script>
-<!-- END Interactive Map Scripts -->
+});
+    ')
+    ->prependFile('http://www.amcharts.com/lib/3/themes/dark.js')
+    ->prependFile('http://www.amcharts.com/lib/3/maps/js/worldHigh.js')
+    ->prependFile('http://www.amcharts.com/lib/3/maps/js/worldLow.js')
+    ->prependFile('http://www.amcharts.com/lib/3/ammap.js')
+    ;
+?>

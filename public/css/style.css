@@ -35,6 +35,18 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'droid'!important;
 }
 
+#chartdiv {
+    background: #fbfbfb;
+    color: #7a738d;
+    height: 800px;
+    padding: 0 10px;
+}
+#chartdiv .amcharts-chart-div > svg {
+    left: 0;
+    top: 0;
+    z-index: 9999;
+}
+
 .btn-success {
     background-color: #57a900;
     background-image: -moz-linear-gradient(top, #70d900, #57a900);
