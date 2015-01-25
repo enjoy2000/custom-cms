@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CustomCMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-25 21:12+0700\n"
-"PO-Revision-Date: 2015-01-25 21:12+0700\n"
+"POT-Creation-Date: 2015-01-25 21:10+0700\n"
+"PO-Revision-Date: 2015-01-25 21:14+0700\n"
 "Last-Translator: Hat Dao <enjoy3013@gmail.com>\n"
 "Language-Team: Hat Dao <enjoy3013@gmail.com>\n"
 "Language: ar_IQ\n"
@@ -16,17 +16,22 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
-"X-Poedit-SearchPath-0: ./Blog\n"
+"X-Poedit-SearchPath-0: ./Mission\n"
 
-#: Blog/src/Blog/Controller/BlogController.php:47
+#: Mission/src/Mission/Controller/BlogController.php:47
 msgid "Your link is expired or that news does not exist anymore."
 msgstr "الرابط الخاص بك هو منتهي الصلاحية او عدم توفر الخبر لهذا الرابط"
 
-#: Blog/view/blog/blog/article.phtml:24 Blog/view/partial/article.phtml:28
+#: Mission/view/mission/blog/article.phtml:24
+#: Mission/view/partial/article.phtml:28
 #, php-format
 msgid "Written by %s"
 msgstr "المكتب الإعلامي %s"
 
-#: Blog/view/blog/index/index.phtml:1 Blog/view/blog/index/index.phtml:2
-msgid "News"
-msgstr "الأخبار"
+#: Mission/view/mission/index/index.phtml:1
+#: Mission/view/mission/index/index.phtml:2
+msgid "Iraq Ambassadors"
+msgstr "البعثات الدبلوماسية العراقية في العالم"
+
+#~ msgid "News"
+#~ msgstr "الأخبار"
