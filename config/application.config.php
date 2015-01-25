@@ -1,27 +1,32 @@
 <?php
+$env = getenv('APP_ENV') ?: 'production';
+
+$modules = array(
+    'DoctrineModule',
+    'DoctrineORMModule',
+    'ZfcBase',
+    'ZfcUser',
+    'ZfcAdmin',
+    'ZfcUserDoctrineORM',
+    'WebinoImageThumb',
+    'SlmLocale',
+    'BjyAuthorize',
+
+    //custom modules
+    'Api',
+    'Application',
+    'Blog',
+    'Landing',
+    'User',
+    'Admin',
+    'Mission',
+);
+if ($env == 'development') {
+    $modules[] = 'ZendDeveloperTools';
+}
 return array(
     // This should be an array of module namespaces used in the application.
-    'modules' => array(
-        'ZendDeveloperTools',
-        'DoctrineModule',
-        'DoctrineORMModule',
-        'ZfcBase',
-        'ZfcUser',
-        'ZfcAdmin',
-        'ZfcUserDoctrineORM',
-        'WebinoImageThumb',
-        'SlmLocale',
-        'BjyAuthorize',
-
-        //custom modules
-        'Api',
-        'Application',
-        'Blog',
-        'Landing',
-        'User',
-        'Admin',
-        'Mission',
-    ),
+    'modules' => $modules,
 
     // These are various options for the listeners attached to the ModuleManager
     'module_listener_options' => array(
