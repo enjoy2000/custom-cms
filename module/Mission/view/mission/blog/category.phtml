@@ -21,7 +21,8 @@ echo $this->paginationControl(
     array('partial/paginator.phtml', 'Blog'),
     // the route to link to when a user clicks a control link
     array(
-        'route' => 'zfcadmin/blog'
+        'route' => 'mission/view',
+        'link' => $category->getUrl()
     )
 );
 ?>
