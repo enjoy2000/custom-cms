@@ -1,245 +1,554 @@
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>Interactive World Map</title>
-		<style type="text/css">
-			#chartdiv {background: #fbfbfb;color:#7a738d; width	: 100%;	height	: 800px;}
-		</style>
-	</head>
-	<body>
-		<!-- BEGIN Interactive Map Container -->
-		<div id="map-container">
-			<div id="chartdiv"></div>
-		</div>
-		<!-- END Interactive Map Container -->		        
-		<!-- BEGIN Interactive Map Scripts -->
-		<script type="text/javascript" src="http://www.amcharts.com/lib/3/ammap.js"></script>
-		<script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
-		<script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/worldHigh.js"></script>
-		<script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/dark.js"></script>
-		<script type="text/javascript">
-			var map = AmCharts.makeChart("chartdiv", {
+<style type="text/css">
+    #chartdiv {
+        background: #fbfbfb;
+        color: #7a738d;
+        width: 100%;
+        height: 800px;
+    }
+</style>
+<!-- BEGIN Interactive Map Container -->
+<div id="map-container">
+    <div id="chartdiv"></div>
+</div>
+<!-- END Interactive Map Container -->
+<!-- BEGIN Interactive Map Scripts -->
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/ammap.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/maps/js/worldHigh.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/dark.js"></script>
+<script type="text/javascript">
+    var map = AmCharts.makeChart("chartdiv", {
 
-				"type": "map",
-				"theme": "dark",
-				"pathToImages": "http://www.amcharts.com/lib/3/images/",
-				"balloon": {
-					"adjustBorderColor": false,
-					"borderColor": "#ffffff",
-					"color": "#000000",
-					"cornerRadius": 0,
-					"fillColor": "#7a738d",
-					"textAlign": "left"
-				},
-				"zoomControl": {
-"buttonFillColor": "#446280"
-},
+        "type": "map",
+        "theme": "dark",
+        "pathToImages": "http://www.amcharts.com/lib/3/images/",
+        "balloon": {
+            "adjustBorderColor": false,
+            "borderColor": "#ffffff",
+            "color": "#000000",
+            "cornerRadius": 0,
+            "fillColor": "#7a738d",
+            "textAlign": "left"
+        },
+        "zoomControl": {
+            "buttonFillColor": "#446280"
+        },
 
-				"dataProvider": {
-					"map": "worldHigh",
-					"getAreasFromMap": false,
-					"areas":[
-						{id:"IN", title: "<strong>India</strong><br/>  Embassy of Republic of Iraq in New Delhi<br/>	      Head of Mission: Ahmed T.Ahmed Brwari <br/>Address: New Delhi -A 15/14, Vasant Vihar -110057, India <br/>Telephone:0091-11- 26150081, 26150082, 26150083<br/>Fax:0091-11-26150083 <br/>E-mail:dlh1emb@mofa.gov.iq"},
-{id:"KZ", title: "<strong>Kazakhstan</strong><br/>  Embassy of Republic of Iraq in Astana<br/>	       Head of Mission: Rageh Saber Abbood Al-Musawi <br/>Address: Republic of Kazakhstan/ Astana city/ Diplomatic town/ Dinmuhamed/ konaev Street/ Building No.19.<br/>Telephone: 0077172790675, 0077172790679<br/>E-mail: astemb@mofa.gov.iq<br/>            "},
-{id:"IT", title: "<strong>Italy</strong><br/>  Embassy of Republic of Iraq in Romme<br/>          Head of Mission: Saywan Sabir Mustafa Barzani<br/>Address: Ambasciata della repubblica dell Iraq, via Della Camilluccia355, 00135 Roma.<br/>Telephone:0635077281 - 063014508 - 06305072571<br/>Fax:06-3014445 <br/>E-mail:romemb@mofa.gov.iq<br/>            "},
-{id:"ZA", title: "<strong>South Africa</strong><br/>  Embassy of Republic of Iraq in Pretoria<br/>	       Head of Mission: Dr.Hesham Ali Ibrahim AL-aluy<br/>Address:803 Jan Shoba St. Brooklyn -Pretoria. P.O Box:11089.<br/>Telephone:012-362-2048/9<br/>Fax:012-362-2027<br/>E-mail:abrtemb@mofa.gov.iq <br/>            "},
-{id:"US", title: "<strong>United States of America</strong><br/>  Embassy of Republic of Iraq in Washington D.C.<br/>           Head of Mission: Lukman Abdul-Rahim Faily<br/>Address: Massachusetts Ave.NW 3421 Washington,D.C.20007.<br/>Telephone:002027421600 <br/>Fax:(+1)202-742-1600<br/>E-mail: wasemb@mofa.gov.iq<br/>            "},
-{id:"GL", title: "<strong>Greenland</strong><br/> Under Development "},
-{id:"AR", title: "<strong>Argentina</strong><br/> Under Development "},
-{id:"CA", title: "<strong>Canada</strong><br/>    Embassy of Republic of Iraq in Ottawa<br/>	        Head of Mission: Abdulrahman Hamid Mohammed Al-Hussaini<br/>Address:215 McLeod Street.Ottawa,Ontario K2P0Z8 Canada  <br/>Telephone:0016132369177<br/>Fax:0016132369641<br/>E-mail:otaemb@mofa.gov.iq <br/>            "},
-{id:"MX", title: "<strong>Mexico</strong><br/>    Embassy of Republic of Iraq in Mexico city<br/>	         Head of Mission: Ali Yassen Mohammed Karim <br/>Address:Paseo de la Reforma 1875,col.lomas de Chapultepec Del.Miguel Hidalgo mexico D.F c.p11000. <br/>Telephone:005255- 55960254<br/>Fax:005255- 55960254<br/>E-mail:mxcemb@mofa.gov.iq  <br/>            "},
-{id:"EC", title: "<strong>Ecuador</strong><br/> Under Development "},
-{id:"VE", title: "<strong>Venezuela</strong><br/>      Embassy of Republic of Iraq in Caracas<br/>	           Head of Mission: Fakhri hassan Al-issa<br/>Address:St Nicholas Street Kobirinko branching from Los Malabars/ Villa Babellonia/ Faye Ariba suburb/ municipality Baruta / mandate Miranda / Caracas / Venezuela<br/>Telefonos: ODP/ 00582129933446<br/>           ODP/ 00582129924713 <br/>Fax:005821-2993-0819<br/>E-mail:crcemb@mofa.gov.iq <br/>            "},
-{id:"BR", title: "<strong>Brazil</strong><br/>     Embassy of Republic of Iraq in Brasilia<br/>	          Head of Mission: Adel Mustafa Kamil AlKurdi.<br/>Address: ses Av- das Nacoes, Qd 815,Lote 64 Brasilia DF, Cep:70430-900 <br/>Telephone:005561- 3462882/3466612 <br/>Fax:005561- 3467442/ 3467034 <br/>E-mail:brzemb@mofa.gov.iq<br/>            "},
-{id:"CO", title: "<strong>Colombia</strong><br/> Under Development "},
-{id:"BO", title: "<strong>Bolivia</strong><br/> Under Development "},
-{id:"PE", title: "<strong>Peru</strong><br/> Under Development "},
-{id:"BZ", title: "<strong>Belize</strong><br/> Under Development "},
-{id:"CL", title: "<strong>Chile</strong><br/>     Embassy oF Republic oF Iraq in Santiago<br/>		     Head of Mission:Charge d'affairs Amer Al-Fatlawi <br/>Address: Enrique Foster Sur306y 405 lasCondes, santiago<br/>Telephone:005629845147<br/>Fax:0091-11-26535236 <br/>E-mail:sanemb@mofa.gov.iq <br/>            "},
-{id:"CR", title: "<strong>Costa Rica</strong><br/> Under Development "},
-{id:"CU", title: "<strong>Cuba</strong><br/> Under Development "},
-{id:"JM", title: "<strong>Jamaica</strong><br/> Under Development "},
-{id:"HT", title: "<strong>Haiti</strong><br/> Under Development "},
-{id:"BS", title: "<strong>The Bahamas</strong><br/> Under Development "},
-{id:"SB", title: "<strong>Solomon Islands</strong><br/> Under Development "},
-{id:"FJ", title: "<strong>Fiji</strong><br/> Under Development "},
-{id:"NC", title: "<strong>New Caledonia</strong><br/>Caledonia"},
-{id:"DO", title: "<strong>Dominican Republic</strong><br/> Under Development "},
-{id:"SV", title: "<strong>El Salvador</strong><br/> Under Development "},
-{id:"GT", title: "<strong>Guatemala</strong><br/> Under Development "},
-{id:"GY", title: "<strong>Guyana</strong><br/> Under Development "},
-{id:"GF", title: "<strong>French Guiana</strong><br/>description"},
-{id:"HN", title: "<strong>Honduras</strong><br/> Under Development "},
-{id:"NI", title: "<strong>Nicaragua</strong><br/> Under Development "},
-{id:"PA", title: "<strong>Panama</strong><br/> Under Development "},
-{id:"PY", title: "<strong>Paraguay</strong><br/> Under Development "},
-{id:"PR", title: "<strong>Puerto Rico</strong><br/> Under Development "},
-{id:"SR", title: "<strong>Suriname</strong><br/> Under Development "},
-{id:"UY", title: "<strong>Uruguay</strong><br/> Under Development "},
-{id:"NL", title: "<strong>The Netherlands</strong><br/>  Embassy of Republic of Iraq in The Hague<br/>	       Head of Mission: Saad A.AL-Majeed<br/>Address: Embassy of the republic of Iraq , Johan de Wittlaan 16, 2517 JR Den Haag<br/>Telephone:0031-703101260 ,0031703101280<br/>Fax: 0031703101261, 0031703101281   <br/>E-mail: lahemb@mofa.gov.iq <br/>            "},
-{id:"NO", title: "<strong>Norway</strong><br/>   Embassy of Republic of Iraq in Oslo<br/>	        Head of Mission: Sundus Omar Ali Albayraqdar <br/>Address: Tidemands gate 9,0244 Oslo,Kingdom of Norway <br/>Telephone:0047-22006000<br/>consular Section Phone: 0047 22 44 94 24<br/>E-mail:oslemb@mofa.gov.iq<br/>            "},
-{id:"DK", title: "<strong>Denmark</strong><br/>    Embassy of Republic of Iraq in copenhagen-Denmark <br/>	         Head of Mission: Dr.Albert Issa Nothor<br/>Address: Ehlersvej 9,2900 Hellerup.<br/>Telephone:004539450270.<br/>Fax:004539406997<br/>E-mail:kbnemb@mofa.gov.iq<br/>       kbnemb@iraqembassy.dk <br/>            "},
-{id:"IE", title: "<strong>Ireland</strong><br/> Under Development "},
-{id:"GB", title: "<strong>United Kingdom</strong><br/>      Embassy of Republic of Iraq in London<br/>	          Head of Mission: Faik Ferik Abdileziz Nerweyi<br/>      Address: 21 Queens Gate London SW7 5JE<br/>      Tel: +44(0) 20 7590 7650  <br/>      Fax: +44(0) 20 7590 7679  <br/>      Email: lonemb@mofa.gov.iq<br/>            "},
-{id:"RO", title: "<strong>Romania</strong><br/>      Embassy of Republic of Iraq in Buckarest<br/>	           Head of Mission: Omer A.K. Berzinji<br/>Address: Venezuela street no. 6-8, sect.1, Bucharest, Romania<br/>Telephone: 0040212339008 - 0040212339009<br/>Fax: 0040212339007<br/>E-mail: bkremb@mofa.gov.iq <br/>            "},
-{id:"DE", title: "<strong>Germany</strong><br/>     Embassy of Republic of Iraq in Berlin <br/>	          Head of Mission: Hussain Mahmood Fadhlalla Alkateeb<br/>      Address: Pacelliallee 19-21, 14195 Berlin<br/>      Telephone:004930 - 81488112<br/>	  Fax:0049308148822<br/>      E-mail:beremb@mofa.gov.iq <br/>            "},
-{id:"FR", title: "<strong>France</strong><br/>    Embassy of Republic of Iraq in Paris<br/>	         Head of Mission: Fareed Mustafa Kamel Yassin<br/>Address: 64 avenue.Foch 75116 Paris<br/>Telephone: +33(0)145533370 <br/>Fax:+33(0)145533380-+33(0)147042294 <br/>E-mail:paremb@mofa.gov.iq<br/>            "},
-{id:"AL", title: "<strong>Albania</strong><br/> Under Development "},
-{id:"AM", title: "<strong>Armenia</strong><br/> Under Development "},
-{id:"AT", title: "<strong>Austria</strong><br/>      Embassy of Republic of Iraq in Austria<br/>	           Head of Mission: Dr.Srood Rashid Najib<br/>Address: Laurenzerberg 2, 1's Floor. 1010 Vienna. <br/>Telephone:(+431)7138195<br/>Fax:(+431)7138208 <br/>E-mail:ven1emb@mofa.gov.iq <br/>            "},
-{id:"BY", title: "<strong>Belarus</strong><br/>   Embassy of Republic of Iraq in Minsk<br/>            Head of Mission: Haider Mansuor Hadi<br/>Address: Belarus,Minsk 220131,Bogdanovicha Str. 267/29  <br/>Telephone:00375172375016<br/>Fax:00375172375255<br/>Email:minemb@mofa.gov.iq <br/>            "},
-{id:"BE", title: "<strong>Belgium</strong><br/>  Embassy Of Republic of Iraq in Bruxelles <br/>	       Head of Mission: Mohammed Abdullah Humaimidi<br/>Address: Avenue Franklin Roosevelt 115/1050 Brussels<br/>Telephone: 003223745992 , 003226630490<br/>Fax: 023747615<br/>E-mail: brxemb@mofa.gov.iq <br/>            "},
-{id:"LU", title: "<strong>Luxembourg</strong><br/> Under Development "},
-{id:"BG", title: "<strong>Bulgaria</strong><br/>    Embassy of Republic of Iraq in Sofia <br/>	         Head of Mission: Asaad Ali Yaseen Khalaf Al Samarraie<br/>Address:21 anton Chekhov str:1113sofia/ bulgaria<br/>Telephone: 9733348-9733482<br/>Fax: 003592- 9711197 <br/>E-mail:sofemb@mofa.gov.iq <br/>            "},
-{id:"CZ", title: "<strong>Czech Republic</strong><br/>  Embassy of Republic of Iraq in Prague <br/>           Head of Mission: Hussain Saleh Majeed Mualla<br/>Address:Mongolska 607/3 PRAGUE 6-160 00   <br/>Telephone:00420 - 224326977 / 224326976 <br/>Fax:224321715 <br/>E-mail: brgemb@mofa.gov.iq <br/>            "},
-{id:"EE", title: "<strong>Estonia</strong><br/> Under Development "},
-{id:"GE", title: "<strong>Georgia</strong><br/>  Embassy of Republic of Iraq in Tbilisi<br/>		  Head of Mission: Bakir Ahmed Aziz Al-Jaff <br/>Address: Lvovi Street No.77, Tibilisi,0160, Georgia.<br/>Telephone: 009952000258.<br/>Fax: 0099532294503<br/>E-mail:tebemb@mofa.gov.iq  <br/>            "},
-{id:"GR", title: "<strong>Greece</strong><br/>  Embassy of Republic of Iraq in Athena <br/>	       Head of mission: BURHAN.N.S.Jaf<br/>Address: MAZARAKI NO:4- P.PSYCHIKO- ATHENS,GREECE.<br/>Telephone: 00302106722330.<br/>Fax: 00302106717185 <br/>E-mail:atnemb@mofa.gov.iq <br/>            "},
-{id:"HU", title: "<strong>Hungary</strong><br/>   Embassy of Republic of Iraq in budapest<br/>	        Head of Mission: Jasim Muhawi Hussein Al-tai<br/>Address:  Hungary-1027 Budapest-Bölöni György utca 3<br/>Telephone:00361-3925120<br/>Fax:00361-3925133 <br/>E-mail: budemb@mofa.gov.iq <br/>            "},
-{id:"IS", title: "<strong>Iceland</strong><br/> Under Development "},
-{id:"LV", title: "<strong>Latvia</strong><br/> Under Development "},
-{id:"LT", title: "<strong>Lithuania</strong><br/> Under Development "},
-{id:"MD", title: "<strong>Moldova</strong><br/> Under Development "},
-{id:"PL", title: "<strong>Poland</strong><br/> Embassy of Reublic of Iraq in Warsow<br/>	      Head of Mission: Assad Sultan Abu Gilal<br/>Address:Poland, Warsow,Ul.Dbrowiecka 9A03-932 <br/>Telephone:(22) 6174911 - 6175773<br/>Fax:(22) 6177065<br/>E-mail:wrsemb@mofa.gov.iq <br/>            "},
-{id:"PT", title: "<strong>Portugal</strong><br/>   Embasy of Republic of Iraq in Lisboa <br/>	        Head of Mission: Charge d'affairs Rest Noori shawis  <br/>Address: Rua da arriaga,9-alapa 1200-608-Lisboa Portugal <br/>Telephone:00351213933310-8 <br/>Fax:00351213911052 <br/>E-mail:lisemb@mofa.gov.iq <br/>            "},
-{id:"RS", title: "<strong>Serbia</strong><br/>  Embassy of Republic of Iraq in Belgrade <br/>	       Head of Mission: Dr.Falah Abdulhasan Abdulsada<br/>Address:Užička 27, 11000 Belgrade, Serbia<br/>Telephone:00381112647027<br/>Fax:00381112668068<br/>E-mail: bgrdemb@mofa.gov.iq<br/>            "},
-{id:"SI", title: "<strong>Slovenia</strong><br/> Under Development "},
-{id:"HR", title: "<strong>Croatia</strong><br/> Under Development "},
-{id:"BA", title: "<strong>Bosnia and Herzegovina</strong><br/> Under Development "},
-{id:"ME", title: "<strong>Montenegro</strong><br/> Under Development "},
-{id:"MK", title: "<strong>Macedonia</strong><br/> Under Development "},
-{id:"SK", title: "<strong>Slovakia</strong><br/>  Embassy of Republic of Iraq in Bratislava<br/>		   Head of Mission: Mohammed Hakim Al-Rubaie<br/>Address:Radvanska 15, Bratislava 81101, Slovakia<br/>Telephone:00421 254131466<br/>Fax:00421254131464<br/>E-mail:brtsemb@mofa.gov.iq<br/>            "},
-{id:"ES", title: "<strong>Spain</strong><br/>  Embassy of Republic of Iraq in Madrid<br/>	       Head of Mission: Wadee Batti Hanna Al-Batti<br/>Address:Calle Carril del Conde nº 56-Madrid – 28034 Spain <br/>Telephone:0034 913 885 980 <br/>Fax:0034 917 218 682 <br/>E-mail:mdremb@mofa.gov.iq <br/>            "},
-{id:"FI", title: "<strong>Finland</strong><br/>  Embassy of Republic of Iraq in Helsinki<br/>	       Head of Mission: Saad Jawad Qindel<br/>Address:Lars Sonckinitie 2,00570, Helsinki<br/>Telephone:0035896818870<br/>Fax:0035896848977 <br/>E-mail:hlsemb@mofa.gov.iq <br/>            "},
-{id:"SE", title: "<strong>Sweden</strong><br/>  Embassy of Republic of Iraq in Stockholm<br/>	       Head of Mission: Baker Fattah Hassan<br/>Address: Tekniska högskolan T. bana, Baldersgatan 6A-B, Stokholm 11427, postal address Iraks Ambassad BOX: 26031- Stokholm 100 41.<br/>Telephone: 004684114443<br/>E-mail:stkemb@mofa.gov.iq <br/>            "},
-{id:"CH", title: "<strong>Switzerland</strong><br/>  Embassy of Republic of Iraq in Bern<br/>	       Head of mission: Counselor Deler Dara Tawfiq <br/>Address: Elfenstrasse 6 3006 Bern<br/>Telephone: 0041313514043-0041794028662<br/>Fax: 0041313518312 <br/>E-mail: bernemb@mofa.gov.iq <br/>            "},
-{id:"TR", title: "<strong>Turkey</strong><br/>          Embassy of Republic of Iraq in Ankara<br/>	               Head of Mission: Talal Jamil Al-Oubadi<br/>Address: Turan Emeksiz sk. No:11 Gaziosmanpaşa 06700 Ankara - Turkey<br/>Telephone:(90 312) 468 74 21 , 468 74 22<br/>Fax:(312 90) 32 48 32 <br/>E-mail:ankemb@mofa.gov.iq <br/>            "},
-{id:"CY", title: "<strong>Cyprus</strong><br/> Under Development "},
-{id:"UA", title: "<strong>Ukraine</strong><br/>  Embassy of Republic of Iraq in Kiev<br/>	       Head of Mission: Shorsh Khalid Said<br/>Address: ZVIRYNETSKA st.35,kiev-UKRAIN.<br/>Telephone:003802860440-003802860441 <br/>Fax:003802860445 <br/>E-mail:kefemb@mofa.gov.iq <br/>            "},
-{id:"QA", title: "<strong>Qatar</strong><br/> Embassy of Republic of Iraq in Doha<br/>          Head of mission:Charge d'affairs Nawar Sadiq Jawad<br/>Address:St-509, Housing No.5 ,New Doha,Aldafa, Diplomatic region.<br/>Telephone:009744216730 - 0074416146<br/>Fax:00974216152<br/>E-mail:dohemb@mofa.gov.iq<br/>            "},
-{id:"SA", title: "<strong>Saudi Arabia</strong><br/> Under Development "},
-{id:"AE", title: "<strong>United Arab Emirates</strong><br/> Under Development "},
-{id:"SY", title: "<strong>Syria</strong><br/> Under Development "},
-{id:"OM", title: "<strong>Oman</strong><br/>  Embassy of Republic of Iraq in Muscat <br/>		   Head of mission: Amal Mussa Hussain Ali AL-Musawi<br/>Address:Madinat Sultan Qaboos.Postal Code 115 .p.o.Box 262<br/>Telephone:24603642- 24695559<br/>Fax:24602026<br/>E-mail:musemb@mofa.gov.iq<br/>            "},
-{id:"KW", title: "<strong>Kuwait</strong><br/>   Embassy of Republic of Iraq in Kuwait<br/>			Head of mission: Mohammed Hussain Mhommed Ali Bahr-AlUloom<br/>Address: Kuwait/Dayiaa/ Embassies bloc.<br/>Telephone:00965 986025225<br/>Fax:00965 986025225<br/>E-mail:kuwemb@mofa.gov.iq <br/>            "},
-{id:"PK", title: "<strong>Pakistan</strong><br/>  Embassy of Republic of Iraq in Islamabad<br/>		   Head of Mission: Rushdi Mahmmod Rasheed<br/>Address:Plot:6-13,Street No:31,G-5 Diplomatic Enclave,Islamabad-Pakistan <br/>Telephone:0092512600432- 0092512600430<br/>Fax:0092512600435- 0092512600437<br/>E-mail:iabemb@mofa.gov.iq <br/>            "},
-{id:"AF", title: "<strong>Afghanistan</strong><br/>  Embassy of Republic of Iraq in Kabul<br/>		   Head of Mission: Arshad Omar Ismael <br/>Address: Maihan Str. HajiYaqoub Square, Shar -E, Now,Kabul- Afghanisttan<br/>Telephone:0093202204849<br/>Fax:0092512600435- 0092512600437<br/>E-mail:kblemb@mofa.gov.iq <br/>            "},
-{id:"AZ", title: "<strong>Azerbaijan</strong><br/>  Embassy of Republic of Iraq in BAKU<br/>	      Head of Mission: Hayder Shiya Ghubeshi AL-Barrak<br/>Address: Azerbaijan-BAKU CITY, YASAMAL DISTRICT, QIZIL SHERK STREET, HOUSE 5<br/>Telephone: 00994125109233- 00994125381734- 00994125381735 <br/>Fax 00994122371835<br/>E-mail:bakemb@mofa.gov.iq <br/>            "},
-{id:"IR", title: "<strong>Iran</strong><br/>   Embassy of Republic of Iraq in Tehran<br/>			Head of Mission: Mohamed Majed Al-Shik<br/>Address: Tehran,Wali Aser Rd Next to Ministry of Justice<br/>Telephone: 00982188938866 - 00982188938865<br/>Fax: 88938877<br/>E-mail:tehemb@mofa.gov.iq <br/>            "},
-{id:"IQ", title: "<strong>Iraq</strong><br/> Under Development "},
-{id:"IL", title: "<strong>Israel</strong><br/> Under Development "},
-{id:"PS", title: "<strong>Palestine</strong><br/> Under Development "},
-{id:"JO", title: "<strong>Jordan</strong><br/>  Embassy of Republic of Iraq in Amman<br/>		  Head of Mission: Dr.jawad Hadi Abbas<br/>Address:jabal Amman Box post 2025<br/>Telephone:0096264637328<br/>Fax:0096264619172<br/>E-mail:amaemb@mofa.gov.iq<br/>            "},
-{id:"LB", title: "<strong>Lebanon</strong><br/>Embassy of Republic of Iraq in Beirut<br/>		Head of Mission: Dr.Raad Mohammed AL-Alusi <br/>Address: pierreheloustreet- brasilia- alhazimiyz, beirut.<br/>Telephone: 0096105452823 - 009615453209<br/>Fax: 009615459850 - 009615453219<br/>E-mail: brtemb@mofa.gov.iq <br/>            "},
-{id:"YE", title: "<strong>Yemen</strong><br/> Embassy of Republic of Iraq in Sanaa <br/>		  Head of Mission: Asaad Ali Yaseen<br/>Address:Yemen- Sanaa neighborhood political- Street No. 17 / A.<br/>Telephone:009671440182<br/>Fax: 009671440187<br/>E-mail:snaemb@mofa.gov.iq <br/>            "},
-{id:"TJ", title: "<strong>Tajikistan</strong><br/> Under Development "},
-{id:"TM", title: "<strong>Turkmenistan</strong><br/> Under Development "},
-{id:"UZ", title: "<strong>Uzbekistan</strong><br/> Under Development "},
-{id:"KG", title: "<strong>Kyrgyzstan</strong><br/> Under Development "},
-{id:"NE", title: "<strong>Niger</strong><br/> Under Development "},
-{id:"AO", title: "<strong>Angola</strong><br/> Under Development "},
-{id:"EG", title: "<strong>Egypt</strong><br/>      Embassy of Republic of Iraq in Cairo<br/>	           Head of Mission: Dhiaa Hadi Abbas<br/>Address: cairo, zamalek, Muhammed Madhar street, street No 9<br/>Telephone: (00202)  27359205 / 27358087 / 27352633<br/>Fax:(00202) 27365075<br/>E-mail: caiemb@mofa.gov.iq <br/>            "},
-{id:"TN", title: "<strong>Tunisia</strong><br/>      Embassy of Republic of Iraq in Tunisia<br/>			   Head of mission: PH.D Jabir Habib Jabir <br/>Address:Tunis- main street block No.110711, postal code BHB2045.<br/>Telephone: 71961983 - 71961985 <br/>Fax:0020271964750<br/>E-mail: tunemb@mofa.gov.iq <br/>            "},
-{id:"GA", title: "<strong>Gabon</strong><br/> Under Development "},
-{id:"DZ", title: "<strong>Algeria</strong><br/>  Embassy of Republic of Iraq in Algeria<br/>		   Head of mission: Auday M. Abdulla AL-Khairalla<br/>Address:4,Rue Arzeki ABRI, Hydra-Alger B.P.249<br/>Telephone:201693125- 021691272 - 021692173 <br/>Email:algemb@mofa.gov.iq<br/>            "},
-{id:"LY", title: "<strong>Libya</strong><br/>  Embassy of Republic of Iraq in Tripoli<br/>		   Head of mission: Saad Mohamed Ridha<br/>Address:Embassy of the Republic of Iraq/ by Gorji - Al-Andalus- Tripoli, <br/>Telephone:00218214778195<br/>Fax:00218214778196<br/>Email:trpemb@mofa.gov.iq <br/>            "},
-{id:"CG", title: "<strong>Congo</strong><br/> Under Development "},
-{id:"GQ", title: "<strong>Equatorial Guinea</strong><br/> Under Development "},
-{id:"BJ", title: "<strong>Benin</strong><br/> Under Development "},
-{id:"BW", title: "<strong>Botswana</strong><br/> Under Development "},
-{id:"BF", title: "<strong>Burkina Faso</strong><br/> Under Development "},
-{id:"BI", title: "<strong>Burundi</strong><br/> Under Development "},
-{id:"CM", title: "<strong>Cameroon</strong><br/> Under Development "},
-{id:"CF", title: "<strong>Central Africa Republic</strong><br/> Under Development "},
-{id:"TD", title: "<strong>Chad</strong><br/> Under Development "},
-{id:"CI", title: "<strong>Ivory Coast</strong><br/> Under Development "},
-{id:"CD", title: "<strong>Democratic Congo</strong><br/> Under Development "},
-{id:"DJ", title: "<strong>Djibouti</strong><br/> Under Development "},
-{id:"ET", title: "<strong>Ethiopia</strong><br/> Under Development "},
-{id:"GM", title: "<strong>Gambia</strong><br/> Under Development "},
-{id:"GH", title: "<strong>Ghana</strong><br/> Under Development "},
-{id:"GN", title: "<strong>Guinea</strong><br/> Under Development "},
-{id:"GW", title: "<strong>Guinea Bissau</strong><br/> Under Development "},
-{id:"KE", title: "<strong>Kenya</strong><br/>  Embassy of Republic of Iraq in Nairobi<br/>		   Head of Mission: Mohammed Saeed  Al- Shakarchi <br/>Address:Nairobi/gigiri/off u.n.avenue/magnolia close,lobelia drive house no.176, P.O. 399-00621.<br/>Telephone:+254 0720 770778<br/>Email:narbemb@mofa.gov.iq <br/>            "},
-{id:"LS", title: "<strong>Lesotho</strong><br/> Under Development "},
-{id:"LR", title: "<strong>Liberia</strong><br/> Under Development "},
-{id:"MG", title: "<strong>Madagascar</strong><br/> Under Development "},
-{id:"MW", title: "<strong>Malawi</strong><br/> Under Development "},
-{id:"ML", title: "<strong>Mali</strong><br/> Under Development "},
-{id:"MA", title: "<strong>Morocco</strong><br/>  Embassy of Republic of Iraq in Rabat<br/>		   Head of Mission: Hazem Al-Yousefi<br/>Address:Muhamed al ghazi Zanka, Almahdee bin Baraka Street,Al swais <br/>Telephone:004539450270-39406098<br/>Fax:0021237759749<br/>Email:rbtemb@mofa.gov.iq <br/>            "},
-{id:"MR", title: "<strong>Mauritania</strong><br/> Embassy of Republic of Iraq in Nouakchott<br/>		 Head of Mission: Ahmed Naif Rasheed al-Dulaimi <br/>Address: tevragh zeina-nord villa no.399 nouakchott<br/>Telephone:002225243252<br/>Fax:002225243251<br/>Email:nokemb@mofa.gov.iq <br/>            "},
-{id:"MZ", title: "<strong>Mozambique</strong><br/> Under Development "},
-{id:"NA", title: "<strong>Namibia</strong><br/> Under Development "},
-{id:"NG", title: "<strong>Nigeria</strong><br/> Embassy of Republic of Iraq in Abuja<br/>	      Head of Mission: Dr.Ali Abbass Bandar Al-Amiri<br/>Address:5 Kainji Street, off Lake Chad Crescent, Maitama Nigeria – Abuja<br/>Telephone: 002348026286023<br/>Fax:<br/>Email:abjem@mofa.gov.iq <br/>            "},
-{id:"ER", title: "<strong>Eritrea</strong><br/> Under Development "},
-{id:"RW", title: "<strong>Rwanda</strong><br/> Under Development "},
-{id:"SN", title: "<strong>Senegal</strong><br/>  Embassy of Republic of Iraq in Dakar<br/>		   Head of Mission: <br/>Address: Point E6th street×B.PO.BO×45448 Dakar Senegal<br/>Telephone: 00221338697799<br/>Fax:00221338240909<br/>Email:dkremb@mofa.gov.iq <br/>            "},
-{id:"SL", title: "<strong>Sierra Leona</strong><br/> Under Development "},
-{id:"SO", title: "<strong>Somalia</strong><br/> Under Development "},
-{id:"SD", title: "<strong>Sudan</strong><br/> Embassy of Republic of Iraq in Kartoum<br/>	      Head of Mission: Dr.Salih Husain Ali <br/>Address:Embassy of the Republic of Iraq-Khartoum-Burry-Garden City- P.O.Box:1969.<br/>Telephone:00249183271866<br/>Fax:<br/>Email:krtemb@mofa.gov.iq <br/>            "},
-{id:"SZ", title: "<strong>Swaziland</strong><br/> Under Development "},
-{id:"TZ", title: "<strong>Tanzania</strong><br/> Under Development "},
-{id:"TO", title: "<strong>Tonga</strong><br/> Under Development "},
-{id:"UG", title: "<strong>Uganda</strong><br/> Under Development "},
-{id:"EH", title: "<strong>Western Sahara</strong><br/> Under Development "},
-{id:"ZM", title: "<strong>Zambia</strong><br/> Under Development "},
-{id:"ZW", title: "<strong>Zimbabwe</strong><br/> Under Development "},
-{id:"AU", title: "<strong>Australia</strong><br/>  Embassy of Republic of Iraq in canberra<br/>	      Head of Mission: Mouayed M. Issa M. Saleh <br/>Address: 48 Culgoa Circuit O'Malley ACT 2606 Australia<br/>Telephone: +61 - 2 - 6286 2744<br/>Fax: +61 - 2 - 6290 2993 <br/>Email:cnbemb@mofa.gov.iq  <br/>            "},
-{id:"MY", title: "<strong>Malaysia</strong><br/>  Embassy of Republic of Iraq in Kuala Lumpur<br/>		Head of Mission: Basim Hattab Habash<br/>Address:2,JALAN LANGGAK GOLF,OFF JALAN TUN RAZAK, 55000 KUALA LUMPUR, MALAYSIA<br/>Telephone:03-21480555, 03-21480650<br/>Fax:00603 - 21414331<br/>Email:quaemb@mofa.gov.iq  <br/>            "},
-{id:"SG", title: "<strong>Singapore</strong><br/> Under Development "},
-{id:"ID", title: "<strong>Indonesia</strong><br/>  Embassy of Republic of Iraq in Jakarta<br/>			Head of Mission: Abdulla Hussein Saleh Al-Jubori<br/>Address:38 jl.Teuku Umar.menteng  <br/>Telephone:021-3904067 <br/>Fax:0062213904066 <br/>E-mail:jakemb@mofa.gov.iq  <br/>            "},
-{id:"NZ", title: "<strong>New Zealand</strong><br/> Under Development "},
-{id:"TH", title: "<strong>Thailand</strong><br/> Under Development "},
-{id:"BN", title: "<strong>Brunei</strong><br/> Under Development "},
-{id:"JP", title: "<strong>Japan</strong><br/>  Embassy of Republic of Iraq in Tokyo<br/>		  Head of Mission: Lukman A. Abdul Al kareem <br/>Address:14-6 kamiyama-cho,shibuya-ku, Tokyo Post No.150-0047  <br/>Telephone:0081 - 035449-3231 <br/>Fax:0081 - 0354497719  <br/>E-mail:tokemb@mofa.gov.iq  <br/>            "},
-{id:"VN", title: "<strong>Vietnam</strong><br/>   Embassy of Republic in Hanoi<br/>			Head of Mission: Khalil Jundi Rashoo<br/>    Address:66 Trang Hung Dao – Hanoi-SRof vietnam <br/>   Telephone: 04 39424141<br/>   Fax:043 942 4055<br/>E-mail:hanemb@mofa.gov.iq <br/>            "},
-{id:"CN", title: "<strong>China</strong><br/>  Embassy of Republic of Iraq in Beijing<br/>	       Head of Mission: Abdul-Karim H.Mostafa<br/>Address: No.25, xiu shui Bei Jie, Jian Wai,Beijing <br/>Postcode: 100600 Beijing, China<br/>Telephone +(8610) 65321873<br/>Fax +(8610) 65321596<br/>E-mail bknemb@mofa.gov.iq  <br/>            "},
-{id:"LK", title: "<strong>Sri Lanka</strong><br/>     Embassy of Republic of Iraq in Colombo <br/>		     Head of Mission: Qahtan Taha Khalaf<br/>Address:19 Barnes Place, Colombo7.<br/>Telephone:0094112300641,0094112300640<br/>Fax:009411230030<br/>E-Mail:colmemb@mofa.gov.iq <br/>            "},
-{id:"BD", title: "<strong>Bangladesh</strong><br/>    Embassy of Republic of Iraq in Dhaka<br/>	         Head of Mission: shaker Qasim Mahdi<br/>Address:House No.16 Dutabash Road, Baridara Diplomatic Zone Dhaka-Bangladesa <br/>Telephone:008801714133335<br/>Fax:8824597-02-0088<br/>E-mail:dakemb@mofa.gov.iq <br/>            "},
-{id:"BT", title: "<strong>Bhutan</strong><br/> Under Development "},
-{id:"KH", title: "<strong>Cambodia</strong><br/> Under Development "},
-{id:"LA", title: "<strong>Laos</strong><br/> Under Development "},
-{id:"MM", title: "<strong>Myanmar</strong><br/> Under Development "},
-{id:"NP", title: "<strong>Nepal</strong><br/> Under Development "},
-{id:"KP", title: "<strong>North Korea</strong><br/> Under Development  "},
-{id:"PG", title: "<strong>Papua New Guinea</strong><br/> Under Development "},
-{id:"PH", title: "<strong>Philippines</strong><br/>   Embassy of Republic of Iraq in Manila<br/>		    Head of Mission: Ahmed Kamal Hasan AL- Kamaly					 <br/>    Address:vh.l.DASMARINAS 2209 PARAISO corner1202,Acacia st,CITY . Manila- Philippine<br/>    Telephone:006328438880<br/>    Fax:006328871953<br/>    E-mail:mnlemb@mofa.gov.iq <br/>            "},
-{id:"KR", title: "<strong>South Korea</strong><br/> Embassy of Republic of Iraq in Seoul<br/>		  Head of Mission: Khalil I. Al-Mosawi<br/>Address:1-94 Donbingg– dong yongsan-ku, seoul, korea  <br/>Telephone: 008227904202 - 008227904203 <br/>Fax:008227904206 <br/>E-mail:sulemb@mofa.gov.iq <br/>            "},
-{id:"TW", title: "<strong>Taiwan</strong><br/> Under Development "},
-{id:"MN", title: "<strong>Mongolia</strong><br/> Under Development "},
-{id:"RU", title: "<strong>Russia</strong><br/>Embassy of Republic of Iraq in Moscow<br/>		Head of Mission: DR.ISMIEAL SHAFIQ MUHSIN<br/>Address:119435Pogodinskaya street 12 Moscow,Russian Federation   <br/>Telephone:00784992465506, 00784992465507, 00784992465508<br/>Fax:0074992462734<br/>E-mail:mosemb@mofa.gov.iq"}
-					],
-				images:[
-				{latitude: 53.479251, longitude: -2.247926, type:"circle", color:"#d84a38", title:"<strong>Consulate General of Republic of Iraq/ Manchester</strong><br/>Head of Mission: ZAID IZZADIN MOHAMMAD NOORI<br/>Address:24 Oxford Court,Cheptow Street,Manchester, M2 3WQ united Kingdom<br/>Tel:+44(0161)2280880<br/>Fax:+44(0161)2280026<br/>Email:Lonemb@mofa.gov.iq"},
-				{latitude: 19.075984, longitude: 72.877656, type:"circle", color:"#d84a38", title:"<strong>Consulate General of The Republic of Iraq in Mumbai-India</strong><br/>Head of Mission: Raad Khalil<br/>Address: A 15/14, Vasant Vihar, New Delhi - 110057 - India<br/>Telephone: 0091 11 26150081 - 0091 11 26150082<br/>Fax:0091-11-2222021562<br/>E-mail:dlh1emb@mofa.gov.iq"},
-				{latitude: 42.331427, longitude: -83.045754, type:"circle", color:"#d84a38", title:"<strong>General Consulate of Republic of Iraq in Detroit</strong><br/>Head of Mission: Al manhal Al-safi<br/>Address:16445 W.12 mile Rd. southfield,Mi 48076.USA<br/>Telephone:0012484231250<br/>Fax:0012023331129<br/>E-mail:detcon@mofa.gov.iq"},
-				{latitude: 34.052234, longitude: -118.243685, type:"circle", color:"#d84a38", title:"<strong>General Consulate of Republic of Iraq in Los Angeles</strong><br/>Head of Mission: Ahmmed Nadim Juad<br/>Address:350 South Figueoa St. Suite 700, Los Angeles, CA 90071<br/>Telephone:0012137976060<br/>Fax:0012023331129<br/>E-mail:loscon@mofa.gov.iq"},
-				{latitude: 45.508670, longitude: -73.553993, type:"circle", color:"#d84a38", title:"<strong>General Consulate of Republic of Iraq in Montreal</strong><br/>Head of Mission: Counsul Jassim Nima Msawil<br/>Address:3019 ST_SULPICE - Montreal - QUEBEC H3H1B6 Canada<br/>Telephone:0015149318555<br/>Fax:0015149318525<br/>E-mail:montcon@mofa.gov.iq"},
-				{latitude: 50.1166667, longitude: 8.6833333, type:"circle", color:"#d84a38", title:"<strong>Consulate General of Republic of Iraq in Frankfort</strong><br/>Head of Mission: Consul General Ali Hadi Al-Baiti<br/>Address: Baselerstrasse 35-37-60329 Frankfurt am Main Deutschland<br/>Telephone:00496923807600<br/>Fax:0049692380760151<br/>E-mail:francon@mofa.gov.iq"},
-				{latitude: 37.066220, longitude: 37.383320, type:"circle", color:"#d84a38", title:"<strong>Consulate General of Republic of Iraq in Ghaziantep</strong><br/>Head of Mission: Sabah Salah Al-Din Al-Dabbagh<br/>Address:Gaziantep/Turkey- Fatih Quarter- St No. 47- building No. 10- Shaheed Kamil<br/>Telephone:00903423224601<br/>Fax:00903423224610<br/>E-mail:gencon@mofa.gov.iq"},
-				{latitude: 41.005270, longitude: 28.976960, type:"circle", color:"#d84a38", title:"<strong>Consulate General of Republic of Iraq in Istanbul</strong><br/>Head of Mission: Hassan Swadi Abdul Aziz<br/>Address: Koy basi avenue no:3, yenikoy sariyer Istanbul<br/>Telephone:(0090212)2996729 - 2629823<br/>Fax:(0090212)2997442<br/>E-mail:istcon@mofa.gov.iq"},
-				{latitude: 21.543489, longitude: 39.172989, type:"circle", color:"#d84a38", title:"<strong>Consulate General of Republic of Iraq in Jeddah</strong><br/>Head of mission: Abdul Jabbar Abdul Rahman Hadhoud<br/>Address:Al-Andalus Quarter, Zahran Street, building<br/>Telephone:(00966)6614809-6648909<br/>Fax:(00966)6631250<br/>E-mail:jedcon@mofa.gov.iq"},
-				{latitude: 25.271139, longitude: 55.307485, type:"circle", color:"#d84a38", title:"<strong>Consulate General of Republic of Iraq in Dubai</strong><br/>Head of mission: Esmat Akeed Sadiq<br/>Address:Dubai/ UAE- Um Hurair 1/ Consulates gleaner<br/>Telephone:00971-43317744<br/>Fax:0097143547696<br/>E-mail:adbemb@mofa.gov.iq"},
-				{latitude: 36.215549, longitude: 37.159279, type:"circle", color:"#d84a38", title:"<strong>Consulate General of Republic of Iraq in Aleppo</strong><br/>Head of mission: Consul General Yosuf Yassen al-Numa<br/>Address: New Shahbah.Alghazaly st.<br/>Telephone:0212641069<br/>Fax:0212641068<br/>E-mail:halcon@mofa.gov.iq"},
-				{latitude: 36.300000, longitude: 59.600000, type:"circle", color:"#d84a38", title:"<strong>Consulate General of Republic of Iraq in Mashad</strong><br/>Head of Mission: Consul General Ibrahim M. Jaafar Jamal Al-deen<br/>Address: bloar frdocy - nabash frdocy 22 - shqeiq north black 494<br/>Telephone:(0098915)7661755 - (0098511)7661756<br/>Fax: 00985117638802<br/>E-mail:mashcon@mofa.gov.iq"},
-				{latitude: 34.314167, longitude: 47.065000, type:"circle", color:"#d84a38", title:"<strong>Consulate General of Republic of Iraq in Kermanshah</strong><br/>Head of Mission: Consul General Mustafa Ibrahim Mussa<br/>Address:Iran/ Kermanshah Province/ Ferdowsi Square/ nearby Mentzach to the God, Kermanshah<br/>Telephone:09187258881-2-3<br/>Fax:7241803- 7249498<br/>E-mail:krmcon@mofa.gov.iq"},
-				{latitude: -33.867487, longitude: 151.206990, type:"circle", color:"#d84a38", title:"<strong>Consulate of Republic of Iraq in Sydney</strong><br/>Head of Mission: Basim Abass Daood<br/>Address:Sydney new 2000- building 5 Elizabeth street level 11<br/>Telephone:00973317742<br/>Fax:<br/>Email:sadcon@mofa.gov.iq"},
-				{latitude: 31.316710, longitude: 48.684380, type:"circle", color:"#d84a38", title:"<strong>Consulate of Republic of Iraq in Ahwaz</strong><br/>Head of Mission: <br/>Address:Iran/ Khuzestan/ Ahwaz/ Amania /SOQrat St/ No9<br/>Telephone:06113332380-06113367445<br/>Fax:<br/>Email:sadcon@mofa.gov.iq"},
-				{latitude: 41.902916, longitude: 12.453389, type:"circle", color:"#d84a38", title:"<strong>Embasy of Republic of Iraq in Vatican</strong><br/>Head of Mission: Habib Muhamed Al-saader<br/>Address: via della camilluccia, 3551- 00135 Roma- Italia<br/>Telephone:0039063014508<br/>Fax:00390635506416<br/>E-mail:ftkemb@mofa.gov.iq"},
-				{latitude: 38.895112, longitude: -77.036366, type:"circle", color:"#d84a38", title:"<strong>General Representive of Republic of Iraq in New York</strong><br/>Head of Mission: Dr.Mohammed Ali Alhakim<br/>Address:14 East 79th Street New York, NY 10075<br/>Telephone:00212-737-4433<br/>Fax:00212-772-1794<br/>E-mail:nyrep@mofa.gov.iq"},
-				{latitude: 30.061629, longitude: 31.219432, type:"circle", color:"#d84a38", title:"<strong>Representation of The Republic of Iraq to the Arab League</strong><br/>Head of Mission: Diyaa Hadi al-Dabbas<br/>Address:cairo, zamalek, Muhammed Madhar street, street No 9<br/>Telephone:7358087-7351828-7352633-7364119 - 00202<br/>Fax:00202 - 7366956<br/>E-mail:cairep@mofa.gov.iq"},
-				{latitude: 27.0275, longitude: 49.5500, type:"circle", color:"#d84a38", title:"<strong>Bahrain</strong>"}
-				]
-				},
-				"areasSettings": {
-					"autoZoom": true,
-					"unlistedAreasColor": "#ffffff",
-					"color": "#ffffff",
-					"rollOverColor": "#3b93c9",
-					"selectedColor": "#3b93c9"
-				}
-			});
-		</script>
-		<!-- END Interactive Map Scripts -->
-	</body>
-</html>
+        "dataProvider": {
+            "map": "worldHigh",
+            "getAreasFromMap": false,
+            "areas": [
+                {
+                    id: "IN",
+                    title: "<strong>India</strong><br/>  Embassy of Republic of Iraq in New Delhi<br/>	      Head of Mission: Ahmed T.Ahmed Brwari <br/>Address: New Delhi -A 15/14, Vasant Vihar -110057, India <br/>Telephone:0091-11- 26150081, 26150082, 26150083<br/>Fax:0091-11-26150083 <br/>E-mail:dlh1emb@mofa.gov.iq"
+                },
+                {
+                    id: "KZ",
+                    title: "<strong>Kazakhstan</strong><br/>  Embassy of Republic of Iraq in Astana<br/>	       Head of Mission: Rageh Saber Abbood Al-Musawi <br/>Address: Republic of Kazakhstan/ Astana city/ Diplomatic town/ Dinmuhamed/ konaev Street/ Building No.19.<br/>Telephone: 0077172790675, 0077172790679<br/>E-mail: astemb@mofa.gov.iq<br/>            "
+                },
+                {
+                    id: "IT",
+                    title: "<strong>Italy</strong><br/>  Embassy of Republic of Iraq in Romme<br/>          Head of Mission: Saywan Sabir Mustafa Barzani<br/>Address: Ambasciata della repubblica dell Iraq, via Della Camilluccia355, 00135 Roma.<br/>Telephone:0635077281 - 063014508 - 06305072571<br/>Fax:06-3014445 <br/>E-mail:romemb@mofa.gov.iq<br/>            "
+                },
+                {
+                    id: "ZA",
+                    title: "<strong>South Africa</strong><br/>  Embassy of Republic of Iraq in Pretoria<br/>	       Head of Mission: Dr.Hesham Ali Ibrahim AL-aluy<br/>Address:803 Jan Shoba St. Brooklyn -Pretoria. P.O Box:11089.<br/>Telephone:012-362-2048/9<br/>Fax:012-362-2027<br/>E-mail:abrtemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "US",
+                    title: "<strong>United States of America</strong><br/>  Embassy of Republic of Iraq in Washington D.C.<br/>           Head of Mission: Lukman Abdul-Rahim Faily<br/>Address: Massachusetts Ave.NW 3421 Washington,D.C.20007.<br/>Telephone:002027421600 <br/>Fax:(+1)202-742-1600<br/>E-mail: wasemb@mofa.gov.iq<br/>            "
+                },
+                {id: "GL", title: "<strong>Greenland</strong><br/> Under Development "},
+                {id: "AR", title: "<strong>Argentina</strong><br/> Under Development "},
+                {
+                    id: "CA",
+                    title: "<strong>Canada</strong><br/>    Embassy of Republic of Iraq in Ottawa<br/>	        Head of Mission: Abdulrahman Hamid Mohammed Al-Hussaini<br/>Address:215 McLeod Street.Ottawa,Ontario K2P0Z8 Canada  <br/>Telephone:0016132369177<br/>Fax:0016132369641<br/>E-mail:otaemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "MX",
+                    title: "<strong>Mexico</strong><br/>    Embassy of Republic of Iraq in Mexico city<br/>	         Head of Mission: Ali Yassen Mohammed Karim <br/>Address:Paseo de la Reforma 1875,col.lomas de Chapultepec Del.Miguel Hidalgo mexico D.F c.p11000. <br/>Telephone:005255- 55960254<br/>Fax:005255- 55960254<br/>E-mail:mxcemb@mofa.gov.iq  <br/>            "
+                },
+                {id: "EC", title: "<strong>Ecuador</strong><br/> Under Development "},
+                {
+                    id: "VE",
+                    title: "<strong>Venezuela</strong><br/>      Embassy of Republic of Iraq in Caracas<br/>	           Head of Mission: Fakhri hassan Al-issa<br/>Address:St Nicholas Street Kobirinko branching from Los Malabars/ Villa Babellonia/ Faye Ariba suburb/ municipality Baruta / mandate Miranda / Caracas / Venezuela<br/>Telefonos: ODP/ 00582129933446<br/>           ODP/ 00582129924713 <br/>Fax:005821-2993-0819<br/>E-mail:crcemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "BR",
+                    title: "<strong>Brazil</strong><br/>     Embassy of Republic of Iraq in Brasilia<br/>	          Head of Mission: Adel Mustafa Kamil AlKurdi.<br/>Address: ses Av- das Nacoes, Qd 815,Lote 64 Brasilia DF, Cep:70430-900 <br/>Telephone:005561- 3462882/3466612 <br/>Fax:005561- 3467442/ 3467034 <br/>E-mail:brzemb@mofa.gov.iq<br/>            "
+                },
+                {id: "CO", title: "<strong>Colombia</strong><br/> Under Development "},
+                {id: "BO", title: "<strong>Bolivia</strong><br/> Under Development "},
+                {id: "PE", title: "<strong>Peru</strong><br/> Under Development "},
+                {id: "BZ", title: "<strong>Belize</strong><br/> Under Development "},
+                {
+                    id: "CL",
+                    title: "<strong>Chile</strong><br/>     Embassy oF Republic oF Iraq in Santiago<br/>		     Head of Mission:Charge d'affairs Amer Al-Fatlawi <br/>Address: Enrique Foster Sur306y 405 lasCondes, santiago<br/>Telephone:005629845147<br/>Fax:0091-11-26535236 <br/>E-mail:sanemb@mofa.gov.iq <br/>            "
+                },
+                {id: "CR", title: "<strong>Costa Rica</strong><br/> Under Development "},
+                {id: "CU", title: "<strong>Cuba</strong><br/> Under Development "},
+                {id: "JM", title: "<strong>Jamaica</strong><br/> Under Development "},
+                {id: "HT", title: "<strong>Haiti</strong><br/> Under Development "},
+                {id: "BS", title: "<strong>The Bahamas</strong><br/> Under Development "},
+                {id: "SB", title: "<strong>Solomon Islands</strong><br/> Under Development "},
+                {id: "FJ", title: "<strong>Fiji</strong><br/> Under Development "},
+                {id: "NC", title: "<strong>New Caledonia</strong><br/>Caledonia"},
+                {id: "DO", title: "<strong>Dominican Republic</strong><br/> Under Development "},
+                {id: "SV", title: "<strong>El Salvador</strong><br/> Under Development "},
+                {id: "GT", title: "<strong>Guatemala</strong><br/> Under Development "},
+                {id: "GY", title: "<strong>Guyana</strong><br/> Under Development "},
+                {id: "GF", title: "<strong>French Guiana</strong><br/>description"},
+                {id: "HN", title: "<strong>Honduras</strong><br/> Under Development "},
+                {id: "NI", title: "<strong>Nicaragua</strong><br/> Under Development "},
+                {id: "PA", title: "<strong>Panama</strong><br/> Under Development "},
+                {id: "PY", title: "<strong>Paraguay</strong><br/> Under Development "},
+                {id: "PR", title: "<strong>Puerto Rico</strong><br/> Under Development "},
+                {id: "SR", title: "<strong>Suriname</strong><br/> Under Development "},
+                {id: "UY", title: "<strong>Uruguay</strong><br/> Under Development "},
+                {
+                    id: "NL",
+                    title: "<strong>The Netherlands</strong><br/>  Embassy of Republic of Iraq in The Hague<br/>	       Head of Mission: Saad A.AL-Majeed<br/>Address: Embassy of the republic of Iraq , Johan de Wittlaan 16, 2517 JR Den Haag<br/>Telephone:0031-703101260 ,0031703101280<br/>Fax: 0031703101261, 0031703101281   <br/>E-mail: lahemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "NO",
+                    title: "<strong>Norway</strong><br/>   Embassy of Republic of Iraq in Oslo<br/>	        Head of Mission: Sundus Omar Ali Albayraqdar <br/>Address: Tidemands gate 9,0244 Oslo,Kingdom of Norway <br/>Telephone:0047-22006000<br/>consular Section Phone: 0047 22 44 94 24<br/>E-mail:oslemb@mofa.gov.iq<br/>            "
+                },
+                {
+                    id: "DK",
+                    title: "<strong>Denmark</strong><br/>    Embassy of Republic of Iraq in copenhagen-Denmark <br/>	         Head of Mission: Dr.Albert Issa Nothor<br/>Address: Ehlersvej 9,2900 Hellerup.<br/>Telephone:004539450270.<br/>Fax:004539406997<br/>E-mail:kbnemb@mofa.gov.iq<br/>       kbnemb@iraqembassy.dk <br/>            "
+                },
+                {id: "IE", title: "<strong>Ireland</strong><br/> Under Development "},
+                {
+                    id: "GB",
+                    title: "<strong>United Kingdom</strong><br/>      Embassy of Republic of Iraq in London<br/>	          Head of Mission: Faik Ferik Abdileziz Nerweyi<br/>      Address: 21 Queens Gate London SW7 5JE<br/>      Tel: +44(0) 20 7590 7650  <br/>      Fax: +44(0) 20 7590 7679  <br/>      Email: lonemb@mofa.gov.iq<br/>            "
+                },
+                {
+                    id: "RO",
+                    title: "<strong>Romania</strong><br/>      Embassy of Republic of Iraq in Buckarest<br/>	           Head of Mission: Omer A.K. Berzinji<br/>Address: Venezuela street no. 6-8, sect.1, Bucharest, Romania<br/>Telephone: 0040212339008 - 0040212339009<br/>Fax: 0040212339007<br/>E-mail: bkremb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "DE",
+                    title: "<strong>Germany</strong><br/>     Embassy of Republic of Iraq in Berlin <br/>	          Head of Mission: Hussain Mahmood Fadhlalla Alkateeb<br/>      Address: Pacelliallee 19-21, 14195 Berlin<br/>      Telephone:004930 - 81488112<br/>	  Fax:0049308148822<br/>      E-mail:beremb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "FR",
+                    title: "<strong>France</strong><br/>    Embassy of Republic of Iraq in Paris<br/>	         Head of Mission: Fareed Mustafa Kamel Yassin<br/>Address: 64 avenue.Foch 75116 Paris<br/>Telephone: +33(0)145533370 <br/>Fax:+33(0)145533380-+33(0)147042294 <br/>E-mail:paremb@mofa.gov.iq<br/>            "
+                },
+                {id: "AL", title: "<strong>Albania</strong><br/> Under Development "},
+                {id: "AM", title: "<strong>Armenia</strong><br/> Under Development "},
+                {
+                    id: "AT",
+                    title: "<strong>Austria</strong><br/>      Embassy of Republic of Iraq in Austria<br/>	           Head of Mission: Dr.Srood Rashid Najib<br/>Address: Laurenzerberg 2, 1's Floor. 1010 Vienna. <br/>Telephone:(+431)7138195<br/>Fax:(+431)7138208 <br/>E-mail:ven1emb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "BY",
+                    title: "<strong>Belarus</strong><br/>   Embassy of Republic of Iraq in Minsk<br/>            Head of Mission: Haider Mansuor Hadi<br/>Address: Belarus,Minsk 220131,Bogdanovicha Str. 267/29  <br/>Telephone:00375172375016<br/>Fax:00375172375255<br/>Email:minemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "BE",
+                    title: "<strong>Belgium</strong><br/>  Embassy Of Republic of Iraq in Bruxelles <br/>	       Head of Mission: Mohammed Abdullah Humaimidi<br/>Address: Avenue Franklin Roosevelt 115/1050 Brussels<br/>Telephone: 003223745992 , 003226630490<br/>Fax: 023747615<br/>E-mail: brxemb@mofa.gov.iq <br/>            "
+                },
+                {id: "LU", title: "<strong>Luxembourg</strong><br/> Under Development "},
+                {
+                    id: "BG",
+                    title: "<strong>Bulgaria</strong><br/>    Embassy of Republic of Iraq in Sofia <br/>	         Head of Mission: Asaad Ali Yaseen Khalaf Al Samarraie<br/>Address:21 anton Chekhov str:1113sofia/ bulgaria<br/>Telephone: 9733348-9733482<br/>Fax: 003592- 9711197 <br/>E-mail:sofemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "CZ",
+                    title: "<strong>Czech Republic</strong><br/>  Embassy of Republic of Iraq in Prague <br/>           Head of Mission: Hussain Saleh Majeed Mualla<br/>Address:Mongolska 607/3 PRAGUE 6-160 00   <br/>Telephone:00420 - 224326977 / 224326976 <br/>Fax:224321715 <br/>E-mail: brgemb@mofa.gov.iq <br/>            "
+                },
+                {id: "EE", title: "<strong>Estonia</strong><br/> Under Development "},
+                {
+                    id: "GE",
+                    title: "<strong>Georgia</strong><br/>  Embassy of Republic of Iraq in Tbilisi<br/>		  Head of Mission: Bakir Ahmed Aziz Al-Jaff <br/>Address: Lvovi Street No.77, Tibilisi,0160, Georgia.<br/>Telephone: 009952000258.<br/>Fax: 0099532294503<br/>E-mail:tebemb@mofa.gov.iq  <br/>            "
+                },
+                {
+                    id: "GR",
+                    title: "<strong>Greece</strong><br/>  Embassy of Republic of Iraq in Athena <br/>	       Head of mission: BURHAN.N.S.Jaf<br/>Address: MAZARAKI NO:4- P.PSYCHIKO- ATHENS,GREECE.<br/>Telephone: 00302106722330.<br/>Fax: 00302106717185 <br/>E-mail:atnemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "HU",
+                    title: "<strong>Hungary</strong><br/>   Embassy of Republic of Iraq in budapest<br/>	        Head of Mission: Jasim Muhawi Hussein Al-tai<br/>Address:  Hungary-1027 Budapest-Bölöni György utca 3<br/>Telephone:00361-3925120<br/>Fax:00361-3925133 <br/>E-mail: budemb@mofa.gov.iq <br/>            "
+                },
+                {id: "IS", title: "<strong>Iceland</strong><br/> Under Development "},
+                {id: "LV", title: "<strong>Latvia</strong><br/> Under Development "},
+                {id: "LT", title: "<strong>Lithuania</strong><br/> Under Development "},
+                {id: "MD", title: "<strong>Moldova</strong><br/> Under Development "},
+                {
+                    id: "PL",
+                    title: "<strong>Poland</strong><br/> Embassy of Reublic of Iraq in Warsow<br/>	      Head of Mission: Assad Sultan Abu Gilal<br/>Address:Poland, Warsow,Ul.Dbrowiecka 9A03-932 <br/>Telephone:(22) 6174911 - 6175773<br/>Fax:(22) 6177065<br/>E-mail:wrsemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "PT",
+                    title: "<strong>Portugal</strong><br/>   Embasy of Republic of Iraq in Lisboa <br/>	        Head of Mission: Charge d'affairs Rest Noori shawis  <br/>Address: Rua da arriaga,9-alapa 1200-608-Lisboa Portugal <br/>Telephone:00351213933310-8 <br/>Fax:00351213911052 <br/>E-mail:lisemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "RS",
+                    title: "<strong>Serbia</strong><br/>  Embassy of Republic of Iraq in Belgrade <br/>	       Head of Mission: Dr.Falah Abdulhasan Abdulsada<br/>Address:Užička 27, 11000 Belgrade, Serbia<br/>Telephone:00381112647027<br/>Fax:00381112668068<br/>E-mail: bgrdemb@mofa.gov.iq<br/>            "
+                },
+                {id: "SI", title: "<strong>Slovenia</strong><br/> Under Development "},
+                {id: "HR", title: "<strong>Croatia</strong><br/> Under Development "},
+                {id: "BA", title: "<strong>Bosnia and Herzegovina</strong><br/> Under Development "},
+                {id: "ME", title: "<strong>Montenegro</strong><br/> Under Development "},
+                {id: "MK", title: "<strong>Macedonia</strong><br/> Under Development "},
+                {
+                    id: "SK",
+                    title: "<strong>Slovakia</strong><br/>  Embassy of Republic of Iraq in Bratislava<br/>		   Head of Mission: Mohammed Hakim Al-Rubaie<br/>Address:Radvanska 15, Bratislava 81101, Slovakia<br/>Telephone:00421 254131466<br/>Fax:00421254131464<br/>E-mail:brtsemb@mofa.gov.iq<br/>            "
+                },
+                {
+                    id: "ES",
+                    title: "<strong>Spain</strong><br/>  Embassy of Republic of Iraq in Madrid<br/>	       Head of Mission: Wadee Batti Hanna Al-Batti<br/>Address:Calle Carril del Conde nº 56-Madrid – 28034 Spain <br/>Telephone:0034 913 885 980 <br/>Fax:0034 917 218 682 <br/>E-mail:mdremb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "FI",
+                    title: "<strong>Finland</strong><br/>  Embassy of Republic of Iraq in Helsinki<br/>	       Head of Mission: Saad Jawad Qindel<br/>Address:Lars Sonckinitie 2,00570, Helsinki<br/>Telephone:0035896818870<br/>Fax:0035896848977 <br/>E-mail:hlsemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "SE",
+                    title: "<strong>Sweden</strong><br/>  Embassy of Republic of Iraq in Stockholm<br/>	       Head of Mission: Baker Fattah Hassan<br/>Address: Tekniska högskolan T. bana, Baldersgatan 6A-B, Stokholm 11427, postal address Iraks Ambassad BOX: 26031- Stokholm 100 41.<br/>Telephone: 004684114443<br/>E-mail:stkemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "CH",
+                    title: "<strong>Switzerland</strong><br/>  Embassy of Republic of Iraq in Bern<br/>	       Head of mission: Counselor Deler Dara Tawfiq <br/>Address: Elfenstrasse 6 3006 Bern<br/>Telephone: 0041313514043-0041794028662<br/>Fax: 0041313518312 <br/>E-mail: bernemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "TR",
+                    title: "<strong>Turkey</strong><br/>          Embassy of Republic of Iraq in Ankara<br/>	               Head of Mission: Talal Jamil Al-Oubadi<br/>Address: Turan Emeksiz sk. No:11 Gaziosmanpaşa 06700 Ankara - Turkey<br/>Telephone:(90 312) 468 74 21 , 468 74 22<br/>Fax:(312 90) 32 48 32 <br/>E-mail:ankemb@mofa.gov.iq <br/>            "
+                },
+                {id: "CY", title: "<strong>Cyprus</strong><br/> Under Development "},
+                {
+                    id: "UA",
+                    title: "<strong>Ukraine</strong><br/>  Embassy of Republic of Iraq in Kiev<br/>	       Head of Mission: Shorsh Khalid Said<br/>Address: ZVIRYNETSKA st.35,kiev-UKRAIN.<br/>Telephone:003802860440-003802860441 <br/>Fax:003802860445 <br/>E-mail:kefemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "QA",
+                    title: "<strong>Qatar</strong><br/> Embassy of Republic of Iraq in Doha<br/>          Head of mission:Charge d'affairs Nawar Sadiq Jawad<br/>Address:St-509, Housing No.5 ,New Doha,Aldafa, Diplomatic region.<br/>Telephone:009744216730 - 0074416146<br/>Fax:00974216152<br/>E-mail:dohemb@mofa.gov.iq<br/>            "
+                },
+                {id: "SA", title: "<strong>Saudi Arabia</strong><br/> Under Development "},
+                {id: "AE", title: "<strong>United Arab Emirates</strong><br/> Under Development "},
+                {id: "SY", title: "<strong>Syria</strong><br/> Under Development "},
+                {
+                    id: "OM",
+                    title: "<strong>Oman</strong><br/>  Embassy of Republic of Iraq in Muscat <br/>		   Head of mission: Amal Mussa Hussain Ali AL-Musawi<br/>Address:Madinat Sultan Qaboos.Postal Code 115 .p.o.Box 262<br/>Telephone:24603642- 24695559<br/>Fax:24602026<br/>E-mail:musemb@mofa.gov.iq<br/>            "
+                },
+                {
+                    id: "KW",
+                    title: "<strong>Kuwait</strong><br/>   Embassy of Republic of Iraq in Kuwait<br/>			Head of mission: Mohammed Hussain Mhommed Ali Bahr-AlUloom<br/>Address: Kuwait/Dayiaa/ Embassies bloc.<br/>Telephone:00965 986025225<br/>Fax:00965 986025225<br/>E-mail:kuwemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "PK",
+                    title: "<strong>Pakistan</strong><br/>  Embassy of Republic of Iraq in Islamabad<br/>		   Head of Mission: Rushdi Mahmmod Rasheed<br/>Address:Plot:6-13,Street No:31,G-5 Diplomatic Enclave,Islamabad-Pakistan <br/>Telephone:0092512600432- 0092512600430<br/>Fax:0092512600435- 0092512600437<br/>E-mail:iabemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "AF",
+                    title: "<strong>Afghanistan</strong><br/>  Embassy of Republic of Iraq in Kabul<br/>		   Head of Mission: Arshad Omar Ismael <br/>Address: Maihan Str. HajiYaqoub Square, Shar -E, Now,Kabul- Afghanisttan<br/>Telephone:0093202204849<br/>Fax:0092512600435- 0092512600437<br/>E-mail:kblemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "AZ",
+                    title: "<strong>Azerbaijan</strong><br/>  Embassy of Republic of Iraq in BAKU<br/>	      Head of Mission: Hayder Shiya Ghubeshi AL-Barrak<br/>Address: Azerbaijan-BAKU CITY, YASAMAL DISTRICT, QIZIL SHERK STREET, HOUSE 5<br/>Telephone: 00994125109233- 00994125381734- 00994125381735 <br/>Fax 00994122371835<br/>E-mail:bakemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "IR",
+                    title: "<strong>Iran</strong><br/>   Embassy of Republic of Iraq in Tehran<br/>			Head of Mission: Mohamed Majed Al-Shik<br/>Address: Tehran,Wali Aser Rd Next to Ministry of Justice<br/>Telephone: 00982188938866 - 00982188938865<br/>Fax: 88938877<br/>E-mail:tehemb@mofa.gov.iq <br/>            "
+                },
+                {id: "IQ", title: "<strong>Iraq</strong><br/> Under Development "},
+                {id: "IL", title: "<strong>Israel</strong><br/> Under Development "},
+                {id: "PS", title: "<strong>Palestine</strong><br/> Under Development "},
+                {
+                    id: "JO",
+                    title: "<strong>Jordan</strong><br/>  Embassy of Republic of Iraq in Amman<br/>		  Head of Mission: Dr.jawad Hadi Abbas<br/>Address:jabal Amman Box post 2025<br/>Telephone:0096264637328<br/>Fax:0096264619172<br/>E-mail:amaemb@mofa.gov.iq<br/>            "
+                },
+                {
+                    id: "LB",
+                    title: "<strong>Lebanon</strong><br/>Embassy of Republic of Iraq in Beirut<br/>		Head of Mission: Dr.Raad Mohammed AL-Alusi <br/>Address: pierreheloustreet- brasilia- alhazimiyz, beirut.<br/>Telephone: 0096105452823 - 009615453209<br/>Fax: 009615459850 - 009615453219<br/>E-mail: brtemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "YE",
+                    title: "<strong>Yemen</strong><br/> Embassy of Republic of Iraq in Sanaa <br/>		  Head of Mission: Asaad Ali Yaseen<br/>Address:Yemen- Sanaa neighborhood political- Street No. 17 / A.<br/>Telephone:009671440182<br/>Fax: 009671440187<br/>E-mail:snaemb@mofa.gov.iq <br/>            "
+                },
+                {id: "TJ", title: "<strong>Tajikistan</strong><br/> Under Development "},
+                {id: "TM", title: "<strong>Turkmenistan</strong><br/> Under Development "},
+                {id: "UZ", title: "<strong>Uzbekistan</strong><br/> Under Development "},
+                {id: "KG", title: "<strong>Kyrgyzstan</strong><br/> Under Development "},
+                {id: "NE", title: "<strong>Niger</strong><br/> Under Development "},
+                {id: "AO", title: "<strong>Angola</strong><br/> Under Development "},
+                {
+                    id: "EG",
+                    title: "<strong>Egypt</strong><br/>      Embassy of Republic of Iraq in Cairo<br/>	           Head of Mission: Dhiaa Hadi Abbas<br/>Address: cairo, zamalek, Muhammed Madhar street, street No 9<br/>Telephone: (00202)  27359205 / 27358087 / 27352633<br/>Fax:(00202) 27365075<br/>E-mail: caiemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "TN",
+                    title: "<strong>Tunisia</strong><br/>      Embassy of Republic of Iraq in Tunisia<br/>			   Head of mission: PH.D Jabir Habib Jabir <br/>Address:Tunis- main street block No.110711, postal code BHB2045.<br/>Telephone: 71961983 - 71961985 <br/>Fax:0020271964750<br/>E-mail: tunemb@mofa.gov.iq <br/>            "
+                },
+                {id: "GA", title: "<strong>Gabon</strong><br/> Under Development "},
+                {
+                    id: "DZ",
+                    title: "<strong>Algeria</strong><br/>  Embassy of Republic of Iraq in Algeria<br/>		   Head of mission: Auday M. Abdulla AL-Khairalla<br/>Address:4,Rue Arzeki ABRI, Hydra-Alger B.P.249<br/>Telephone:201693125- 021691272 - 021692173 <br/>Email:algemb@mofa.gov.iq<br/>            "
+                },
+                {
+                    id: "LY",
+                    title: "<strong>Libya</strong><br/>  Embassy of Republic of Iraq in Tripoli<br/>		   Head of mission: Saad Mohamed Ridha<br/>Address:Embassy of the Republic of Iraq/ by Gorji - Al-Andalus- Tripoli, <br/>Telephone:00218214778195<br/>Fax:00218214778196<br/>Email:trpemb@mofa.gov.iq <br/>            "
+                },
+                {id: "CG", title: "<strong>Congo</strong><br/> Under Development "},
+                {id: "GQ", title: "<strong>Equatorial Guinea</strong><br/> Under Development "},
+                {id: "BJ", title: "<strong>Benin</strong><br/> Under Development "},
+                {id: "BW", title: "<strong>Botswana</strong><br/> Under Development "},
+                {id: "BF", title: "<strong>Burkina Faso</strong><br/> Under Development "},
+                {id: "BI", title: "<strong>Burundi</strong><br/> Under Development "},
+                {id: "CM", title: "<strong>Cameroon</strong><br/> Under Development "},
+                {id: "CF", title: "<strong>Central Africa Republic</strong><br/> Under Development "},
+                {id: "TD", title: "<strong>Chad</strong><br/> Under Development "},
+                {id: "CI", title: "<strong>Ivory Coast</strong><br/> Under Development "},
+                {id: "CD", title: "<strong>Democratic Congo</strong><br/> Under Development "},
+                {id: "DJ", title: "<strong>Djibouti</strong><br/> Under Development "},
+                {id: "ET", title: "<strong>Ethiopia</strong><br/> Under Development "},
+                {id: "GM", title: "<strong>Gambia</strong><br/> Under Development "},
+                {id: "GH", title: "<strong>Ghana</strong><br/> Under Development "},
+                {id: "GN", title: "<strong>Guinea</strong><br/> Under Development "},
+                {id: "GW", title: "<strong>Guinea Bissau</strong><br/> Under Development "},
+                {
+                    id: "KE",
+                    title: "<strong>Kenya</strong><br/>  Embassy of Republic of Iraq in Nairobi<br/>		   Head of Mission: Mohammed Saeed  Al- Shakarchi <br/>Address:Nairobi/gigiri/off u.n.avenue/magnolia close,lobelia drive house no.176, P.O. 399-00621.<br/>Telephone:+254 0720 770778<br/>Email:narbemb@mofa.gov.iq <br/>            "
+                },
+                {id: "LS", title: "<strong>Lesotho</strong><br/> Under Development "},
+                {id: "LR", title: "<strong>Liberia</strong><br/> Under Development "},
+                {id: "MG", title: "<strong>Madagascar</strong><br/> Under Development "},
+                {id: "MW", title: "<strong>Malawi</strong><br/> Under Development "},
+                {id: "ML", title: "<strong>Mali</strong><br/> Under Development "},
+                {
+                    id: "MA",
+                    title: "<strong>Morocco</strong><br/>  Embassy of Republic of Iraq in Rabat<br/>		   Head of Mission: Hazem Al-Yousefi<br/>Address:Muhamed al ghazi Zanka, Almahdee bin Baraka Street,Al swais <br/>Telephone:004539450270-39406098<br/>Fax:0021237759749<br/>Email:rbtemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "MR",
+                    title: "<strong>Mauritania</strong><br/> Embassy of Republic of Iraq in Nouakchott<br/>		 Head of Mission: Ahmed Naif Rasheed al-Dulaimi <br/>Address: tevragh zeina-nord villa no.399 nouakchott<br/>Telephone:002225243252<br/>Fax:002225243251<br/>Email:nokemb@mofa.gov.iq <br/>            "
+                },
+                {id: "MZ", title: "<strong>Mozambique</strong><br/> Under Development "},
+                {id: "NA", title: "<strong>Namibia</strong><br/> Under Development "},
+                {
+                    id: "NG",
+                    title: "<strong>Nigeria</strong><br/> Embassy of Republic of Iraq in Abuja<br/>	      Head of Mission: Dr.Ali Abbass Bandar Al-Amiri<br/>Address:5 Kainji Street, off Lake Chad Crescent, Maitama Nigeria – Abuja<br/>Telephone: 002348026286023<br/>Fax:<br/>Email:abjem@mofa.gov.iq <br/>            "
+                },
+                {id: "ER", title: "<strong>Eritrea</strong><br/> Under Development "},
+                {id: "RW", title: "<strong>Rwanda</strong><br/> Under Development "},
+                {
+                    id: "SN",
+                    title: "<strong>Senegal</strong><br/>  Embassy of Republic of Iraq in Dakar<br/>		   Head of Mission: <br/>Address: Point E6th street×B.PO.BO×45448 Dakar Senegal<br/>Telephone: 00221338697799<br/>Fax:00221338240909<br/>Email:dkremb@mofa.gov.iq <br/>            "
+                },
+                {id: "SL", title: "<strong>Sierra Leona</strong><br/> Under Development "},
+                {id: "SO", title: "<strong>Somalia</strong><br/> Under Development "},
+                {
+                    id: "SD",
+                    title: "<strong>Sudan</strong><br/> Embassy of Republic of Iraq in Kartoum<br/>	      Head of Mission: Dr.Salih Husain Ali <br/>Address:Embassy of the Republic of Iraq-Khartoum-Burry-Garden City- P.O.Box:1969.<br/>Telephone:00249183271866<br/>Fax:<br/>Email:krtemb@mofa.gov.iq <br/>            "
+                },
+                {id: "SZ", title: "<strong>Swaziland</strong><br/> Under Development "},
+                {id: "TZ", title: "<strong>Tanzania</strong><br/> Under Development "},
+                {id: "TO", title: "<strong>Tonga</strong><br/> Under Development "},
+                {id: "UG", title: "<strong>Uganda</strong><br/> Under Development "},
+                {id: "EH", title: "<strong>Western Sahara</strong><br/> Under Development "},
+                {id: "ZM", title: "<strong>Zambia</strong><br/> Under Development "},
+                {id: "ZW", title: "<strong>Zimbabwe</strong><br/> Under Development "},
+                {
+                    id: "AU",
+                    title: "<strong>Australia</strong><br/>  Embassy of Republic of Iraq in canberra<br/>	      Head of Mission: Mouayed M. Issa M. Saleh <br/>Address: 48 Culgoa Circuit O'Malley ACT 2606 Australia<br/>Telephone: +61 - 2 - 6286 2744<br/>Fax: +61 - 2 - 6290 2993 <br/>Email:cnbemb@mofa.gov.iq  <br/>            "
+                },
+                {
+                    id: "MY",
+                    title: "<strong>Malaysia</strong><br/>  Embassy of Republic of Iraq in Kuala Lumpur<br/>		Head of Mission: Basim Hattab Habash<br/>Address:2,JALAN LANGGAK GOLF,OFF JALAN TUN RAZAK, 55000 KUALA LUMPUR, MALAYSIA<br/>Telephone:03-21480555, 03-21480650<br/>Fax:00603 - 21414331<br/>Email:quaemb@mofa.gov.iq  <br/>            "
+                },
+                {id: "SG", title: "<strong>Singapore</strong><br/> Under Development "},
+                {
+                    id: "ID",
+                    title: "<strong>Indonesia</strong><br/>  Embassy of Republic of Iraq in Jakarta<br/>			Head of Mission: Abdulla Hussein Saleh Al-Jubori<br/>Address:38 jl.Teuku Umar.menteng  <br/>Telephone:021-3904067 <br/>Fax:0062213904066 <br/>E-mail:jakemb@mofa.gov.iq  <br/>            "
+                },
+                {id: "NZ", title: "<strong>New Zealand</strong><br/> Under Development "},
+                {id: "TH", title: "<strong>Thailand</strong><br/> Under Development "},
+                {id: "BN", title: "<strong>Brunei</strong><br/> Under Development "},
+                {
+                    id: "JP",
+                    title: "<strong>Japan</strong><br/>  Embassy of Republic of Iraq in Tokyo<br/>		  Head of Mission: Lukman A. Abdul Al kareem <br/>Address:14-6 kamiyama-cho,shibuya-ku, Tokyo Post No.150-0047  <br/>Telephone:0081 - 035449-3231 <br/>Fax:0081 - 0354497719  <br/>E-mail:tokemb@mofa.gov.iq  <br/>            "
+                },
+                {
+                    id: "VN",
+                    title: "<strong>Vietnam</strong><br/>   Embassy of Republic in Hanoi<br/>			Head of Mission: Khalil Jundi Rashoo<br/>    Address:66 Trang Hung Dao – Hanoi-SRof vietnam <br/>   Telephone: 04 39424141<br/>   Fax:043 942 4055<br/>E-mail:hanemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "CN",
+                    title: "<strong>China</strong><br/>  Embassy of Republic of Iraq in Beijing<br/>	       Head of Mission: Abdul-Karim H.Mostafa<br/>Address: No.25, xiu shui Bei Jie, Jian Wai,Beijing <br/>Postcode: 100600 Beijing, China<br/>Telephone +(8610) 65321873<br/>Fax +(8610) 65321596<br/>E-mail bknemb@mofa.gov.iq  <br/>            "
+                },
+                {
+                    id: "LK",
+                    title: "<strong>Sri Lanka</strong><br/>     Embassy of Republic of Iraq in Colombo <br/>		     Head of Mission: Qahtan Taha Khalaf<br/>Address:19 Barnes Place, Colombo7.<br/>Telephone:0094112300641,0094112300640<br/>Fax:009411230030<br/>E-Mail:colmemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "BD",
+                    title: "<strong>Bangladesh</strong><br/>    Embassy of Republic of Iraq in Dhaka<br/>	         Head of Mission: shaker Qasim Mahdi<br/>Address:House No.16 Dutabash Road, Baridara Diplomatic Zone Dhaka-Bangladesa <br/>Telephone:008801714133335<br/>Fax:8824597-02-0088<br/>E-mail:dakemb@mofa.gov.iq <br/>            "
+                },
+                {id: "BT", title: "<strong>Bhutan</strong><br/> Under Development "},
+                {id: "KH", title: "<strong>Cambodia</strong><br/> Under Development "},
+                {id: "LA", title: "<strong>Laos</strong><br/> Under Development "},
+                {id: "MM", title: "<strong>Myanmar</strong><br/> Under Development "},
+                {id: "NP", title: "<strong>Nepal</strong><br/> Under Development "},
+                {id: "KP", title: "<strong>North Korea</strong><br/> Under Development  "},
+                {id: "PG", title: "<strong>Papua New Guinea</strong><br/> Under Development "},
+                {
+                    id: "PH",
+                    title: "<strong>Philippines</strong><br/>   Embassy of Republic of Iraq in Manila<br/>		    Head of Mission: Ahmed Kamal Hasan AL- Kamaly					 <br/>    Address:vh.l.DASMARINAS 2209 PARAISO corner1202,Acacia st,CITY . Manila- Philippine<br/>    Telephone:006328438880<br/>    Fax:006328871953<br/>    E-mail:mnlemb@mofa.gov.iq <br/>            "
+                },
+                {
+                    id: "KR",
+                    title: "<strong>South Korea</strong><br/> Embassy of Republic of Iraq in Seoul<br/>		  Head of Mission: Khalil I. Al-Mosawi<br/>Address:1-94 Donbingg– dong yongsan-ku, seoul, korea  <br/>Telephone: 008227904202 - 008227904203 <br/>Fax:008227904206 <br/>E-mail:sulemb@mofa.gov.iq <br/>            "
+                },
+                {id: "TW", title: "<strong>Taiwan</strong><br/> Under Development "},
+                {id: "MN", title: "<strong>Mongolia</strong><br/> Under Development "},
+                {
+                    id: "RU",
+                    title: "<strong>Russia</strong><br/>Embassy of Republic of Iraq in Moscow<br/>		Head of Mission: DR.ISMIEAL SHAFIQ MUHSIN<br/>Address:119435Pogodinskaya street 12 Moscow,Russian Federation   <br/>Telephone:00784992465506, 00784992465507, 00784992465508<br/>Fax:0074992462734<br/>E-mail:mosemb@mofa.gov.iq"
+                }
+            ],
+            images: [
+                {
+                    latitude: 53.479251,
+                    longitude: -2.247926,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>Consulate General of Republic of Iraq/ Manchester</strong><br/>Head of Mission: ZAID IZZADIN MOHAMMAD NOORI<br/>Address:24 Oxford Court,Cheptow Street,Manchester, M2 3WQ united Kingdom<br/>Tel:+44(0161)2280880<br/>Fax:+44(0161)2280026<br/>Email:Lonemb@mofa.gov.iq"
+                },
+                {
+                    latitude: 19.075984,
+                    longitude: 72.877656,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>Consulate General of The Republic of Iraq in Mumbai-India</strong><br/>Head of Mission: Raad Khalil<br/>Address: A 15/14, Vasant Vihar, New Delhi - 110057 - India<br/>Telephone: 0091 11 26150081 - 0091 11 26150082<br/>Fax:0091-11-2222021562<br/>E-mail:dlh1emb@mofa.gov.iq"
+                },
+                {
+                    latitude: 42.331427,
+                    longitude: -83.045754,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>General Consulate of Republic of Iraq in Detroit</strong><br/>Head of Mission: Al manhal Al-safi<br/>Address:16445 W.12 mile Rd. southfield,Mi 48076.USA<br/>Telephone:0012484231250<br/>Fax:0012023331129<br/>E-mail:detcon@mofa.gov.iq"
+                },
+                {
+                    latitude: 34.052234,
+                    longitude: -118.243685,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>General Consulate of Republic of Iraq in Los Angeles</strong><br/>Head of Mission: Ahmmed Nadim Juad<br/>Address:350 South Figueoa St. Suite 700, Los Angeles, CA 90071<br/>Telephone:0012137976060<br/>Fax:0012023331129<br/>E-mail:loscon@mofa.gov.iq"
+                },
+                {
+                    latitude: 45.508670,
+                    longitude: -73.553993,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>General Consulate of Republic of Iraq in Montreal</strong><br/>Head of Mission: Counsul Jassim Nima Msawil<br/>Address:3019 ST_SULPICE - Montreal - QUEBEC H3H1B6 Canada<br/>Telephone:0015149318555<br/>Fax:0015149318525<br/>E-mail:montcon@mofa.gov.iq"
+                },
+                {
+                    latitude: 50.1166667,
+                    longitude: 8.6833333,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>Consulate General of Republic of Iraq in Frankfort</strong><br/>Head of Mission: Consul General Ali Hadi Al-Baiti<br/>Address: Baselerstrasse 35-37-60329 Frankfurt am Main Deutschland<br/>Telephone:00496923807600<br/>Fax:0049692380760151<br/>E-mail:francon@mofa.gov.iq"
+                },
+                {
+                    latitude: 37.066220,
+                    longitude: 37.383320,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>Consulate General of Republic of Iraq in Ghaziantep</strong><br/>Head of Mission: Sabah Salah Al-Din Al-Dabbagh<br/>Address:Gaziantep/Turkey- Fatih Quarter- St No. 47- building No. 10- Shaheed Kamil<br/>Telephone:00903423224601<br/>Fax:00903423224610<br/>E-mail:gencon@mofa.gov.iq"
+                },
+                {
+                    latitude: 41.005270,
+                    longitude: 28.976960,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>Consulate General of Republic of Iraq in Istanbul</strong><br/>Head of Mission: Hassan Swadi Abdul Aziz<br/>Address: Koy basi avenue no:3, yenikoy sariyer Istanbul<br/>Telephone:(0090212)2996729 - 2629823<br/>Fax:(0090212)2997442<br/>E-mail:istcon@mofa.gov.iq"
+                },
+                {
+                    latitude: 21.543489,
+                    longitude: 39.172989,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>Consulate General of Republic of Iraq in Jeddah</strong><br/>Head of mission: Abdul Jabbar Abdul Rahman Hadhoud<br/>Address:Al-Andalus Quarter, Zahran Street, building<br/>Telephone:(00966)6614809-6648909<br/>Fax:(00966)6631250<br/>E-mail:jedcon@mofa.gov.iq"
+                },
+                {
+                    latitude: 25.271139,
+                    longitude: 55.307485,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>Consulate General of Republic of Iraq in Dubai</strong><br/>Head of mission: Esmat Akeed Sadiq<br/>Address:Dubai/ UAE- Um Hurair 1/ Consulates gleaner<br/>Telephone:00971-43317744<br/>Fax:0097143547696<br/>E-mail:adbemb@mofa.gov.iq"
+                },
+                {
+                    latitude: 36.215549,
+                    longitude: 37.159279,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>Consulate General of Republic of Iraq in Aleppo</strong><br/>Head of mission: Consul General Yosuf Yassen al-Numa<br/>Address: New Shahbah.Alghazaly st.<br/>Telephone:0212641069<br/>Fax:0212641068<br/>E-mail:halcon@mofa.gov.iq"
+                },
+                {
+                    latitude: 36.300000,
+                    longitude: 59.600000,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>Consulate General of Republic of Iraq in Mashad</strong><br/>Head of Mission: Consul General Ibrahim M. Jaafar Jamal Al-deen<br/>Address: bloar frdocy - nabash frdocy 22 - shqeiq north black 494<br/>Telephone:(0098915)7661755 - (0098511)7661756<br/>Fax: 00985117638802<br/>E-mail:mashcon@mofa.gov.iq"
+                },
+                {
+                    latitude: 34.314167,
+                    longitude: 47.065000,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>Consulate General of Republic of Iraq in Kermanshah</strong><br/>Head of Mission: Consul General Mustafa Ibrahim Mussa<br/>Address:Iran/ Kermanshah Province/ Ferdowsi Square/ nearby Mentzach to the God, Kermanshah<br/>Telephone:09187258881-2-3<br/>Fax:7241803- 7249498<br/>E-mail:krmcon@mofa.gov.iq"
+                },
+                {
+                    latitude: -33.867487,
+                    longitude: 151.206990,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>Consulate of Republic of Iraq in Sydney</strong><br/>Head of Mission: Basim Abass Daood<br/>Address:Sydney new 2000- building 5 Elizabeth street level 11<br/>Telephone:00973317742<br/>Fax:<br/>Email:sadcon@mofa.gov.iq"
+                },
+                {
+                    latitude: 31.316710,
+                    longitude: 48.684380,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>Consulate of Republic of Iraq in Ahwaz</strong><br/>Head of Mission: <br/>Address:Iran/ Khuzestan/ Ahwaz/ Amania /SOQrat St/ No9<br/>Telephone:06113332380-06113367445<br/>Fax:<br/>Email:sadcon@mofa.gov.iq"
+                },
+                {
+                    latitude: 41.902916,
+                    longitude: 12.453389,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>Embasy of Republic of Iraq in Vatican</strong><br/>Head of Mission: Habib Muhamed Al-saader<br/>Address: via della camilluccia, 3551- 00135 Roma- Italia<br/>Telephone:0039063014508<br/>Fax:00390635506416<br/>E-mail:ftkemb@mofa.gov.iq"
+                },
+                {
+                    latitude: 38.895112,
+                    longitude: -77.036366,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>General Representive of Republic of Iraq in New York</strong><br/>Head of Mission: Dr.Mohammed Ali Alhakim<br/>Address:14 East 79th Street New York, NY 10075<br/>Telephone:00212-737-4433<br/>Fax:00212-772-1794<br/>E-mail:nyrep@mofa.gov.iq"
+                },
+                {
+                    latitude: 30.061629,
+                    longitude: 31.219432,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>Representation of The Republic of Iraq to the Arab League</strong><br/>Head of Mission: Diyaa Hadi al-Dabbas<br/>Address:cairo, zamalek, Muhammed Madhar street, street No 9<br/>Telephone:7358087-7351828-7352633-7364119 - 00202<br/>Fax:00202 - 7366956<br/>E-mail:cairep@mofa.gov.iq"
+                },
+                {
+                    latitude: 27.0275,
+                    longitude: 49.5500,
+                    type: "circle",
+                    color: "#d84a38",
+                    title: "<strong>Bahrain</strong>"
+                }
+            ]
+        },
+        "areasSettings": {
+            "autoZoom": true,
+            "unlistedAreasColor": "#ffffff",
+            "color": "#ffffff",
+            "rollOverColor": "#3b93c9",
+            "selectedColor": "#3b93c9"
+        }
+    });
+</script>
+<!-- END Interactive Map Scripts -->
