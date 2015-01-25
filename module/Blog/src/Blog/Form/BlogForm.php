@@ -296,6 +296,7 @@ class BlogForm extends ZendForm {
                 if ($slugExist) {
                     $formData['urlKey'] .= '-' . date('Ymdhis');
                 }
+                $formData['urlKey'] = str_replace(' ', '-', $formData['urlKey']);
             }
 
             // save
