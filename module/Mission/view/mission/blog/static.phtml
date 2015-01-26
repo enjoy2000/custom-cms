@@ -1,0 +1,45 @@
+<?php
+/** @var \Mission\Entity\StaticPage $staticPage */
+$staticPage = $this->staticPage;
+
+/**
+ * Set meta data
+ */
+$this->headTitle($staticPage->getTitle());
+if ($staticPage->getMetaDescription()) {
+    $this->headMeta()->setName('description', $staticPage->getMetaDescription());
+}
+if ($staticPage->getMetaKeywords()) {
+    $this->headMeta()->appendName('keywords', $staticPage->getMetaKeywords());
+}
+?>
+
+<div class="static-pages col-md-3">
+    <?php echo $this->partial('static', [
+        'category' => $staticPage->getCategory(),
+        'currentUrl' => $staticPage->getUrlKey()
+    ]) ?>
+</div>
+<div class="col-md-9">
+    <h1><?php echo $staticPage->getTitle() ?></h1>
+
+    <!-- No need to show time and user create on static pages
+    <div class="blog-author">
+        <i class="glyphicon glyphicon-calendar"></i>
+        <?php echo $staticPage->getExactCreateTime() ?>
+        |
+        <i class="glyphicon glyphicon-user"></i>
+        <?php echo sprintf($this->translate('Written by %s'), $staticPage->getCreateUser()->getDisplayName()) ?>
+    </div>
+    <div class="categories">
+        <?php $cat = $staticPage->getCategory() ?>
+        <a class="btn btn-primary" href="<?php echo $cat->getUrl() ?>" title="<?php echo $cat->getName() ?>">
+            <?php echo $cat->getName() ?>
+        </a>
+    </div>
+    -->
+    <hr />
+    <div class="blog-content">
+        <?php echo $staticPage->getContent(); ?>
+    </div>
+</div>

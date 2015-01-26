@@ -6,14 +6,19 @@ return [
 
             'BjyAuthorize\Guard\Route' => array(
                 array('route' => 'admin', 'roles' => array('moderator')),
-                array('route' => 'home', 'roles' => array('guest')),
+
+                // user
                 array('route' => 'zfcuser', 'roles' => array('guest')),
                 array('route' => 'zfcuser/logout', 'roles' => array('user')),
                 array('route' => 'zfcuser/changepassword', 'roles' => array('user')),
                 array('route' => 'zfcuser/login', 'roles' => array('guest')),
+
+                // api
                 array('route' => 'api/blog', 'roles' => array('guest')),
                 array('route' => 'api/category', 'roles' => array('guest')),
                 array('route' => 'api/locale', 'roles' => array('guest')),
+
+                // admin
                 array('route' => 'zfcadmin', 'roles' => array('administrator')),
                 array('route' => 'zfcadmin/blog', 'roles' => array('moderator')),
                 array('route' => 'zfcadmin/blog/new', 'roles' => array('administrator')),
@@ -27,6 +32,10 @@ return [
                 array('route' => 'zfcadmin/mission-category', 'roles' => array('administrator')),
                 array('route' => 'zfcadmin/mission-category/new', 'roles' => array('administrator')),
                 array('route' => 'zfcadmin/mission-category/edit', 'roles' => array('administrator')),
+                array('route' => 'zfcadmin/mission-category/static', 'roles' => array('administrator')),
+                array('route' => 'zfcadmin/mission-category/static/edit', 'roles' => array('administrator')),
+                array('route' => 'zfcadmin/mission-category/static/manage', 'roles' => array('administrator')),
+                array('route' => 'zfcadmin/mission-category/static/new', 'roles' => array('administrator')),
                 array('route' => 'zfcadmin/dashboard', 'roles' => array('guest')),
                 array('route' => 'zfcadmin/default', 'roles' => array('administrator')),
                 array('route' => 'zfcadmin/moderator', 'roles' => array('administrator')),
@@ -34,6 +43,7 @@ return [
                 array('route' => 'zfcadmin/moderator/edit', 'roles' => array('administrator')),
 
                 /** For Landing Pages */
+                array('route' => 'home', 'roles' => array('guest')),
                 array('route' => 'the-ministry', 'roles' => array('guest')),
                 array('route' => 'the-ministry/faq', 'roles' => array('guest')),
                 array('route' => 'the-ministry/ministry-departments', 'roles' => array('guest')),

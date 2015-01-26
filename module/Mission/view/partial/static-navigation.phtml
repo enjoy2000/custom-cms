@@ -1,0 +1,23 @@
+<?php
+$em = $this->getHelperPluginManager()->getServiceLocator()->get('doctrine.entitymanager.orm_default');
+?>
+
+<div class="list-group panel default-panel">
+    <div class="panel-heading">
+        <a href="<?php echo $this->url('mission/view', ['slug' => $this->category->getUrlKey()]) ?>">
+            <?php echo $this->category->getName() ?>
+        </a>
+    </div>
+    <?php
+    /** @var \Mission\Entity\StaticPage $page */
+    foreach ($this->category->getChildPages($em) as $page) : ?>
+        <a class="list-group-item<?php echo ($this->currentUrl == $page->getUrlKey()) ? ' active' : '' ?>"
+           href="<?php echo $this->url('mission/view', [
+               'slug' => $this->category->getUrlkey(),
+               'static' => $page->getUrlKey()
+           ]) ?>"
+           title="<?php echo $page->getTitle() ?>">
+            <?php echo $page->getTitle() ?>
+        </a>
+    <?php endforeach; ?>
+</div>

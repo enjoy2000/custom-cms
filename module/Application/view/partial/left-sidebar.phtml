@@ -2,29 +2,43 @@
 use Application\Helper\Common;
 
 //var_dump($this->routes);die;
-$routeName = $this->getHelperPluginManager()->getServiceLocator()->get('Application')
-    ->getMvcEvent()->getRouteMatch()->getMatchedRouteName();
+$routeMatch = $this->getHelperPluginManager()->getServiceLocator()->get('Application')->getMvcEvent()->getRouteMatch();
+$routeName = $routeMatch->getMatchedRouteName();
 
 $currentRoute = explode('/', $routeName);
 $parentRoute = $currentRoute[0];
 $routes = $this->config('router')['routes'][$parentRoute];
-
 ?>
-<div class="list-group panel default-panel">
-    <div class="panel-heading">
-        <a href="<?php echo $this->url($parentRoute) ?>"
-           title="<?php echo $this->translate(Common::getNameFromRoute($parentRoute)) ?>">
-            <?php echo $this->translate(Common::getNameFromRoute($parentRoute)) ?>
-        </a>
-    </div>
-    <?php
-    foreach ($routes['child_routes'] as $k => $route) :
-        $currentRoute = $parentRoute . '/' . $k;
+
+<!-- If on mission page render mission static pages on left sidebar -->
+<?php if ($routeName == 'mission/view') : ?>
+
+    <div id="static-pages">
+        <?php
+        $em = $this->getHelperPluginManager()->getServiceLocator()->get('doctrine.entitymanager.orm_default');
+        $slug = $routeMatch->getParam('slug');
         ?>
-        <a class="list-group-item<?php echo ($routeName == $currentRoute) ? ' active' : '' ?>"
-           href="<?php echo $this->url($currentRoute) ?>"
-           title="<?php echo $this->translate(Common::getNameFromRoute($route['options']['route'])) ?>">
-            <?php echo $this->translate(Common::getNameFromRoute($route['options']['route'])) ?>
-        </a>
-    <?php endforeach; ?>
-</div>
+    </div>
+
+<?php else : ?>
+
+    <div class="list-group panel default-panel">
+        <div class="panel-heading">
+            <a href="<?php echo $this->url($parentRoute) ?>"
+               title="<?php echo $this->translate(Common::getNameFromRoute($parentRoute)) ?>">
+                <?php echo $this->translate(Common::getNameFromRoute($parentRoute)) ?>
+            </a>
+        </div>
+        <?php
+        foreach ($routes['child_routes'] as $k => $route) :
+            $currentRoute = $parentRoute . '/' . $k;
+            ?>
+            <a class="list-group-item<?php echo ($routeName == $currentRoute) ? ' active' : '' ?>"
+               href="<?php echo $this->url($currentRoute) ?>"
+               title="<?php echo $this->translate(Common::getNameFromRoute($route['options']['route'])) ?>">
+                <?php echo $this->translate(Common::getNameFromRoute($route['options']['route'])) ?>
+            </a>
+        <?php endforeach; ?>
+    </div>
+
+<?php endif; ?>

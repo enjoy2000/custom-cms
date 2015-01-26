@@ -88,7 +88,7 @@
 
         // edit category
         window.edit = function($id) {
-            window.location.href = "/admin/category/edit/" + $id;
+            window.location.href = "/admin/mission-category/edit/" + $id;
         }
 
         window.removeCategory = function($id) {

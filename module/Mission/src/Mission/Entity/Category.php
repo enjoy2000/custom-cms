@@ -172,4 +172,11 @@ class Category {
                     ->orderBy('b.id', 'DESC');
         return $queryBuilder;
     }
+
+    public function getChildPages($em)
+    {
+        $childPages = $em->getRepository('Mission\Entity\StaticPage')
+            ->findBy(['category' => $this]);
+        return $childPages;
+    }
 }

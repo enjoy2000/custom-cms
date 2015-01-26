@@ -22,7 +22,24 @@ class BlogController extends AbstractActionController {
     public function viewAction()
     {
         $slug = $this->params()->fromRoute('slug');
+        $staticUrlKey = $this->params()->fromRoute('static');
         $category = $this->findOneBy('Mission\Entity\Category', ['urlKey' => $slug]);
+
+        if ($staticUrlKey) {
+            $em = $this->getEntityManager();
+            $qb = $em->getRepository('Mission\Entity\StaticPage')->createQueryBuilder('sp');
+            $qb->andwhere($qb->expr()->eq('sp.category', $category->getId()))
+                ->andWhere($qb->expr()->eq('sp.urlKey', "'".$staticUrlKey."'"));
+            $staticPage  = $qb->getQuery()->getResult();
+            //var_dump($staticPage[0]);die;
+            if (is_array($staticPage) && isset($staticPage[0])) {
+                return $this->forward()->dispatch('Mission\Controller\Blog', array(
+                    'action' => 'static',
+                    'staticPage'   => $staticPage[0],
+                ));
+            }
+        }
+
         /** @var \Mission\Entity\Blog $blog */
         $blog = $this->findOneBy('Mission\Entity\Blog', ['urlKey' => $slug]);
         //var_dump($slug);die;
@@ -78,6 +95,17 @@ class BlogController extends AbstractActionController {
         return new ViewModel([
             'category' => $category,
             'paginator' => $paginator,
+        ]);
+    }
+
+    public function staticAction()
+    {
+        //$this->layout('layout/3columns');
+
+        $staticPage = $this->params()->fromRoute('staticPage');
+
+        return new ViewModel([
+            'staticPage' => $staticPage
         ]);
     }
 }

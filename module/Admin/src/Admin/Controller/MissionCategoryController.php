@@ -50,7 +50,7 @@ class MissionCategoryController extends AbstractActionController
             $em->merge($category);
             $em->flush();
 
-            return $this->redirect()->toRoute('zfcadmin/category');
+            return $this->redirect()->toRoute('zfcadmin/mission-category');
         }
 
         $locales = $this->getEntityManager()->getRepository('Blog\Entity\Locale')->findAll();

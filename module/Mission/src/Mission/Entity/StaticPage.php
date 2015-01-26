@@ -32,7 +32,7 @@ class StaticPage {
 
     /**
      * @var string
-     * @ORM\Column(type="string", unique=true,  length=255)
+     * @ORM\Column(type="string",  length=255)
      */
     protected $urlKey;
 
@@ -61,8 +61,8 @@ class StaticPage {
 
     /**
      * @var \Mission\Entity\Category
-     * @ORM\ManyToOne(targetEntity="\Blog\Entity\Category")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id", nullable=true)
+     * @ORM\ManyToOne(targetEntity="\Mission\Entity\Category")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $category;
 
@@ -98,9 +98,9 @@ class StaticPage {
     protected $updateTime;
 
     /**
-     * @ORM\Column(type="integer", nullable=true, length="11")
+     * @ORM\Column(type="integer", nullable=true, length=11)
      */
-    protected $order = 0;
+    protected $orderNumber = 0;
 
     public function preUpdate()
     {
@@ -271,6 +271,7 @@ class StaticPage {
             'createTime',
             'updateUser',
             'updateTime',
+            'orderNumber',
         ];
         $data = [];
         foreach ($keys as $key) {
@@ -304,7 +305,8 @@ class StaticPage {
             'createUser',
             'createTime',
             'updateUser',
-            'updateTime'
+            'updateTime',
+            'orderNumber'
         ];
         foreach ($keys as $key) {
             if (isset($data[$key])) {
@@ -337,7 +339,7 @@ class StaticPage {
 
     public function getOrder()
     {
-        return $this->order;
+        return $this->orderNumber;
     }
 
     /**
@@ -345,6 +347,6 @@ class StaticPage {
      */
     public function setOrder($orderNumber)
     {
-        $this->order = $orderNumber;
+        $this->orderNumber = $orderNumber;
     }
 }

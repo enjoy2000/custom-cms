@@ -29,12 +29,4 @@ class IndexController extends AbstractActionController {
             'categories' => $categories
         ]);
     }
-
-    public function iraqiAmbassadorsAction()
-    {
-        die('here');
-        return $this->forward()->dispatch('Mission\Controller\Index', [
-            'action' => 'index'
-        ]);
-    }
 }

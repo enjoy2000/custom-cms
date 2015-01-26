@@ -40,6 +40,12 @@ $module = isset($modules[1]) ? $modules[1] : null;
             <li>
                 <a href="<?php echo $this->url('zfcadmin/mission-category') ?>">Categories Manager</a>
             </li>
+            <li>
+                <a href="<?php echo $this->url('zfcadmin/mission-category/static/new') ?>">Add New Static Page</a>
+            </li>
+            <li>
+                <a href="<?php echo $this->url('zfcadmin/mission-category/static') ?>">Mission Static Pages Manager</a>
+            </li>
         </ul>
     </li>
     <li class="dropdown<?php echo ($module == 'mission-blog') ? ' active' : '' ?>">

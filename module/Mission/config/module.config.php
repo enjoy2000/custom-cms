@@ -11,7 +11,7 @@ return array(
     'router' => array(
         'routes' => array(
             'mission' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'type' => 'Zend\Mvc\Router\Http\Segment',
                 'options' => array(
                     'route'    => '/mission',
                     'defaults' => array(
@@ -21,22 +21,13 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-                    'iraqi-ambassadors' => array(
-                        'type' => 'Zend\Mvc\Router\Http\Literal',
-                        'options' => array(
-                            'route'    => '/iraqi-ambassadors',
-                            'defaults' => array(
-                                'controller' => 'Mission\Controller\Index',
-                                'action'     => 'iraqiAmbassadors',
-                            ),
-                        ),
-                    ),
                     'view' => array(
                         'type' => 'segment',
                         'options' => array(
-                            'route' => '/[:slug]',
+                            'route' => '[/:slug][/:static]',
                             'constraints' => array(
                                 'slug' => '[a-zA-Z0-9_-]+',
+                                'static' => '[a-zA-Z0-9_-]+',
                             ),
                             'defaults' => array(
                                 'controller' => 'Mission\Controller\Blog',
@@ -80,6 +71,7 @@ return array(
         'doctype'                  => 'HTML5',
         'template_map' => array(
             'article_partial' => __DIR__ . '/../view/partial/article.phtml',
+            'static' => __DIR__ . '/../view/partial/static-navigation.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',

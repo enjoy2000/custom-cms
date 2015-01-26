@@ -186,12 +186,9 @@ return array(
                                 ),
                             ),
                             'static' => array(
-                                'type' => 'Segment',
+                                'type' => 'Literal',
                                 'options' => array(
-                                    'route' => '/[:id]/static',
-                                    'constraints' => array(
-                                        'id' => '[0-9]+',
-                                    ),
+                                    'route' => '/static',
                                     'defaults' => array(
                                         'controller' => 'Admin\Controller\MissionStatic',
                                         'action' => 'index',
@@ -219,6 +216,19 @@ return array(
                                             'defaults' => array(
                                                 'controller' => 'Admin\Controller\MissionStatic',
                                                 'action' => 'new',
+                                            ),
+                                        ),
+                                    ),
+                                    'manage' => array(
+                                        'type' => 'Segment',
+                                        'options' => array(
+                                            'route' => '/manage[/][:id]',
+                                            'constraints' => array(
+                                                'id' => '[0-9]+',
+                                            ),
+                                            'defaults' => array(
+                                                'controller' => 'Admin\Controller\MissionStatic',
+                                                'action' => 'manage',
                                             ),
                                         ),
                                     ),
@@ -292,6 +302,7 @@ return array(
             'Admin\Controller\Dashboard' => 'Admin\Controller\DashboardController',
             'Admin\Controller\MissionBlog' => 'Admin\Controller\MissionBlogController',
             'Admin\Controller\MissionCategory' => 'Admin\Controller\MissionCategoryController',
+            'Admin\Controller\MissionStatic' => 'Admin\Controller\MissionStaticController',
             'Admin\Controller\Moderator' => 'Admin\Controller\ModeratorController'
         ),
     ),

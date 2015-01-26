@@ -182,16 +182,18 @@ class MissionCategoryController extends AbstractRestfulJsonController
             ]);
         }
         $em = $this->getEntityManager();
-        // remove check foreign key for temp delete category
-        $sql = $em->createQuery('SET FOREIGN_KEY_CHECKS=0');
-        $sql->getResult();
-        $sql->getResult();
+
+        /**
+         * Remove check foreign key for temp delete category
+         * If we need to remove blogs belong to this category as well, remove the this
+         */
+        $em->getConnection()->exec('SET FOREIGN_KEY_CHECKS=0');
+
         $category = $this->find('Mission\Entity\Category', $id);
         $em->remove($category);
         $em->flush();
         // set foreign key check again for some security
-        $sql = $em->createQuery('SET FOREIGN_KEY_CHECKS=1');
-        $sql->getResult();
+        $em->getConnection()->exec('SET FOREIGN_KEY_CHECKS=1');
 
         return new JsonModel([
             'success' => true

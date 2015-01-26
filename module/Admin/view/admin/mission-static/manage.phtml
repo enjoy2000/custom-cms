@@ -1,0 +1,81 @@
+<?php $this->headTitle(sprintf('"%s" Manager', $this->category->getName())) ?>
+<?php $this->headScript()
+    ->prependFile('/js/admin/blog-index.js')
+    ->prependFile('/js/plugin/bootbox/bootbox.min.js')
+    ->prependFile('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js');
+?>
+<h1 class="text-center"><?php echo sprintf('"%s" Manager', $this->category->getName()) ?></h1>
+
+<?php
+// add at the end of the file after the table
+echo $this->paginationControl(
+// the paginator object
+    $this->paginator,
+    // the scrolling style
+    'sliding',
+    // the partial to use to render the control
+    array('partial/paginator.phtml', 'Blog'),
+    // the route to link to when a user clicks a control link
+    array(
+        'route' => 'zfcadmin/blog'
+    )
+);
+?>
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Order</th>
+            <th>Create Time</th>
+            <th>Create User</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    <!-- Loop blogs -->
+    <?php
+    /** @var \Mission\Entity\StaticPage $page */
+    foreach ($this->paginator as $page) :
+    ?>
+        <tr>
+            <td><?php echo $page->getId(); ?></td>
+            <td><?php echo $page->getTitle(); ?></td>
+            <td valign="top">
+                <a style="font-size: 20px;" href="#" data-blog="<?php echo $page->getId() ?>"
+                   class="toggle-active-blog text-<?php echo $page->isPublished() ? 'success' : 'danger'; ?>"
+                   title="Toggle Blog Status">
+                    <i class="fa fa-toggle-<?php echo $page->isPublished() ? 'on' : 'off'; ?>"></i>
+                </a>
+            </td>
+            <td><?php echo $page->getOrder() ?></td>
+            <td><?php echo $page->getCreateTime(); ?></td>
+            <td><?php echo $page->getCreateUser()->getDisplayName() ?></td>
+            <td>
+                <a class="btn btn-primary"
+                   href="<?php echo $this->url('zfcadmin/mission-category/static/edit', ['id' => $page->getId()]) ?>"
+                   title="Edit Blog">
+                    <i class="fa fa-edit"></i></a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+
+<?php
+// add at the end of the file after the table
+echo $this->paginationControl(
+// the paginator object
+    $this->paginator,
+    // the scrolling style
+    'sliding',
+    // the partial to use to render the control
+    array('partial/paginator.phtml', 'Blog'),
+    // the route to link to when a user clicks a control link
+    array(
+        'route' => 'blog'
+    )
+);
+?>

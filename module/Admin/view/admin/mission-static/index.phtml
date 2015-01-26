@@ -1,0 +1,24 @@
+<?php $this->headTitle('Select Category To Manage') ?>
+<h1 class="text-center">Select Category To Manage</h1>
+
+<table class="table table-consended">
+    <tbody>
+    <tr>
+    <?php
+    $i = 1;
+    /** @var \Mission\Entity\Category $category */
+    foreach ($this->categories as $category) : ?>
+        <td>
+            <a class="btn btn-success"
+               href="<?php echo $this->url('zfcadmin/mission-category/static/manage', ['id' => $category->getId()]) ?>"
+               title="<?php echo $category->getName() ?>">
+                <?php echo $category->getName() ?>
+            </a>
+        </td>
+        <?php if ($i % 3 == 0 && $i != count($this->categories)) : ?>
+        </tr><tr>
+        <?php endif ?>
+    <?php ++$i; endforeach; ?>
+    </tr>
+    </tbody>
+</table>
