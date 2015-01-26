@@ -178,10 +178,49 @@ return array(
                                 'options' => array(
                                     'route' => '/edit[/][:id]',
                                     'constraints' => array(
-                                        'slug' => '[0-9]+',
+                                        'id' => '[0-9]+',
                                     ),
                                     'defaults' => array(
                                         'action' => 'edit',
+                                    ),
+                                ),
+                            ),
+                            'static' => array(
+                                'type' => 'Segment',
+                                'options' => array(
+                                    'route' => '/[:id]/static',
+                                    'constraints' => array(
+                                        'id' => '[0-9]+',
+                                    ),
+                                    'defaults' => array(
+                                        'controller' => 'Admin\Controller\MissionStatic',
+                                        'action' => 'index',
+                                    ),
+                                ),
+                                'may_terminate' => true,
+                                'child_routes' => array(
+                                    'edit' => array(
+                                        'type' => 'Segment',
+                                        'options' => array(
+                                            'route' => '/edit[/][:id]',
+                                            'constraints' => array(
+                                                'id' => '[0-9]+',
+                                            ),
+                                            'defaults' => array(
+                                                'controller' => 'Admin\Controller\MissionStatic',
+                                                'action' => 'edit',
+                                            ),
+                                        ),
+                                    ),
+                                    'new' => array(
+                                        'type' => 'Segment',
+                                        'options' => array(
+                                            'route' => '/new',
+                                            'defaults' => array(
+                                                'controller' => 'Admin\Controller\MissionStatic',
+                                                'action' => 'new',
+                                            ),
+                                        ),
                                     ),
                                 ),
                             ),
