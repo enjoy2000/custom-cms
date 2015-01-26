@@ -45,9 +45,6 @@ return array(
                         'type' => 'segment',
                         'options' => array(
                             'route' => '/[:slug]',
-                            'constraints' => array(
-                                'slug' => '[a-zA-Z0-9_-]+',
-                            ),
                             'defaults' => array(
                                 'controller' => 'Blog\Controller\Blog',
                                 'action' => 'view',

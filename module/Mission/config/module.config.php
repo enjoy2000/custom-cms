@@ -25,10 +25,6 @@ return array(
                         'type' => 'segment',
                         'options' => array(
                             'route' => '[/:slug][/:static]',
-                            'constraints' => array(
-                                'slug' => '[a-zA-Z0-9_-]+',
-                                'static' => '[a-zA-Z0-9_-]+',
-                            ),
                             'defaults' => array(
                                 'controller' => 'Mission\Controller\Blog',
                                 'action' => 'view',
