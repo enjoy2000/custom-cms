@@ -176,7 +176,10 @@ class Category {
     public function getChildPages($em)
     {
         $childPages = $em->getRepository('Mission\Entity\StaticPage')
-            ->findBy(['category' => $this]);
+            ->findBy(
+                ['category' => $this],
+                ['orderNumber' => 'ASC']
+            );
         return $childPages;
     }
 }

@@ -228,7 +228,7 @@ class StaticForm extends ZendForm {
                 'max'       => 1000,
             ])
         );
-        $inputFilter->add($order);
+        //$inputFilter->add($order);
 
         return $inputFilter;
     }
@@ -242,7 +242,6 @@ class StaticForm extends ZendForm {
         $user = $controller->getCurrentUser();
         $formData['category'] = $controller->find('Mission\Entity\Category', (int)$formData['category']);
         $formData['locale'] = $locale;
-        $formData['order'] = (int)$formData['order'];
         if (!$formData['id']) {
             $formData['createUser'] = $user;
             $formData['createTime'] = new \DateTime('now');
