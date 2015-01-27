@@ -24,11 +24,13 @@ $routes = $this->config('router')['routes'][$parentRoute];
         foreach ($routes['child_routes'] as $k => $route) :
             $currentRoute = $parentRoute . '/' . $k;
             ?>
+            <?php if (!isset($route['hide'])) :  // hide route on navigation ?>
             <li<?php echo ($routeName == $currentRoute) ? ' class="active"' : '' ?>>
                 <a href="<?php echo $this->url($currentRoute) ?>">
                     <?php echo $this->translate(Common::getNameFromRoute($route['options']['route'])) ?>
                 </a>
             </li>
+            <?php endif; ?>
         <?php endforeach; ?>
     </ul>
 </li>

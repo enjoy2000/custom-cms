@@ -65,17 +65,9 @@ return array(
                                 'action'     => 'ministryDepartments',
                             ),
                         ),
+                        'hide' => true,
                     ),
-                    'the-minister' => array(
-                        'type' => 'Literal',
-                        'options' => array(
-                            'route'    => '/the-minister',
-                            'defaults' => array(
-                                'controller' => 'Landing\Controller\Ministry',
-                                'action'     => 'theMinister',
-                            ),
-                        ),
-                    ),
+                    /*
                     'speeches-interviews' => array(
                         'type' => 'Literal',
                         'options' => array(
@@ -95,7 +87,7 @@ return array(
                                 'action'     => 'undersecretaries',
                             ),
                         ),
-                    ),
+                    ),*/
                     'announcements' => array(
                         'type' => 'Literal',
                         'options' => array(
@@ -113,6 +105,26 @@ return array(
                             'defaults' => array(
                                 'controller' => 'Landing\Controller\Ministry',
                                 'action'     => 'magazine',
+                            ),
+                        ),
+                    ),
+                    'the-minister' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/the-minister',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\Ministry',
+                                'action'     => 'theMinister',
+                            ),
+                        ),
+                    ),
+                    'mofa-ministers' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/mofa-ministers',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\Ministry',
+                                'action'     => 'mofa-ministers',
                             ),
                         ),
                     ),

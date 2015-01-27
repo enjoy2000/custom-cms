@@ -57,19 +57,9 @@
         </h3>
         <?php
         /** @var \Blog\Entity\Blog $blog */
-        foreach ($this->otherNews as $blog) :
-        ?>
-            <div class="col-md-3">
-                <?php echo $blog->renderPhoto() ?>
-                <h3><?php echo $blog->getTitle() ?></h3>
-                <div class="info clearfix">
-                    <a class="pull-left flip read-more" href="<?php echo $blog->getUrl() ?>">
-                        <?php echo $this->translate('Read more') ?></a>
-                    <span class="pull-right flip">
-                        <?php echo $blog->getDate() ?>
-                    </span>
-                </div>
-            </div>
+        foreach ($this->restNews as $blog) :
+            ?>
+            <?php echo $this->partial('article_partial', ['blog' => $blog]) ?>
         <?php endforeach; ?>
     </div>
     <div class="col-md-3 pull-right flip consular-services">
@@ -120,14 +110,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Rest News from 15-20 -->
-    <div id="rest-news" class="col-md-9">
-        <?php
-        /** @var \Blog\Entity\Blog $blog */
-        foreach ($this->restNews as $blog) :
-            ?>
-            <?php echo $this->partial('article_partial', ['blog' => $blog]) ?>
-        <?php endforeach; ?>
-    </div><!-- End Rest News -->
 </div>

@@ -55,4 +55,9 @@ class MinistryController extends AbstractActionController
     {
         return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
     }
+
+    public function mofaMinistersAction()
+    {
+        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
+    }
 }
