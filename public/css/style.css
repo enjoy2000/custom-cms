@@ -21,6 +21,9 @@ body {
 }
 
 body > .container {
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(67,102,123,1);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(67,102,123,1);
+    box-shadow: 0px 0px 6px 0px rgba(67,102,123,0.50);
     background-color: #fff;
     padding: 0;
 }
@@ -257,7 +260,9 @@ footer p.site-title {
     border: solid 0px #ccc;
     background-color:#fbfbfb;
     position: relative;
-    box-shadow: 6px 0 8px -6px rgba(67, 67, 67, 0.6), -6px 0 8px -6px rgba(67, 67, 67, 0.6);
+    -webkit-box-shadow: 0 4px 15px -6px #777;
+    -moz-box-shadow: 0 4px 15px -6px #777;
+    box-shadow: 0 4px 15px -4px #777;    
     margin-bottom:10px;
 }
 #news-carousel:before,#news-carousel:after
@@ -302,7 +307,8 @@ footer p.site-title {
 
 }
 #news-carousel .item {
-    margin: 5px;
+    margin: 0px;
+    padding-bottom:6px;
 }
 #news-carousel .item .blog1 a.news-photo {
     height: 248px;
@@ -452,4 +458,20 @@ body.blog.view .author-date {
 }
 .sidebar {
     margin-top: 10px;
+}
+.well{
+    background-color:#fbfbfb;
+}
+.author-date{
+    display:none;
+}
+.well h3{
+    color:#176c8f;
+    border-bottom:solid 2px;
+    margin-bottom:10px;
+    font-size:16px;
+    padding:3px;
+}
+.col-md-8{
+    font-size:13px
 }
