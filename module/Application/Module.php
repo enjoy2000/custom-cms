@@ -83,6 +83,13 @@ class Module
                     $viewHelper->setServiceLocator($serviceLocator);
 
                     return $viewHelper;
+                },
+                'em' => function ($helperPluginManager) {
+                    $serviceLocator = $helperPluginManager->getServiceLocator();
+                    $viewHelper = new View\Helper\Em();
+                    $viewHelper->setServiceLocator($serviceLocator);
+
+                    return $viewHelper;
                 }
             ),
         );

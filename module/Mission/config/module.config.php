@@ -10,6 +10,26 @@
 return array(
     'router' => array(
         'routes' => array(
+            'mission-menu' => [
+                'type' => 'Zend\Mvc\Router\Http\Segment',
+                'options' => array(
+                    'route'    => '/mission-menu',
+                    'defaults' => array(
+                        'controller' => 'Mission\Controller\Index',
+                        'action'     => 'menu',
+                    ),
+                ),
+            ],
+            'mission-header' => [
+                'type' => 'Zend\Mvc\Router\Http\Segment',
+                'options' => array(
+                    'route'    => '/mission-header',
+                    'defaults' => array(
+                        'controller' => 'Mission\Controller\Index',
+                        'action'     => 'header',
+                    ),
+                ),
+            ],
             'mission' => array(
                 'type' => 'Zend\Mvc\Router\Http\Segment',
                 'options' => array(

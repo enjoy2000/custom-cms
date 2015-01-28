@@ -105,6 +105,8 @@ return [
                 array('route' => 'latest-news', 'roles' => array('guest')),
                 array('route' => 'blog/view', 'roles' => array('guest')),
                 array('route' => 'mission', 'roles' => array('guest')),
+                array('route' => 'mission-menu', 'roles' => array('guest')),
+                array('route' => 'mission-header', 'roles' => array('guest')),
                 array('route' => 'mission/view', 'roles' => array('guest')),
             ),
         ),

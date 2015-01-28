@@ -143,6 +143,7 @@ header .logo > a {
 header #language-switcher {
     position: absolute;
     right: 0;
+    top: 0;
 
 }
 nav#top-nav {
@@ -474,4 +475,16 @@ body.blog.view .author-date {
 }
 .col-md-8{
     font-size:13px
+}
+body.mission .mission-header{
+    height: 165px;
+    background: url('../img/mission-header.jpg') center no-repeat transparent;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+body.mission .mission-header .mission-title{
+    color: #fff;
+    padding-left: 200px;
+    font-size: 25px;
+    padding-top: 43px;
 }

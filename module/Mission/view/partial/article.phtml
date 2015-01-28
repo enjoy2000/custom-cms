@@ -3,12 +3,12 @@
 $blog = $this->blog;
 ?>
 <div class="well clearfix article article<?php echo $blog->getId() ?>">
-    <div class="media-object photo col-md-4 pull-left">
+    <div class="media-object photo col-md-4 pull-left flip">
         <a href="<?php echo $blog->getUrl() ?>" class="news-photo" title="<?php echo $blog->getTitle() ?>">
             <img alt="" src="<?php echo $blog->getThumbnail() ?>" />
         </a>
     </div>
-    <div class="media-body col-md-8 pull-right">
+    <div class="media-body col-md-8 pull-right flip">
         <a href="<?php echo $blog->getUrl() ?>" class="media-heading" title="<?php echo $blog->getTitle() ?>">
             <h3>
                 <?php echo $blog->getTitle() ?>

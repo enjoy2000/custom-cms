@@ -1,0 +1,18 @@
+<ul class="nav navbar-nav">
+    <li<?php echo (!$this->static) ? ' class="active current-menu-item"' : '' ?>>
+        <a href="<?php echo $this->url('mission/view', [
+            'slug' => $this->category,
+        ]) ?>"><?php echo $this->translate('Home') ?></a>
+    </li>
+
+    <?php foreach ($this->childPages as $page) : ?>
+    <li<?php echo ($page->getUrlKey() == $this->static) ? ' class="active current-menu-item"' : '' ?>>
+        <a href="<?php echo $this->url('mission/view', [
+            'slug' => $this->category,
+            'static' => $this->slug
+        ]) ?>">
+            <?php echo $page->getTitle() ?>
+        </a>
+    </li>
+    <?php endforeach; ?>
+</ul>

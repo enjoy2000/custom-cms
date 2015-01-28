@@ -29,4 +29,31 @@ class IndexController extends AbstractActionController {
             'categories' => $categories
         ]);
     }
+
+    public function menuAction()
+    {
+        $categorySlug = $this->params()->fromQuery('category');
+        $staticPageSlug = $this->params()->fromQuery('static');
+        $category = $this->findOneBy('Mission\Entity\Category', ['urlKey' => $categorySlug]);
+        $childPages = $category->getChildPages($this->getEntityManager());
+
+        $view = new ViewModel([
+            'category' => $categorySlug,
+            'static' => $staticPageSlug,
+            'childPages' => $childPages
+        ]);
+        $view->setTerminal(true);
+        return $view;
+    }
+
+    public function headerAction()
+    {
+        $categorySlug = $this->params()->fromQuery('category');
+        $category = $this->findOneBy('Mission\Entity\Category', ['urlKey' => $categorySlug]);
+        $view = new ViewModel([
+            'header' => $category->getName()
+        ]);
+        $view->setTerminal(true);
+        return $view;
+    }
 }

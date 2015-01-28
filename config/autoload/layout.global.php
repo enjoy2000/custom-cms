@@ -8,5 +8,7 @@ return [
         'Landing/Index' => 'layout/layout',
         'Landing/ContactUs' => 'layout/layout',
         'Blog' => 'layout/layout',
+        'Mission' => 'layout/layout',
+        'Mission/Blog' => 'layout/mission',
     ],
 ];

@@ -47,10 +47,13 @@ class Module
         $controllers = explode('\\', $controllerClass);
         $action = str_replace('Controller', '', $controllers[2]);
         $moduleNamespace = substr($controllerClass, 0, strpos($controllerClass, '\\'));
-        if (isset($config['module_layouts'][$moduleNamespace])) {
-            $controller->layout($config['module_layouts'][$moduleNamespace]);
-            if (isset($config['module_layouts'][$moduleNamespace . '/' . $action])) {
-                $controller->layout($config['module_layouts'][$moduleNamespace . '/' . $action]);
+
+        if (!$controller->layout()->terminate()) {
+            if (isset($config['module_layouts'][$moduleNamespace])) {
+                $controller->layout($config['module_layouts'][$moduleNamespace]);
+                if (isset($config['module_layouts'][$moduleNamespace . '/' . $action])) {
+                    $controller->layout($config['module_layouts'][$moduleNamespace . '/' . $action]);
+                }
             }
         }
     }

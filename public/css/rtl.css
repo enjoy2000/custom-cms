@@ -12,3 +12,10 @@ header #language-switcher {
 header .head-logo {
     padding-top: 0;
 }
+body.mission .mission-header{
+    background: url('../img/mission-header-ar.jpg') center no-repeat transparent;
+}
+body.mission .mission-header .mission-title {
+    padding-left: 0;
+    padding-right: 200px;
+}

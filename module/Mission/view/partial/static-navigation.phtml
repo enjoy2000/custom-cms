@@ -1,7 +1,3 @@
-<?php
-$em = $this->getHelperPluginManager()->getServiceLocator()->get('doctrine.entitymanager.orm_default');
-?>
-
 <div class="list-group panel default-panel">
     <div class="panel-heading">
         <a href="<?php echo $this->url('mission/view', ['slug' => $this->category->getUrlKey()]) ?>">
@@ -10,7 +6,7 @@ $em = $this->getHelperPluginManager()->getServiceLocator()->get('doctrine.entity
     </div>
     <?php
     /** @var \Mission\Entity\StaticPage $page */
-    foreach ($this->category->getChildPages($em) as $page) : ?>
+    foreach ($this->category->getChildPages($this->em()) as $page) : ?>
         <a class="list-group-item<?php echo ($this->currentUrl == $page->getUrlKey()) ? ' active' : '' ?>"
            href="<?php echo $this->url('mission/view', [
                'slug' => $this->category->getUrlkey(),
@@ -21,3 +17,25 @@ $em = $this->getHelperPluginManager()->getServiceLocator()->get('doctrine.entity
         </a>
     <?php endforeach; ?>
 </div>
+
+<?php
+$this->inlineScript()
+    ->prependScript('
+        $(document).ready(function(){
+            $.get("'.$this->url('mission-menu').'?category=' .
+                $this->category->getUrlKey() .
+                '&static=' .
+                $this->currentUrl .
+                '").success(function($data){
+                console.log($data);
+                $(".collapse.navbar-collapse").html($data);
+            });
+            $.get("'.$this->url('mission-header').'?category=' .
+                $this->category->getUrlKey() .
+                '").success(function($data){
+                console.log($data);
+                $(".mission-title").html($data);
+            });
+        });
+    ');
+?>
