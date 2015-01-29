@@ -14,6 +14,7 @@ use Zend\InputFilter;
 use Zend\Validator;
 use Zend\Filter;
 use Mission\Entity\Blog;
+use Application\Helper\Util;
 
 
 class BlogForm extends ZendForm {
@@ -282,7 +283,7 @@ class BlogForm extends ZendForm {
 
             // check url key
             if (!$formData['urlKey']) {
-                $slug = \Application\Helper\Url::formatUrl($formData['title']);
+                $slug = Util::slugify($formData['title']);
 
                 // check slug exist
                 $slugExist = $controller->findOneBy('Mission\Entity\Blog', ['urlKey' => $slug]);
@@ -291,12 +292,12 @@ class BlogForm extends ZendForm {
                 }
                 $formData['urlKey'] = $slug;
             } else {
+                $formData['urlKey'] = Util::slugify($formData['urlKey']);
                 // check slug exist
                 $slugExist = $controller->findOneBy('Mission\Entity\Blog', ['urlKey' => $formData['urlKey']]);
                 if ($slugExist) {
                     $formData['urlKey'] .= '-' . date('Ymdhis');
                 }
-                $formData['urlKey'] = str_replace(' ', '-', $formData['urlKey']);
             }
 
             // save

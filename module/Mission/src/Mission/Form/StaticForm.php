@@ -14,7 +14,7 @@ use Zend\InputFilter;
 use Zend\Validator;
 use Zend\Filter;
 use Mission\Entity\StaticPage;
-use Application\Helper\Url;
+use Application\Helper\Util;
 
 class StaticForm extends ZendForm {
     public function __construct(\Application\Controller\AbstractActionController $controller, $name = null)
@@ -248,10 +248,10 @@ class StaticForm extends ZendForm {
 
             // check url key
             if (!$formData['urlKey']) {
-                $slug = Url::formatUrl($formData['title']);
+                $slug = Util::slugify($formData['title']);
                 $formData['urlKey'] = $slug;
             } else {
-                $formData['urlKey'] = str_replace(' ', '-', $formData['urlKey']);
+                $formData['urlKey'] = Util::slugify($formData['urlKey']);
             }
 
             // save

@@ -10,6 +10,7 @@ namespace Api\Controller\Blog;
 use Api\Controller\AbstractRestfulJsonController;
 use Blog\Entity\Category;
 use Zend\View\Model\JsonModel;
+use Application\Helper\Util;
 use Zend\Paginator\Paginator;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
@@ -96,7 +97,7 @@ class CategoryController extends AbstractRestfulJsonController
         $data['locale'] = $this->find('Blog\Entity\Locale', (int)$data['locale']);
 
         if (!$data['urlKey']) {
-            $slug = \Application\Helper\Url::formatUrl($data['name']);
+            $slug = Util::slugify($data['name']);
 
             // check slug exist
             $slugExist = $this->findOneBy('Blog\Entity\Category', ['urlKey' => $slug]);
@@ -105,6 +106,7 @@ class CategoryController extends AbstractRestfulJsonController
             }
             $data['urlKey'] = $slug;
         } else {
+            $data['urlKey'] = Util::slugify($data['urlKey']);
             // check slug exist
             $slugExist = $this->findOneBy('Blog\Entity\Category', ['urlKey' => $data['urlKey']]);
             if ($slugExist) {
