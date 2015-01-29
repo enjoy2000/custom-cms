@@ -147,7 +147,11 @@ class Category {
 
     public function getUrl()
     {
-        $url = '/' . \Mission\Entity\Blog::BLOG_ROUTE . '/' .$this->urlKey;
+	$url = '';
+	if ($this->locale->getShortCode() == 'ar') {
+	    $url .= '/ar';
+	}
+        $url .= '/' . \Mission\Entity\Blog::BLOG_ROUTE . '/' .$this->urlKey;
 
         return $url;
     }
