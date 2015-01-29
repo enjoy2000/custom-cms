@@ -10,6 +10,7 @@ namespace Admin\Controller;
 
 use Application\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Application\Helper\Util;
 
 class CategoryController extends AbstractActionController
 {
@@ -40,6 +41,7 @@ class CategoryController extends AbstractActionController
 
             // if new slug exist add unique id
             if ($category->getUrlKey() != $data['urlKey']) {
+		$data['urlKey'] = Util::slugify($data['urlKey']);
                 $slugExist = $this->findOneBy('Blog\Entity\Category', ['urlKey' => $data['urlKey']]);
                 if ($slugExist) {
                     $data['urlKey'] .= '-' . date('Ymdhis');
