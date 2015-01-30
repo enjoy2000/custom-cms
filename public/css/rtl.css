@@ -19,3 +19,6 @@ body.mission .mission-header .mission-title {
     padding-left: 0;
     padding-right: 200px;
 }
+li.reforming-the-ministry {
+    display: none;
+}

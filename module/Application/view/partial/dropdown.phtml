@@ -14,7 +14,7 @@ $parentRoute = $this->route;
 $routes = $this->config('router')['routes'][$parentRoute];
 
 ?>
-<li class="dropdown<?php echo ($currentParentRoute == $parentRoute) ? ' active current-menu-item' : '' ?>">
+<li class="<?php echo $parentRoute ?> dropdown<?php echo ($currentParentRoute == $parentRoute) ? ' active current-menu-item' : '' ?>">
     <a data-toggle="dropdown" href="<?php echo $this->url($parentRoute) ?>">
         <?php echo $this->translate(Common::getNameFromRoute($parentRoute)) ?>
         <span class="caret"></span>
@@ -25,7 +25,7 @@ $routes = $this->config('router')['routes'][$parentRoute];
             $currentRoute = $parentRoute . '/' . $k;
             ?>
             <?php if (!isset($route['hide'])) :  // hide route on navigation ?>
-            <li<?php echo ($routeName == $currentRoute) ? ' class="active"' : '' ?>>
+            <li<?php echo ($routeName == $currentRoute) ? ' class="active '.$k.'"' : ' class="'.$k.'"' ?>>
                 <a href="<?php echo $this->url($currentRoute) ?>">
                     <?php echo $this->translate(Common::getNameFromRoute($route['options']['route'])) ?>
                 </a>

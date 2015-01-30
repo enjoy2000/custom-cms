@@ -17,7 +17,8 @@ class ConsularServicesController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
+        return $this->forward()->dispatch('Landing\Controller\ConsularServices',
+            ['action' => 'birth-certificate']);
     }
 
     public function approvingCorpseEntryToIraqAction()
@@ -40,7 +41,7 @@ class ConsularServicesController extends AbstractActionController
         return new ViewModel();
     }
 
-    public function deadCertificateAction()
+    public function deathCertificateAction()
     {
         return new ViewModel();
     }
