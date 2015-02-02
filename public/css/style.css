@@ -156,8 +156,10 @@ nav#top-nav .container {
     padding: 0;
 
 }
+nav#top-nav ul.nav li~li { border-left: 2px solid #fff } 
+
 nav#top-nav ul.nav li a {
-    padding: 12px 10px;
+    padding: 12px 12px;
     background-color: #fbfbfb;
     color: #45494B;
     font-size:14px;
@@ -261,9 +263,9 @@ footer p.site-title {
     border: solid 0px #ccc;
     background-color:#fbfbfb;
     position: relative;
-    -webkit-box-shadow: 0 4px 15px -6px #777;
-    -moz-box-shadow: 0 4px 15px -6px #777;
-    box-shadow: 0 4px 15px -4px #777;    
+    -webkit-box-shadow: 0 4px 5px -6px #777;
+    -moz-box-shadow: 0 4px 5px -6px #777;
+    box-shadow: 0 4px 5px -4px #777;    
     margin-bottom:10px;
 }
 #news-carousel:before,#news-carousel:after
@@ -303,7 +305,7 @@ footer p.site-title {
 
 }
 #news-carousel .item {
-    padding: 5px;
+    padding: px;
     color: #000;
 
 }
@@ -315,37 +317,33 @@ footer p.site-title {
     height: 248px;
 }
 #news-carousel .item .blog2 a.news-photo {
-    height: 180px;
+    height: 193px;
 }
 #news-carousel .item .blog1 {
     padding-right: 4px;
     padding-left: 4px;
 }
 #news-carousel .item .blog1 h2 {
-    font-size: 22px;
-    color: #2a3744;
+    font-size: 20px;
+    color: #005ea5;
     padding-bottom:10px;
     line-height: 30px;
 }
 #news-carousel .item .blog2 h2 {
     font-size: 16px;
     padding:7px;
-    color: #2a3744;
-    height: 47px;
+    color: #fff;
+    height: 55px;
     overflow: hidden;
     line-height: 20px;
+    background-color:#df2c00;
 
 }
 #news-carousel .item .blog2 .read-more{
-    position: absolute;
-    bottom: -29px;
-    right: 5px;
-    background-color: #4c75a4;
-    color:#fff;
-    padding:3px;
+   display:none;
 }
 .read-more {
-    background-color: #4c75a4;
+    background-color: #005ea5;
     color:#fff;
     padding:5px;
     font-weight:bold;
@@ -423,6 +421,13 @@ div.consular-services .service-row > div {
     text-align: center;
     font-family: 'droid';
 }
+div.consular-services{
+    padding-left:20px;
+    width:24%;
+    margin-right:0px!important;
+    padding-right:0px;
+}
+
 div.consular-services .service-row > div > a{
     position: relative;
 }
@@ -487,4 +492,9 @@ body.mission .mission-header .mission-title{
     padding-left: 200px;
     font-size: 25px;
     padding-top: 43px;
+}
+.col-md-9
+{
+  margin-right:10px;
+  width: 75%!important;
 }
