@@ -422,10 +422,8 @@ div.consular-services .service-row > div {
     font-family: 'droid';
 }
 div.consular-services{
-    padding-left:20px;
     width:24%;
     margin-right:0px!important;
-    padding-right:0px;
 }
 
 div.consular-services .service-row > div > a{
