@@ -1,0 +1,78 @@
+#slideshowu94
+{
+	position: relative;
+}
+
+#u104
+{
+	position: absolute;
+	background-color: transparent;
+}
+
+#u107,#u169,#u183,#u197,#u211,#u225,#u239,#u253,#u267
+{
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	position: relative;
+}
+
+#u107_clip,#u169_clip,#u183_clip,#u197_clip,#u211_clip,#u225_clip,#u253_clip,#u267_clip
+{
+	overflow: hidden;
+}
+
+#u103-4
+{
+	position: absolute;
+	border-style: none;
+	border-color: transparent;
+	background-color: #29ABE2;
+	text-align: center;
+	color: #FFFFFF;
+	line-height: 20px;
+	font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+	font-weight: bold;
+}
+
+#u111-4
+{
+	position: absolute;
+	border-style: none;
+	border-color: transparent;
+	background-color: #29ABE2;
+	text-align: center;
+	color: #FFFFFF;
+	line-height: 20px;
+	font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+	font-weight: bold;
+}
+
+#u114-4
+{
+	position: absolute;
+	border-style: none;
+	border-color: transparent;
+	background-color: #29ABE2;
+	text-align: center;
+	color: #FFFFFF;
+	line-height: 20px;
+	font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+	font-weight: bold;
+}
+
+#u103-4:hover,#u111-4:hover,#u114-4:hover
+{
+	background-color: #0071BC;
+}
+
+.SSFirstButton,.SSPreviousButton,.SSNextButton,.SSLastButton,.SSSlideLink,.SSCloseButton /* slideshowFreeStyle */
+{
+	cursor: pointer;
+}
+
+.SSSlideLoading /* slideshowFreeStyle */
+{
+	background: url("../images/loading.gif") no-repeat center center;
+}
+
