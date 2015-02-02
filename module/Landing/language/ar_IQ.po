@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CustomCMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-30 11:50+0800\n"
-"PO-Revision-Date: 2015-01-30 11:51+0800\n"
+"POT-Creation-Date: 2015-02-02 17:36+0800\n"
+"PO-Revision-Date: 2015-02-02 17:37+0800\n"
 "Last-Translator: Hat Dao <enjoy3013@gmail.com>\n"
 "Language-Team: Hat Dao <enjoy3013@gmail.com>\n"
 "Language: en_US\n"
@@ -15,49 +15,6 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ./Landing\n"
-
-msgid "Announcements"
-msgstr "اعلانات"
-
-msgid "Tendor"
-msgstr "اتجاه"
-
-msgid "Magazine"
-msgstr "مجلة"
-
-msgid "Faq"
-msgstr "الاسئلة والمعلومات"
-
-msgid "Reforming The Ministry"
-msgstr "تأهيل وزارة الخارجية"
-
-msgid "Speeches Interviews"
-msgstr "خطابات ومقابلات الوزير"
-
-msgid "The Virtual Museum Of Iraq"
-msgstr "المتحف العراقي الافتراضير"
-
-msgid "Encyclopedia"
-msgstr "موسوعة العراق"
-
-msgid "Iraq And The United Nations"
-msgstr "العراق ومنظمة الامم المتحدة"
-
-msgid "Extension of Passports"
-msgstr "تمديد الجوازات"
-
-msgid "Certificate of Origin"
-msgstr "شهادة المنشأ"
-
-msgid "Passports Issuance"
-msgstr "اصدار الجوازات"
-
-msgid "Iraq Visa Form"
-msgstr "العراق نموذج فيزا"
-
-msgid "Mofa Ministers"
-msgstr "وزراء الخارجية العراقية"
-
 
 #: Landing/view/landing/ministry/magazine.phtml:1
 #: Landing/view/landing/ministry/magazine.phtml:2
@@ -688,16 +645,19 @@ msgstr "خطابات ومقابلات الوزير"
 
 #: Landing/view/landing/ministry/index.phtml:11
 #: Landing/view/landing/ministry/the-minister.phtml:13
+#: Landing/view/landing/index/menu/accordion/index.phtml:36
 msgid "Name: Dr. Ibrahim al-Jaafari"
 msgstr "الأسم: الدكتور ابراهيم الجعفري"
 
 #: Landing/view/landing/ministry/index.phtml:13
 #: Landing/view/landing/ministry/the-minister.phtml:15
+#: Landing/view/landing/index/menu/accordion/index.phtml:39
 msgid "Iraqi Foreign Ministry."
 msgstr "وزارة الخارجية العراقية"
 
 #: Landing/view/landing/ministry/index.phtml:14
 #: Landing/view/landing/ministry/the-minister.phtml:16
+#: Landing/view/landing/index/menu/accordion/index.phtml:42
 msgid "Former Iraqi Prime Minister."
 msgstr "وزير الخارجية العراقية"
 
@@ -867,14 +827,14 @@ msgid ""
 "of the new Iraqi state."
 msgstr ""
 "شغل منصب رئيس الوزراء كأول رئيس وزراء منتخب للعراق، إثر الانتخابات العامة "
-"التي شارك فيها الشعب العراقي بكثافة في الــ30 من كانون الثاني 2005م."
-"\rواستطاع الجعفري ان يحقق منجزات كبيرة خلال الحكومة الانتقالية، بالبدء بوضع "
-"المشاريع التنموية والواسعة؛ للنهوض بالبنى التحتية المنهارة، وتجاوز التركة "
-"الثقيلة التي خلفها النظام المقبور، إضافة إلى تهيئة مستلزمات اعداد "
-"وإقرار(الدستور الدائم) للعراق، وانتخاب (مجلس النواب)الدائم بنجاح في اجراءات "
-"امنية ناجحة ايضاً فضلاً عن اهتمامه الكبير بالاعلاميين والشعراء والفنانين "
-"والأدباء والرياضيين، كما ارسى دعائم دولة القانون، وساهم في ترسيخ أسس الدولة "
-"العراقية الجديدة."
+"التي شارك فيها الشعب العراقي بكثافة في الــ30 من كانون الثاني 2005م.واستطاع "
+"الجعفري ان يحقق منجزات كبيرة خلال الحكومة الانتقالية، بالبدء بوضع المشاريع "
+"التنموية والواسعة؛ للنهوض بالبنى التحتية المنهارة، وتجاوز التركة الثقيلة "
+"التي خلفها النظام المقبور، إضافة إلى تهيئة مستلزمات اعداد وإقرار(الدستور "
+"الدائم) للعراق، وانتخاب (مجلس النواب)الدائم بنجاح في اجراءات امنية ناجحة "
+"ايضاً فضلاً عن اهتمامه الكبير بالاعلاميين والشعراء والفنانين والأدباء "
+"والرياضيين، كما ارسى دعائم دولة القانون، وساهم في ترسيخ أسس الدولة العراقية "
+"الجديدة."
 
 #: Landing/view/landing/ministry/index.phtml:112
 #: Landing/view/landing/ministry/the-minister.phtml:114
@@ -1416,6 +1376,7 @@ msgstr ""
 
 #: Landing/view/landing/ministry/the-minister.phtml:1
 #: Landing/view/landing/ministry/the-minister.phtml:2
+#: Landing/view/landing/index/menu/accordion/index.phtml:31
 msgid "The Minister"
 msgstr "السيد الوزير"
 
@@ -1488,6 +1449,10 @@ msgstr "الأخبار الرئيسية"
 
 #: Landing/view/landing/index/index.phtml:23
 #: Landing/view/landing/index/index.phtml:36
+#: Landing/view/landing/index/menu/accordion/index.phtml:43
+#: Landing/view/landing/index/menu/accordion/index.phtml:62
+#: Landing/view/landing/index/menu/accordion/index.phtml:82
+#: Landing/view/landing/index/menu/accordion/index.phtml:124
 msgid "Read more"
 msgstr "اقرأ المزيد"
 
@@ -1537,6 +1502,165 @@ msgstr "روابط"
 #: Landing/view/landing/index/index.phtml:101
 msgid "Ministry Departments"
 msgstr "أقسام الوزارة"
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:47
+#, fuzzy
+msgid "Iraq's Constitution"
+msgstr "موقف العراق منها"
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:50
+#, fuzzy
+msgid "In the name of God, the Most merciful, the Most compassionate"
+msgstr "{وَلَقدْ كَرمَّنَا بَني أدَمَ}"
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:52
+msgid "We have honored the sons of Adam"
+msgstr ""
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:54
+msgid "Preamble"
+msgstr ""
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:56
+msgid ""
+"We, the people of Mesopotamia, the homeland of the apostles and prophets, "
+"resting place of the virtuous\r\n"
+"                imams, cradle of civilization, crafters of writing, and home "
+"of numeration."
+msgstr ""
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:59
+msgid ""
+"Upon our land the first law made by man was passed, and the oldest pact of "
+"just governance was inscribed,\r\n"
+"                and upon our soil the saints and companions of the Prophet "
+"prayed"
+msgstr ""
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:65
+#, fuzzy
+msgid "Iraq Encyclopedia"
+msgstr "موسوعة العراق"
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:68
+#, fuzzy
+msgid ""
+"-Content 3DAILY AVERAGE OF TEMPERATURES (CENTIGRADE) AND RELATIVE HUMIDITY "
+"FOR BAGHDAD CITY BY MONTH FOR\r\n"
+"                THE YEAR 2009"
+msgstr ""
+"المعدلات الیومیة لدرجات الحرارة (بالمقیاس المئوي) والرطوبة النسبیة لمدینة "
+"بغداد حسب الشھر لسنة 2009."
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:71
+#, fuzzy
+msgid ""
+"-RAINFALL, ANNUAL AVERAGE OF RELATIVE HUMIDITY AND TEMPERATURES FOR THE "
+"YEARS 1999-2009"
+msgstr ""
+"الأمطار والمعدل السنوي لدرجات الحرارة والرطوبة النسبية للسنوات 1999 - 2009. "
+"سكان العراق للسنوات 1977-2011."
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:73
+#, fuzzy
+msgid "-POPULATION OF IRAQ FOR THE YEARS 1977 - 2011."
+msgstr " سكان العراق للسنوات 1977-2011."
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:75
+#, fuzzy
+msgid "-AREA, YIELD AND PRODUCTION FOR CROPS AND VEGETABLES FOR THE YEAR 2010."
+msgstr "المساحة والغلة والإنتاج للمحاصیل والخضراوات لسنة 2010."
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:77
+#, fuzzy
+msgid ""
+"-No. OF HOLDINGS AND PALMS BY SEX ON NATIONAL LEVEL AND GOVERNORATES "
+"ACCORDING TO THE AGRICULTURAL\r\n"
+"                CENSUSES FOR THEYEAR 2001."
+msgstr ""
+"عدد الحیازات و عدد اشجار النخیل حسب الجنس على مستوى العراق حسب نتائج التعداد "
+"الزراعي لسنة 2001 ( العدد : نخلة )."
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:80
+#, fuzzy
+msgid "-PRODUCTION OF DATES BY KINDS FOR THE YEARS 2000 -2010 (10 Ton)."
+msgstr ""
+"عدد الحیازات و عدد اشجار النخیل حسب الجنس على مستوى العراق حسب نتائج التعداد "
+"الزراعي لسنة 2001 ( العدد : نخلة )."
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:84
+#, fuzzy
+msgid "International Conventions"
+msgstr "المنظمات الدولية"
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:87
+msgid "The UN Charter"
+msgstr ""
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:90
+msgid ""
+"The First Geneva\r\n"
+"                Convention"
+msgstr ""
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:93
+msgid "The Second Geneva Convention"
+msgstr ""
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:96
+msgid "The Third Geneva Convention"
+msgstr ""
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:99
+msgid "The Fourth Geneva Convention"
+msgstr ""
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:102
+#, fuzzy
+msgid "Consular Relations"
+msgstr "الخدمات القنصلية"
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:105
+msgid ""
+"Diplomatic\r\n"
+"                Relations"
+msgstr ""
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:108
+#: Landing/view/landing/foreign-policy/security-council-resolutions.phtml:1
+#: Landing/view/landing/foreign-policy/security-council-resolutions.phtml:2
+#: Landing/view/landing/foreign-policy/security-council-resolutions.phtml:7
+msgid "Security Council Resolutions"
+msgstr "قرارات مجلس الامن"
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:112
+#, fuzzy
+msgid "Diplomatic Relations"
+msgstr "البعثات الدبلوماسية"
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:113
+#: Landing/view/landing/foreign-policy/the-new-iraq.phtml:1
+#: Landing/view/landing/foreign-policy/the-new-iraq.phtml:2
+msgid "The New Iraq"
+msgstr "العراق الجديد"
+
+#: Landing/view/landing/index/menu/accordion/index.phtml:116
+msgid ""
+"•The new Iraq inherited a heavy legacy of hostility and distrust as a result "
+"of the irresponsible\r\n"
+"                policies of the former regime towards the neighboring and "
+"far countries which led to a decline in the\r\n"
+"                country's position in the international community. <br>\r\n"
+"                •The Foreign Ministry in the new Iraq faced these challenges "
+"and still, to address that legacy in a bid\r\n"
+"                to retrieve 's position that befits rich civilization "
+"heritage and its people and its riches. <br>\r\n"
+"                •As representatives of the new Iraq, we have actively and "
+"successfully worked on removing the isolation\r\n"
+"                condition to achieve the goals of our foreign policy in a "
+"responsible vision in accordance with the\r\n"
+"                following:"
+msgstr ""
 
 #: Landing/view/landing/contact-us/index.phtml:1
 #: Landing/view/landing/contact-us/index.phtml:2
@@ -4400,11 +4524,6 @@ msgstr ""
 "الاتفاقيات والبرتوكولات الملحقة بها بغية الارتقاء بواقع حقوق الانسان في "
 "العراق بشكل ينسجم مع المعايير الدولية."
 
-#: Landing/view/landing/foreign-policy/the-new-iraq.phtml:1
-#: Landing/view/landing/foreign-policy/the-new-iraq.phtml:2
-msgid "The New Iraq"
-msgstr "العراق الجديد"
-
 #: Landing/view/landing/foreign-policy/the-new-iraq.phtml:5
 msgid ""
 "•The new Iraq inherited a heavy legacy of hostility and distrust as a result "
@@ -4877,12 +4996,6 @@ msgstr ""
 "الأوبك لزيادة العائدات من بيع النّفط في السّوق العالمية. تأسست في بغداد عام "
 "1960، من طرف السعودية، إيران، العراق، الكويت وفنزويلا، ومقرّها في فيينا. "
 "للمزيد من المعلومات..."
-
-#: Landing/view/landing/foreign-policy/security-council-resolutions.phtml:1
-#: Landing/view/landing/foreign-policy/security-council-resolutions.phtml:2
-#: Landing/view/landing/foreign-policy/security-council-resolutions.phtml:7
-msgid "Security Council Resolutions"
-msgstr "قرارات مجلس الامن"
 
 #: Landing/view/landing/foreign-policy/security-council-resolutions.phtml:16
 msgid "Security council Resolutions in regarding to Iraq"

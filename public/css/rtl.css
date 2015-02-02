@@ -28,3 +28,13 @@ header{
 	height: 165px;
     background: url('../trash/images/rtl_header3.jpg') center no-repeat transparent;
 }
+#images-carousel .controls {
+    left: 0 !important;
+    right: auto !important;
+}
+#images-carousel .controls .right {
+    float: right;
+}
+#images-carousel .controls .left{
+    float: left;
+}
