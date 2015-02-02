@@ -16,6 +16,49 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ./Landing\n"
 
+msgid "Announcements"
+msgstr "اعلانات"
+
+msgid "Tendor"
+msgstr "اتجاه"
+
+msgid "Magazine"
+msgstr "مجلة"
+
+msgid "Faq"
+msgstr "الاسئلة والمعلومات"
+
+msgid "Reforming The Ministry"
+msgstr "تأهيل وزارة الخارجية"
+
+msgid "Speeches Interviews"
+msgstr "خطابات ومقابلات الوزير"
+
+msgid "The Virtual Museum Of Iraq"
+msgstr "المتحف العراقي الافتراضير"
+
+msgid "Encyclopedia"
+msgstr "موسوعة العراق"
+
+msgid "Iraq And The United Nations"
+msgstr "العراق ومنظمة الامم المتحدة"
+
+msgid "Extension of Passports"
+msgstr "تمديد الجوازات"
+
+msgid "Certificate of Origin"
+msgstr "شهادة المنشأ"
+
+msgid "Passports Issuance"
+msgstr "اصدار الجوازات"
+
+msgid "Iraq Visa Form"
+msgstr "العراق نموذج فيزا"
+
+msgid "Mofa Ministers"
+msgstr "وزراء الخارجية العراقية"
+
+
 #: Landing/view/landing/ministry/magazine.phtml:1
 #: Landing/view/landing/ministry/magazine.phtml:2
 msgid "Ministry's Magazine"
