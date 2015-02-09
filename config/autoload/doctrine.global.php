@@ -11,8 +11,15 @@ return array(
                     'user'     => 'username',
                     'password' => 'password',
                     'dbname'   => 'database',
+                    'charset'  => 'utf8'
                 )
             )
         )
     ),
+    'db' => [
+        'driver' => 'PDO',
+        'database' => 'custom_cms',
+        'username' => 'developer',
+        'password' => 'developer-password'
+    ]
 );

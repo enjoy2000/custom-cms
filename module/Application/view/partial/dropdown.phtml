@@ -12,9 +12,22 @@ $currentRoute = explode('/', $routeName);
 $currentParentRoute = $currentRoute[0];
 $parentRoute = $this->route;
 $routes = $this->config('router')['routes'][$parentRoute];
+$currentSlug = $routeMatch->getParams('slug', null);
+$arrayLink = [];
 
+$activeMenu = false;
+if (isset($custom_links)) {
+    foreach ($routes['custom_links'] as $link) {
+        $arrayLink[] = $link['link']['en'];
+        $arrayLink[] = $link['link']['ar'];
+    }
+    if (in_array($currentSlug, $arrayLink)) {
+        $activeMenu = true;
+    }
+}
 ?>
-<li class="<?php echo $parentRoute ?> dropdown<?php echo ($currentParentRoute == $parentRoute) ? ' active current-menu-item' : '' ?>">
+
+<li class="<?php echo $parentRoute ?> dropdown<?php echo ($currentParentRoute == $parentRoute || $activeMenu) ? ' active current-menu-item' : '' ?>">
     <a data-toggle="dropdown" href="<?php echo $this->url($parentRoute) ?>">
         <?php echo $this->translate(Common::getNameFromRoute($parentRoute)) ?>
         <span class="caret"></span>
@@ -32,5 +45,19 @@ $routes = $this->config('router')['routes'][$parentRoute];
             </li>
             <?php endif; ?>
         <?php endforeach; ?>
+
+        <!-- Custom pages were set in landing module config route -->
+        <?php if (isset($routes['custom_links'])) : ?>
+            <?php
+            foreach ($routes['custom_links'] as $link) :
+                $url =  (Locale::getPrimaryLanguage(Locale::getDefault()) == 'en') ? $link['link']['en'] : $link['link']['ar'];
+            ?>
+                <li<?php echo ($currentSlug == $url) ? ' class="active"' : '' ?>>
+                    <a href="<?php echo $this->url('blog/view', ['slug' => $url]) ?>">
+                        <?php echo $this->translate($link['label']) ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </ul>
 </li>

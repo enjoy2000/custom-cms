@@ -224,6 +224,30 @@ class Blog
         $this->locale = $locale;
     }
 
+    /**
+     * Some function for render data table
+     */
+    public function getBlogLanguage()
+    {
+        return $this->locale->getName();
+    }
+
+    public function getGridCategory()
+    {
+        $categories = [];
+        foreach ($this->getCategories() as $category) {
+            $categories[] = $category->getName();
+        }
+
+        return implode('<br/>', $categories);
+    }
+
+    public function getActions()
+    {
+        return '<a class="btn btn-primary" href="'.$this->getEditUrl().'" title="Edit Blog">
+                    <i class="fa fa-edit"></i></a>';
+    }
+
     public function getCreateUser()
     {
         return $this->createUser;
@@ -274,6 +298,11 @@ class Blog
     public function setUpdateTime($time)
     {
         $this->updateTime = $time;
+    }
+
+    public function getPublished()
+    {
+        return $this->published;
     }
 
     public function togglePublished()

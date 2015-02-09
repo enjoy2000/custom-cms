@@ -18,6 +18,8 @@ class IndexController extends AbstractActionController {
     {
         $locale = new Container('locale');
         $locale = $this->findOneBy('Blog\Entity\Locale', ['code' => $locale->locale]);
+        $catUrlKey = ($locale->getShortCode() == 'en') ? 'main-english' : 'arabic-1';
+        return $this->redirect()->toRoute('blog/view', ['slug' => $catUrlKey]);
 
         // get categories based on current locale
         $repository = $this->getEntityManager()->getRepository('Blog\Entity\Category');

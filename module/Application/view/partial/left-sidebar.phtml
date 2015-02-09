@@ -8,6 +8,7 @@ $routeName = $routeMatch->getMatchedRouteName();
 $currentRoute = explode('/', $routeName);
 $parentRoute = $currentRoute[0];
 $routes = $this->config('router')['routes'][$parentRoute];
+$currentSlug = $routeMatch->getParams('slug', null);
 ?>
 
 <div class="list-group panel default-panel">
@@ -29,4 +30,17 @@ $routes = $this->config('router')['routes'][$parentRoute];
         </a>
         <?php endif; ?>
     <?php endforeach; ?>
+
+    <!-- Custom pages were set in landing module config route -->
+    <?php if (isset($routes['custom_links'])) : ?>
+        <?php
+        foreach ($routes['custom_links'] as $link) :
+            $url =  (Locale::getPrimaryLanguage(Locale::getDefault()) == 'en') ? $link['link']['en'] : $link['link']['ar'];
+            ?>
+            <a class="list-group-item<?php echo ($currentSlug == $url) ? ' active' : '' ?>"
+                href="<?php echo $this->url('blog/view', ['slug' => $url]) ?>">
+                <?php echo $this->translate($link['label']) ?>
+            </a>
+        <?php endforeach; ?>
+    <?php endif; ?>
 </div>

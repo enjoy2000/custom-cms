@@ -15,11 +15,14 @@ use Blog\Entity\Blog;
 use Zend\Paginator\Paginator;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use Admin\Table\Blog as BlogTable;
+use Zend\Http\Response;
 
 class BlogController extends AbstractActionController
 {
     public function indexAction()
     {
+        return new ViewModel();
         $em = $this->getEntityManager();
 
         $blogs = $em->getRepository('Blog\Entity\Blog');
@@ -47,6 +50,27 @@ class BlogController extends AbstractActionController
         return new ViewModel([
             'paginator' => $paginator
         ]);
+    }
+
+    public function queryAction()
+    {
+        $em = $this->getEntityManager();
+
+        $blogs = $em->getRepository('Blog\Entity\Blog');
+        $queryBuilder = $blogs->createQueryBuilder('b')
+                    ->innerJoin('b.categories', 'c')
+                    ->innerJoin('b.locale', 'l')
+        ;
+
+        $table = new BlogTable();
+        $table->setAdapter($this->getDbAdapter())
+            ->setSource($queryBuilder)
+            ->setParamAdapter($this->getRequest()->getPost())
+        ;
+
+        $response = new Response();
+        $response->setContent($table->render());
+        return $response;
     }
 
     public function newAction()

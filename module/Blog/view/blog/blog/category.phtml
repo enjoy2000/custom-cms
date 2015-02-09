@@ -22,7 +22,7 @@ echo $this->paginationControl(
     // the route to link to when a user clicks a control link
     array(
         'route' => 'blog/view',
-        'link' => $category->getUrl()
+        'link' => $this->url('blog/view', ['slug' => $category->getUrlKey()])
     )
 );
 ?>

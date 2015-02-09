@@ -11,7 +11,7 @@ namespace Application\Controller;
 use Zend\Stdlib\RequestInterface as Request;
 use Zend\Stdlib\ResponseInterface as Response;
 use Zend\Session\Container;
-
+use Zend\Db\Adapter\Adapter;
 use User\Entity\User;
 
 
@@ -24,6 +24,8 @@ trait ControllerMethods{
     protected $_locale = null;
 
     protected $_router = null;
+
+    protected $_dbAdapter = null;
 
     /**
      * Dispatch a request
@@ -59,6 +61,20 @@ trait ControllerMethods{
                                          ->get('Doctrine\ORM\EntityManager');
         }
         return $this->_entityManager;
+    }
+
+    /**
+     * @return \Zend\Db\Adapter\Adapter
+     */
+    public function getDbAdapter()
+    {
+        if (null === $this->_dbAdapter) {
+            $dbConfig = $this->getServiceLocator()->get('config')['db'];
+            $adapter = new \Zend\Db\Adapter\Adapter($dbConfig);
+            $this->_dbAdapter = $adapter;
+        }
+
+        return $this->_dbAdapter;
     }
 
     /**

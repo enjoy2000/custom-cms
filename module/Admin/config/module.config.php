@@ -92,6 +92,15 @@ return array(
                                     ),
                                 ),
                             ),
+                            'query' => array(
+                                'type' => 'literal',
+                                'options' => array(
+                                    'route' => '/query',
+                                    'defaults' => array(
+                                        'action' => 'query',
+                                    ),
+                                ),
+                            ),
                             'edit' => array(
                                 'type' => 'Segment',
                                 'options' => array(

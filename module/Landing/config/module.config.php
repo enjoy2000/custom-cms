@@ -44,6 +44,50 @@ return array(
                         'action'     => 'index',
                     ),
                 ),
+                'custom_links' => [
+                    [
+                        'label' => 'Press Releases',
+                        'link' => [
+                            'en' => 'press-releases',
+                            'ar' => 'arabic-press-releases'
+                        ],
+                    ],
+                    [
+                        'label' => 'Speeches & Interviews',
+                        'link' => [
+                            'en' => 'speeches-interviews',
+                            'ar' => 'arabic-speeches-interviews'
+                        ],
+                    ],
+                    [
+                        'label' => 'Ministry\'s Announcements',
+                        'link' => [
+                            'en' => 'ministry-s-announcements',
+                            'ar' => 'arabic-ministry-s-announcements'
+                        ],
+                    ],
+                    [
+                        'label' => 'Announcements',
+                        'link' => [
+                            'en' => 'announcements',
+                            'ar' => 'arabic-announcements'
+                        ],
+                    ],
+                    [
+                        'label' => 'Ministry\'s Magazine',
+                        'link' => [
+                            'en' => 'ministry-s-magazine',
+                            'ar' => 'arabic-ministry-s-magazine'
+                        ],
+                    ],
+                    [
+                        'label' => 'Undersecretaries',
+                        'link' => [
+                            'en' => 'undersecretaries',
+                            'ar' => 'ar-undersecretaries'
+                        ],
+                    ],
+                ],
                 'may_terminate' => true,
                 'child_routes' => array(
                     'faq' => array(
@@ -97,6 +141,7 @@ return array(
                                 'action'     => 'announcements',
                             ),
                         ),
+                        'hide' => true,
                     ),
                     'magazine' => array(
                         'type' => 'Literal',
@@ -107,6 +152,7 @@ return array(
                                 'action'     => 'magazine',
                             ),
                         ),
+                        'hide' => true,
                     ),
                     'the-minister' => array(
                         'type' => 'Literal',

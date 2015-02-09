@@ -39,6 +39,43 @@ return array(
                         'action'     => 'index',
                     ),
                 ),
+                'custom_links' => [
+                    [
+                        'label' => 'Minister Speeches',
+                        'link' => [
+                            'en' => 'minister-speeches',
+                            'ar' => 'arabic-minister-speeches'
+                        ],
+                    ],
+                    [
+                        'label' => 'Press Conferences',
+                        'link' => [
+                            'en' => 'press-conferences',
+                            'ar' => 'ar-press-conferences'
+                        ],
+                    ],
+                    [
+                        'label' => 'Video Library',
+                        'link' => [
+                            'en' => 'video-library',
+                            'ar' => 'ar-video-library'
+                        ],
+                    ],
+                    [
+                        'label' => 'Photo Library',
+                        'link' => [
+                            'en' => 'ar-photo-library',
+                            'ar' => 'ar-photo-library'
+                        ],
+                    ],
+                    [
+                        'label' => 'Other Headlines',
+                        'link' => [
+                            'en' => 'other-headlines',
+                            'ar' => 'ar-other-headlines'
+                        ],
+                    ],
+                ],
                 'may_terminate' => true,
                 'child_routes' => array(
                     'view' => array(

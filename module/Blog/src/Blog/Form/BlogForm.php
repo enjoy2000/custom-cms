@@ -319,9 +319,11 @@ class BlogForm extends ZendForm {
             unset($formData['id']);
 
             // if upload new photo delete the old one
-            if (isset($formData['photo']) && is_string($formData['photo'])) {
+            if ($formData['photo']) {
                 unlink('./public' . \Blog\Entity\Blog::DEFAULT_UPLOAD_PATH . $oldData->getPhoto());
                 unlink('./public' . \Blog\Entity\Blog::DEFAULT_CACHE_PATH . $oldData->getPhoto());
+            } else {
+                unset($formData['photo']);
             }
 
             // save

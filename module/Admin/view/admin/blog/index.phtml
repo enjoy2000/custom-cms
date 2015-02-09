@@ -1,11 +1,26 @@
 <?php $this->headTitle($this->translate('News Manager')) ?>
 <?php $this->headScript()
     ->prependFile('/js/admin/blog-index.js')
+    ->prependFile($this->basePath() . '/js/DT_bootstrap_3.js')
+    ->prependFile($this->basePath() . '/js/zf-table.js')
+    ->prependFile($this->basePath() . '/js/jquery.dataTables.min.js')
     ->prependFile('/js/plugin/bootbox/bootbox.min.js')
     ->prependFile('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js');
+
+$this->headLink()
+    ->prependStylesheet($this->basePath() . '/css/zf-table/zf-table.css')
 ?>
 <h1 class="text-center"><?php echo $this->translate('News Manager') ?></h1>
 
+<div id="blogTable"></div>
+
+<script>
+    $(document).ready(function() {
+        $('#blogTable').zfTable('<?php echo $this->url("zfcadmin/blog/query") ?>');
+    });
+</script>
+
+<?php /** ?>
 <?php
 // add at the end of the file after the table
 echo $this->paginationControl(
@@ -37,7 +52,6 @@ echo $this->paginationControl(
 
     <!-- Loop blogs -->
     <?php
-    /** @var \Blog\Entity\Blog $blog */
     foreach ($this->paginator as $blog) :
     ?>
         <tr>
@@ -45,7 +59,6 @@ echo $this->paginationControl(
             <td><?php echo $blog->getTitle(); ?></td>
             <td>
             <?php
-            /** @var \Blog\Entity\Category $category */
             foreach ($blog->getCategories() as $category) : ?>
                 <?php echo $category->getName() . '<br />'; ?>
             <?php endforeach; ?>
@@ -83,3 +96,4 @@ echo $this->paginationControl(
     )
 );
 ?>
+<?php */ ?>
