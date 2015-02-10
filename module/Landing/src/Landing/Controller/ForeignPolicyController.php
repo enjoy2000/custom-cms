@@ -23,12 +23,12 @@ class ForeignPolicyController extends AbstractActionController
 
     public function theNewIraqAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('foreign-policy')]);
+        return new ViewModel([]);
     }
 
     public function internationalOrganizationsAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('foreign-policy')]);
+        return new ViewModel([]);
     }
 
     public function arabLeagueAction()

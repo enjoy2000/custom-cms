@@ -18,46 +18,46 @@ class MinistryController extends AbstractActionController
 
     public function indexAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
+        return new ViewModel([]);
     }
 
     public function theMinisterAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
+        return new ViewModel([]);
     }
 
     public function ministryDepartmentsAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
+        return new ViewModel([]);
     }
 
     public function faqAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
+        return new ViewModel([]);
     }
 
     public function speechesInterviewsAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
+        return new ViewModel([]);
     }
 
     public function undersecretariesAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
+        return new ViewModel([]);
     }
 
     public function announcementsAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
+        return new ViewModel([]);
     }
 
     public function magazineAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
+        return new ViewModel([]);
     }
 
     public function mofaMinistersAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('the-ministry')]);
+        return new ViewModel([]);
     }
 }

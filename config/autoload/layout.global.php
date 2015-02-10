@@ -6,9 +6,9 @@ return [
         'Admin' => 'layout/admin',
         'Landing' => 'layout/3columns',
         'Landing/Index' => 'layout/layout',
-        'Landing/ContactUs' => 'layout/layout',
-        'Blog' => 'layout/layout',
-        'Mission' => 'layout/layout',
+        //'Landing/ContactUs' => 'layout/layout',
+        //'Blog' => 'layout/layout',
+        //'Mission' => 'layout/layout',
         'Mission/Blog' => 'layout/mission',
     ],
 ];

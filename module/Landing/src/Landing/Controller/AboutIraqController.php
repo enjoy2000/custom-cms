@@ -16,36 +16,36 @@ class AboutIraqController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('about-iraq')]);
+        return new ViewModel([]);
     }
 
     public function investmentAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('about-iraq')]);
+        return new ViewModel([]);
     }
 
     public function announcementsAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('about-iraq')]);
+        return new ViewModel([]);
     }
 
     public function constitutionAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('about-iraq')]);
+        return new ViewModel([]);
     }
 
     public function encyclopediaAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('about-iraq')]);
+        return new ViewModel([]);
     }
 
     public function theVirtualMuseumOfIraqAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('about-iraq')]);
+        return new ViewModel([]);
     }
 
     public function touristGuideAction()
     {
-        return new ViewModel(['routes' => $this->getRouter('about-iraq')]);
+        return new ViewModel([]);
     }
 }
