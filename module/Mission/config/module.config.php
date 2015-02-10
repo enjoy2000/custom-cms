@@ -39,6 +39,15 @@ return array(
                         'action'     => 'index',
                     ),
                 ),
+                'custom_links' => [
+                    [
+                        'label' => 'Iraq Mission Abroad',
+                        'link' => [
+                            'en' => 'en-iraq-mission-abroad',
+                            'ar' => 'ar-mofa-iraq-mission-abroad'
+                        ],
+                    ],
+                ],
                 'may_terminate' => true,
                 'child_routes' => array(
                     'view' => array(

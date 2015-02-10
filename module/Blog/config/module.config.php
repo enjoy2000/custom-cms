@@ -75,6 +75,20 @@ return array(
                             'ar' => 'ar-other-headlines'
                         ],
                     ],
+                    [
+                        'label' => 'Contact Press Department',
+                        'link' => [
+                            'en' => 'en-contact-press-department',
+                            'ar' => 'ar-mofa-contact-press-department'
+                        ],
+                    ],
+                    [
+                        'label' => 'Official Documents',
+                        'link' => [
+                            'en' => 'en-official-documents',
+                            'ar' => 'ar-mofa-official-documents'
+                        ],
+                    ],
                 ],
                 'may_terminate' => true,
                 'child_routes' => array(

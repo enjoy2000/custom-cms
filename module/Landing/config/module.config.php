@@ -87,6 +87,27 @@ return array(
                             'ar' => 'ar-undersecretaries'
                         ],
                     ],
+                    [
+                        'label' => 'Iraqi Ambassadors',
+                        'link' => [
+                            'en' => 'en-iraqi-mofa-ambassadors',
+                            'ar' => 'ar-iraqi-mofa-ambassadors'
+                        ],
+                    ],
+                    [
+                        'label' => 'Ministry Departments',
+                        'link' => [
+                            'en' => 'en-ministry-departments',
+                            'ar' => 'ar-mofa-ministry-departments'
+                        ],
+                    ],
+                    [
+                        'label' => 'Other Links',
+                        'link' => [
+                            'en' => 'en-other-links',
+                            'ar' => 'ar-mofa-other-links'
+                        ],
+                    ],
                 ],
                 'may_terminate' => true,
                 'child_routes' => array(
