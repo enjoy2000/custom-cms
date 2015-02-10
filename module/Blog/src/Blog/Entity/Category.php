@@ -19,6 +19,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Category {
 
     const BLOGS_PER_PAGE = 5;
+    const NEWS_EN = 'main-english';
+    const NEWS_AR = 'arabic-1';
 
     /**
      * @var int

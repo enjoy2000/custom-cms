@@ -11,7 +11,7 @@ namespace Blog\Controller;
 use Application\Controller\AbstractActionController;
 use Doctrine\DBAL\Schema\View;
 use Zend\View\Model\ViewModel;
-use Blog\Entity\Blog;
+use Application\Helper\Common;
 use Zend\Paginator\Paginator;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
@@ -55,6 +55,10 @@ class BlogController extends AbstractActionController {
     {
         $blog = $this->params()->fromRoute('blog');
 
+        if (Common::getParentMenuFromSlug($blog->getUrlKey(), $this->getServiceLocator()->get('config')['router'])) {
+            $this->layout('layout/3columns');
+        }
+
         return new ViewModel([
             'blog' => $blog
         ]);
@@ -63,6 +67,7 @@ class BlogController extends AbstractActionController {
     public function categoryAction()
     {
         $category = $this->params()->fromRoute('category');
+
 
         $queryBuilder = $category->getActiveBlogs($this);
 
@@ -73,6 +78,10 @@ class BlogController extends AbstractActionController {
         $page = (int)$this->getRequest()->getQuery('page');
         if ($page) {
             $paginator->setCurrentPageNumber($page);
+        }
+
+        if (Common::getParentMenuFromSlug($category->getUrlKey(), $this->getServiceLocator()->get('config')['router'])) {
+            $this->layout('layout/3columns');
         }
 
         return new ViewModel([

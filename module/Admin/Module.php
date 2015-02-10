@@ -17,7 +17,7 @@ class Module
     public function onBootstrap(MvcEvent $e)
     {
         $eventManager        = $e->getApplication()->getEventManager();
-        $eventManager->attach(MvcEvent::EVENT_DISPATCH, array($this, 'selectLayout'));
+        $eventManager->attach(MvcEvent::EVENT_DISPATCH, array($this, 'selectLayout'), 100);
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
     }
@@ -47,13 +47,13 @@ class Module
         $action = str_replace('Controller', '', $controllers[2]);
         $moduleNamespace = substr($controllerClass, 0, strpos($controllerClass, '\\'));
 
-        if (!$controller->layout()->terminate()) {
+        //if (!$controller->layout()->terminate()) {
             if (isset($config['module_layouts'][$moduleNamespace])) {
                 $controller->layout($config['module_layouts'][$moduleNamespace]);
                 if (isset($config['module_layouts'][$moduleNamespace . '/' . $action])) {
                     $controller->layout($config['module_layouts'][$moduleNamespace . '/' . $action]);
                 }
             }
-        }
+        //}
     }
 }

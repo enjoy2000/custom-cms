@@ -12,20 +12,31 @@ namespace Landing\Controller;
 use Application\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\Session\Container;
+use Blog\Entity\Category;
 
 class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
         $localeSession = new Container('locale');
-        $locale = $this->findBy('Blog\Entity\Locale', ['code' => $localeSession->locale]);
-        $blogs = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
-            ->findBy(
-                ['published' => true, 'locale' => $locale],
-                ['id' => 'DESC'],
-                10,
-                0
-            );
+        $locale = $this->findOneBy('Blog\Entity\Locale', ['code' => $localeSession->locale]);
+
+        $catUrlKey = ($locale->getShortCode() == 'en') ? Category::NEWS_EN : Category::NEWS_AR;
+        $category = $this->getEntityManager()->getRepository('Blog\Entity\Category')
+            ->findOneBy(
+                ['urlKey' => $catUrlKey]
+            )
+        ;
+
+        $qb = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
+            ->createQueryBuilder('b');
+        $blogs = $qb->join('b.categories', 'c')
+            ->where("c.urlKey = '{$catUrlKey}'")
+            ->setFirstResult(0)
+            ->setMaxResults(8)
+            ->orderBy('b.id', 'DESC')
+            ->getQuery()
+            ->getResult();
 
         /*
         $otherNews = $this->getEntityManager()->getRepository('Blog\Entity\Blog')

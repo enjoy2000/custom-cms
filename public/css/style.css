@@ -6,12 +6,6 @@
   font-family: 'nask';
   src: url('/fonts/droidnaskh-bold.woff'); /* IE9 Compat Modes */
 }
-@media (min-width: 1200px) {
-    .container {
-        width: 1000px;
-        font-family:'nask';
-    }
-}
 
 body {
     background: -webkit-linear-gradient(270deg,rgba(76,157,206,1.00) 0%,rgba(255,255,255,0.00) 51.81%,rgba(0,0,0,0.00) 100%) !important;
@@ -495,4 +489,17 @@ body.mission .mission-header .mission-title{
 {
   margin-right:10px;
   width: 75%!important;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1000px;
+        font-family:'nask';
+    }
+}
+
+@media (max-width: 769px) {
+    body > .container {
+        padding: 0 15px;
+    }
 }

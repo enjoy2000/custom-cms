@@ -12,13 +12,14 @@ use Application\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\View\Model\JsonModel;
 use Zend\Session\Container;
+use Blog\Entity\Category;
 
 class IndexController extends AbstractActionController {
     public function indexAction()
     {
         $locale = new Container('locale');
         $locale = $this->findOneBy('Blog\Entity\Locale', ['code' => $locale->locale]);
-        $catUrlKey = ($locale->getShortCode() == 'en') ? 'main-english' : 'arabic-1';
+        $catUrlKey = ($locale->getShortCode() == 'en') ? Category::NEWS_EN : Category::NEWS_AR;
         return $this->redirect()->toRoute('blog/view', ['slug' => $catUrlKey]);
 
         // get categories based on current locale

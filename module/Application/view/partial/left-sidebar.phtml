@@ -6,9 +6,11 @@ $routeMatch = $this->getHelperPluginManager()->getServiceLocator()->get('Applica
 $routeName = $routeMatch->getMatchedRouteName();
 
 $currentRoute = explode('/', $routeName);
-$parentRoute = $currentRoute[0];
+$currentSlug = $routeMatch->getParam('slug', null);
+$parentRoute = (Common::getParentMenuFromSlug($currentSlug, $this->config('router'))) ?
+    Common::getParentMenuFromSlug($currentSlug, $this->config('router')) :
+    $currentRoute[0];
 $routes = $this->config('router')['routes'][$parentRoute];
-$currentSlug = $routeMatch->getParams('slug', null);
 ?>
 
 <div class="list-group panel default-panel">

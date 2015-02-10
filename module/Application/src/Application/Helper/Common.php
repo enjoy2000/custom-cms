@@ -32,4 +32,21 @@ class Common {
 
         return $route;
     }
+
+    public static function getParentMenuFromSlug($slug, $configRouter)
+    {
+        $routes = $configRouter['routes'];
+        foreach ($routes as $k => $route) {
+            if (isset($route['custom_links'])) {
+                foreach ($route['custom_links'] as $link) {
+                    if (in_array($slug, $link['link'])) {
+
+                        return $k;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
 } 
