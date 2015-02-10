@@ -59,6 +59,10 @@ class BlogController extends AbstractActionController {
             $this->layout('layout/3columns');
         }
 
+        if ($this->params()->fromQuery('print') == 1) {
+            $this->layout('layout/print');
+        }
+
         return new ViewModel([
             'blog' => $blog
         ]);

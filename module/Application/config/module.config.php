@@ -76,6 +76,7 @@ return array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
             'layout/3columns'           => __DIR__ . '/../view/layout/3columns.phtml',
             'layout/mission'           => __DIR__ . '/../view/layout/mission.phtml',
+            'layout/print'           => __DIR__ . '/../view/layout/print.phtml',
             'layout/footer'           => __DIR__ . '/../view/layout/layout/footer.phtml',
             'layout/header'           => __DIR__ . '/../view/layout/layout/header.phtml',
             'layout/navigation'           => __DIR__ . '/../view/layout/layout/navigation.phtml',
