@@ -6,6 +6,11 @@ $(document).ready(function(){
         $.each($data.blogs, function(){
             html += '<div class="blog item row" style="border-bottom: solid 1px #ccc; padding: 5px 0;">' +
             '<a href="'+this.blogUrl+'" title="'+this.title+'">'+this.title+'</a>' +
+            '<div class="thumbnail">' +
+            '<img src="' +
+            this.thumbnail +
+            '" alt="" />' +
+            '</div>' +
             '<div class="short-content">' +
             this.shortContent +
             '</div>' +

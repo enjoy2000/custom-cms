@@ -100,6 +100,7 @@ class IndexController extends AbstractActionController {
                 $blogsData[] = [
                     'blogUrl' => $blog->getUrl(),
                     'title' => $blog->getTitle(),
+                    'thumbnail' => $blog->getThumbnail(),
                     'shortContent' => $blog->getShortContent(),
                 ];
             }
