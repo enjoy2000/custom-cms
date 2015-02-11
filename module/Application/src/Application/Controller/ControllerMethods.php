@@ -28,31 +28,6 @@ trait ControllerMethods{
     protected $_dbAdapter = null;
 
     /**
-     * Dispatch a request
-     *
-     * @events dispatch.pre, dispatch.post
-     * @param  Request $request
-     * @param  null|Response $response
-     * @return Response|mixed
-     */
-    public function dispatch(Request $request, Response $response = null){
-
-        $config = $this->getServiceLocator()->get('config');
-        $routes = $config['router']['routes'];
-        $this->_router = $routes;
-        //var_dump($request);die;
-        return parent::dispatch($request, $response);
-    }
-
-    /**
-     * @return \Zend\Mvc\Router\Http\TreeRouteStack
-     */
-    public function getRouter($route)
-    {
-        return $this->_router[$route];
-    }
-
-    /**
      * @return \Doctrine\ORM\EntityManager
      */
     public function getEntityManager(){

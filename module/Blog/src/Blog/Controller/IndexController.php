@@ -38,16 +38,20 @@ class IndexController extends AbstractActionController {
     {
         $locale = new Container('locale');
         $locale = $this->findOneBy('Blog\Entity\Locale', ['code' => $locale->locale]);
+        $catUrlKey = ($locale->getShortCode() == 'en') ? Category::NEWS_EN : Category::NEWS_AR;
         $em = $this->getEntityManager();
         $qb = $em->getRepository('Blog\Entity\Blog')->createQueryBuilder('b');
         $qb
+            ->join('b.categories', 'c')
             ->select('b')
             ->where($qb->expr()->andX(
                 $qb->expr()->eq('b.published', ':published'),
-                $qb->expr()->eq('b.locale', ':locale')
+                //$qb->expr()->eq('b.locale', ':locale'),
+                $qb->expr()->eq('c.urlKey', ':urlKey')
             ))
             ->setParameter('published', true)
-            ->setParameter('locale', $locale)
+            //->setParameter('locale', $locale)
+            ->setParameter('urlKey', $catUrlKey)
             ->orderBy('b.id', 'DESC')
             ->setMaxResults(10)
             ->setFirstResult(0)

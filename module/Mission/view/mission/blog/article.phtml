@@ -23,16 +23,6 @@ if ($blog->getMetaKeywords()) {
     <i class="glyphicon glyphicon-user"></i>
     <?php echo sprintf($this->translate('Written by %s'), $blog->getCreateUser()->getDisplayName()) ?>
 </div>
-<div class="categories">
-<?php
-/** @var \Mission\Entity\Category $cat */
-foreach ($cats as $cat) :
-?>
-    <a class="btn btn-primary" href="<?php echo $cat->getUrl() ?>" title="<?php echo $cat->getName() ?>">
-        <?php echo $cat->getName() ?>
-    </a>
-<?php endforeach; ?>
-</div>
 <hr />
 <div class="article-photo text-center">
     <img src="<?php echo $blog->getPhotoUrl() ?>" alt="" />

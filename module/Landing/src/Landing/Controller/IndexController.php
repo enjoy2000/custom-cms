@@ -32,6 +32,7 @@ class IndexController extends AbstractActionController
             ->createQueryBuilder('b');
         $blogs = $qb->join('b.categories', 'c')
             ->where("c.urlKey = '{$catUrlKey}'")
+            ->andWhere("b.published = 1")
             ->setFirstResult(0)
             ->setMaxResults(8)
             ->orderBy('b.id', 'DESC')
@@ -56,6 +57,8 @@ class IndexController extends AbstractActionController
                 8,
                 10
             );
+
+        $this->layout('layout/layout');
 
         return new ViewModel([
             'blogs' => array_chunk($blogs, 2),  // chunk array for render in news
