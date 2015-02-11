@@ -485,11 +485,6 @@ body.mission .mission-header .mission-title{
     font-size: 25px;
     padding-top: 43px;
 }
-.col-md-9
-{
-  margin-right:10px;
-  width: 75%!important;
-}
 
 @media (min-width: 1200px) {
     .container {
@@ -499,7 +494,10 @@ body.mission .mission-header .mission-title{
 }
 
 @media (max-width: 769px) {
-    body > .container {
-        padding: 0 15px;
+    #news-carousel a.left.carousel-control {
+        left: 0px;
+    }
+    #news-carousel a.right.carousel-control {
+        right: 0px;
     }
 }
