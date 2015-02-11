@@ -500,4 +500,8 @@ body.mission .mission-header .mission-title{
     #news-carousel a.right.carousel-control {
         right: 0px;
     }
+    body.home .consular-services,
+    body.home .other-news {
+        width: 100%;
+    }
 }
