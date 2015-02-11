@@ -21,7 +21,9 @@
         <link rel="stylesheet" href="<?php echo $this->basePath() ?>/css/bootstrap-rtl.min.css">
         <link rel="stylesheet" href="<?php echo $this->basePath() ?>/css/rtl.css">
     <?php endif; ?>
-
+    <style>
+        img {max-width: 100%;}
+    </style>
 </head>
 <?php
 $routeMatch = $this->getHelperPluginManager()->getServiceLocator()->get('Application')

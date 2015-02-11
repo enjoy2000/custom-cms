@@ -72,6 +72,10 @@ class BlogController extends AbstractActionController {
     {
         $blog = $this->params()->fromRoute('blog');
 
+        if ($this->params()->fromQuery('print') == 1) {
+            $this->layout('layout/print');
+        }
+
         return new ViewModel([
             'blog' => $blog
         ]);
