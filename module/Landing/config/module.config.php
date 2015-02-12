@@ -108,6 +108,20 @@ return array(
                             'ar' => 'ar-mofa-other-links'
                         ],
                     ],
+                    [
+                        'label' => 'Martyrs of The Ministry of Foreign Affairs',
+                        'link' => [
+                            'en' => 'en-martyrs-of-the-inistry-of-foreign-affairs',
+                            'ar' => 'ar-martyrs-of-the-inistry-of-foreign-affairs'
+                        ],
+                    ],
+                    [
+                        'label' => 'The Ministry Law No. 36 of 2013',
+                        'link' => [
+                            'en' => 'the-ministry-law-no-36-of-2013',
+                            'ar' => 'ar-the-ministry-law-no-36-of-2013'
+                        ],
+                    ],
                 ],
                 'may_terminate' => true,
                 'child_routes' => array(
@@ -206,6 +220,15 @@ return array(
                         'action'     => 'index',
                     ),
                 ),
+                'custom_links' => [
+                    [
+                        'label' => 'ReligiousTtourism',
+                        'link' => [
+                            'en' => 'en-religious-tourism',
+                            'ar' => 'ar-mofa-religious-tourism'
+                        ],
+                    ],
+                ],
                 'may_terminate' => true,
                 'child_routes' => array(
                     'announcements' => array(

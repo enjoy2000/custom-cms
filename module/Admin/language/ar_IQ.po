@@ -57,8 +57,11 @@ msgid "Martyrs of The Ministry of Foreign Affairs"
 msgstr "اسماء شهداء وزارة الخارجية"
 
 #: Application/view/error/404.phtml:11
-msgid "The ministry Law No. 36 of 2013"
+msgid "The Ministry Law No. 36 of 2013"
 msgstr "قانون الوزارة رقم 36 لسنة 2013"
+
+msgid "Religious Tourism"
+msgstr "السياحة الدينية"
 
 #: Application/view/error/404.phtml:11
 msgid "Minister speeches"
@@ -151,7 +154,8 @@ msgid "The requested controller was unable to dispatch the request."
 msgstr "لم يتمكن من ارسال طلب الى وحدة التحكم المطلوبة"
 
 #: Application/view/error/404.phtml:14
-msgid "The requested controller could not be mapped to an existing controller class."
+msgid ""
+"The requested controller could not be mapped to an existing controller class."
 msgstr "لا يمكن تعيين وحدة التحكم المطلوبة لفئة التحكم القائمة"
 
 #: Application/view/error/404.phtml:17
