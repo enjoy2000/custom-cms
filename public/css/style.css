@@ -492,6 +492,16 @@ body.mission .mission-header .mission-title{
     padding-top: 43px;
 }
 
+body.mission:not(.home) #main-content {
+    padding: 0 15px;
+}
+body.layout:not(.home) #main-content {
+    padding: 0 15px;
+}
+body.3columns:not(.home) #main-wrapper {
+    padding: 0 15px;
+}
+
 @media (min-width: 1200px) {
     .container {
         width: 1000px;

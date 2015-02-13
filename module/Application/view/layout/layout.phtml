@@ -46,7 +46,7 @@ if ($routeMatch) {
     $modules = explode('/', $routeName);
 }
 ?>
-<body class="<?php echo isset($modules) ? join(' ', $modules) : '' ?>">
+<body class="<?php echo isset($modules) ? join(' ', $modules) : '' ?> layout">
 <div class="container">
     <?php echo $this->partial('layout/header') ?>
 
