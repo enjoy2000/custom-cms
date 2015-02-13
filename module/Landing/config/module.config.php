@@ -222,7 +222,7 @@ return array(
                 ),
                 'custom_links' => [
                     [
-                        'label' => 'ReligiousTtourism',
+                        'label' => 'Religious Tourism',
                         'link' => [
                             'en' => 'en-religious-tourism',
                             'ar' => 'ar-mofa-religious-tourism'

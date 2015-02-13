@@ -80,10 +80,10 @@ msgid "Contact Press Department"
 msgstr "dsdsdsd"
 
 #: Application/view/error/404.phtml:11
-msgid "Video library"
+msgid "Video Library"
 msgstr "مكتبة الفيديو"
 
-msgid "Photo library"
+msgid "Photo Library"
 msgstr "مكتبة الصور"
 
 msgid "Other Headlines"
