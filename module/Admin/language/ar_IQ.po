@@ -64,7 +64,7 @@ msgid "Religious Tourism"
 msgstr "السياحة الدينية"
 
 #: Application/view/error/404.phtml:11
-msgid "Minister speeches"
+msgid "Minister Speeches"
 msgstr "خطابات الوزير"
 
 #: Application/view/error/404.phtml:11
@@ -77,7 +77,7 @@ msgstr "وثائق رسمية"
 
 #: Application/view/error/404.phtml:11
 msgid "Contact Press Department"
-msgstr "dsdsdsd"
+msgstr "اتصل بالقسم الصحفي"
 
 #: Application/view/error/404.phtml:11
 msgid "Video Library"
