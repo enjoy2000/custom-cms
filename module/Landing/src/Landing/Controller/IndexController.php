@@ -49,14 +49,16 @@ class IndexController extends AbstractActionController
             );
         */
 
-
-        $restNews = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
-            ->findBy(
-                ['published' => true, 'locale' => $locale],
-                ['id' => 'DESC'],
-                8,
-                10
-            );
+        $qb = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
+            ->createQueryBuilder('b');
+        $restNews = $qb->join('b.categories', 'c')
+            ->where("c.urlKey = '{$catUrlKey}'")
+            ->andWhere("b.published = 1")
+            ->setFirstResult(8)
+            ->setMaxResults(10)
+            ->orderBy('b.id', 'DESC')
+            ->getQuery()
+            ->getResult();
 
         $this->layout('layout/layout');
 
