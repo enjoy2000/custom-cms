@@ -16,6 +16,12 @@ msgstr ""
 msgid "A 404 error occurred"
 msgstr "حدث خطأ رقم 404"
 
+msgid "Mission"
+msgstr "ﺎﻠﺒﻌﺛﺎﺗ ﺎﻟﺪﺒﻟﻮﻣﺎﺴﻳﺓ"
+
+msgid "International Conventions"
+msgstr "ﺍﻼﺘﻓﺎﻘﻳﺎﺗ ﺎﻟﺩﻮﻠﻳﺓ"
+
 #: Application/view/error/404.phtml
 msgid "Press Releases"
 msgstr "الناطق الصحفي"

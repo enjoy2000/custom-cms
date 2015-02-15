@@ -1185,19 +1185,16 @@ msgid "-AREA, YIELD AND PRODUCTION FOR CROPS AND VEGETABLES FOR THE YEAR 2010."
 msgstr "المساحة والغلة والإنتاج للمحاصیل والخضراوات لسنة 2010."
 
 #: Landing/view/landing/index/menu/accordion/index.phtml:77
-#, fuzzy
 msgid ""
 "-No. OF HOLDINGS AND PALMS BY SEX ON NATIONAL LEVEL AND GOVERNORATES ACCORDING TO THE AGRICULTURAL\r\n"
 "                CENSUSES FOR THEYEAR 2001."
 msgstr "عدد الحیازات و عدد اشجار النخیل حسب الجنس على مستوى العراق حسب نتائج التعداد الزراعي لسنة 2001 ( العدد : نخلة )."
 
 #: Landing/view/landing/index/menu/accordion/index.phtml:80
-#, fuzzy
 msgid "-PRODUCTION OF DATES BY KINDS FOR THE YEARS 2000 -2010 (10 Ton)."
 msgstr "عدد الحیازات و عدد اشجار النخیل حسب الجنس على مستوى العراق حسب نتائج التعداد الزراعي لسنة 2001 ( العدد : نخلة )."
 
 #: Landing/view/landing/index/menu/accordion/index.phtml:84
-#, fuzzy
 msgid "International Conventions"
 msgstr "المنظمات الدولية"
 
