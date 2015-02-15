@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'droid';
+  src: url('/fonts/droidkufi-bold.woff'); /* IE9 Compat Modes */
+}
+@font-face {
+  font-family: 'nask';
+  src: url('/fonts/droidnaskh-bold.woff'); /* IE9 Compat Modes */
+}
+nav#top-nav ul.nav li a {
+ font-family:'droid'!important;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #2a3744;
+    font-size:18px;
+    padding-bottom: 5px;
+    margin: 0;
+    line-height:25px;
+    padding: 0;
+    font-family: 'droid'!important;
+}
+nav#top-nav .collapse.navbar-collapse {
+    margin-right: 0;
+}
+div.hover-content,
+header #language-switcher {
+    left: 0;
+    right: auto;
+}
+#news-carousel a.left.carousel-control span.glyphicon {
+    left: -1px;
+}
+header .head-logo {
+    padding-top: 0;
+}
+body.mission .mission-header{
+    background: url('../img/mission-header-ar.jpg') center no-repeat transparent;
+}
+body.mission .mission-header .mission-title {
+    padding-left: 0;
+    padding-right: 200px;
+}
+li.reforming-the-ministry {
+    display: none;
+}
+header .head-logo{display:none;}
+header .logo > a {display:none;}
+header{
+	height: 160px;
+    background: url('../trash/images/rtl_header3.jpg') center no-repeat transparent;
+}
+#images-carousel .controls {
+    left: 0 !important;
+    right: auto !important;
+}
+#images-carousel .controls .right {
+    float: right;
+}
+#images-carousel .controls .left{
+    float: left;
+}
+.black-head {
+    font-size: 18px;
+    color: #2a3744;
+    padding-top:2px;
+    padding-bottom:2px;
+    font-family: 'droid'!important;
+    border-bottom: solid 3px #000;
+}
+nav#top-nav ul.nav{
+    margin-top:5px;
+}
+#news-ticker .title{
+    font-family: 'droid';
+}
+#news-ticker ul li a{
+      font-family:'nask';
+  }
+footer ul {
+    font-family: 'nask';
+}
+#news-carousel .item {
+    font-family: 'nask'!important;
+    }
+@media (min-width: 1200px) {
+    .container {
+        width: 1000px;
+        font-family:'nask';
+    }
+}
+div.consular-services .service-row > div {
+    font-family: 'droid';
+}
