@@ -166,6 +166,7 @@
         </div>
 
         <!-- According menu -->
-        <?php include(__DIR__ . '/menu/accordion/index.phtml') ?>
+        <?php $menuLocale = (Locale::getPrimaryLanguage(Locale::getDefault()) == 'en') ? 'EN' : 'AR'; ?>
+        <?php include(__DIR__ . '/menu/' . $menuLocale . '/index.phtml') ?>
     </div>
 </div>
