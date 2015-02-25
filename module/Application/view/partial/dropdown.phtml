@@ -40,7 +40,7 @@ if (isset($custom_links)) {
             foreach ($routes['custom_links'] as $link) :
                 $url =  (Locale::getPrimaryLanguage(Locale::getDefault()) == 'en') ? $link['link']['en'] : $link['link']['ar'];
             ?>
-                <li<?php echo ($currentSlug == $url) ? ' class="active"' : '' ?>>
+                <li class="<?php echo $url ?> <?php echo ($currentSlug == $url) ? 'active' : '' ?>">
                     <a href="<?php echo $this->url('blog/view', ['slug' => $url]) ?>">
                         <?php echo $this->translate($link['label']) ?>
                     </a>

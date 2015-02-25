@@ -14,12 +14,14 @@ $routes = $this->config('router')['routes'][$parentRoute];
 ?>
 
 <div class="list-group panel default-panel">
+    <?php if ($parentRoute != 'mission') : ?>
     <div class="panel-heading">
         <a href="<?php echo $this->url($parentRoute) ?>"
            title="<?php echo $this->translate(Common::getNameFromRoute($parentRoute)) ?>">
             <?php echo $this->translate(Common::getNameFromRoute($parentRoute)) ?>
         </a>
     </div>
+    <?php endif; ?>
 
     <!-- Custom pages were set in landing module config route -->
     <?php if (isset($routes['custom_links'])) : ?>
