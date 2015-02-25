@@ -19,6 +19,9 @@ msgstr "حدث خطأ رقم 404"
 msgid "Mission"
 msgstr "ﺎﻠﺒﻌﺛﺎﺗ ﺎﻟﺪﺒﻟﻮﻣﺎﺴﻳﺓ"
 
+msgid "Blog"
+msgstr "الأخبار"
+
 msgid "International Conventions"
 msgstr "ﺍﻼﺘﻓﺎﻘﻳﺎﺗ ﺎﻟﺩﻮﻠﻳﺓ"
 
