@@ -125,16 +125,6 @@ return array(
                 ],
                 'may_terminate' => true,
                 'child_routes' => array(
-                    'faq' => array(
-                        'type' => 'Literal',
-                        'options' => array(
-                            'route'    => '/faq',
-                            'defaults' => array(
-                                'controller' => 'Landing\Controller\Ministry',
-                                'action'     => 'faq',
-                            ),
-                        ),
-                    ),
                     'ministry-departments' => array(
                         'type' => 'Literal',
                         'options' => array(
@@ -206,6 +196,16 @@ return array(
                             'defaults' => array(
                                 'controller' => 'Landing\Controller\Ministry',
                                 'action'     => 'mofa-ministers',
+                            ),
+                        ),
+                    ),
+                    'faq' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route'    => '/faq',
+                            'defaults' => array(
+                                'controller' => 'Landing\Controller\Ministry',
+                                'action'     => 'faq',
                             ),
                         ),
                     ),

@@ -33,18 +33,6 @@ if (isset($custom_links)) {
         <span class="caret"></span>
     </a>
     <ul class="dropdown-menu" role="menu">
-        <?php
-        foreach ($routes['child_routes'] as $k => $route) :
-            $currentRoute = $parentRoute . '/' . $k;
-            ?>
-            <?php if (!isset($route['hide'])) :  // hide route on navigation ?>
-            <li<?php echo ($routeName == $currentRoute) ? ' class="active '.$k.'"' : ' class="'.$k.'"' ?>>
-                <a href="<?php echo $this->url($currentRoute) ?>">
-                    <?php echo $this->translate(Common::getNameFromRoute($route['options']['route'])) ?>
-                </a>
-            </li>
-            <?php endif; ?>
-        <?php endforeach; ?>
 
         <!-- Custom pages were set in landing module config route -->
         <?php if (isset($routes['custom_links'])) : ?>
@@ -59,5 +47,19 @@ if (isset($custom_links)) {
                 </li>
             <?php endforeach; ?>
         <?php endif; ?>
+
+        <!-- Child menus for child_routes -->
+        <?php
+        foreach ($routes['child_routes'] as $k => $route) :
+            $currentRoute = $parentRoute . '/' . $k;
+            ?>
+            <?php if (!isset($route['hide'])) :  // hide route on navigation ?>
+            <li<?php echo ($routeName == $currentRoute) ? ' class="active '.$k.'"' : ' class="'.$k.'"' ?>>
+                <a href="<?php echo $this->url($currentRoute) ?>">
+                    <?php echo $this->translate(Common::getNameFromRoute($route['options']['route'])) ?>
+                </a>
+            </li>
+        <?php endif; ?>
+        <?php endforeach; ?>
     </ul>
 </li>
