@@ -41,5 +41,7 @@
             autostart: 1,
             pauseOnHover: 1
         });
+
+        $('li.the-minister').prependTo($('li.the-minister').parent());
     });
 })(jQuery);
