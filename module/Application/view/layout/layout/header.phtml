@@ -13,18 +13,11 @@
         <?php endif; ?>
     </div>
     <div id="language-switcher">
-        <div class="dropdown">
-            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <?php echo $this->translate('Language') ?>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <li>
-                    <a href="/" title="<?php echo $this->translate('English') ?>"><?php echo $this->translate('English') ?></a>
-                    <a href="/ar/" title="<?php echo $this->translate('Arabic') ?>"><?php echo $this->translate('Arabic') ?></a>
-                </li>
-            </ul>
-        </div>
+        <?php if ($this->locale == 'en_US'): ?>
+        <a class="btn" href="/ar/" title="<?php echo $this->translate('Arabic') ?>"><?php echo $this->translate('Arabic') ?></a>
+        <?php else : ?>
+        <a class="btn" href="/" title="<?php echo $this->translate('English') ?>"><?php echo $this->translate('English') ?></a>
+        <?php endif; ?>
     </div>
 </header>
 <nav id="top-nav" class="navbar navbar-inverse" role="navigation">
