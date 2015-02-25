@@ -47,6 +47,13 @@ return array(
                             'ar' => 'ar-mofa-iraq-mission-abroad'
                         ],
                     ],
+                    [
+                        'label' => 'Foreign Mission in Iraq',
+                        'link' => [
+                            'en' => 'foreign-mission-in-iraq',
+                            'ar' => 'ar-foreign-mission-in-iraq'
+                        ],
+                    ],
                 ],
                 'may_terminate' => true,
                 'child_routes' => array(
