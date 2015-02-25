@@ -12,7 +12,7 @@ $currentRoute = explode('/', $routeName);
 $currentParentRoute = $currentRoute[0];
 $parentRoute = $this->route;
 $routes = $this->config('router')['routes'][$parentRoute];
-$currentSlug = $routeMatch->getParams('slug', null);
+$currentSlug = $routeMatch ? $routeMatch->getParams('slug', null) : null;
 $arrayLink = [];
 
 $activeMenu = false;

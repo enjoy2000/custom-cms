@@ -22,7 +22,7 @@ if ($routeMatch) {
     $routeMatch = $this->getHelperPluginManager()->getServiceLocator()->get('Application')
         ->getMvcEvent()->getRouteMatch();
     $routes = $this->config('router')['routes']['blog'];
-    $currentSlug = $routeMatch->getParams('slug', null);
+    $currentSlug = $routeMatch ? $routeMatch->getParams('slug', null) : null;
     $arrayLink = [];
 
     $activeMenu = false;
@@ -63,7 +63,6 @@ if ($routeMatch) {
 
     <?php
     $routes = $this->config('router')['routes']['mission'];
-    $currentSlug = $routeMatch->getParams('slug', null);
     $arrayLink = [];
 
     $activeMenu = false;
