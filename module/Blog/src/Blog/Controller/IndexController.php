@@ -85,7 +85,8 @@ class IndexController extends AbstractActionController {
         /** @var \Zend\Cache\Storage\Adapter\Redis $cache */
         $cache = $this->getServiceLocator()->get('Cache\Transient');
 
-        if (!$cache->hasItem($key)) {
+        // TODO: removed cached already
+        //if (!$cache->hasItem($key)) {
             $blogs = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
                 ->findBy(
                     ['published' => true, 'locale' => $locale],
@@ -106,7 +107,7 @@ class IndexController extends AbstractActionController {
             }
 
             $cache->setItem($key, $blogsData);
-        }
+        //}
 
         return new JsonModel([
             'blogs' => $cache->getItem($key),
