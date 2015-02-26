@@ -105,7 +105,7 @@ return array(
                         'label' => 'Other Links',
                         'link' => [
                             'en' => 'en-other-links',
-                            'ar' => 'ar-mofa-other-links'
+                            'ar' => 'ar-other-links'
                         ],
                     ],
                     [

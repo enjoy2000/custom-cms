@@ -4127,7 +4127,7 @@ msgstr ""
 #: Landing/view/landing/foreign-policy/human-rights.phtml:59
 #, php-format
 msgid ""
-"All States have ratified at least one, and 80% of States have\n"
+"All States have ratified at least one, and %s of States have\n"
 "                ratified four or more of the core human rights treaties, "
 "reflecting consent of States which creates\n"
 "                legal obligations for them and giving concrete expression to "
@@ -4135,7 +4135,7 @@ msgid ""
 "                norms enjoy universal protection by customary international "
 "law across all boundaries and\n"
 "                civilizations."
-msgstr ""
+msgstr "صدقت كل دولة واحدة على الأقل، و 80٪ من الدول قد صدقت أربعة أو أكثر من المعاهدات الأساسية لحقوق الإنسان، والتي تعكس موافقة الدول التي تخلق التزامات قانونية بالنسبة لهم،. حيث أن بعض المعايير الأساسية لحقوق الإنسان تتمتع بالحماية الشاملة بموجب القانون الدولي العرفي عبر جميع الحدود والحضارات."
 
 #: Landing/view/landing/foreign-policy/human-rights.phtml:65
 msgid "Human Rights Bodies"
