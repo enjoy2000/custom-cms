@@ -89,10 +89,10 @@
                 <?php
                 $otherLinks = (Locale::getPrimaryLanguage(Locale::getDefault()) == 'en') ?
                     "en-other-links" :
-                    "ar-mofa-other-links"
+                    "ar-mofa-other-links";
                 $ministryDepartments = (Locale::getPrimaryLanguage(Locale::getDefault()) == 'en') ?
                     "en-ministry-departments" :
-                    "ar-mofa-ministry-departments"
+                    "ar-mofa-ministry-departments";
                 ?>
                 <a href="<?php echo $this->url('blog/view', ['slug' => $otherLinks]) ?>" target="_self"
                    title="<?php echo $this->translate('Links') ?>">
