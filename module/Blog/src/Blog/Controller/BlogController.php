@@ -58,7 +58,7 @@ class BlogController extends AbstractActionController {
         if (Common::getParentMenuFromSlug($blog->getUrlKey(), $this->getServiceLocator()->get('config')['router'])) {
             $this->layout('layout/3columns');
         }
-
+        $this->layout('layout/3columns');
         if ($this->params()->fromQuery('print') == 1) {
             $this->layout('layout/print');
         }
@@ -72,7 +72,7 @@ class BlogController extends AbstractActionController {
     {
         $category = $this->params()->fromRoute('category');
 
-
+        $this->layout('layout/3columns');
         $queryBuilder = $category->getActiveBlogs($this);
 
         $adapter = new DoctrineAdapter(new ORMPaginator($queryBuilder));
