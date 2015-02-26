@@ -93,3 +93,6 @@ footer ul {
 div.consular-services .service-row > div {
     font-family: 'droid';
 }
+body > .container {
+    background: #d9d9d9 url(/trash/images/ar5.jpg) no-repeat scroll center top!important;
+}
