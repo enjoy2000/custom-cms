@@ -4,6 +4,7 @@
 #cssmenu ul li,
 #cssmenu ul li a {
   margin: 0;
+  width:210px;
   padding: 0;
   border: 0;
   list-style: none;
@@ -45,7 +46,7 @@
   position: absolute;
   right: 15px;
   display: block;
-  width: 10px;
+  width: 0px;
   height: 10px;
   content: "";
   border-radius: 2px;
@@ -92,6 +93,7 @@
   -webkit-perspective: 600px;
   -moz-perspective: 600px;
   perspective: 600px;
+  margin-top:10px;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -120,6 +122,7 @@
   backface-visibility: hidden;
 }
 #cssmenu ul li:hover > ul {
+  margin-right:30px;
   left: 100%;
   opacity: 1;
   transform: rotate3d(0, 0, 0, 0);
@@ -138,7 +141,7 @@
 }
 #cssmenu ul ul a {
   padding: 12px 15px;
-  font-size: 13px;
+  font-size: 12px;
   color: #ffffff;
   font-weight: 700;
   text-decoration: none;
