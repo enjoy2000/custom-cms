@@ -64,7 +64,7 @@ return array(
                     [
                         'label' => 'Photo Library',
                         'link' => [
-                            'en' => 'ar-photo-library',
+                            'en' => 'photo-library',
                             'ar' => 'ar-photo-library'
                         ],
                     ],
