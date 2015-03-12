@@ -91,6 +91,13 @@ class Module
                     $viewHelper->setServiceLocator($serviceLocator);
 
                     return $viewHelper;
+                },
+                'rendermenu' => function ($helperPluginManager) {
+                    $serviceLocator = $helperPluginManager->getServiceLocator();
+                    $viewHelper = new View\Helper\Rendermenu();
+                    $viewHelper->setServiceLocator($serviceLocator);
+
+                    return $viewHelper;
                 }
             ),
         );

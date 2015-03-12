@@ -7,16 +7,11 @@ if ($routeMatch) {
     $routeName = '404';
 }
 ?>
+<?php echo $this->rendermenu($routeMatch) ?>
 <ul class="nav navbar-nav">
     <li<?php echo ($routeName == 'home') ? ' class="active current-menu-item"' : '' ?>>
         <a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a>
     </li>
-
-    <!-- the-ministry -->
-    <?php echo $this->partial('dropdown-menu', ['route' => 'the-ministry']) ?>
-
-    <!-- about-iraq -->
-    <?php echo $this->partial('dropdown-menu', ['route' => 'about-iraq']) ?>
 
     <?php
     $routeMatch = $this->getHelperPluginManager()->getServiceLocator()->get('Application')
@@ -37,8 +32,8 @@ if ($routeMatch) {
     }
     ?>
     <li<?php echo ($routeName == 'blog' || $activeMenu) ? ' class="active current-menu-item dropdown"' : ' class="dropdown"' ?>>
-        <a href="<?php echo $this->url('blog') ?>" title="<?php echo $this->translate('News') ?>">
-            <?php echo $this->translate('News') ?>
+        <a href="<?php echo $this->url('blog') ?>" title="<?php echo $this->translate('The Minister') ?>">
+            <?php echo $this->translate('The Minister') ?>
             <span class="caret"></span>
         </a>
         <ul class="dropdown-menu" role="menu">
@@ -57,6 +52,12 @@ if ($routeMatch) {
             <?php endif; ?>
         </ul>
     </li>
+
+    <!-- the-ministry -->
+    <?php echo $this->partial('dropdown-menu', ['route' => 'the-ministry']) ?>
+
+    <!-- about-iraq -->
+    <?php echo $this->partial('dropdown-menu', ['route' => 'about-iraq']) ?>
 
     <!-- foreign-policy -->
     <?php echo $this->partial('dropdown-menu', ['route' => 'foreign-policy']) ?>

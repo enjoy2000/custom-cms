@@ -111,6 +111,13 @@ return array(
 
                 return $viewHelper;
             },
+            'rendermenu' => function ($helperPluginManager) {
+                $serviceLocator = $helperPluginManager->getServiceLocator();
+                $viewHelper = new \Application\View\Helper\Rendermenu();
+                $viewHelper->setServiceLocator($serviceLocator);
+
+                return $viewHelper;
+            },
         )
     ),
     // Placeholder for console routes
