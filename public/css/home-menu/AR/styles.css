@@ -93,7 +93,7 @@
   -webkit-perspective: 600px;
   -moz-perspective: 600px;
    perspective: 600px;
-   margin-top:10px;
+   margin-top:0px;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
