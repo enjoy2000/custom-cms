@@ -28,9 +28,16 @@ class Menu
 
         /** @var \Landing\Entity\Menu $menu */
         foreach ($rootMenus as $menu) {
+            if ($this->_isActive($em, $menu, $routeMatch)) {
+                $active = ' active current-menu-item';
+            } else {
+                $active = '';
+            }
             $data = $menu->getMenu($this->_getLocaleShortCode());
             if (!$menu->hasChild($em)) {
-                $html .= '<li><a href="'
+                $html .= '<li class="'
+                    . $active
+                    . '"><a href="'
                     . $this->_getUrl($menu)
                     . '" title="'
                     . $data['label']
@@ -38,7 +45,9 @@ class Menu
                     . $data['label']
                     . '</a></li>';
             } else {
-                $html .= '<li class="dropdown"><a data-toggle="dropdown" href="'
+                $html .= '<li class="dropdown'
+                    . $active
+                    . '"><a data-toggle="dropdown" href="'
                     . $this->_getUrl($menu)
                     . '" title="'
                     . $data['label']
@@ -121,5 +130,26 @@ class Menu
         }
 
         return $url;
+    }
+
+    protected function _isActive($em, $menu, $routeMatch)
+    {
+        if ($routeMatch) {
+            $routeName = $routeMatch->getMatchedRouteName();
+            $currentSlug = $routeMatch->getParams('slug', null);
+        } else {
+            $routeName = '404';
+            $currentSlug = null;
+        }
+
+        $arrKeys = [];
+        $menuData = $menu->getMenu($this->_getLocaleShortCode());
+        $arrKeys[] = $menuData['link'];
+        foreach ($menu->getChildMenus($em) as $childMenu) {
+            $childData = $childMenu->getMenu($this->_getLocaleShortCode());
+            $arrKeys[] = $childData['link'];
+        }
+
+        return (in_array($routeName, $arrKeys) || in_array($currentSlug, $arrKeys));
     }
 }
