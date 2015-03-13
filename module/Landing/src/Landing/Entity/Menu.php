@@ -52,6 +52,11 @@ class Menu {
     protected $orderNumber = null;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $showMenu = 1;
+
+    /**
      * @var \Landing\Entity\Menu
      * @ORM\ManyToOne(targetEntity="Landing\Entity\Menu")
      */
@@ -81,11 +86,34 @@ class Menu {
         return $this->type;
     }
 
+    public function getOrderNumber()
+    {
+        return $this->orderNumber;
+    }
+
+    public function getShowMenu()
+    {
+        return $this->showMenu;
+    }
+
     public function getChildMenus($entityManager)
     {
         $menus = $entityManager->getRepository('Landing\Entity\Menu')->findBy(['parentMenu' => $this->id]);
+        $menus = $this->sortByOrderNumber($menus);
 
         return $menus;
+    }
+
+    public static function sortByOrderNumber($menus)
+    {
+        $sortedMenus = [];
+        foreach ($menus as $menu)
+        {
+            $sortedMenus[$menu->getOrderNumber()] = $menu;
+        }
+        ksort($sortedMenus);
+
+        return $sortedMenus;
     }
 
     public function hasChild($entityManager)

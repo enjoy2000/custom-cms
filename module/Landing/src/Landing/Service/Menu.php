@@ -22,6 +22,7 @@ class Menu
         }
 
         $rootMenus = $em->getRepository('Landing\Entity\Menu')->findBy(['parentMenu' => null]);
+        $rootMenus = \Landing\Entity\Menu::sortByOrderNumber($rootMenus);
 
         //$html = '<ul class="nav navbar-nav">';
         $html = '';
@@ -88,18 +89,6 @@ class Menu
     protected function _getLocaleShortCode()
     {
         return \Locale::getPrimaryLanguage(\Locale::getDefault());
-    }
-
-    protected function _sortByOrderNumber($menus)
-    {
-        $sortedMenus = [];
-        foreach ($menus as $menu)
-        {
-            $sortedMenus[$menu->getId()] = $menu;
-        }
-        ksort($sortedMenus);
-
-        return $sortedMenus;
     }
 
     protected function _url($name = null, $params = array(), $options = array(), $reuseMatchedParams = false)

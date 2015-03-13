@@ -10,6 +10,12 @@ $form->setAttribute('method', 'post');
 <?php echo $this->form()->openTag($form) ?>
     <dl class="zend_form">
     <?php foreach ($form as $element): ?>
+        <?php
+            if ($element->getName() == 'submit') {
+                $element->setAttribute('class', 'btn btn-primary');
+                $element->setAttribute('style', 'margin-top: 10px;');
+            }
+        ?>
         <?php if (!$element instanceof Zend\Form\Element\Button): ?>
             <dt><?php echo $this->formLabel($element) ?></dt>
         <?php endif ?>
