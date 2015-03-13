@@ -12,7 +12,10 @@ return array(
                     'password' => 'password',
                     'dbname'   => 'database',
                     'charset'  => 'utf8'
-                )
+                ),
+                'doctrine_type_mappings' => array(
+                    'enum' => 'string'
+                ),
             )
         )
     ),

@@ -775,5 +775,7 @@ return array(
                 'drivers' => array(
                     'Landing\Entity' => 'landing_entities'
                 )
-            ))),
+            )
+        )
+    ),
 );
