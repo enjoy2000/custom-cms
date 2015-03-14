@@ -52,7 +52,7 @@ class Menu {
     protected $orderNumber = null;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", options={"default" : 1})
      */
     protected $showMenu = 1;
 
