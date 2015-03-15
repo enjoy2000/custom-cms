@@ -323,8 +323,7 @@ footer p.site-title {
     height: 248px;
 }
 #news-carousel .item .blog2 a.news-photo {
-    height: 170px;
-    border-bottom:2px solid #2b5c7f;
+    height: 193px;
 }
 #news-carousel .item .blog1 {
     padding-right: 4px;
@@ -339,18 +338,17 @@ footer p.site-title {
 #news-carousel .item .blog2 h2 {
     font-size: 14px;
     padding:7px;
-    color: #005ea5;
+    color: #fff;
     height: 55px;
     overflow: hidden;
     line-height: 20px;
-    background-color:#fbfbfb;
+    background-color:#2989d8;
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2168ae', endColorstr='#6ca2cc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 
 }
 #news-carousel .item .blog2 .read-more{
-   display:inline;
-   background-color:#005ea5;
+   display:none;
 }
 .read-more {
     background-color: #005ea5;

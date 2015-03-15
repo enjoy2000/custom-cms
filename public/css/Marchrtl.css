@@ -136,16 +136,3 @@ background: #fff url(/trash/images/mar.jpg) no-repeat scroll center top!importan
 #news-ticker .title{border-left:1px solid white;
 border-right:0px solid white;
 }
-#news-carousel .item .blog2 .read-more{
-   display:inline;
-   background-color:#005ea5;
-   font-family:droid;
-   font-size:12px;
-   padding-bottom:3px;
-}
-#news-carousel .item .blog1 .read-more{
-   display:inline;
-   background-color:#005ea5;
-   font-family:droid;
-   font-size:12px;
-}
