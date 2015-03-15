@@ -1,0 +1,58 @@
+<?php $this->headTitle($this->translate('Add News')) ?>
+<?php $this->headScript()
+    ->prependFile('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js');
+?>
+<style>
+    .note-editable {
+        min-height: 250px;
+    }
+</style>
+<h1 class="text-center"><?php echo $this->translate('Add News') ?></h1>
+<?php $form->prepare(); ?>
+<?php echo $this->form()->openTag($form); ?>
+
+<?php
+/** @var \Zend\Form\Element $element */
+foreach($form->getElements() as $element): ?>
+    <?php
+    $messages = $element->getMessages()
+    ?>
+    <div class="form-group<?php if($messages) echo " has-error" ?>">
+        <?php if($messages): ?>
+            <?php foreach($messages as $message): ?>
+                <div class="col-md-3">&nbsp;</div>
+                <div class="alert-danger col-md-7">
+                    <?php if (is_array($message)): ?>
+                        <?php
+                        foreach ($message as $k=>$mess) {
+                            echo $mess . '<br />';
+                        }
+                        ?>
+                    <?php else: ?>
+                        <?php echo $message ?>
+                    <?php endif; ?>
+                </div>
+            <?php endforeach;?>
+        <?php endif; ?>
+        <?php if ($element->getName() == 'showMenu') : ?>
+            <div class="col-md-3">
+                &nbsp;
+            </div>
+            <div class="col-md-7">
+                <div class="checkbox">
+                    <label class="control-label col-md-3">
+                        <?php echo $this->formElement($element); ?>
+                        <?php echo $element->getLabel() ?>
+                    </label>
+                </div>
+            </div>
+        <?php else : ?>
+            <label class="control-label col-md-3"><?php echo $element->getLabel() ?></label>
+            <div class="col-md-7">
+            <?php echo $this->formElement($element); ?>
+            </div>
+        <?php endif; ?>
+    </div>
+<?php endforeach;?>
+
+<?php echo $this->form()->closeTag(); ?>

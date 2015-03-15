@@ -281,6 +281,54 @@ return array(
                             ),
                         ),
                     ),
+
+                    // menu
+                    'menu' => array(
+                        'type' => 'Segment',
+                        'options' => array(
+                            'route' => '/menu[/[:action[/]]]',
+                            'defaults' => array(
+                                'controller' => 'Admin\Controller\Menu',
+                                'action' => 'index',
+                            ),
+                        ),
+                        'may_terminate' => true,
+                        'child_routes' => array(
+                            'new' => array(
+                                'type' => 'literal',
+                                'options' => array(
+                                    'route' => '/new',
+                                    'defaults' => array(
+                                        'action' => 'new',
+                                    ),
+                                ),
+                            ),
+                            'edit' => array(
+                                'type' => 'Segment',
+                                'options' => array(
+                                    'route' => '/edit[/][:id]',
+                                    'constraints' => array(
+                                        'id' => '[0-9]+',
+                                    ),
+                                    'defaults' => array(
+                                        'action' => 'edit',
+                                    ),
+                                ),
+                            ),
+                            'delete' => array(
+                                'type' => 'Segment',
+                                'options' => array(
+                                    'route' => '/delete[/][:id]',
+                                    'constraints' => array(
+                                        'id' => '[0-9]+',
+                                    ),
+                                    'defaults' => array(
+                                        'action' => 'delete',
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
                 ),
             ),
         ),
@@ -309,6 +357,7 @@ return array(
             'Admin\Controller\Blog' => 'Admin\Controller\BlogController',
             'Admin\Controller\Category' => 'Admin\Controller\CategoryController',
             'Admin\Controller\Dashboard' => 'Admin\Controller\DashboardController',
+            'Admin\Controller\Menu' => 'Admin\Controller\MenuController',
             'Admin\Controller\MissionBlog' => 'Admin\Controller\MissionBlogController',
             'Admin\Controller\MissionCategory' => 'Admin\Controller\MissionCategoryController',
             'Admin\Controller\MissionStatic' => 'Admin\Controller\MissionStaticController',

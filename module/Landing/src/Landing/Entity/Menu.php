@@ -51,15 +51,12 @@ class Menu {
      */
     protected $orderNumber = null;
 
-    /**
-<<<<<<< HEAD
-=======
-     * @ORM\Column(type="boolean")
+    /*
+     * @ORM\Column(type="boolean", options={"default" : 1})
      */
     protected $showMenu = 1;
 
     /**
->>>>>>> 5423a0b89b5883265adea0039a541b411bc0aa94
      * @var \Landing\Entity\Menu
      * @ORM\ManyToOne(targetEntity="Landing\Entity\Menu")
      */
@@ -68,6 +65,11 @@ class Menu {
     public function getId()
     {
         return $this->id;
+    }
+    
+    public function getLabel()
+    {
+        return $this->label;
     }
 
     public function getMenu($localeShortCode)
@@ -88,12 +90,6 @@ class Menu {
     {
         return $this->type;
     }
-
-<<<<<<< HEAD
-    public function getChildMenus($entityManager)
-    {
-        $menus = $entityManager->getRepository('Landing\Entity\Menu')->findBy(['parentMenu' => $this->id]);
-=======
     public function getOrderNumber()
     {
         return $this->orderNumber;
@@ -108,13 +104,10 @@ class Menu {
     {
         $menus = $entityManager->getRepository('Landing\Entity\Menu')->findBy(['parentMenu' => $this->id]);
         $menus = $this->sortByOrderNumber($menus);
->>>>>>> 5423a0b89b5883265adea0039a541b411bc0aa94
 
         return $menus;
     }
 
-<<<<<<< HEAD
-=======
     public static function sortByOrderNumber($menus)
     {
         $sortedMenus = [];
@@ -126,10 +119,28 @@ class Menu {
 
         return $sortedMenus;
     }
-
->>>>>>> 5423a0b89b5883265adea0039a541b411bc0aa94
+    
     public function hasChild($entityManager)
     {
         return (boolean) $this->getChildMenus($entityManager);
+    }
+    
+    public function setData($data)
+    {
+        $keys = [
+            'type',
+            'value',
+            'valueAr',
+            'label',
+            'labelAr',
+            'orderNumber',
+            'parentMenu',
+            'showMenu',
+        ];
+        foreach ($keys as $key) {
+            if (isset($data[$key])) {
+                $this->$key = $data[$key];
+            }
+        }
     }
 }
