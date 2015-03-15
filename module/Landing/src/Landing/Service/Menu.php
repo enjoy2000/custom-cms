@@ -22,24 +22,6 @@ class Menu
         }
 
         $rootMenus = $em->getRepository('Landing\Entity\Menu')->findBy(['parentMenu' => null]);
-<<<<<<< HEAD
-
-        $html = '<ul class="nav navbar-nav">';
-
-        /** @var \Landing\Entity\Menu $menu */
-        foreach ($rootMenus as $menu) {
-            $data = $menu->getMenu($this->_getLocaleShortCode());
-            $html .= '<li><a href="'
-                . $this->_getUrl($menu)
-                . '" title="'
-                . $data['label']
-                . '">'
-                . $data['label']
-                . '</a></li>';
-            $html .= $this->_renderChild($menu, $em);
-        }
-        $html .= '</ul>';
-=======
         $rootMenus = \Landing\Entity\Menu::sortByOrderNumber($rootMenus);
 
         //$html = '<ul class="nav navbar-nav">';
@@ -79,7 +61,6 @@ class Menu
             }
         }
         //$html .= '</ul>';
->>>>>>> 5423a0b89b5883265adea0039a541b411bc0aa94
 
         return $html;
     }
@@ -88,11 +69,7 @@ class Menu
     {
         $html = '';
         if ($parent->hasChild($em)) {
-<<<<<<< HEAD
-            $html .= '<ul class="sub">';
-=======
             $html .= '<ul class="dropdown-menu" role="menu">';
->>>>>>> 5423a0b89b5883265adea0039a541b411bc0aa94
             foreach ($parent->getChildMenus($em) as $menu) {
                 $data = $menu->getMenu($this->_getLocaleShortCode());
                 $html .= '<li><a href="'
@@ -114,7 +91,6 @@ class Menu
         return \Locale::getPrimaryLanguage(\Locale::getDefault());
     }
 
-<<<<<<< HEAD
     protected function _sortByOrderNumber($menus)
     {
         $sortedMenus = [];
@@ -127,8 +103,6 @@ class Menu
         return $sortedMenus;
     }
 
-=======
->>>>>>> 5423a0b89b5883265adea0039a541b411bc0aa94
     protected function _url($name = null, $params = array(), $options = array(), $reuseMatchedParams = false)
     {
         //var_dump($arr);die;
@@ -158,8 +132,6 @@ class Menu
 
         return $url;
     }
-<<<<<<< HEAD
-=======
 
     protected function _isActive($em, $menu, $routeMatch)
     {
@@ -181,5 +153,4 @@ class Menu
 
         return (in_array($routeName, $arrKeys) || in_array($currentSlug, $arrKeys));
     }
->>>>>>> 5423a0b89b5883265adea0039a541b411bc0aa94
 }
