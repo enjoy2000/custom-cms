@@ -8,11 +8,11 @@ class Blog extends AbstractTable
 {
 
     protected $config = array(
-        'name' => 'Doctrine',
+        //'name' => 'Doctrine',
         'showPagination' => true,
-        'showQuickSearch' => false,
+        'showQuickSearch' => true,
         'showItemPerPage' => true,
-        'showColumnFilters' => true,
+        //'showColumnFilters' => true,
     );
 
     //Definition of headers
@@ -54,8 +54,10 @@ class Blog extends AbstractTable
             $query->where("q.city like '%".$value."%' ");
         }
         if ($value = $this->getParamAdapter()->getValueOfFilter('createTime')) {
-            $query->where("p.product like '%".$value."%' ");
+            $query->where("b.createTime like '%".$value."%' ");
         }
-
+        if ($value = $this->getParamAdapter()->getQuickSearch()) {
+            $query->where("b.title like '%".$value."%' ");
+        }
     }
 }

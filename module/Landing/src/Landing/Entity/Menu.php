@@ -52,6 +52,14 @@ class Menu {
     protected $orderNumber = null;
 
     /**
+<<<<<<< HEAD
+=======
+     * @ORM\Column(type="boolean")
+     */
+    protected $showMenu = 1;
+
+    /**
+>>>>>>> 5423a0b89b5883265adea0039a541b411bc0aa94
      * @var \Landing\Entity\Menu
      * @ORM\ManyToOne(targetEntity="Landing\Entity\Menu")
      */
@@ -81,13 +89,45 @@ class Menu {
         return $this->type;
     }
 
+<<<<<<< HEAD
     public function getChildMenus($entityManager)
     {
         $menus = $entityManager->getRepository('Landing\Entity\Menu')->findBy(['parentMenu' => $this->id]);
+=======
+    public function getOrderNumber()
+    {
+        return $this->orderNumber;
+    }
+
+    public function getShowMenu()
+    {
+        return $this->showMenu;
+    }
+
+    public function getChildMenus($entityManager)
+    {
+        $menus = $entityManager->getRepository('Landing\Entity\Menu')->findBy(['parentMenu' => $this->id]);
+        $menus = $this->sortByOrderNumber($menus);
+>>>>>>> 5423a0b89b5883265adea0039a541b411bc0aa94
 
         return $menus;
     }
 
+<<<<<<< HEAD
+=======
+    public static function sortByOrderNumber($menus)
+    {
+        $sortedMenus = [];
+        foreach ($menus as $menu)
+        {
+            $sortedMenus[$menu->getOrderNumber()] = $menu;
+        }
+        ksort($sortedMenus);
+
+        return $sortedMenus;
+    }
+
+>>>>>>> 5423a0b89b5883265adea0039a541b411bc0aa94
     public function hasChild($entityManager)
     {
         return (boolean) $this->getChildMenus($entityManager);

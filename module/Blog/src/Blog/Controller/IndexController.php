@@ -83,7 +83,7 @@ class IndexController extends AbstractActionController {
             $key = 'latest-news-ar';
         }
         /** @var \Zend\Cache\Storage\Adapter\Redis $cache */
-        $cache = $this->getServiceLocator()->get('Cache\Transient');
+        $cache = $this->getServiceLocator()->get('Cache\Persistence');
 
         // TODO: removed cached already
         //if (!$cache->hasItem($key)) {

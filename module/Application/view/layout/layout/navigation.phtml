@@ -7,7 +7,6 @@ if ($routeMatch) {
     $routeName = '404';
 }
 ?>
-<?php echo $this->rendermenu($routeMatch) ?>
 <ul class="nav navbar-nav">
     <li<?php echo ($routeName == 'home') ? ' class="active current-menu-item"' : '' ?>>
         <a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a>
@@ -31,36 +30,7 @@ if ($routeMatch) {
         }
     }
     ?>
-    <li<?php echo ($routeName == 'blog' || $activeMenu) ? ' class="active current-menu-item dropdown"' : ' class="dropdown"' ?>>
-        <a href="<?php echo $this->url('blog') ?>" title="<?php echo $this->translate('The Minister') ?>">
-            <?php echo $this->translate('The Minister') ?>
-            <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu" role="menu">
-            <!-- Custom pages were set in landing module config route -->
-            <?php if (isset($routes['custom_links'])) : ?>
-                <?php
-                foreach ($routes['custom_links'] as $link) :
-                    $url =  (Locale::getPrimaryLanguage(Locale::getDefault()) == 'en') ? $link['link']['en'] : $link['link']['ar'];
-                    ?>
-                    <li<?php echo ($currentSlug == $url) ? ' class="active"' : '' ?>>
-                        <a href="<?php echo $this->url('blog/view', ['slug' => $url]) ?>">
-                            <?php echo $this->translate($link['label']) ?>
-                        </a>
-                    </li>
-                <?php endforeach; ?>
-            <?php endif; ?>
-        </ul>
-    </li>
-
-    <!-- the-ministry -->
-    <?php echo $this->partial('dropdown-menu', ['route' => 'the-ministry']) ?>
-
-    <!-- about-iraq -->
-    <?php echo $this->partial('dropdown-menu', ['route' => 'about-iraq']) ?>
-
-    <!-- foreign-policy -->
-    <?php echo $this->partial('dropdown-menu', ['route' => 'foreign-policy']) ?>
+    <?php echo $this->rendermenu($routeMatch) ?>
 
     <?php
     $routes = $this->config('router')['routes']['mission'];
