@@ -62,6 +62,12 @@ class BlogController extends AbstractActionController
                     ->innerJoin('b.locale', 'l')
         ;
 
+        if (!$this->isAdmin()) {
+            $queryBuilder->innerJoin('c.moderators', 'm');
+            $queryBuilder->where('m.id = :id')
+                ->setParameter(':id', $this->getCurrentUser()->getId());
+        }
+
         $table = new BlogTable();
         $table->setAdapter($this->getDbAdapter())
             ->setSource($queryBuilder)

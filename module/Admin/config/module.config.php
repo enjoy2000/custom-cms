@@ -286,7 +286,7 @@ return array(
                     'menu' => array(
                         'type' => 'Segment',
                         'options' => array(
-                            'route' => '/menu[/[:action[/]]]',
+                            'route' => '/menu[/[:action[/]][:id[/]]]',
                             'defaults' => array(
                                 'controller' => 'Admin\Controller\Menu',
                                 'action' => 'index',
@@ -308,7 +308,7 @@ return array(
                                 'options' => array(
                                     'route' => '/edit[/][:id]',
                                     'constraints' => array(
-                                        'id' => '[0-9]+',
+                                        'slug' => '[0-9]+',
                                     ),
                                     'defaults' => array(
                                         'action' => 'edit',

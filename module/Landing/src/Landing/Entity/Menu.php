@@ -51,10 +51,10 @@ class Menu {
      */
     protected $orderNumber = null;
 
-    /*
+    /**
      * @ORM\Column(type="boolean", options={"default" : 1})
      */
-    protected $showMenu = 1;
+    protected $showMenu;
 
     /**
      * @var \Landing\Entity\Menu
@@ -142,5 +142,21 @@ class Menu {
                 $this->$key = $data[$key];
             }
         }
+    }
+
+    public function getFormData()
+    {
+        //var_dump($this->showMenu);die;
+        return [
+            'id' => $this->id,
+            'type' => $this->type,
+            'value' => $this->value,
+            'valueAr' => $this->valueAr,
+            'label' => $this->label,
+            'labelAr' => $this->labelAr,
+            'orderNumber' => $this->orderNumber,
+            'parentMenu' => $this->parentMenu ? $this->parentMenu->getId() : null,
+            'showMenu' => $this->showMenu ? 1 : 0,
+        ];
     }
 }

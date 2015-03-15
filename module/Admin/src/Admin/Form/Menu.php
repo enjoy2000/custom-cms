@@ -73,7 +73,7 @@ class Menu extends ZendForm
                 'label' => 'Url Key',
             ),
             'attributes' => array(
-                'class' => 'form-control col-md-7',
+                'class' => 'form-control col-md-7 custom-modal',
                 'required' => true,
             ),
         ));
@@ -85,7 +85,7 @@ class Menu extends ZendForm
                 'label' => 'Arabic Url Key',
             ),
             'attributes' => array(
-                'class' => 'form-control col-md-7',
+                'class' => 'form-control col-md-7 custom-modal',
                 'required' => true,
             ),
         ));
@@ -139,13 +139,9 @@ class Menu extends ZendForm
             'name' => 'showMenu',
             'attributes' => array(
                 'class' => '',
-                'required' => true,
-                'checked' => 'checked'
             ),
             'options' => array(
                 'label' => 'Show in top menu',
-                'checked_value' => 1,
-                'unchecked_value' => 0,
             ),
         ));
         
@@ -159,6 +155,9 @@ class Menu extends ZendForm
                 'class' => 'btn btn-primary'
             ),
         ));
+
+        // set input filter
+        $this->setInputFilter($this->createInputFilter());
     }
     
      public function createInputFilter()
@@ -186,18 +185,7 @@ class Menu extends ZendForm
         $inputFilter->add($labelAr);
 
         $orderNumber = new InputFilter\Input('orderNumber');
-        /**
-        $urlKey->getFilterChain()->attachByName(
-            'slug',
-            array(
-                array('StringLength', FALSE, array(3, 255)),
-                array('Regex', FALSE, array('pattern' => '/^[\w.-]*$/'))
-            )
-        );
-         * */
-        $orderNumber->getFilterChain()->attach(
-            new Validator\NumberFormat()
-        );
+        $orderNumber->setRequired(true);
         $inputFilter->add($orderNumber);
 
         return $inputFilter;
@@ -206,16 +194,20 @@ class Menu extends ZendForm
     public function save($controller)
     {
         $data = $this->getData();
+        //var_dump($data);die;
         
         if ((int)$data['id'] > 0) {
-            $menu = $this->getEntityManager()->getRepository('Landing\Entity\Menu')->find((int)$data['id']);
-        
-            $menu->setData($data);
-            $controller->getEntityManager()->merge($menu);
+            $menu = $controller->getEntityManager()->getRepository('Landing\Entity\Menu')->find((int)$data['id']);
         } else{
             $menu = new MenuEntity();
-        
-            $menu->setData($data);
+        }
+
+        $data['parentMenu'] = $controller->find('Landing\Entity\Menu', (int) $data['parentMenu']);
+
+        $menu->setData($data);
+        if ((int)$data['id'] > 0) {
+            $controller->getEntityManager()->merge($menu);
+        } else{
             $controller->getEntityManager()->persist($menu);
         }
         $controller->getEntityManager()->flush();

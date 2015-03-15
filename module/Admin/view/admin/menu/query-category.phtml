@@ -1,0 +1,16 @@
+<?php $result = $this->result ?>
+<table class="form">
+    <tbody>
+        <?php
+        /** @var \Blog\Entity\Category $category */
+        foreach ($result as $category) : ?>
+        <tr>
+            <td>
+                <a href="#" data-url-key="<?php echo $category->getUrlKey() ?>" title="Choose this category">
+                    <?php echo $category->getName() ?>
+                </a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
