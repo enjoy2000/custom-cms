@@ -1,0 +1,62 @@
+<?php
+/** @var \Blog\Form\BlogForm $form */
+$form = $this->form;
+$data =  $form->getElements();
+$title = $data['title']->getValue();
+$cats = $data['categories']->getValue();
+?>
+<?php $this->headTitle($this->translate('Edit News "' . $title . '"')) ?>
+<?php $this->headLink()
+    ->prependStylesheet('/js/plugin/summernote/summernote.css')
+?>
+<?php $this->headScript()
+    ->prependFile('/js/admin/blog-new.js')
+    ->prependFile('/js/plugin/summernote/summernote.min.js')
+    ->prependFile('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js');
+?>
+<script type='text/javascript'>
+    <?php
+    $js_array = json_encode($cats);
+    echo "var originValCats = ". $js_array . ";\n";
+    ?>
+</script>
+<style>
+    .note-editable {
+        min-height: 250px;
+    }
+</style>
+    <h1 class="text-center"><?php echo $this->translate('Edit News "' . $title . '"') ?></h1>
+<?php $form->prepare(); ?>
+<?php echo $this->form()->openTag($form); ?>
+
+<?php
+/** @var \Zend\Form\Element $element */
+foreach($form->getElements() as $element): ?>
+    <?php
+    $messages = $element->getMessages()
+    ?>
+    <div class="form-group<?php if($messages) echo " has-error" ?>">
+        <?php if($messages): ?>
+            <?php foreach($messages as $message): ?>
+                <div class="col-md-3">&nbsp;</div>
+                <div class="alert-danger col-md-7">
+                    <?php if (is_array($message)): ?>
+                        <?php
+                        foreach ($message as $k=>$mess) {
+                            echo $mess . '<br />';
+                        }
+                        ?>
+                    <?php else: ?>
+                        <?php echo $message ?>
+                    <?php endif; ?>
+                </div>
+            <?php endforeach;?>
+        <?php endif; ?>
+        <label class="control-label col-md-3"><?php echo $element->getLabel() ?></label>
+        <div class="col-md-7">
+            <?php echo $this->formElement($element); ?>
+        </div>
+    </div>
+<?php endforeach;?>
+
+<?php echo $this->form()->closeTag(); ?>

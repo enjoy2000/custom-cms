@@ -66,6 +66,11 @@ class Menu {
     {
         return $this->id;
     }
+    
+    public function getLabel()
+    {
+        return $this->label;
+    }
 
     public function getMenu($localeShortCode)
     {
@@ -119,5 +124,24 @@ class Menu {
     public function hasChild($entityManager)
     {
         return (boolean) $this->getChildMenus($entityManager);
+    }
+    
+    public function setData($data)
+    {
+        $keys = [
+            'type',
+            'value',
+            'valueAr',
+            'label',
+            'labelAr',
+            'orderNumber',
+            'parentMenu',
+            'showMenu',
+        ];
+        foreach ($keys as $key) {
+            if (isset($data[$key])) {
+                $this->$key = $data[$key];
+            }
+        }
     }
 }

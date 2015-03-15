@@ -11,6 +11,7 @@ namespace Admin\Controller;
 use Application\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\View\Model\JsonModel;
+use Admin\Form\Menu;
 
 class MenuController extends AbstractActionController
 {
@@ -19,10 +20,25 @@ class MenuController extends AbstractActionController
         return new ViewModel([]);
     }
 
-    public function addAction()
+    public function newAction()
     {
+        $form = new Menu($this, 'new');
+        
+        if ($this->getRequest()->isPost()) {
+            /** @var \Zend\Http\Request $request */
+            $request = $this->getRequest();
+            // Make certain to merge the files info!
+            $postData = $request->getPost()->toArray();
+            $form->setData($postData);
+            if ($form->isValid()) {
+                $form->save($this);
+                $this->flashMessenger()->addSuccessMessage('Your menu is created successfully!');
+                return $this->redirect()->toRoute('zfcadmin/menu');
+            }
+        }
+        
         return new ViewModel([
-
+            'form' => $form
         ]);
     }
 

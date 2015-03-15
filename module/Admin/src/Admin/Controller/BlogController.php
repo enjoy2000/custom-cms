@@ -89,7 +89,7 @@ class BlogController extends AbstractActionController
             $form->setData($postData);
             if ($form->isValid()) {
                 $form->save($this);
-                $this->flashMessenger()->addSuccessMessage('You news is created successfully!');
+                $this->flashMessenger()->addSuccessMessage('Your news is created successfully!');
                 return $this->redirect()->toRoute('zfcadmin/blog');
             }
         }
