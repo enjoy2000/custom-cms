@@ -40,6 +40,10 @@ $(document).ready(function(){
             type: 'get',
             success: function($data) {
                 console.log($data);
+                if ($data['categories'].length == 0) {
+                    bootbox.alert('There is no category in this language.');
+                    return false;
+                }
                 var catOptions = '';
                 $.each($data['categories'], function(){
                     catOptions += '<option value="' + this.id + '">' + this.name + '</option>';

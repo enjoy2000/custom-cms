@@ -34,10 +34,15 @@ class CategoryController extends AbstractRestfulJsonController
         // start filter
         if ($localeId = $this->params()->fromQuery('locale')) {
             $queryBuilder
-                ->innerJoin('\Blog\Entity\Locale', 'l')
-                ->where("c.locale=l.id")
+                ->innerJoin('c.locale', 'l')
                 ->andWhere('l.id=:id')
                 ->setParameter(':id', (int)$localeId);
+        }
+        if (!$this->isAdmin()) {
+            $queryBuilder
+                ->innerJoin('c.moderators', 'm')
+                ->andwhere('m.id = :mod')
+                ->setParameter(':mod', $this->getCurrentUser()->getId());
         }
         $cats = $queryBuilder->getQuery()->getResult();
         $data = [];
