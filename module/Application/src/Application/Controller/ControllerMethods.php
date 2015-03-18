@@ -181,4 +181,17 @@ trait ControllerMethods{
 
         return false;
     }
+
+    public function isMenuItem($urlKey) {
+        $queryBuilder = $this->getEntityManager()->getRepository('Landing\Entity\Menu')->createQueryBuilder('m');
+        $menu = $queryBuilder
+            ->where('m.value = :key')
+            ->orwhere('m.valueAr = :key')
+            ->setParameter(':key', $urlKey)
+            ->getQuery()
+            ->getResult()
+        ;
+
+        return !empty($menu);
+    }
 }

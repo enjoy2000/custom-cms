@@ -1,7 +1,52 @@
 <?php $this->headTitle($this->translate('Menu Manager')) ?>
-
+<?php
+    $this->headScript()
+        ->prependFile('/js/plugin/bootbox/bootbox.min.js')
+    ;
+?>
 <h1 class="text-center"><?php echo $this->translate('Menu Manager') ?></h1>
 
-<div class="collapse navbar-collapse">
-    <?php echo $this->partial('layout/navigation') ?>
+<div id="menu-manager" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+        <li>
+            <a class="home" href="#"><?php echo $this->translate('Home') ?></a>
+        </li>
+        <?php echo $this->renderMenu($this->getHelperPluginManager()->getServiceLocator()->get('Application')->getMvcEvent()->getRouteMatch(), 'admin') ?>
+    </ul>
 </div><!--/.nav-collapse -->
+<script>
+    (function($){
+        $('document').ready(function(){
+            /**
+             * Effect for main menu
+             */
+            $('#menu-manager .dropdown').hover(
+                function(){
+                    $(this).addClass('open active');
+                    $(this).find('.toggle-dropdown').dropdown('toggle');
+                },
+                function(){
+                    $(this).removeClass('open active');
+                    $(this).find('.toggle-dropdown').dropdown('toggle');
+
+                    // for current menu item
+                    if ($(this).hasClass('current-menu-item')) {
+                        $(this).addClass('active');
+                    }
+                }
+            );
+            $('#menu-manager .dropdown > a').click(function(e){
+                e.preventDefault();
+
+                window.location.href = $(this).attr('href');
+            });
+
+            // Can't edit home menu
+            $('#menu-manager a.home').on('click', function(e){
+                e.preventDefault();
+
+                bootbox.alert('Cannot edit home menu');
+            });
+        });
+    })(jQuery);
+</script>

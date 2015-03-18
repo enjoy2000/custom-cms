@@ -30,24 +30,39 @@ class Rendermenu extends AbstractHelper
      * @param  string
      * @return String
      */
-    public function __invoke($routeMatch, $sidebar = null)
+    public function __invoke($routeMatch, $name = null)
     {
         //$em = $this->serviceLocator->get('doctrine.entitymanager.orm_default');
-        if (null === $sidebar) {
+        if (null === $name) {
             $menu = $this->_getMainMenu($routeMatch);
-        } else {
-            $menu = $this->_getSidebar($routeMatch, $sidebar);
+        } else if ($name == 'sidebar') {
+            $menu = $this->_getSidebar($routeMatch);
+        } else if ($name == 'admin') {
+            $menu = $this->_getAdminMenu($routeMatch);
         }
 
         return $menu;
     }
 
+    protected function _getAdminMenu($routeMatch)
+    {
+        $menuService = new \Landing\Service\Menu();
+
+        return $menuService->renderMenu($routeMatch, $this->serviceLocator, 'admin');
+    }
+
     protected function _getMainMenu($routeMatch)
     {
-        $em = $this->serviceLocator->get('doctrine.entitymanager.orm_default');
         $menuService = new \Landing\Service\Menu();
 
         return $menuService->renderMenu($routeMatch, $this->serviceLocator);
+    }
+
+    protected function _getSidebar($routeMatch)
+    {
+        $menuService = new \Landing\Service\Menu();
+
+        return $menuService->renderSidebar($routeMatch, $this->serviceLocator);
     }
 
     /**

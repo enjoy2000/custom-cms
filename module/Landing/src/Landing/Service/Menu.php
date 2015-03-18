@@ -9,13 +9,13 @@ class Menu
 {
     private $_serviceLocator = null;
 
-    public function renderMenu($routeMatch, $serviceLocator)
+    public function renderMenu($routeMatch, $serviceLocator, $name = null)
     {
         $em = $serviceLocator->get('doctrine.entitymanager.orm_default');
         $this->_serviceLocator = $serviceLocator;
         if ($routeMatch) {
             $routeName = $routeMatch->getMatchedRouteName();
-            $currentSlug = $routeMatch->getParams('slug', null);
+            $currentSlug = $routeMatch->getParam('slug', null);
         } else {
             $routeName = '404';
             $currentSlug = null;
@@ -39,7 +39,7 @@ class Menu
                 $html .= '<li class="'
                     . $active
                     . '"><a href="'
-                    . $this->_getUrl($menu)
+                    . $this->_getUrl($menu, $name)
                     . '" title="'
                     . $data['label']
                     . '">'
@@ -49,14 +49,14 @@ class Menu
                 $html .= '<li class="dropdown'
                     . $active
                     . '"><a data-toggle="dropdown" href="'
-                    . $this->_getUrl($menu)
+                    . $this->_getUrl($menu, $name)
                     . '" title="'
                     . $data['label']
                     . '">'
                     . $data['label']
                     . ' <span class="caret"></span>'
                     . '</a>'
-                    . $this->_renderChild($menu, $em)
+                    . $this->_renderChild($menu, $em, $name)
                     . '</li>';
             }
         }
@@ -65,20 +65,94 @@ class Menu
         return $html;
     }
 
-    protected function _renderChild($parent, $em)
+    public function renderSidebar($routeMatch, $serviceLocator)
+    {
+        $em = $serviceLocator->get('doctrine.entitymanager.orm_default');
+        $this->_serviceLocator = $serviceLocator;
+        if ($routeMatch) {
+            $routeName = $routeMatch->getMatchedRouteName();
+            $currentSlug = $routeMatch->getParam('slug', null);
+        } else {
+            $routeName = '404';
+            $currentSlug = null;
+        }
+        if ($routeName == 'blog/view') {
+            $urlKey = $currentSlug;
+        } else {
+            $urlKey = $routeName;
+        }
+        //var_dump($urlKey);die;
+        $currentMenu = $em->getRepository('Landing\Entity\Menu')->createQueryBuilder('m')
+            ->where('m.value = :key')
+            ->setParameter(':key', $urlKey)
+            ->orwhere('m.valueAr = :keyar')
+            ->setParameter(':keyar', $urlKey)
+            ->getQuery()
+            ->getResult();
+        //var_dump($currentMenu);die;
+        if (!empty($currentMenu)) {
+            $parentMenu = $currentMenu[0]->getParentMenu() ? $currentMenu[0]->getParentMenu() : $currentMenu[0];
+        }
+
+        $parentData = $parentMenu->getMenu($this->_getLocaleShortCode());
+
+        $html = '<div class="list-group panel default-panel">';
+
+        $html
+            .= '<div class="panel-heading">'
+            . '<a href="'
+            . $parentData['link']
+            . '" title="'
+            . $parentData['label']
+            . '">'
+            . $parentData['label']
+            . '</a>'
+            . '</div>'
+        ;
+
+        if ($parentMenu->hasChild($em)) {
+            foreach ($parentMenu->getChildMenus($em) as $menu) {
+                $data = $menu->getMenu($this->_getLocaleShortCode());
+                if ($this->_isActive($em, $menu, $routeMatch)) {
+                    $active = ' active';
+                } else {
+                    $active = '';
+                }
+                $html
+                    .= '<a class="list-group-item'
+                    . $active
+                    . '" href="'
+                    . $data['link']
+                    . '" title="'
+                    . $data['label']
+                    . '">'
+                    . $data['label']
+                    . '</a>'
+                ;
+            }
+        }
+
+        $html .= '</div>';
+
+        return $html;
+    }
+
+    protected function _renderChild($parent, $em, $name = null)
     {
         $html = '';
         if ($parent->hasChild($em)) {
             $html .= '<ul class="dropdown-menu" role="menu">';
             foreach ($parent->getChildMenus($em) as $menu) {
-                $data = $menu->getMenu($this->_getLocaleShortCode());
-                $html .= '<li><a href="'
-                    . $this->_getUrl($menu)
-                    . '" title="'
-                    . $data['label']
-                    . '">'
-                    . $data['label']
-                    . '</a></li>';
+                if ($name != null && $menu->getShowMenu()) {
+                    $data = $menu->getMenu($this->_getLocaleShortCode());
+                    $html .= '<li><a href="'
+                        . $this->_getUrl($menu, $name)
+                        . '" title="'
+                        . $data['label']
+                        . '">'
+                        . $data['label']
+                        . '</a></li>';
+                }
             }
             $html .= '</ul>';
         }
@@ -113,8 +187,12 @@ class Menu
         }
     }
 
-    protected function _getUrl($menu)
+    protected function _getUrl($menu, $name = null)
     {
+
+        if ($name = 'admin') {
+            return $this->_url('zfcadmin/menu', ['action' => 'edit', 'id' => $menu->getId()]);
+        }
         $data = $menu->getMenu($this->_getLocaleShortCode());
         $type = $menu->getType();
         switch ($type) {
@@ -137,7 +215,7 @@ class Menu
     {
         if ($routeMatch) {
             $routeName = $routeMatch->getMatchedRouteName();
-            $currentSlug = $routeMatch->getParams('slug', null);
+            $currentSlug = $routeMatch->getParam('slug', null);
         } else {
             $routeName = '404';
             $currentSlug = null;

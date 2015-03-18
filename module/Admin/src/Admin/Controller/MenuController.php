@@ -127,4 +127,14 @@ class MenuController extends AbstractActionController
 
         return $view;
     }
+
+    public function isParentMenuAction()
+    {
+        $id = (int)$this->params()->fromRoute('id');
+        $menu = $this->find('Landing\Entity\Menu', $id);
+
+        return new JsonModel([
+            'result' => ($menu->getParentMenu() === null)
+        ]);
+    }
 }

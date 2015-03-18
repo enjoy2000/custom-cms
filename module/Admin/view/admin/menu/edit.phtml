@@ -1,6 +1,7 @@
 <?php $this->headTitle($this->translate('Edit Menu "'. $this->title .'"')) ?>
 <?php $this->headScript()
     ->prependFile('/js/admin/menu/modal.js')
+    ->prependFile('/js/plugin/bootbox/bootbox.min.js')
     ->prependFile('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js')
 ;
 ?>
@@ -50,6 +51,13 @@ foreach($form->getElements() as $element): ?>
             <label class="control-label col-md-3"><?php echo $element->getLabel() ?></label>
             <div class="col-md-7">
                 <?php echo $this->formElement($element); ?>
+                <?php if ($element->getName() == 'send') : ?>
+                    <a class="btn btn-danger delete-menu" title="Delete this menu" href="<?php echo $this->url('zfcadmin/menu',
+                            ['action' => 'delete', 'id' => $form->getElements()['id']->getValue()]
+                        ) ?>">
+                        Delete this menu
+                    </a>
+                <?php endif; ?>
             </div>
         <?php endif; ?>
     </div>
@@ -91,3 +99,27 @@ foreach($form->getElements() as $element): ?>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<script>
+    (function($){
+        $(document).ready(function(){
+            $('a.btn.delete-menu').on('click', function(e){
+                var deleteUrl = $(this).attr('href');
+                e.preventDefault();
+                $.get('<?php echo $this->url('zfcadmin/menu', [
+                        'action' => 'is-parent-menu',
+                        'id' => $form->getElements()['id']->getValue()
+                        ]) ?>', function(data){
+                    console.log(data);
+                    if (data.result) {
+                        $('.bootbox-body').append('<p class="text-danger"><strong>This is a parent menu. This action will delete this menu and all of this children menus.</strong></p>');
+                    }
+                });
+                bootbox.confirm('Are you sure to delete this menu?', function(confirm){
+                    if (confirm) {
+                        window.location.href = deleteUrl;
+                    }
+                });
+            });
+        });
+    })(jQuery);
+</script>
