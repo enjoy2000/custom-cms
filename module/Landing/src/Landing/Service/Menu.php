@@ -143,7 +143,7 @@ class Menu
         if ($parent->hasChild($em)) {
             $html .= '<ul class="dropdown-menu" role="menu">';
             foreach ($parent->getChildMenus($em) as $menu) {
-                if ($name != null && $menu->getShowMenu()) {
+                if ($name != null || $menu->getShowMenu()) {
                     $data = $menu->getMenu($this->_getLocaleShortCode());
                     $html .= '<li><a href="'
                         . $this->_getUrl($menu, $name)
