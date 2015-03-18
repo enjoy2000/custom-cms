@@ -78,7 +78,10 @@ $module = isset($modules[1]) ? $modules[1] : null;
         <a href="#" data-toggle="dropdown" class="dropdown-toggle">System <b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
-                <a href="<?php echo $this->url('zfcadmin/menu') ?>">Menu</a>
+                <a href="<?php echo $this->url('zfcadmin/menu') ?>">Menu Manager</a>
+            </li>
+	    <li>
+                <a href="<?php echo $this->url('zfcadmin/menu', ['action' => 'new']) ?>">Add Menu</a>
             </li>
         </ul>
     </li>
