@@ -190,7 +190,7 @@ class Menu
     protected function _getUrl($menu, $name = null)
     {
 
-        if ($name = 'admin') {
+        if ($name == 'admin') {
             return $this->_url('zfcadmin/menu', ['action' => 'edit', 'id' => $menu->getId()]);
         }
         $data = $menu->getMenu($this->_getLocaleShortCode());
