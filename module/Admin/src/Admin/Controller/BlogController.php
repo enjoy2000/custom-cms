@@ -63,9 +63,9 @@ class BlogController extends AbstractActionController
         ;
 
         if (!$this->isAdmin()) {
-            $queryBuilder->innerJoin('c.moderators', 'm');
-            $queryBuilder->where('m.id = :id')
-                ->setParameter(':id', $this->getCurrentUser()->getId());
+            $queryBuilder->join('c.moderators', 'm')
+                ->where('m.id = :mod')
+                ->setParameter(':mod', $this->getCurrentUser()->getId());
         }
 
         $table = new BlogTable();
@@ -135,24 +135,5 @@ class BlogController extends AbstractActionController
         return new ViewModel([
             'form' => $form
         ]);
-    }
-
-    public function dumpAction()
-    {
-        $em = $this->getEntityManager();
-        //
-        $dump = $this->find('Blog\Entity\Blog', 1);
-        $dumpData = $dump->getData();
-        unset($dumpData['id']);
-        for ($i = 0; $i < 50; ++$i) {
-            $blog = new Blog;
-            $dumpData['urlKey'] .= $i;
-            $blog->setData($dumpData);
-            $em->persist($blog);
-            $em->flush();
-            echo sprintf('Inserted %s rows successfully<br />', $i+1);
-        }
-        echo 'finished all';
-        die;
     }
 }

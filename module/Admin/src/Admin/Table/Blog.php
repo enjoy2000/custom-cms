@@ -38,26 +38,10 @@ class Blog extends AbstractTable
 
     protected function initFilters($query)
     {
-        if ($value = $this->getParamAdapter()->getValueOfFilter('id')) {
-            $query->where("b.id = {$value}");
-        }
-        if ($value = $this->getParamAdapter()->getValueOfFilter('title')) {
-            $query->where("b.title like '%".$value."%' ");
-        }
-        if ($value = $this->getParamAdapter()->getValueOfFilter('gridCategory')) {
-            $query->where("c.name like '%{$value}%'");
-        }
-        if ($value = $this->getParamAdapter()->getValueOfFilter('blogLanguage')) {
-            $query->where("l.name like '%".$value."%' ");
-        }
-        if ($value = $this->getParamAdapter()->getValueOfFilter('published')) {
-            $query->where("q.city like '%".$value."%' ");
-        }
-        if ($value = $this->getParamAdapter()->getValueOfFilter('createTime')) {
-            $query->where("b.createTime like '%".$value."%' ");
-        }
         if ($value = $this->getParamAdapter()->getQuickSearch()) {
-            $query->where("b.title like '%".$value."%' ");
+            $query->andWhere('b.title like :value')
+                ->setParameter(':value', '%' . $value . '%')
+            ;
         }
     }
 }
