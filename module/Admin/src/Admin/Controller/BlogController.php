@@ -63,7 +63,7 @@ class BlogController extends AbstractActionController
         ;
 
         if (!$this->isAdmin()) {
-            $queryBuilder->join('c.moderators', 'm')
+            $queryBuilder->innerJoin('c.moderators', 'm')
                 ->where('m.id = :mod')
                 ->setParameter(':mod', $this->getCurrentUser()->getId());
         }

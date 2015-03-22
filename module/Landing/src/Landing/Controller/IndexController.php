@@ -22,17 +22,14 @@ class IndexController extends AbstractActionController
         $locale = $this->findOneBy('Blog\Entity\Locale', ['code' => $localeSession->locale]);
 
         $catUrlKey = ($locale->getShortCode() == 'en') ? Category::NEWS_EN : Category::NEWS_AR;
-        $category = $this->getEntityManager()->getRepository('Blog\Entity\Category')
-            ->findOneBy(
-                ['urlKey' => $catUrlKey]
-            )
-        ;
 
-        $qb = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
+        $qb1 = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
             ->createQueryBuilder('b');
-        $blogs = $qb->join('b.categories', 'c')
-            ->where("c.urlKey = '{$catUrlKey}'")
-            ->andWhere("b.published = 1")
+        $blogs = $qb1->innerJoin('b.categories', 'c')
+            ->where("c.urlKey = :urlkey")
+            ->setParameter(':urlkey', $catUrlKey)
+            ->andWhere("b.published = :published")
+            ->setParameter(':published', 1)
             ->setFirstResult(0)
             ->setMaxResults(8)
             ->orderBy('b.id', 'DESC')
@@ -49,11 +46,13 @@ class IndexController extends AbstractActionController
             );
         */
 
-        $qb = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
+        $qb2 = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
             ->createQueryBuilder('b');
-        $restNews = $qb->join('b.categories', 'c')
-            ->where("c.urlKey = '{$catUrlKey}'")
-            ->andWhere("b.published = 1")
+        $restNews = $qb2->innerJoin('b.categories', 'c')
+            ->where("c.urlKey = :urlkey")
+            ->setParameter(':urlkey', $catUrlKey)
+            ->andWhere("b.published = :published")
+            ->setParameter(':published', 1)
             ->setFirstResult(8)
             ->setMaxResults(10)
             ->orderBy('b.id', 'DESC')
