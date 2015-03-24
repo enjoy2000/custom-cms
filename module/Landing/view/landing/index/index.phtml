@@ -61,6 +61,14 @@
             ?>
             <?php echo $this->partial('article_partial', ['blog' => $blog]) ?>
         <?php endforeach; ?>
+        <?php
+        $restNewsUrl = (Locale::getPrimaryLanguage(Locale::getDefault()) == 'en') ? "en-missions-news" : "ar-missions-news";
+        ?>
+        <p class="text-center text-primary">
+            <a class="btn btn-primary cat-read-more" href="<?php echo $this->url('blog/view', ['slug' => $restNewsUrl]) ?>" title="<?php echo $this->translate('Read more') ?>">
+                >>
+            </a>
+        </p>
     </div>
     <div class="col-md-3 pull-right flip consular-services">
         <h3 class="black-head">
