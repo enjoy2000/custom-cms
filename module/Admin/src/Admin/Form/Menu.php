@@ -195,7 +195,17 @@ class Menu extends ZendForm
     {
         $data = $this->getData();
         //var_dump($data);die;
-        
+        if ($data['type'] == 'static') {
+            try {
+                $url = $controller->url()->fromRoute($data['value']);
+                $urlAr = $controller->url()->fromRoute($data['valueAr']);
+                //var_dump($url);die;
+            } catch (\Exception $e) {
+                $controller->flashMessenger()->addErrorMessage('Your static route is not found.');
+                $controller->redirect()->toRoute('zfcadmin/menu');
+                exit();
+            }
+        }
         if ((int)$data['id'] > 0) {
             $menu = $controller->getEntityManager()->getRepository('Landing\Entity\Menu')->find((int)$data['id']);
         } else{
