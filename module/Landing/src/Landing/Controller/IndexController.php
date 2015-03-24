@@ -45,15 +45,17 @@ class IndexController extends AbstractActionController
                 10
             );
         */
-
+        $restNewsUrl = ($locale->getShortCode() == 'en') ?
+            ['en-missions-news', 'eundersecretaries-news'] :
+            ['ar-missions-news', 'aundersecretaries-news']
+        ;
         $qb2 = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
             ->createQueryBuilder('b');
         $restNews = $qb2->innerJoin('b.categories', 'c')
-            ->where("c.urlKey = :urlkey")
-            ->setParameter(':urlkey', $catUrlKey)
-            ->andWhere("b.published = :published")
+            ->where("b.published = :published")
             ->setParameter(':published', 1)
-            ->setFirstResult(8)
+            ->andWhere("c.urlKey = '$restNewsUrl[0]' OR c.urlKey ='$restNewsUrl[1]'")
+            ->setFirstResult(0)
             ->setMaxResults(10)
             ->orderBy('b.id', 'DESC')
             ->getQuery()
