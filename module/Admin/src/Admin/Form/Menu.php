@@ -202,8 +202,7 @@ class Menu extends ZendForm
                 //var_dump($url);die;
             } catch (\Exception $e) {
                 $controller->flashMessenger()->addErrorMessage('Your static route is not found.');
-                $controller->redirect()->toRoute('zfcadmin/menu');
-                exit();
+                return $controller->redirect()->toRoute('zfcadmin/menu');
             }
         }
         if ((int)$data['id'] > 0) {
