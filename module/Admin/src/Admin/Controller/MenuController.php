@@ -23,7 +23,7 @@ class MenuController extends AbstractActionController
     public function newAction()
     {
         $form = new Menu($this, 'new');
-        
+
         if ($this->getRequest()->isPost()) {
             /** @var \Zend\Http\Request $request */
             $request = $this->getRequest();
@@ -126,5 +126,15 @@ class MenuController extends AbstractActionController
         $view->setVariable('result', $result);
 
         return $view;
+    }
+
+    public function isParentMenuAction()
+    {
+        $id = (int)$this->params()->fromRoute('id');
+        $menu = $this->find('Landing\Entity\Menu', $id);
+
+        return new JsonModel([
+            'result' => ($menu->getParentMenu() === null)
+        ]);
     }
 }

@@ -59,6 +59,7 @@ class Menu {
     /**
      * @var \Landing\Entity\Menu
      * @ORM\ManyToOne(targetEntity="Landing\Entity\Menu")
+     * @ORM\JoinColumn(name="parentMenu_id", referencedColumnName="id", onDelete="CASCADE")
      */
     protected $parentMenu = null;
 
@@ -93,6 +94,11 @@ class Menu {
     public function getOrderNumber()
     {
         return $this->orderNumber;
+    }
+
+    public function getParentMenu()
+    {
+        return $this->parentMenu;
     }
 
     public function getShowMenu()

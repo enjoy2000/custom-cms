@@ -28,3 +28,8 @@ extras/documentation
 public/uploads
 !public/uploads/blog-photo/default.png
 !public/uploads/blog-photo/thumbnail/keep.me
+
+# Document files
+public/Galleryimages
+public/documents
+public/documentfiles

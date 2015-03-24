@@ -55,7 +55,7 @@ class BlogController extends AbstractActionController {
     {
         $blog = $this->params()->fromRoute('blog');
 
-        if (Common::getParentMenuFromSlug($blog->getUrlKey(), $this->getServiceLocator()->get('config')['router'])) {
+        if ($this->isMenuItem($blog->getUrlKey())) {
             $this->layout('layout/3columns');
         }
         $this->layout('layout/3columns');
@@ -84,7 +84,7 @@ class BlogController extends AbstractActionController {
             $paginator->setCurrentPageNumber($page);
         }
 
-        if (Common::getParentMenuFromSlug($category->getUrlKey(), $this->getServiceLocator()->get('config')['router'])) {
+        if ($this->isMenuItem($category->getUrlKey())) {
             $this->layout('layout/3columns');
         }
 

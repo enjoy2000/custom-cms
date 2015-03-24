@@ -11,8 +11,36 @@ $parentRoute = (Common::getParentMenuFromSlug($currentSlug, $this->config('route
     Common::getParentMenuFromSlug($currentSlug, $this->config('router')) :
     $currentRoute[0];
 $routes = $this->config('router')['routes'][$parentRoute];
-?>
 
+if ($routeMatch) {
+    $routeName = $routeMatch->getMatchedRouteName();
+    $currentSlug = $routeMatch->getParam('slug', null);
+} else {
+    $routeName = '404';
+    $currentSlug = null;
+}
+if ($routeName == 'blog/view') {
+    $urlKey = $currentSlug;
+} else {
+    $urlKey = $routeName;
+}
+//var_dump($urlKey);die;
+$em = $this->em();
+$currentMenu = $em->getRepository('Landing\Entity\Menu')->createQueryBuilder('m')
+    ->where('m.value = :key')
+    ->setParameter(':key', $urlKey)
+    ->orwhere('m.valueAr = :keyar')
+    ->setParameter(':keyar', $urlKey)
+    ->getQuery()
+    ->getResult();
+//var_dump($currentMenu);die;
+if (!empty($currentMenu)) {
+    $parentMenu = $currentMenu[0]->getParentMenu() ? $currentMenu[0]->getParentMenu() : $currentMenu[0];
+}
+?>
+<?php if (!empty($currentMenu)) : ?>
+    <?php echo $this->renderMenu($routeMatch, 'sidebar') ?>
+<?php else : ?>
 <div class="list-group panel default-panel">
     <?php if ($parentRoute != 'mission') : ?>
     <div class="panel-heading">
@@ -50,3 +78,4 @@ $routes = $this->config('router')['routes'][$parentRoute];
     <?php endif; ?>
     <?php endforeach; ?>
 </div>
+<?php endif; ?>
