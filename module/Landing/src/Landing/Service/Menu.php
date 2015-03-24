@@ -101,7 +101,7 @@ class Menu
         $html
             .= '<div class="panel-heading">'
             . '<a href="'
-            . $parentData['link']
+            . $this->_getUrl($parentMenu)
             . '" title="'
             . $parentData['label']
             . '">'
@@ -122,7 +122,7 @@ class Menu
                     .= '<a class="list-group-item'
                     . $active
                     . '" href="'
-                    . $data['link']
+                    . $this->_getUrl($menu)
                     . '" title="'
                     . $data['label']
                     . '">'

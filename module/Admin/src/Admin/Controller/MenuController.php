@@ -23,7 +23,7 @@ class MenuController extends AbstractActionController
     public function newAction()
     {
         $form = new Menu($this, 'new');
-        
+
         if ($this->getRequest()->isPost()) {
             /** @var \Zend\Http\Request $request */
             $request = $this->getRequest();
