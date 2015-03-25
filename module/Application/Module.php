@@ -21,26 +21,22 @@ class Module
          * Set default time zone
          */
         date_default_timezone_set('UTC');
-        $eventManager        = $e->getApplication()->getEventManager();
-        $eventManager->attach(MvcEvent::EVENT_DISPATCH, array($this, 'selectLayout'));
-        $moduleRouteListener = new ModuleRouteListener();
-        $moduleRouteListener->attach($eventManager);
 
 
         // session container
         $sessionContainer = new Container('locale');
 
         $sessionContainer->offsetUnset('locale');
-        // test if session language exists
-        if (!$sessionContainer->offsetExists('locale')) {
-            $shortCode = \Locale::getPrimaryLanguage(\Locale::getDefault());
-            if ($shortCode == 'ar') {
-                $locale = 'ar_IQ';
-            } else {
-                $locale = 'en_US';
-            }
-            $sessionContainer->offsetSet('locale', $locale);
+        $requestUri = explode('/', $_SERVER['REQUEST_URI']);
+        if ($requestUri[1] != 'en') {
+            $locale = 'ar_IQ';
+            \Locale::setDefault ('ar_IQ');
+        } else {
+            $locale = 'en_US';
+            \Locale::setDefault ('en_US');
         }
+        $sessionContainer->offsetSet('locale', $locale);
+
         // service manager
         $sm = $e->getApplication()->getServiceManager();
 
@@ -49,12 +45,17 @@ class Module
         // die('here');
         // translating system
         $translator = $sm->get('translator');
-        $translator ->setLocale($sessionContainer->locale)
+        $translator ->setLocale($sessionContainer->offsetGet('locale'))
             ->setFallbackLocale('en_US');
 
         // set variables to layout
         $viewModel = $e->getApplication()->getMvcEvent()->getViewModel();
         $viewModel->locale = $sessionContainer->locale;
+
+        $eventManager        = $e->getApplication()->getEventManager();
+        $eventManager->attach(MvcEvent::EVENT_DISPATCH, array($this, 'selectLayout'));
+        $moduleRouteListener = new ModuleRouteListener();
+        $moduleRouteListener->attach($eventManager);
 
     }
 
