@@ -24,6 +24,7 @@ return [
                 array('route' => 'zfcadmin/blog/query', 'roles' => array('moderator')),
                 array('route' => 'zfcadmin/blog/new', 'roles' => array('moderator')),
                 array('route' => 'zfcadmin/blog/edit', 'roles' => array('moderator')),
+                array('route' => 'zfcadmin/blog/delete', 'roles' => array('moderator')),
                 array('route' => 'zfcadmin/category', 'roles' => array('administrator')),
                 array('route' => 'zfcadmin/category/new', 'roles' => array('administrator')),
                 array('route' => 'zfcadmin/category/edit', 'roles' => array('administrator')),

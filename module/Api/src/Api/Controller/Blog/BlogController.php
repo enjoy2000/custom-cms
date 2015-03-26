@@ -25,7 +25,7 @@ class BlogController extends AbstractRestfulJsonController
         $queryBuilder = $blogs->createQueryBuilder('blog');
 
         if (!$this->getCurrentUser() || !$this->getCurrentUser()->isModeratorOrAdmin()) {
-            $queryBuilder->andWhere('blog.published=true');
+            $queryBuilder->andWhere('blog.published=1');
         }
 
         // start filter

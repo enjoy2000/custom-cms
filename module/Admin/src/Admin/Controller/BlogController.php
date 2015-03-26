@@ -127,7 +127,7 @@ class BlogController extends AbstractActionController
             $form->setData($postData);
             if ($form->isValid()) {
                 $form->save($this);
-                $this->flashMessenger()->addSuccessMessage('You news is updated successfully!');
+                $this->flashMessenger()->addSuccessMessage('You news has been updated successfully!');
                 return $this->redirect()->toRoute('zfcadmin/blog');
             }
         }
@@ -135,5 +135,16 @@ class BlogController extends AbstractActionController
         return new ViewModel([
             'form' => $form
         ]);
+    }
+
+    public function deleteAction()
+    {
+        $id = (int)$this->params()->fromRoute('id');
+        $blog = $this->find('Blog\Entity\Blog', $id);
+        $this->getEntityManager()->remove($blog);
+        $this->getEntityManager()->flush();
+
+        $this->flashMessenger()->addSuccessMessage('You news has been deleted successfully!');
+        return $this->redirect()->toRoute('zfcadmin/blog');
     }
 }

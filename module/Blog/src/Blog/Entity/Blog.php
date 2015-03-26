@@ -79,7 +79,7 @@ class Blog
      * @var \Doctrine\Common\Collections\Collection
      * @ORM\ManyToMany(targetEntity="Blog\Entity\Category")
      * @ORM\JoinTable(name="blog_category",
-     *      joinColumns={@ORM\JoinColumn(name="blog_id", referencedColumnName="id")},
+     *      joinColumns={@ORM\JoinColumn(name="blog_id", referencedColumnName="id", onDelete="CASCADE")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="category_id", referencedColumnName="id", onDelete="CASCADE")}
      * )
      */
@@ -244,8 +244,15 @@ class Blog
 
     public function getActions()
     {
-        return '<a class="btn btn-primary" href="'.$this->getEditUrl().'" title="Edit Blog">
-                    <i class="fa fa-edit"></i></a>';
+        $html = '<a class="btn btn-primary" href="'
+            . $this->getEditUrl()
+            . '" title="Edit Blog">'
+            . '<i class="fa fa-edit"></i></a>'
+            . ' <a class="btn btn-danger delete-blog" href="'
+            . $this->getDeleteUrl()
+            . '"><i class="fa fa-remove"></i></a>'
+        ;
+        return $html;
     }
 
     public function getCreateUser()
@@ -433,6 +440,11 @@ class Blog
     public function getEditUrl()
     {
         return '/admin/blog/edit/' . $this->id;
+    }
+
+    public function getDeleteUrl()
+    {
+        return '/admin/blog/delete/' . $this->id;
     }
 
     public function getDate($type='createTime')

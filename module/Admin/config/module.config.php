@@ -113,6 +113,18 @@ return array(
                                     ),
                                 ),
                             ),
+                            'delete' => array(
+                                'type' => 'Segment',
+                                'options' => array(
+                                    'route' => '/delete[/][:id]',
+                                    'constraints' => array(
+                                        'slug' => '[0-9]+',
+                                    ),
+                                    'defaults' => array(
+                                        'action' => 'delete',
+                                    ),
+                                ),
+                            ),
                         ),
                     ),
 

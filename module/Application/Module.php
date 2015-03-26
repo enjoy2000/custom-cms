@@ -27,15 +27,18 @@ class Module
         $sessionContainer = new Container('locale');
 
         $sessionContainer->offsetUnset('locale');
-        $requestUri = explode('/', $_SERVER['REQUEST_URI']);
-        if ($requestUri[1] != 'en') {
-            $locale = 'ar_IQ';
-            \Locale::setDefault ('ar_IQ');
-        } else {
-            $locale = 'en_US';
-            \Locale::setDefault ('en_US');
+
+        if (isset($_SERVER['REQUEST_URI'])) {
+            $requestUri = explode('/', $_SERVER['REQUEST_URI']);
+            if (isset($requestUri[1]) && $requestUri[1] != 'en') {
+                $locale = 'ar_IQ';
+                \Locale::setDefault ('ar_IQ');
+            } else {
+                $locale = 'en_US';
+                \Locale::setDefault ('en_US');
+            }
+            $sessionContainer->offsetSet('locale', $locale);
         }
-        $sessionContainer->offsetSet('locale', $locale);
 
         // service manager
         $sm = $e->getApplication()->getServiceManager();

@@ -1,10 +1,11 @@
 <?php $this->headTitle($this->translate('News Manager')) ?>
 <?php $this->headScript()
-    ->prependFile('/js/admin/blog-index.js')
+    ->prependFile($this->basePath() . '/js/admin/blog-index.js')
+    ->prependFile($this->basePath() . '/js/plugin/bootbox/bootbox.min.js')
     ->prependFile($this->basePath() . '/js/DT_bootstrap_3.js')
     ->prependFile($this->basePath() . '/js/zf-table.js')
     ->prependFile($this->basePath() . '/js/jquery.dataTables.min.js')
-    ->prependFile('/js/plugin/bootbox/bootbox.min.js')
+    ->prependFile($this->basePath() . '/js/plugin/bootbox/bootbox.min.js')
     ->prependFile('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js');
 
 $this->headLink()
