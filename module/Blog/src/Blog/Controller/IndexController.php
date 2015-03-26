@@ -49,7 +49,7 @@ class IndexController extends AbstractActionController {
                 //$qb->expr()->eq('b.locale', ':locale'),
                 $qb->expr()->eq('c.urlKey', ':urlKey')
             ))
-            ->setParameter('published', true)
+            ->setParameter('published', 1)
             //->setParameter('locale', $locale)
             ->setParameter('urlKey', $catUrlKey)
             ->orderBy('b.id', 'DESC')
@@ -89,7 +89,7 @@ class IndexController extends AbstractActionController {
         //if (!$cache->hasItem($key)) {
             $blogs = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
                 ->findBy(
-                    ['published' => true, 'locale' => $locale],
+                    ['published' => 1, 'locale' => $locale],
                     ['id' => 'DESC'],
                     5,
                     0
