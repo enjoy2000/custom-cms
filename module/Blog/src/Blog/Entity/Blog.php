@@ -455,9 +455,9 @@ class Blog
     public function getUrl()
     {
         if ($this->locale->getShortCode() == 'en') {
-            $url = '/' . self::BLOG_ROUTE . '/' . $this->urlKey;
+            $url = '/en/' . self::BLOG_ROUTE . '/' . $this->urlKey;
         } else {
-            $url = '/ar/' . self::BLOG_ROUTE . '/' . $this->urlKey;
+            $url = '/' . self::BLOG_ROUTE . '/' . $this->urlKey;
         }
 
         return $url;

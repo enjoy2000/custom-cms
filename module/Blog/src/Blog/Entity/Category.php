@@ -150,9 +150,9 @@ class Category {
     public function getUrl()
     {
         if ($this->locale->getShortCode() == 'en') {
-            $url = '/' . \Blog\Entity\Blog::BLOG_ROUTE . '/' . $this->urlKey;
+            $url = '/en/' . \Blog\Entity\Blog::BLOG_ROUTE . '/' . $this->urlKey;
         } else {
-            $url = '/ar/' . \Blog\Entity\Blog::BLOG_ROUTE . '/' . $this->urlKey;
+            $url = '/' . \Blog\Entity\Blog::BLOG_ROUTE . '/' . $this->urlKey;
         }
 
         return $url;
