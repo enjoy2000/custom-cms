@@ -1,53 +1,67 @@
+<?php
+$this->headScript()
+    ->prependFile($this->basePath() . '/js/plugin/slider-pro/jquery.sliderPro.min.js');
+
+$this->headLink()
+    ->prependStylesheet($this->basePath() . '/js/plugin/slider-pro/slider-pro.min.css')
+?>
 <h3 class="black-head">
     <?php echo $this->translate('Main News') ?>
 </h3>
-<div id="news-carousel" class="carousel slide" data-ride="carousel">
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-    <?php foreach ($this->blogs as $chunk) : ?>
+<div id="news-carousel" class="slider-pro">
+    <div class="sp-slides">
         <?php
-        /** @var \Blog\Entity\Blog $blog1, $blog2 */
-        list($blog1, $blog2) = $chunk;
-        ?>
-        <div class="item clearfix <?php echo ($chunk == $blogs[0]) ? ' active' : '' ?>">
-            <div class="col-md-8 blog1">
-                <div class="col-md-5">
-                    <a class="title" href="<?php echo $blog1->getUrl() ?>">
-                        <h2><?php echo $blog1->getTitle() ?></h2></a>
-                    <p class="date"><?php echo $blog1->getDate() ?></p>
-                    <p class="short-description">
-                        <?php echo $blog1->getShortContent() ?>
-                    </p>
-                    <a class="read-more" href="<?php echo $blog1->getUrl() ?>">
-                        <?php echo $this->translate('Read more') ?></a>
+        /** @var \Blog\Entity\Blog $blog */
+        foreach ($this->blogs as $blog) : ?>
+            <div class="sp-slide">
+                <img class="image" src="<?php echo $blog->getPhotoUrl() ?>" alt="<?php echo $blog->getTitle() ?>">
+                <div class="caption">
+                    <div class="date">
+                        <?php echo $blog->getDate() ?>
+                    </div>
+                    <div class="title">
+                        <h5>
+                            <?php echo $blog->getTitle() ?>
+                        </h5>
+                    </div>
+                    <div class="description">
+                        <?php echo $blog->getShortContent() ?>
+                    </div>
+                    <a class="read-more" href="<?php echo $blog->getUrl() ?>" title="<?php echo $this->translate('Read more') ?>">
+                        <?php echo $this->translate('Read more') ?>
+                    </a>
                 </div>
-                <div class="col-md-7">
-                    <?php echo $blog1->renderPhoto() ?>
-                </div>
-            </div>
-            <div class="col-md-4 blog2">
-                <?php echo $blog2->renderPhoto() ?>
-                <a class="title" href="<?php echo $blog2->getUrl() ?>">
-                    <h2><?php echo $blog2->getTitle() ?></h2>
-                </a>
 
-                <a class="read-more" href="<?php echo $blog2->getUrl() ?>">
-                    <?php echo $this->translate('Read more') ?></a>
+                <div class="sp-thumbnail clearfix">
+                    <img class="thumbnail pull-left flip" src="<?php echo $blog->getThumbnail() ?>" alt="<?php echo $blog->getTitle() ?>" />
+                    <div class="title pull-left flip">
+                        <h5>
+                            <?php echo $blog->getTitle() ?>
+                        </h5>
+                    </div>
+                    <a class="read-more" href="<?php echo $blog->getUrl() ?>" title="<?php echo $this->translate('Read more') ?>">
+                        <?php echo $this->translate('Read more') ?>
+                    </a>
+                </div>
             </div>
-        </div>
-    <?php endforeach; ?>
+        <?php endforeach; ?>
     </div>
+</div>
 
-    <!-- Controls -->
-    <a class="left carousel-control" href="#news-carousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#news-carousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
+<div id="google-search">
+    <script>
+        (function() {
+            var cx = '001811311850481412071:n6y571c6vns';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//www.google.com/cse/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+        })();
+    </script>
+    <gcse:search></gcse:search>
 </div>
 
 <div class="clearfix">
@@ -65,7 +79,9 @@
         $restNewsUrl = (Locale::getPrimaryLanguage(Locale::getDefault()) == 'en') ? "en-missions-news" : "ar-missions-news";
         ?>
         <p class="text-center text-primary">
-            <a class="btn btn-primary cat-read-more" href="<?php echo $this->url('blog/view', ['slug' => $restNewsUrl]) ?>" title="<?php echo $this->translate('Read more') ?>">
+            <a class="btn btn-primary cat-read-more"
+               href="<?php echo $this->url('blog/view', ['slug' => $restNewsUrl]) ?>"
+               title="<?php echo $this->translate('Read more') ?>">
                 >>
             </a>
         </p>
@@ -74,17 +90,20 @@
         <h3 class="black-head">
             <?php echo $this->translate('Consular Services') ?>
         </h3>
+
         <div class="service-row clearfix">
             <div class="investment pull-left flip">
                 <a href="/trash/assets/investmentoverview.pdf" target="_blank">
-                    <img src="/img/fe/aboutiq.jpg" alt="" />
+                    <img src="/img/fe/aboutiq.jpg" alt=""/>
                     <span class="middle-text"><?php echo $this->translate('Investment in IRAQ') ?></span>
+
                     <div class="hover-content">
                         <div class="head text-center">
-                            <img src="/trash/images/investment.jpg" alt="" />
+                            <img src="/trash/images/investment.jpg" alt=""/>
                         </div>
                         <div class="text">
                             <p><?php echo $this->translate('Dear Investor') ?>,</p>
+
                             <p>
                                 <?php echo $this->translate('The investment opportunities found in today’s Iraq vary in type, size, scope,sector, purpose, and structure. Potential investors will find an openlandscape to develop projects that will fill the needs of Iraq’s expanding and demanding population. Iraq’s location at the center of many historic andcurrent middle-east trade routes provides an undeniable advantage;combined with a variety of natural resources and a desire for advanced quality of life, this advantage creates many opportunities for builders,suppliers, transporters, developers, producers, providers, manufacturers,servicers, and financiers, all of whom will find many avenues by which to establish new relationships, build new operations, create new markets, and develop new mutually beneficial business connections.') ?>
                             </p>
@@ -104,7 +123,7 @@
                 ?>
                 <a href="<?php echo $this->url('blog/view', ['slug' => $otherLinks]) ?>" target="_self"
                    title="<?php echo $this->translate('Links') ?>">
-                    <img src="/img/fe/connection.jpg" alt="" />
+                    <img src="/img/fe/connection.jpg" alt=""/>
                     <span class="middle-text"><?php echo $this->translate('Links') ?></span>
                 </a>
             </div>
@@ -113,14 +132,14 @@
             <div class="departments pull-left flip">
                 <a href="<?php echo $this->url('blog/view', ['slug' => $ministryDepartments]) ?>" target="_self"
                    title="<?php echo $this->translate('Ministry Departments') ?>">
-                    <img src="/img/fe/departments.jpg" alt="" />
+                    <img src="/img/fe/departments.jpg" alt=""/>
                     <span class="middle-text"><?php echo $this->translate('Ministry Departments') ?></span>
                 </a>
             </div>
             <div class="faq pull-right flip">
                 <a href="<?php echo $this->url('the-ministry/faq') ?>" target="_self"
                    title="<?php echo $this->translate('FAQ\'s') ?>">
-                    <img src="/img/fe/question.jpg" alt="" />
+                    <img src="/img/fe/question.jpg" alt=""/>
                     <span class="middle-text"><?php echo $this->translate('FAQ\'s') ?></span>
                 </a>
             </div>
@@ -154,13 +173,14 @@
                 ?>
                 <?php foreach ($imgs as $img): ?>
                     <div class="item<?php echo ($img == array_values($imgs)[0]) ? ' active' : '' ?>">
-                        <img src="/slide/images/<?php echo $img ?>" alt="" />
+                        <img src="/slide/images/<?php echo $img ?>" alt=""/>
                     </div>
                 <?php endforeach; ?>
 
                 <div style="position: absolute; bottom: 0; right: 0;" class="controls clearfix">
                     <!-- Controls -->
-                    <a style="color: #fff; background-color: #176c8f" class="left" href="#images-carousel" role="button" data-slide="prev">
+                    <a style="color: #fff; background-color: #176c8f" class="left" href="#images-carousel" role="button"
+                       data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
@@ -173,7 +193,8 @@
                         </span>
                     </div>
                     -->
-                    <a style="color: #fff; background-color: #176c8f" class="right" href="#images-carousel" role="button" data-slide="next">
+                    <a style="color: #fff; background-color: #176c8f" class="right" href="#images-carousel"
+                       role="button" data-slide="next">
                         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -186,3 +207,35 @@
         <?php include(__DIR__ . '/menu/' . $menuLocale . '/index.phtml') ?>
     </div>
 </div>
+
+
+<?php $thumbnailPosition = (Locale::getPrimaryLanguage(Locale::getDefault()) == 'en') ? 'right' : 'left'; ?>
+<script>
+    (function($){
+        $(document).ready(function() {
+            $('#news-carousel').sliderPro({
+                width: 600,
+                height: 500,
+                orientation: 'vertical',
+                loop: false,
+                arrows: true,
+                buttons: false,
+                thumbnailsPosition: '<?php echo $thumbnailPosition ?>',
+                thumbnailPointer: true,
+                thumbnailWidth: 380,
+                breakpoints: {
+                    800: {
+                        thumbnailsPosition: 'bottom',
+                        thumbnailWidth: 270,
+                        thumbnailHeight: 100
+                    },
+                    500: {
+                        thumbnailsPosition: 'bottom',
+                        thumbnailWidth: 120,
+                        thumbnailHeight: 50
+                    }
+                }
+            });
+        });
+    })(jQuery)
+</script>

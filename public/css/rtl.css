@@ -167,3 +167,7 @@ border-right:0px solid white;
 #mc ul{
   margin-top:-10px;
 }
+#news-carousel .sp-thumbnail .read-more {
+    left: 0;
+    right: auto;
+}
