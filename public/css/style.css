@@ -200,8 +200,6 @@ nav#top-nav .collapse.navbar-collapse {
 #news-ticker {
     background-color: #3B93C9;
     font-weight:bold;
-
-
 }
 #news-ticker .title{
     font-size: 16px;
@@ -580,6 +578,7 @@ background: #fff url(/trash/images/maren.jpg) no-repeat scroll center top!import
   padding-left:32px;
   margin-top:10px;
   color:#046ab4;
+  margin-bottom:979px;
   height: 60px;
   border: 1px solid #94989c;
   line-height: 18px;
@@ -590,4 +589,51 @@ background: #fff url(/trash/images/maren.jpg) no-repeat scroll center top!import
   font-weight:bold;
   border-radius: 0;
   -webkit-appearance: none;
+}
+#mc ul{
+   margin: 0;
+   padding: 0;
+   margin-top:10px;
+
+}
+#mc ul li {
+    font-family:arial;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    list-style-type: none;
+    border-left-width: thick;
+    border-left-style: solid;
+    border-left-color: #3B93C9;
+    background-color: #FBFBFB;
+    border-bottom-color: #FFFFFF;
+    border-bottom-style: solid;
+    margin-left:0px;
+}
+#mc ul li:hover {
+        border-left-width: thick;
+    border-left-style: solid;
+    border-left-color: #3B93C9;
+    text-align: left;
+    background-color: #F8F8F8;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    list-style-type: none;
+    border-bottom-style: solid;
+    border-bottom-color: #FFFFFF;
+}
+#mc ul li a {
+    color: #0D5D83;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+
+}
+#mc{
+  width:210px;
+  margin-left:0px;
 }

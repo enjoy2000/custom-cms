@@ -10,6 +10,7 @@ body {
     overflow-x: hidden;
     background: #d9d9d9 url(/trash/images/ar31.jpg) no-repeat scroll center top!important;
 }
+nav#top-nav ul.nav li~li { border-left: 0px solid #fff;border-right: 2px solid #fff;} 
 nav#top-nav ul.nav li a {
  font-family:'droid'!important;
 }
@@ -121,6 +122,7 @@ background: #fff url(/trash/images/mar.jpg) no-repeat scroll center top!importan
   padding-right:22px!important;
   padding-left:0px;
   margin-top:10px;
+  margin-bottom:979px;
   color:#046ab4;
   height: 60px;
   border: 1px solid #94989c;
@@ -148,4 +150,20 @@ border-right:0px solid white;
    background-color:#005ea5;
    font-family:droid;
    font-size:12px;
+}
+#mc ul li {
+  font-family:droid;
+   text-align: right;
+   border-right-width: thick;
+   border-right-style: solid;
+   border-right-color: #3B93C9;
+   border-left-width: 0px;
+   padding-right: 10px;
+}
+#mc ul li:hover {
+  border-left-width: 0px;
+  text-align:right;
+}
+#mc ul{
+  margin-top:-10px;
 }
