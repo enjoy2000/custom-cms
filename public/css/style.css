@@ -309,10 +309,11 @@ footer p.site-title {
 }
 #news-carousel .sp-thumbnail {
     color: #3B93C9;
+    border-bottom: solid 2px #ccc;
 }
 #news-carousel .sp-thumbnail .read-more {
     padding: 2px 5px;
-    background-color: #3B93C9;
+    background-color: #005ea5;
     color: #fff;
     transition: opacity 200ms ease-out;
     position: absolute;
@@ -323,6 +324,7 @@ footer p.site-title {
 #news-carousel .sp-thumbnail .thumbnail {
     width: 30%;
     margin: 0;
+    height: 78px;
 }
 #news-carousel .sp-thumbnail .title {
     width: 70%;
@@ -330,6 +332,10 @@ footer p.site-title {
 #news-carousel .sp-thumbnail .title h5 {
     font-size: 12px;
     color: #3B93C9;
+}
+#news-carousel .sp-slide img.image{
+    height: 100%;
+    max-width: none!important;
 }
 #news-carousel .caption {
     position: absolute;
@@ -343,7 +349,7 @@ footer p.site-title {
 }
 #news-carousel .caption .read-more {
     padding: 3px 10px;
-    background-color: #3B93C9;
+    background-color: #005ea5;
     color: #fff;
     transition: opacity 200ms ease-out;
     position: absolute;
