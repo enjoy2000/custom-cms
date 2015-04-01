@@ -35,6 +35,9 @@ $this->headLink()
                 <div class="sp-thumbnail clearfix">
                     <img class="thumbnail pull-left flip" src="<?php echo $blog->getThumbnail() ?>" alt="<?php echo $blog->getTitle() ?>" />
                     <div class="title pull-left flip">
+                        <div class="date">
+                            <?php echo $blog->getDate() ?>
+                        </div>
                         <h5>
                             <?php echo $blog->getTitle() ?>
                         </h5>

@@ -343,6 +343,7 @@ footer p.site-title {
     padding-bottom: 20px;
     background-color: rgba(255, 255, 255, 0.8);
     color: #3B93C9;
+    width: 100%;
 }
 #news-carousel .caption h5 {
     color: #3B93C9;
