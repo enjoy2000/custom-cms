@@ -336,6 +336,7 @@ footer p.site-title {
 #news-carousel .sp-slide img.image{
     max-width: none!important;
 }
+.sp-grabbing {cursor: pointer}
 #news-carousel .caption {
     position: absolute;
     bottom: 20px;
