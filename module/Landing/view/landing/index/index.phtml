@@ -51,22 +51,6 @@ $this->headLink()
     </div>
 </div>
 
-<div id="google-search">
-    <script>
-        (function() {
-            var cx = '<?php echo (Locale::getPrimaryLanguage(Locale::getDefault()) == 'en') ? "001811311850481412071:afbvdes6dlm" : "001811311850481412071:n6y571c6vns" ?>';
-            var gcse = document.createElement('script');
-            gcse.type = 'text/javascript';
-            gcse.async = true;
-            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-            '//www.google.com/cse/cse.js?cx=' + cx;
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(gcse, s);
-        })();
-    </script>
-    <gcse:search></gcse:search>
-</div>
-
 <div class="clearfix">
     <div class="col-md-9 pull-left flip other-news">
         <h3 class="black-head">
@@ -90,6 +74,23 @@ $this->headLink()
         </p>
     </div>
     <div class="col-md-3 pull-right flip consular-services">
+
+        <div id="google-search">
+            <script>
+                (function() {
+                    var cx = '<?php echo (Locale::getPrimaryLanguage(Locale::getDefault()) == 'en') ? "001811311850481412071:afbvdes6dlm" : "001811311850481412071:n6y571c6vns" ?>';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                    '//www.google.com/cse/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                })();
+            </script>
+            <gcse:search></gcse:search>
+        </div>
+
         <h3 class="black-head">
             <?php echo $this->translate('Consular Services') ?>
         </h3>
@@ -217,7 +218,7 @@ $this->headLink()
     (function($){
         $(document).ready(function() {
             $('#news-carousel').sliderPro({
-                width: 600,
+                width: 500,
                 height: 337,
                 orientation: 'vertical',
                 loop: false,
@@ -225,7 +226,7 @@ $this->headLink()
                 buttons: false,
                 thumbnailsPosition: '<?php echo $thumbnailPosition ?>',
                 thumbnailPointer: true,
-                thumbnailWidth: 380,
+                thumbnailWidth: 480,
                 breakpoints: {
                     800: {
                         thumbnailsPosition: 'bottom',
