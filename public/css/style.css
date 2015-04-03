@@ -334,6 +334,7 @@ footer p.site-title {
     color: #3B93C9;
 }
 #news-carousel .sp-slide img.image{
+    width: 100%;
     max-width: none!important;
 }
 .sp-grabbing {cursor: pointer!important}
