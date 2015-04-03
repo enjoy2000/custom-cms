@@ -334,9 +334,9 @@ footer p.site-title {
     color: #3B93C9;
 }
 #news-carousel .sp-slide img.image{
-    height: 100%;
     max-width: none!important;
 }
+.sp-grabbing {cursor: pointer!important}
 #news-carousel .caption {
     position: absolute;
     bottom: 20px;
