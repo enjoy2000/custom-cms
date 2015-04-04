@@ -20,7 +20,7 @@ class Module
         /**
          * Set default time zone
          */
-        date_default_timezone_set('Asia/Dhaka');
+        date_default_timezone_set('Asia/Baghdad');
 
 
         // session container
