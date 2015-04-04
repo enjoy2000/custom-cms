@@ -322,12 +322,12 @@ footer p.site-title {
     font-size: 12px;
 }
 #news-carousel .sp-thumbnail .thumbnail {
-    width: 30%;
+    width: 130px;
     margin: 0;
     height: 78px;
 }
 #news-carousel .sp-thumbnail .title {
-    width: 70%;
+    width: 320px;
 }
 #news-carousel .sp-thumbnail .title h5 {
     font-size: 12px;
