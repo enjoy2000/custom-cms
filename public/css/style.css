@@ -307,77 +307,60 @@ footer p.site-title {
     padding: 0;
 
 }
-#news-carousel .item {
-    padding: 7px;
-    color: #000;
-    font-family:'r2';
-
+#news-carousel .sp-thumbnail {
+    color: #3B93C9;
+    border-bottom: solid 2px #ccc;
 }
-#news-carousel .item {
-    margin: 0px;
-    padding-bottom:6px;
-}
-#news-carousel .item .blog1 a.news-photo {
-    height: 248px;
-}
-#news-carousel .item .blog2 a.news-photo {
-    height: 170px;
-    border-bottom:2px solid #2b5c7f;
-}
-#news-carousel .item .blog1 {
-    padding-right: 4px;
-    padding-left: 4px;
-}
-#news-carousel .item .blog1 h2 {
-    font-size: 20px;
-    color: #005ea5;
-    padding-bottom:10px;
-    line-height: 30px;
-}
-#news-carousel .item .blog2 h2 {
-    font-size: 14px;
-    padding:7px;
-    color: #005ea5;
-    height: 55px;
-    overflow: hidden;
-    line-height: 20px;
-    background-color:#fbfbfb;
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2168ae', endColorstr='#6ca2cc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-
-}
-#news-carousel .item .blog2 .read-more{
-   display:inline;
-   background-color:#005ea5;
-}
-.read-more {
+#news-carousel .sp-thumbnail .read-more {
+    padding: 2px 5px;
     background-color: #005ea5;
-    color:#fff;
-    padding:5px;
-    font-family: 'r2';
-}
-#news-carousel a.carousel-control {
-    width: 30px;
-    background: #45494b;
     color: #fff;
-    top: 40%;
-    height: 73px;
-
-}
-#news-carousel a.carousel-control span.glyphicon {
-    left: -2px;
-    top: 35px;
+    transition: opacity 200ms ease-out;
     position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 12px;
 }
-#news-carousel a.left.carousel-control span.glyphicon {
-    left: 14px;
+#news-carousel .sp-thumbnail .thumbnail {
+    width: 130px;
+    margin: 0;
+    height: 78px;
 }
-#news-carousel a.left.carousel-control {
-    left: -30px;
+#news-carousel .sp-thumbnail .title {
+    width: 320px;
 }
-#news-carousel a.right.carousel-control {
-    right: -30px;
+#news-carousel .sp-thumbnail .title h5 {
+    font-size: 12px;
+    color: #3B93C9;
 }
+#news-carousel .sp-slide img.image{
+    width: 100%;
+    max-width: none!important;
+}
+.sp-grabbing {cursor: pointer!important}
+#news-carousel .caption {
+    position: absolute;
+    bottom: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #3B93C9;
+    width: 100%;
+}
+#news-carousel .caption h5 {
+    color: #3B93C9;
+}
+#news-carousel .caption .read-more {
+    padding: 3px 10px;
+    background-color: #005ea5;
+    color: #fff;
+    transition: opacity 200ms ease-out;
+    position: absolute;
+    bottom: -10px;
+}
+#news-carousel .caption .read-more:hover {
+    opacity: 0.8;
+}
+
 div.other-news .col-md-3 {
     padding: 0;
 }

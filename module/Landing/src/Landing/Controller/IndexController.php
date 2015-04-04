@@ -64,7 +64,7 @@ class IndexController extends AbstractActionController
         $this->layout('layout/layout');
 
         return new ViewModel([
-            'blogs' => array_chunk($blogs, 2),  // chunk array for render in news
+            'blogs' => $blogs,  // chunk array for render in news
             //'otherNews' => $otherNews,
             'restNews' => $restNews,
         ]);
