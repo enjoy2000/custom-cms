@@ -596,17 +596,20 @@ select {
     border: solid 1px #176c8f;
     width: 50px;
     text-align: center;
-    margin: 0px;
+    margin: 2px;
 }
 #mission-news .news .date .month {
     background-color: #176c8f;
     color: #fff;
 }
+#mission-news .news .date .day {
+    font-size: 25px;
+}
 #mission-news .news+.news {
     border-top: solid 1px #ccc;
 }
 #mission-news .news .title {
-    width: 160px;
+    width: 156px;
 }
 #mc ul{
    margin: 0;
