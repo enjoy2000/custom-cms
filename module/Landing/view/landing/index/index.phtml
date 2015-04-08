@@ -223,7 +223,7 @@ $this->headLink()
                     <?php echo $blog->getDate() ?>
                 </div>
                 <div class="pull-left flip title">
-                    <a href="<?php echo $blog->getUrl() ?>" title="<?php echo $blog->getTitle() ?>">
+                    <a style="display:inline; text-overflow: ellipsis;" href="<?php echo $blog->getUrl() ?>" title="<?php echo $blog->getTitle() ?>">
                         <?php echo $blog->getTitle() ?>
                     </a>
                 </div>

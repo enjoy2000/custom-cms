@@ -570,14 +570,14 @@ div#main-content{
     width:238px;
 }
 select {
-background: #fff url(/trash/images/maren.jpg) no-repeat scroll center top!important;
+    background: #fff url(/trash/images/maren.jpg) no-repeat scroll center top!important;
   position: relative;
   width: 100%;
   margin: 0;
   padding-left:32px;
   margin-top:10px;
   color:#046ab4;
-  margin-bottom:979px;
+  margin-bottom: 10px;
   height: 60px;
   border: 1px solid #94989c;
   line-height: 18px;
