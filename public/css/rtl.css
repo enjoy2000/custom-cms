@@ -114,26 +114,26 @@ div.short-content{
     padding-right:2px;
 }
 select {
-background: #fff url(/trash/images/mar.jpg) no-repeat scroll center top!important;
-  position: relative;
-  width: 100%;
-  margin: 0;
-  font-family:"droid"!important;
-  padding-right:22px!important;
-  padding-left:0px;
-  margin-top:10px;
-  margin-bottom:979px;
-  color:#046ab4;
-  height: 60px;
-  border: 1px solid #94989c;
-  line-height: 18px;
-  font-size: 12px;
-  font-family:arial;
-  color: #1c6f91;
-  text-shadow: 1px px 1px rgba(150, 150, 150, 1)!important;
-  font-weight:bold;
-  border-radius: 0;
-  -webkit-appearance: none;
+    background: #fff url(/trash/images/mar.jpg) no-repeat scroll center top!important;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    font-family:"droid"!important;
+    padding-right:22px!important;
+    padding-left:0px;
+    margin-top:10px;
+    margin-bottom:10px;
+    color:#046ab4;
+    height: 60px;
+    border: 1px solid #94989c;
+    line-height: 18px;
+    font-size: 12px;
+    font-family:arial;
+    color: #1c6f91;
+    text-shadow: 1px px 1px rgba(150, 150, 150, 1)!important;
+    font-weight:bold;
+    border-radius: 0;
+    -webkit-appearance: none;
 }
 #news-ticker .title{border-left:1px solid white;
 border-right:0px solid white;

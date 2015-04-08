@@ -218,12 +218,18 @@ $this->headLink()
             /** @var \Blog\Entity\Blog $blog */
             foreach ($this->missionNews as $blog) :
             ?>
-            <div class="clearfix">
+            <div class="clearfix news">
                 <div class="pull-left flip date">
-                    <?php echo $blog->getDate() ?>
+                    <div class="month">
+                        <?php echo $blog->getCreateTime()->format('m') ?>
+                    </div>
+                    <div class="date">
+                        <?php echo $blog->getCreateTime()->format('d') ?>
+                    </div>
+                    <?php //echo $blog->getDate() ?>
                 </div>
                 <div class="pull-left flip title">
-                    <a style="display:inline; text-overflow: ellipsis;" href="<?php echo $blog->getUrl() ?>" title="<?php echo $blog->getTitle() ?>">
+                    <a href="<?php echo $blog->getUrl() ?>" title="<?php echo $blog->getTitle() ?>">
                         <?php echo $blog->getTitle() ?>
                     </a>
                 </div>

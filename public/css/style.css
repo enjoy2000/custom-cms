@@ -571,23 +571,40 @@ div#main-content{
 }
 select {
     background: #fff url(/trash/images/maren.jpg) no-repeat scroll center top!important;
-  position: relative;
-  width: 100%;
-  margin: 0;
-  padding-left:32px;
-  margin-top:10px;
-  color:#046ab4;
-  margin-bottom: 10px;
-  height: 60px;
-  border: 1px solid #94989c;
-  line-height: 18px;
-  font-size: 14px;
-  font-family:arial;
-  color: #1c6f91;
-  text-shadow: 1px px 1px rgba(150, 150, 150, 1)!important;
-  font-weight:bold;
-  border-radius: 0;
-  -webkit-appearance: none;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding-left:32px;
+    margin-top:10px;
+    color:#046ab4;
+    margin-bottom: 10px;
+    height: 60px;
+    border: 1px solid #94989c;
+    line-height: 18px;
+    font-size: 14px;
+    font-family:arial;
+    color: #1c6f91;
+    text-shadow: 1px px 1px rgba(150, 150, 150, 1)!important;
+    font-weight:bold;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+#mission-news .news {
+    padding: 5px 0;
+}
+#mission-news .news .date {
+    border: solid 1px #176c8f;
+    width: 50px;
+}
+#mission-news .news .date .month {
+    background-color: #176c8f;
+    color: #fff;
+}
+#mission-news .news+.news {
+    border-top: solid 1px #ccc;
+}
+#mission-news .news .title {
+    width: 160px;
 }
 #mc ul{
    margin: 0;

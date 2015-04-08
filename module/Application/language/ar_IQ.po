@@ -25,6 +25,9 @@ msgstr "حدث خطأ رقم 404"
 msgid "Tendor"
 msgstr "اتجاه"
 
+msgid "Commercial Announcement"
+msgstr "اعلانات تجاري"
+
 msgid "Magazine"
 msgstr "مجلة"
 
