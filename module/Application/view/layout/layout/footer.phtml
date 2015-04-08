@@ -72,6 +72,28 @@
                     <a href="<?php echo $this->url('foreign-policy/iraq-s-security') ?>">
                         <?php echo $this->translate('Iraq\'s Security') ?></a>
                 </li>
+                
+                <li>
+                    <?php 
+                    $url1 = (\Locale->getDefault() == 'en_US') ? 'english-ministry-s-announcements' : 'arabic-ministry-s-announcements';
+                    $url2 = (\Locale->getDefault() == 'en_US') ? 'english-commercial-announcement' : '-announcements';
+                    ?>
+                    <a href="<?php echo $this->url('blog/view', ['slug' => $url1]) ?>">
+                        <?php echo $this->translate('Ministry\'s Announcements') ?>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo $this->url('blog/view', ['slug' => $url2]) ?>">
+                        <?php echo $this->translate('Commercial Announcement') ?>
+                    </a>
+                </li>
+          <!--      
+<div id='mc'>
+<ul>
+  <li><a href="http://mofa.gov.iq/news/arabic-ministry-s-announcements">إعلانات الوزارة</a></li>
+  <li><a href="http://mofa.gov.iq/news/arabic-announcements">اعلانات تجارية</a></li>
+</ul>
+</div>-->
             </ul>
         </div>
     </div>

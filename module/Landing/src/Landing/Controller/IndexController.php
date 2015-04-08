@@ -60,12 +60,26 @@ class IndexController extends AbstractActionController
             ->orderBy('b.id', 'DESC')
             ->getQuery()
             ->getResult();
+        
+        
+        $missionUrl = ($locale->getShortCode() == 'en') ? 'en-missions-news' : 'ar-missions-news';
+        $qb3 = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
+            ->createQueryBuilder('b');
+        $missionNews = $qb3->innerJoin('b.categories', 'c')
+            ->where("b.published = :published")
+            ->setParameter(':published', 1)
+            ->andWhere("c.urlKey = '$missionUrl'")
+            ->setFirstResult(0)
+            ->setMaxResults(10)
+            ->orderBy('b.id', 'DESC')
+            ->getQuery()
+            ->getResult();    
 
         $this->layout('layout/layout');
 
         return new ViewModel([
             'blogs' => $blogs,  // chunk array for render in news
-            //'otherNews' => $otherNews,
+            'missionNews' => $missionNews,
             'restNews' => $restNews,
         ]);
     }

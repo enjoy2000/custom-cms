@@ -212,6 +212,24 @@ $this->headLink()
         <!-- According menu -->
         <?php $menuLocale = (Locale::getPrimaryLanguage(Locale::getDefault()) == 'en') ? 'EN' : 'AR'; ?>
         <?php include(__DIR__ . '/menu/' . $menuLocale . '/index.phtml') ?>
+        
+        <div id="mission-news">
+            <?php
+            /** @var \Blog\Entity\Blog $blog */
+            foreach ($this->missionNews as $blog) :
+            ?>
+            <div class="clearfix">
+                <div class="pull-left flip date">
+                    <?php echo $blog->getDate() ?>
+                </div>
+                <div class="pull-left flip title">
+                    <a href="<?php echo $blog->getUrl() ?>" title="<?php echo $blog->getTitle() ?>">
+                        <?php echo $blog->getTitle() ?>
+                    </a>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
     </div>
 </div>
 
