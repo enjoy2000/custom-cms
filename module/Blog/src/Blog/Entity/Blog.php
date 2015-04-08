@@ -477,6 +477,11 @@ class Blog
     {
         return $this->createTime->format('jS F, Y  h:i A');
     }
+    
+    public function getCreateTime()
+    {
+        return $this->createTime;
+    }
 
     public function getPhotoUrl()
     {
