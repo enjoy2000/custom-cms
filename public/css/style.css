@@ -596,7 +596,7 @@ select {
     border: solid 1px #176c8f;
     width: 50px;
     text-align: center;
-    margin: 2px;
+    margin: 0px;
 }
 #mission-news .news .date .month {
     background-color: #176c8f;
