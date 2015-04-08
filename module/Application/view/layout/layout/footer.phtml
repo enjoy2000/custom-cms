@@ -76,7 +76,7 @@
                 <li>
                     <?php 
                     $url1 = (\Locale::getDefault() == 'en_US') ? 'english-ministry-s-announcements' : 'arabic-ministry-s-announcements';
-                    $url2 = (\Locale::getDefault() == 'en_US') ? 'english-commercial-announcement' : '-announcements';
+                    $url2 = (\Locale::getDefault() == 'en_US') ? 'english-commercial-announcement' : 'arabic-announcements';
                     ?>
                     <a href="<?php echo $this->url('blog/view', ['slug' => $url1]) ?>">
                         <?php echo $this->translate('Ministry\'s Announcements') ?>
