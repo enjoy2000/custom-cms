@@ -221,10 +221,10 @@ $this->headLink()
             <div class="clearfix news">
                 <div class="pull-left flip date">
                     <div class="month">
-                        <?php echo $blog->getCreateTime()->format('m') ?>
+                        <?php echo $blog->getCreateTimeObject()->format('m') ?>
                     </div>
                     <div class="date">
-                        <?php echo $blog->getCreateTime()->format('d') ?>
+                        <?php echo $blog->getCreateTimeObject()->format('d') ?>
                     </div>
                     <?php //echo $blog->getDate() ?>
                 </div>

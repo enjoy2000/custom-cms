@@ -478,7 +478,7 @@ class Blog
         return $this->createTime->format('jS F, Y  h:i A');
     }
     
-    public function getCreateTime()
+    public function getCreateTimeObject()
     {
         return $this->createTime;
     }
