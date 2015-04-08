@@ -269,7 +269,7 @@ footer p.site-title {
     -webkit-box-shadow: 0 4px 5px -6px #777;
     -moz-box-shadow: 0 4px 5px -6px #777;
     box-shadow: 0 4px 5px -4px #777;    
-    margin-bottom:10px;
+    margin-bottom:0px;
 }
 #news-carousel:before,#news-carousel:after
 {
@@ -311,7 +311,20 @@ footer p.site-title {
     color: #3B93C9;
     border-bottom: solid 2px #ccc;
 }
+#news-carousel .sp-left-thumbnails.sp-has-pointer .sp-selected-thumbnail:after{
+    border-left-color:#3b93c9;
+    
+}
+#news-carousel .sp-left-thumbnails.sp-has-pointer .sp-selected-thumbnail:before{
+  color:white!important;
+   border-left-color:#3b93c9;
+}
+#news-carousel .sp-thumbnail .date {
+  color:black!important;
+  padding-right:2px!important;
+}
 #news-carousel .sp-thumbnail .read-more {
+   display:none;
     padding: 2px 5px;
     background-color: #005ea5;
     color: #fff;
@@ -330,8 +343,9 @@ footer p.site-title {
     width: 320px;
 }
 #news-carousel .sp-thumbnail .title h5 {
-    font-size: 12px;
-    color: #3B93C9;
+    font-size: 14px;
+    padding-right:3px;
+    color: #094b85;
 }
 #news-carousel .sp-slide img.image{
     width: 100%;
@@ -340,22 +354,24 @@ footer p.site-title {
 .sp-grabbing {cursor: pointer!important}
 #news-carousel .caption {
     position: absolute;
-    bottom: 20px;
-    padding-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #3B93C9;
+    bottom: 0px;
+    padding-bottom: 10px;
+    padding-right:2px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #3B93C;
     width: 100%;
 }
 #news-carousel .caption h5 {
-    color: #3B93C9;
+    color: #094b85;
 }
 #news-carousel .caption .read-more {
-    padding: 3px 10px;
+    display:none;
+    padding: 6px 10px;
     background-color: #005ea5;
     color: #fff;
     transition: opacity 200ms ease-out;
     position: absolute;
-    bottom: -10px;
+    bottom: -25px;
 }
 #news-carousel .caption .read-more:hover {
     opacity: 0.8;
