@@ -658,3 +658,8 @@ select {
   width:210px;
   margin-left:0px;
 }
+
+.cse .gsc-search-button input.gsc-search-button-v2, input.gsc-search-button-v2 {
+    height: auto!important;
+    width: auto!important;
+}
