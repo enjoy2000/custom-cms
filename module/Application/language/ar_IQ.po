@@ -26,7 +26,7 @@ msgid "Tendor"
 msgstr "اتجاه"
 
 msgid "Commercial Announcement"
-msgstr "اعلانات تجاري"
+msgstr "اعلانات تجاريةي"
 
 msgid "Magazine"
 msgstr "مجلة"
