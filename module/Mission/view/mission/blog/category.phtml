@@ -4,12 +4,12 @@ $category = $this->category;
 $this->headTitle($this->translate($category->getName()))
 ?>
 
-<div class="static-pages col-md-3">
+<div class="static-pages col-xs-3">
     <?php echo $this->partial('static', [
         'category' => $category,
     ]) ?>
 </div>
-<div class="col-md-9">
+<div class="col-xs-9">
     <h1 class="text-center"><?php echo $category->getName() ?></h1>
     <hr />
 

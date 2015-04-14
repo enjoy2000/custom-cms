@@ -46,7 +46,7 @@ class BlogForm extends ZendForm {
             'type' => 'Zend\Form\Element\Select',
             'name' => 'locale',
             'attributes' => array(
-                'class' => 'form-control col-md-7',
+                'class' => 'form-control col-xs-7',
                 'required' => true,
                 'id' => 'select-locale',
             ),
@@ -60,7 +60,7 @@ class BlogForm extends ZendForm {
             'type' => 'Zend\Form\Element\Select',
             'name' => 'categories',
             'attributes' => array(
-                'class' => 'form-control col-md-7',
+                'class' => 'form-control col-xs-7',
                 'required' => true,
                 'id' => 'select-category',
                 'multiple' => 'multiple',
@@ -78,7 +78,7 @@ class BlogForm extends ZendForm {
             'type' => 'Zend\Form\Element\Text',
             'name' => 'title',
             'attributes' => array(
-                'class' => 'form-control col-md-7',
+                'class' => 'form-control col-xs-7',
                 'required' => true,
             ),
             'options' => array(
@@ -91,7 +91,7 @@ class BlogForm extends ZendForm {
                 'label' => 'Url key',
             ),
             'attributes' => array(
-                'class' => 'form-control col-md-7',
+                'class' => 'form-control col-xs-7',
                 'required' => false,
             ),
             'type'  => 'Text',
@@ -101,7 +101,7 @@ class BlogForm extends ZendForm {
             'type' => 'Zend\Form\Element\Select',
             'name' => 'published',
             'attributes' => [
-                'class' => 'form-control col-md-7',
+                'class' => 'form-control col-xs-7',
                 'required' => true,
             ],
             'options' => array(
@@ -128,7 +128,7 @@ class BlogForm extends ZendForm {
             ),
             'attributes' => [
                 'id' => 'shortContent',
-                'class' => 'form-control col-md-7',
+                'class' => 'form-control col-xs-7',
                 'required' => true
             ]
         ));

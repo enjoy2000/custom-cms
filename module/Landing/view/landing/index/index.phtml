@@ -54,7 +54,7 @@ $this->headLink()
 </div>
 
 <div class="clearfix">
-    <div class="col-md-9 pull-left flip other-news">
+    <div class="col-xs-9 pull-left flip other-news">
         <h3 class="black-head">
             <?php echo $this->translate('Other News') ?>
         </h3>
@@ -75,7 +75,7 @@ $this->headLink()
             </a>
         </p>
     </div>
-    <div class="col-md-3 pull-right flip consular-services">
+    <div class="col-xs-3 pull-right flip consular-services">
         <div id="google-search">
             <script>
                 (function() {
@@ -246,24 +246,14 @@ $this->headLink()
                 width: 500,
                 height: 337,
                 orientation: 'vertical',
-                loop: false,
+                loop: true,
                 arrows: true,
                 buttons: false,
                 thumbnailsPosition: '<?php echo $thumbnailPosition ?>',
                 thumbnailPointer: true,
                 thumbnailWidth: 480,
-                breakpoints: {
-                    800: {
-                        thumbnailsPosition: 'bottom',
-                        thumbnailWidth: 270,
-                        thumbnailHeight: 100
-                    },
-                    500: {
-                        thumbnailsPosition: 'bottom',
-                        thumbnailWidth: 120,
-                        thumbnailHeight: 50
-                    }
-                }
+                responsive: false,
+                autoScaleLayers: false
             });
         });
     })(jQuery)
