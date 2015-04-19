@@ -155,6 +155,9 @@ nav#top-nav {
     margin-bottom: 0;
 
 }
+nav#top-nav > .container {
+    border-bottom: solid 3px #3B93C9;
+}
 nav#top-nav .container {
     padding: 0;
 
@@ -667,3 +670,20 @@ select {
 #google-search{
     padding-top:5px;
 }
+.fancybox-lock .fancybox-overlay {
+    overflow: auto;
+    overflow-y: auto;
+}
+.article-photo img:hover {
+    cursor: -webkit-zoom-in;
+    cursor: -moz-zoom-in;
+    cursor: zoom-in;
+}
+/*
+#right-sidebar .blog.item.row {
+    background-color: #fff;
+    padding: 5px 0px;
+    border-bottom: solid 1px #ccc;
+    margin: 0;
+}
+*/

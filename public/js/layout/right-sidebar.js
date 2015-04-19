@@ -4,7 +4,7 @@ $(document).ready(function(){
         var html ='';
         console.log($data);
         $.each($data.blogs, function(){
-            html += '<div class="blog item row" style="border-bottom: solid 1px #ccc; padding: 5px 0;">' +
+            html += '<div class="blog item row">' +
             '<a href="'+this.blogUrl+'" title="'+this.title+'">'+this.title+'</a>' +
             '<div class="thumbnail">' +
             '<img src="' +

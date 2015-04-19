@@ -87,14 +87,14 @@ footer ul {
 div.consular-services .service-row > div {
     font-family: 'droid';
 }
-#right-sidebar.col-md-3{
+#right-sidebar.col-xs-3{
     background-color:#fff!important;
 }
-#right-sidebar.col-md-3 a {
+#right-sidebar.col-xs-3 a {
     font-family:nask!important;
     padding-right:1px;    
 }
-#right-sidebar.col-md-3{
+#right-sidebar.col-xs-3{
     background-color:#fff!important;
     margin-right:12px;
     margin-left:0px;
