@@ -256,6 +256,8 @@ footer > .container {
 }
 footer > .container .col-xs-4 {
     padding-top: 0;
+    background-color: transparent;
+    border-color: transparent;
 }
 footer ul {
     text-shadow: 1px 1px 5px #0063a8;
