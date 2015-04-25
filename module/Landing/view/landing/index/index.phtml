@@ -5,7 +5,24 @@ $this->headScript()
 $this->headLink()
     ->prependStylesheet($this->basePath() . '/js/plugin/slider-pro/slider-pro.min.css')
 ?>
-<h3 class="black-head">
+
+<div id="google-search">
+    <script>
+        (function() {
+            var cx = '<?php echo (Locale::getPrimaryLanguage(Locale::getDefault()) == 'en') ? "001811311850481412071:afbvdes6dlm" : "001811311850481412071:n6y571c6vns" ?>';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//www.google.com/cse/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+        })();
+    </script>
+    <gcse:search></gcse:search>
+</div>
+
+<h3 class="black-head clearfix">
     <?php echo $this->translate('Main News') ?>
 </h3>
 <div id="news-carousel" class="slider-pro">
@@ -76,22 +93,6 @@ $this->headLink()
         </p>
     </div>
     <div class="col-xs-3 pull-right flip consular-services">
-        <div id="google-search">
-            <script>
-                (function() {
-                    var cx = '<?php echo (Locale::getPrimaryLanguage(Locale::getDefault()) == 'en') ? "001811311850481412071:afbvdes6dlm" : "001811311850481412071:n6y571c6vns" ?>';
-                    var gcse = document.createElement('script');
-                    gcse.type = 'text/javascript';
-                    gcse.async = true;
-                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                    '//www.google.com/cse/cse.js?cx=' + cx;
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(gcse, s);
-                })();
-            </script>
-            <gcse:search></gcse:search>
-        </div>
-
         <h3 class="black-head">
             <?php echo $this->translate('Consular Services') ?>
         </h3>

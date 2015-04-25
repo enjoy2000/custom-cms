@@ -671,6 +671,7 @@ select {
 }
 #google-search{
     padding-top:5px;
+    width: 235px;
 }
 .fancybox-lock .fancybox-overlay {
     overflow: auto;
@@ -681,11 +682,17 @@ select {
     cursor: -moz-zoom-in;
     cursor: zoom-in;
 }
-/*
-#right-sidebar .blog.item.row {
-    background-color: #fff;
-    padding: 5px 0px;
-    border-bottom: solid 1px #ccc;
-    margin: 0;
+body.home #main-content {
+    position: relative;
 }
-*/
+body.home .black-head {
+    z-index: 999;
+    padding-top: 20px;
+    position: relative;
+}
+body.home #google-search {
+    position: absolute;
+    left: 0;
+    z-index: 0;
+    top: -5px;
+}
