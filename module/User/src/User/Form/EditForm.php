@@ -34,7 +34,7 @@ class EditForm extends ZendForm {
             'type' => 'Zend\Form\Element\Text',
             'name' => 'displayName',
             'attributes' => array(
-                'class' => 'form-control col-md-7',
+                'class' => 'form-control col-xs-7',
                 'required' => true,
             ),
             'options' => array(

@@ -28,7 +28,7 @@ class Menu extends ZendForm
             'type' => 'Zend\Form\Element\Select',
             'name' => 'type',
             'attributes' => array(
-                'class' => 'form-control col-md-7',
+                'class' => 'form-control col-xs-7',
                 'required' => true,
             ),
             'options' => array(
@@ -46,7 +46,7 @@ class Menu extends ZendForm
             'type' => 'Zend\Form\Element\Text',
             'name' => 'label',
             'attributes' => array(
-                'class' => 'form-control col-md-7',
+                'class' => 'form-control col-xs-7',
                 'required' => true,
             ),
             'options' => array(
@@ -61,7 +61,7 @@ class Menu extends ZendForm
                 'label' => 'Arabic Label',
             ),
             'attributes' => array(
-                'class' => 'form-control col-md-7',
+                'class' => 'form-control col-xs-7',
                 'required' => true,
             ),
         ));
@@ -73,7 +73,7 @@ class Menu extends ZendForm
                 'label' => 'Url Key',
             ),
             'attributes' => array(
-                'class' => 'form-control col-md-7 custom-modal',
+                'class' => 'form-control col-xs-7 custom-modal',
                 'required' => true,
             ),
         ));
@@ -85,7 +85,7 @@ class Menu extends ZendForm
                 'label' => 'Arabic Url Key',
             ),
             'attributes' => array(
-                'class' => 'form-control col-md-7 custom-modal',
+                'class' => 'form-control col-xs-7 custom-modal',
                 'required' => true,
             ),
         ));
@@ -94,7 +94,7 @@ class Menu extends ZendForm
             'type' => 'Zend\Form\Element\Number',
             'name' => 'orderNumber',
             'attributes' => [
-                'class' => 'form-control col-md-7',
+                'class' => 'form-control col-xs-7',
                 'required' => true,
             ],
             'options' => array(
@@ -125,7 +125,7 @@ class Menu extends ZendForm
             'type' => 'Zend\Form\Element\Select',
             'name' => 'parentMenu',
             'attributes' => array(
-                'class' => 'form-control col-md-7',
+                'class' => 'form-control col-xs-7',
                 'required' => true,
             ),
             'options' => array(

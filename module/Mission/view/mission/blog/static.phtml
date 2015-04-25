@@ -14,13 +14,13 @@ if ($staticPage->getMetaKeywords()) {
 }
 ?>
 
-<div class="static-pages col-md-3">
+<div class="static-pages col-xs-3">
     <?php echo $this->partial('static', [
         'category' => $staticPage->getCategory(),
         'currentUrl' => $staticPage->getUrlKey()
     ]) ?>
 </div>
-<div class="col-md-9">
+<div class="col-xs-9">
     <h1><?php echo $staticPage->getTitle() ?></h1>
 
     <!-- No need to show time and user create on static pages

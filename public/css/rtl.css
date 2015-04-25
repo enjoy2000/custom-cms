@@ -7,7 +7,6 @@
   src: url('/fonts/droidnaskh-bold.woff'); /* IE9 Compat Modes */
 }
 body {
-    overflow-x: hidden;
     background: #d9d9d9 url(/trash/images/ar31.jpg) no-repeat scroll center top!important;
 }
 nav#top-nav ul.nav li~li { border-left: 0px solid #fff;border-right: 2px solid #fff;} 
@@ -84,24 +83,18 @@ footer ul {
 }
 #news-carousel .item {
     font-family: 'nask'!important;
-    }
-@media (min-width: 1200px) {
-    .container {
-        width: 1000px;
-        font-family:'nask';
-    }
 }
 div.consular-services .service-row > div {
     font-family: 'droid';
 }
-#right-sidebar.col-md-3{
+#right-sidebar.col-xs-3{
     background-color:#fff!important;
 }
-#right-sidebar.col-md-3 a {
+#right-sidebar.col-xs-3 a {
     font-family:nask!important;
     padding-right:1px;    
 }
-#right-sidebar.col-md-3{
+#right-sidebar.col-xs-3{
     background-color:#fff!important;
     margin-right:12px;
     margin-left:0px;
@@ -170,4 +163,7 @@ border-right:0px solid white;
 #news-carousel .sp-thumbnail .read-more {
     left: 0;
     right: auto;
+}
+.navbar-nav > li {
+    float: right;
 }

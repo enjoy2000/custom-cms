@@ -1,4 +1,15 @@
 <?php
+$this->headScript()
+    ->prependFile($this->basePath('js/landing/blog-view.js'))
+    ->prependFile('https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.js')
+    ->prependFile('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js')
+;
+$this->headLink()
+    ->prependStylesheet('https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css')
+    ->prependStylesheet('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css')
+;
+?>
+<?php
 /** @var \Blog\Entity\Blog $blog */
 $blog = $this->blog;
 $cats = $blog->getCategories();
@@ -30,7 +41,7 @@ if ($blog->getMetaKeywords()) {
 </div>
 <hr />
 <div class="article-photo text-center">
-    <img src="<?php echo $blog->getPhotoUrl() ?>" alt="" />
+    <img src="<?php echo $blog->getPhotoUrl() ?>" alt="<?php echo $blog->getTitle() ?>" title="<?php echo $blog->getTitle() ?>" />
 </div>
 <div class="blog-content">
     <?php echo $blog->getContent(); ?>
