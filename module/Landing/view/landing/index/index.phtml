@@ -219,13 +219,7 @@ $this->headLink()
             ?>
             <div class="clearfix news">
                 <div class="pull-left flip date">
-                    <div class="month">
-                        <?php echo $blog->getCreateTimeObject()->format('m') ?>
-                    </div>
-                    <div class="day">
-                        <?php echo $blog->getCreateTimeObject()->format('d') ?>
-                    </div>
-                    <?php //echo $blog->getDate() ?>
+                    <?php echo $blog->getDate() ?>
                 </div>
                 <div class="pull-left flip title">
                     <a href="<?php echo $blog->getUrl() ?>" title="<?php echo $blog->getTitle() ?>">
