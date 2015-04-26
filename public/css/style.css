@@ -237,6 +237,7 @@ nav#top-nav .collapse.navbar-collapse {
 #news-ticker {
     background-color: #3B93C9;
     font-weight: bold;
+    display: none;
 }
 
 #news-ticker .title {
