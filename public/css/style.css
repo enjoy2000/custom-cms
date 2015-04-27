@@ -800,14 +800,12 @@ body.home #main-content {
 }
 
 body.home .black-head {
-    z-index: 999;
-    padding-top: 20px;
-    position: relative;
+    padding-top: 37px;
 }
 
 body.home #google-search {
     position: absolute;
     left: 0;
-    z-index: 0;
+    z-index: 1;
     top: -5px;
 }

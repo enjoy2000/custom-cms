@@ -167,3 +167,8 @@ border-right:0px solid white;
 .navbar-nav > li {
     float: right;
 }
+
+body.home #google-search {
+    left: auto;
+    right: 0;
+}
