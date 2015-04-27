@@ -169,6 +169,6 @@ border-right:0px solid white;
 }
 
 body.home #google-search {
-    left: auto;
-    right: 0;
+    left: 0;
+    right: auto;
 }

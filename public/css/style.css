@@ -805,7 +805,8 @@ body.home .black-head {
 
 body.home #google-search {
     position: absolute;
-    left: 0;
+    left: auto;
+    right: 0;
     z-index: 1;
     top: -5px;
 }
