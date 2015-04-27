@@ -774,6 +774,10 @@ select {
     width: auto !important;
 }
 
+.gsc-search-box-tools .gsc-search-box .gsc-input {
+    line-height: 12px!important;
+}
+
 #mission-news a {
     color: #105c9a;
     font-size: 13px;
