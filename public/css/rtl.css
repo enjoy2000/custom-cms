@@ -172,3 +172,21 @@ body.home #google-search {
     left: 0;
     right: auto;
 }
+#news-carousel .description{
+  padding-top:5px;
+  font-family:nask;
+  font-size:14px;;
+}
+div.pull-left.flip.title a{
+  font-family:nask;
+  font-size:14px!important;
+}
+.short-description
+{
+  font-family:times;
+  font-size:16px;
+  font-weight:bold;
+}
+.col-xs-3{
+  font-family:nask;
+}

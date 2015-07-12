@@ -804,7 +804,7 @@ body.home #main-content {
 }
 
 body.home .black-head {
-    padding-top: 37px;
+    padding-top: 3px;
 }
 
 body.home #google-search {
@@ -813,4 +813,35 @@ body.home #google-search {
     right: 0;
     z-index: 1;
     top: -5px;
+}
+.col-xs-4{
+  padding:0px;
+  padding-left:0px!important;
+  padding-right:0px!important;
+}
+
+#mission-news .pull-left.flip.title{
+  width:210px!important;
+}
+div.pull-left.flip.date{
+  background-color:#fbfbfb;
+  color:#0c4a83;
+}
+
+a.news-photo img{
+height:130px;
+width: 212px;
+}
+.col-xs-4{
+width:30.333333%!important;
+}
+.col-xs-8{
+    width: 69.668990%!important;
+}
+.gsc-control-cse{
+    padding-top:0px!important;
+    padding-bottom:0xp!important;
+    border-color:transparent!important;
+    background-color:transparent!important;
+   
 }
