@@ -23,7 +23,7 @@ $this->headLink()
 </div>
 
 <h3 class="black-head clearfix">
-    <?php echo $this->translate('Minster News') ?>
+    <?php echo $this->translate('Minister News') ?>
 </h3>
 <div id="news-carousel" class="slider-pro">
     <div class="sp-slides">
@@ -73,7 +73,7 @@ $this->headLink()
 <div class="clearfix">
     <div class="col-xs-9 pull-left flip other-news">
         <h3 class="black-head">
-            <?php echo $this->translate('Other News') ?>
+            <?php echo (Locale::getPrimaryLanguage(Locale::getDefault()) == 'en') ? "Ministry News" : "أخبار الوزارة" ?>
         </h3>
         <?php
         /** @var \Blog\Entity\Blog $blog */

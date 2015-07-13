@@ -1473,8 +1473,8 @@ msgstr ""
 "عروض برامج التأمين الصحي لموظفي البعثات الدبلوماسية والقنصلية في الخارج"
 
 #: Landing/view/landing/index/index.phtml:2
-msgid "Minster News"
-msgstr "أخبارالسيد الوزير"
+msgid "Minister News"
+msgstr "أخبار الوزير"
 
 #: Landing/view/landing/index/index.phtml:23
 #: Landing/view/landing/index/index.phtml:36
