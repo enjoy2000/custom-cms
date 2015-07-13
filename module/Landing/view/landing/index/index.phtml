@@ -23,7 +23,7 @@ $this->headLink()
 </div>
 
 <h3 class="black-head clearfix">
-    <?php echo $this->translate('Main News') ?>
+    <?php echo $this->translate('Minster News') ?>
 </h3>
 <div id="news-carousel" class="slider-pro">
     <div class="sp-slides">
@@ -93,9 +93,24 @@ $this->headLink()
         </p>
     </div>
     <div class="col-xs-3 pull-right flip consular-services">
-        <h3 class="black-head">
-            <?php echo $this->translate('Consular Services') ?>
-        </h3>
+        <?php if (Locale::getPrimaryLanguage(Locale::getDefault()) == 'ar') : ?>
+        <div id='mc'>
+            <ul>
+                <li><a href="http://mofamission.gov.iq/ab/genins">مكتب المفتش العام</a></li>
+                <li><a href="http://mofa.gov.iq/news/arabic-press-releases">المتحدث الرسمي</a></li>
+                <li><a href="http://mofa.gov.iq/news/arforeign-service-institute">معهد الخدمة الخارجية</a></li>
+            </ul>
+        </div>
+        <?php else : ?>
+        <div id='mc'>
+            <ul>
+                <li><a href="http://mofamission.gov.iq/en/genins">Inspector General</a><br>
+                </li>
+                <li><a href="http://mofa.gov.iq/en/news/english-press-releases">Official Spokesman</a></li>
+                <li><a href="http://mofa.gov.iq/en/news/enforeign-service-institute">Foreign Service Institute</a></li>
+            </ul>
+        </div>
+        <?php endif; ?>
 
         <div class="service-row clearfix">
             <div class="investment pull-left flip">
@@ -118,7 +133,6 @@ $this->headLink()
                 </a>
             </div>
             <div class="links pull-right flip">
-                <!-- TODO: missing link here -->
                 <?php
                 $otherLinks = (Locale::getPrimaryLanguage(Locale::getDefault()) == 'en') ?
                     "en-other-links" :
@@ -177,7 +191,7 @@ $this->headLink()
                 $directory = getcwd() . '/public/slide/images/';
                 $imgs = array_diff(scandir($directory), array('..', '.'));
                 ?>
-                <?php foreach ($imgs as $img): ?>
+                <?php foreach ($imgs as $img) : ?>
                     <div class="item<?php echo ($img == array_values($imgs)[0]) ? ' active' : '' ?>">
                         <img src="/slide/images/<?php echo $img ?>" alt=""/>
                     </div>
