@@ -8,7 +8,7 @@
     ],
     "homepage": "http://framework.zend.com/",
     "require": {
-        "php": ">=5.3.3",
+        "php": ">=5.6.12",
         "zendframework/zendframework": "*",
         "zendframework/zend-developer-tools": "dev-master",
     	"zf-commons/zfc-base": "*",
