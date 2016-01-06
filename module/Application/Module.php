@@ -1,12 +1,12 @@
 <?php
 /**
- * Zend Framework (http://framework.zend.com/)
+ * Zend Framework (http://framework.zend.com/).
  *
  * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
+ *
  * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
-
 namespace Application;
 
 use Zend\Mvc\ModuleRouteListener;
@@ -17,11 +17,10 @@ class Module
 {
     public function onBootstrap(MvcEvent $e)
     {
-        /**
+        /*
          * Set default time zone
          */
         date_default_timezone_set('Asia/Baghdad');
-
 
         // session container
         $sessionContainer = new Container('locale');
@@ -32,10 +31,10 @@ class Module
             $requestUri = explode('/', $_SERVER['REQUEST_URI']);
             if (isset($requestUri[1]) && $requestUri[1] != 'en') {
                 $locale = 'ar_IQ';
-                \Locale::setDefault ('ar_IQ');
+                \Locale::setDefault('ar_IQ');
             } else {
                 $locale = 'en_US';
-                \Locale::setDefault ('en_US');
+                \Locale::setDefault('en_US');
             }
             $sessionContainer->offsetSet('locale', $locale);
         }
@@ -48,40 +47,39 @@ class Module
         // die('here');
         // translating system
         $translator = $sm->get('translator');
-        $translator ->setLocale($sessionContainer->offsetGet('locale'))
+        $translator->setLocale($sessionContainer->offsetGet('locale'))
             ->setFallbackLocale('en_US');
 
         // set variables to layout
         $viewModel = $e->getApplication()->getMvcEvent()->getViewModel();
         $viewModel->locale = $sessionContainer->locale;
 
-        $eventManager        = $e->getApplication()->getEventManager();
-        $eventManager->attach(MvcEvent::EVENT_DISPATCH, array($this, 'selectLayout'));
+        $eventManager = $e->getApplication()->getEventManager();
+        $eventManager->attach(MvcEvent::EVENT_DISPATCH, [$this, 'selectLayout']);
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
-
     }
 
     public function getConfig()
     {
-        return include __DIR__ . '/config/module.config.php';
+        return include __DIR__.'/config/module.config.php';
     }
 
     public function getAutoloaderConfig()
     {
-        return array(
-            'Zend\Loader\StandardAutoloader' => array(
-                'namespaces' => array(
-                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
-                ),
-            ),
-        );
+        return [
+            'Zend\Loader\StandardAutoloader' => [
+                'namespaces' => [
+                    __NAMESPACE__ => __DIR__.'/src/'.__NAMESPACE__,
+                ],
+            ],
+        ];
     }
 
     public function getViewHelperConfig()
     {
-        return array(
-            'factories' => array(
+        return [
+            'factories' => [
                 'config' => function ($helperPluginManager) {
                     $serviceLocator = $helperPluginManager->getServiceLocator();
                     $viewHelper = new View\Helper\Config();
@@ -102,15 +100,15 @@ class Module
                     $viewHelper->setServiceLocator($serviceLocator);
 
                     return $viewHelper;
-                }
-            ),
-        );
+                },
+            ],
+        ];
     }
 
     public function selectLayout(MvcEvent $e)
     {
         $controller = $e->getTarget();
-        $config          = $e->getApplication()->getServiceManager()->get('config');
+        $config = $e->getApplication()->getServiceManager()->get('config');
         $controllerClass = get_class($controller);
         $controllers = explode('\\', $controllerClass);
         $action = str_replace('Controller', '', $controllers[2]);
@@ -120,8 +118,8 @@ class Module
         if (!$controller->layout()->terminate()) {
             if (isset($config['module_layouts'][$moduleNamespace])) {
                 $controller->layout($config['module_layouts'][$moduleNamespace]);
-                if (isset($config['module_layouts'][$moduleNamespace . '/' . $action])) {
-                    $controller->layout($config['module_layouts'][$moduleNamespace . '/' . $action]);
+                if (isset($config['module_layouts'][$moduleNamespace.'/'.$action])) {
+                    $controller->layout($config['module_layouts'][$moduleNamespace.'/'.$action]);
                 }
             }
         }

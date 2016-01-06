@@ -1,28 +1,29 @@
 <?php
-return array(
-    'doctrine' => array(
-        'connection' => array(
+
+return [
+    'doctrine' => [
+        'connection' => [
             // default connection name
-            'orm_default' => array(
+            'orm_default' => [
                 'driverClass' => 'Doctrine\DBAL\Driver\PDOMySql\Driver',
-                'params' => array(
+                'params'      => [
                     'host'     => 'localhost',
                     'port'     => '3306',
                     'user'     => 'username',
                     'password' => 'password',
                     'dbname'   => 'database',
-                    'charset'  => 'utf8'
-                ),
-                'doctrine_type_mappings' => array(
-                    'enum' => 'string'
-                ),
-            )
-        )
-    ),
+                    'charset'  => 'utf8',
+                ],
+                'doctrine_type_mappings' => [
+                    'enum' => 'string',
+                ],
+            ],
+        ],
+    ],
     'db' => [
-        'driver' => 'PDO',
+        'driver'   => 'PDO',
         'database' => 'custom_cms',
         'username' => 'developer',
-        'password' => 'developer-password'
-    ]
-);
+        'password' => 'developer-password',
+    ],
+];

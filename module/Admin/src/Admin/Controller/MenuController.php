@@ -3,15 +3,14 @@
  * Created by PhpStorm.
  * User: antiprovn
  * Date: 1/2/15
- * Time: 7:07 PM
+ * Time: 7:07 PM.
  */
-
 namespace Admin\Controller;
 
-use Application\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
-use Zend\View\Model\JsonModel;
 use Admin\Form\Menu;
+use Application\Controller\AbstractActionController;
+use Zend\View\Model\JsonModel;
+use Zend\View\Model\ViewModel;
 
 class MenuController extends AbstractActionController
 {
@@ -33,21 +32,23 @@ class MenuController extends AbstractActionController
             if ($form->isValid()) {
                 $form->save($this);
                 $this->flashMessenger()->addSuccessMessage('Your menu has been created successfully!');
+
                 return $this->redirect()->toRoute('zfcadmin/menu');
             }
         }
-        
+
         return new ViewModel([
-            'form' => $form
+            'form' => $form,
         ]);
     }
 
     public function editAction()
     {
-        $id = (int)$this->params()->fromRoute('id');
+        $id = (int) $this->params()->fromRoute('id');
         $menu = $this->find('Landing\Entity\Menu', $id);
         if (!$menu) {
             $this->flashMessenger()->addErrorMessage('Cannot find your menu id!');
+
             return $this->redirect()->toRoute('zfcadmin/menu');
         }
         $form = new Menu($this, 'edit');
@@ -63,27 +64,30 @@ class MenuController extends AbstractActionController
             if ($form->isValid()) {
                 $form->save($this);
                 $this->flashMessenger()->addSuccessMessage('Your menu has been updated successfully!');
+
                 return $this->redirect()->toRoute('zfcadmin/menu');
             }
         }
 
         return new ViewModel([
-            'form' => $form,
+            'form'  => $form,
             'title' => $menu->getLabel(),
         ]);
     }
 
     public function deleteAction()
     {
-        $id = (int)$this->params()->fromRoute('id');
+        $id = (int) $this->params()->fromRoute('id');
         $menu = $this->find('Landing\Entity\Menu', $id);
         if (!$menu) {
             $this->flashMessenger()->addErrorMessage('Cannot find your menu id!');
+
             return $this->redirect()->toRoute('zfcadmin/menu');
         } else {
             $this->getEntityManager()->remove($menu);
             $this->getEntityManager()->flush();
             $this->flashMessenger()->addSuccessMessage('Your menu has been deleted successfully!');
+
             return $this->redirect()->toRoute('zfcadmin/menu');
         }
     }
@@ -96,8 +100,8 @@ class MenuController extends AbstractActionController
         //var_dump($query);die;
 
         $result = $this->getEntityManager()->getRepository('Blog\Entity\Blog')->createQueryBuilder('b')
-            ->where("b.title LIKE :query")
-            ->setParameter(':query', '%' . $query . '%')
+            ->where('b.title LIKE :query')
+            ->setParameter(':query', '%'.$query.'%')
             ->setMaxResults('10')
             ->getQuery()
             //->getSQL();
@@ -116,8 +120,8 @@ class MenuController extends AbstractActionController
         //var_dump($query);die;
 
         $result = $this->getEntityManager()->getRepository('Blog\Entity\Category')->createQueryBuilder('c')
-            ->where("c.name LIKE :query")
-            ->setParameter(':query', '%' . $query . '%')
+            ->where('c.name LIKE :query')
+            ->setParameter(':query', '%'.$query.'%')
             ->setMaxResults('10')
             ->getQuery()
             //->getSQL();
@@ -130,11 +134,11 @@ class MenuController extends AbstractActionController
 
     public function isParentMenuAction()
     {
-        $id = (int)$this->params()->fromRoute('id');
+        $id = (int) $this->params()->fromRoute('id');
         $menu = $this->find('Landing\Entity\Menu', $id);
 
         return new JsonModel([
-            'result' => ($menu->getParentMenu() === null)
+            'result' => ($menu->getParentMenu() === null),
         ]);
     }
 }

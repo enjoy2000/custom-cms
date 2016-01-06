@@ -1,11 +1,11 @@
 <?php
 /**
- * BjyAuthorize Module (https://github.com/bjyoungblood/BjyAuthorize)
+ * BjyAuthorize Module (https://github.com/bjyoungblood/BjyAuthorize).
  *
  * @link https://github.com/bjyoungblood/BjyAuthorize for the canonical source repository
+ *
  * @license http://framework.zend.com/license/new-bsd New BSD License
  */
-
 namespace User\Entity;
 
 use BjyAuthorize\Acl\HierarchicalRoleInterface;
@@ -60,7 +60,7 @@ class Role implements HierarchicalRoleInterface
      */
     public function setId($id)
     {
-        $this->id = (int)$id;
+        $this->id = (int) $id;
     }
 
     /**
@@ -86,7 +86,7 @@ class Role implements HierarchicalRoleInterface
     }
 
     /**
-     * Get the parent role
+     * Get the parent role.
      *
      * @return Role
      */

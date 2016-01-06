@@ -3,20 +3,15 @@
  * Created by PhpStorm.
  * User: antiprovn
  * Date: 9/27/14
- * Time: 10:28 PM
+ * Time: 10:28 PM.
  */
-
 namespace Application\Controller;
 
-use Zend\Stdlib\RequestInterface as Request;
-use Zend\Stdlib\ResponseInterface as Response;
-use Zend\Session\Container;
-use Zend\Db\Adapter\Adapter;
 use User\Entity\User;
+use Zend\Session\Container;
 
-
-trait ControllerMethods{
-    
+trait ControllerMethods
+{
     protected $currentUser = null;
 
     protected $_entityManager = null;
@@ -30,11 +25,13 @@ trait ControllerMethods{
     /**
      * @return \Doctrine\ORM\EntityManager
      */
-    public function getEntityManager(){
-        if($this->_entityManager === null){
+    public function getEntityManager()
+    {
+        if ($this->_entityManager === null) {
             $this->_entityManager = $this->getServiceLocator()
                                          ->get('Doctrine\ORM\EntityManager');
         }
+
         return $this->_entityManager;
     }
 
@@ -53,14 +50,15 @@ trait ControllerMethods{
     }
 
     /**
-     * Get current locale
+     * Get current locale.
+     *
      * @return string|null
      */
     public function getLocale()
     {
         if (null === $this->_locale) {
             $locale = new Container('locale');
-            $this->_locale  = $locale->locale;
+            $this->_locale = $locale->locale;
         }
 
         return $this->_locale;
@@ -69,78 +67,95 @@ trait ControllerMethods{
     /**
      * @param $entityName
      * @param $criteria
+     *
      * @return object
      */
-    public function findOneBy($entityName, $criteria){
+    public function findOneBy($entityName, $criteria)
+    {
         return $this->getEntityManager()->getRepository($entityName)->findOneBy($criteria);
     }
 
-    public function findBy($entityName, $criteria){
+    public function findBy($entityName, $criteria)
+    {
         return $this->getEntityManager()->getRepository($entityName)->findBy($criteria);
     }
 
     /**
      * @param $entityName
      * @param $id
+     *
      * @return object
      */
-    public function find($entityName, $id){
+    public function find($entityName, $id)
+    {
         return $this->getEntityManager()->find($entityName, $id);
     }
 
     /**
      * @param $entityName
      * @param $id
+     *
      * @return object
      */
-    public function getReference($entityName, $id){
+    public function getReference($entityName, $id)
+    {
         return $this->getEntityManager()->getReference($entityName, $id);
     }
 
     /**
      * @param $criteria
+     *
      * @return null|\User\Entity\User
      */
-    public function getUser($criteria){
+    public function getUser($criteria)
+    {
         return $this->getEntityManager()->getRepository('\User\Entity\User')->findOneBy($criteria);
     }
 
     /**
-     * @param integer $id
+     * @param int $id
+     *
      * @return null|\User\Entity\User
      */
-    function getUserById($id){
+    public function getUserById($id)
+    {
         return $this->getEntityManager()->find('\User\Entity\User', $id);
     }
 
     /**
-     * Get base url
+     * Get base url.
+     *
      * @return string
      */
-    public function getBaseUrl(){
+    public function getBaseUrl()
+    {
         $uri = $this->getRequest()->getUri();
         $base = sprintf('%s://%s', $uri->getScheme(), $uri->getHost());
+
         return $base;
     }
 
-    public function getTranslator(){
+    public function getTranslator()
+    {
         return $this->getServiceLocator()->get('translator');
     }
 
     /**
      * @return null|\User\Entity\User
      */
-    public function getCurrentUser(){
-        if($this->currentUser === null){
+    public function getCurrentUser()
+    {
+        if ($this->currentUser === null) {
             if ($this->zfcUserAuthentication()->hasIdentity()) {
                 $this->currentUser = $this->zfcUserAuthentication()->getIdentity();
             }
         }
+
         return $this->currentUser;
     }
 
     /**
-     * Check for user logged in permission is Moderator of list categories or admin
+     * Check for user logged in permission is Moderator of list categories or admin.
      */
     public function checkPermissionForModerator(array $categories)
     {
@@ -148,9 +163,9 @@ trait ControllerMethods{
             $roles = $this->getCurrentUser()->getRoles();
             foreach ($roles as $role) {
                 $roleId = $role->getRoleId();
-                if($roleId == 'administrator') {  // if admin return true
+                if ($roleId == 'administrator') {  // if admin return true
                     return true;
-                } else if ($roleId == 'moderator') {  // if mod check if has permission in at least 1 category
+                } elseif ($roleId == 'moderator') {  // if mod check if has permission in at least 1 category
                     foreach ($categories as $category) {
                         $mods = $category->getModerators();
                         if (in_array($this->getCurrentUser(), $mods)) {
@@ -163,12 +178,12 @@ trait ControllerMethods{
 
         return $this->redirect()->toRoute('zfcuser', [
             'controller' => 'user',
-            'action' => 'login'
+            'action'     => 'login',
         ]);
     }
 
     /**
-     * Check current user is admin or not
+     * Check current user is admin or not.
      */
     public function isAdmin()
     {
@@ -182,15 +197,15 @@ trait ControllerMethods{
         return false;
     }
 
-    public function isMenuItem($urlKey) {
+    public function isMenuItem($urlKey)
+    {
         $queryBuilder = $this->getEntityManager()->getRepository('Landing\Entity\Menu')->createQueryBuilder('m');
         $menu = $queryBuilder
             ->where('m.value = :key')
             ->orwhere('m.valueAr = :key')
             ->setParameter(':key', $urlKey)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
 
         return !empty($menu);
     }

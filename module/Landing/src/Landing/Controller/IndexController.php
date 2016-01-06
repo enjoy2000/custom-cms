@@ -1,18 +1,18 @@
 <?php
 /**
- * Zend Framework (http://framework.zend.com/)
+ * Zend Framework (http://framework.zend.com/).
  *
  * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
+ *
  * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
-
 namespace Landing\Controller;
 
 use Application\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
-use Zend\Session\Container;
 use Blog\Entity\Category;
+use Zend\Session\Container;
+use Zend\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {
@@ -26,9 +26,9 @@ class IndexController extends AbstractActionController
         $qb1 = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
             ->createQueryBuilder('b');
         $blogs = $qb1->innerJoin('b.categories', 'c')
-            ->where("c.urlKey = :urlkey")
+            ->where('c.urlKey = :urlkey')
             ->setParameter(':urlkey', $catUrlKey)
-            ->andWhere("b.published = :published")
+            ->andWhere('b.published = :published')
             ->setParameter(':published', 1)
             ->setFirstResult(0)
             ->setMaxResults(8)
@@ -47,12 +47,11 @@ class IndexController extends AbstractActionController
         */
         $restNewsUrl = ($locale->getShortCode() == 'en') ?
             'eundersecretaries-news' :
-            'aundersecretaries-news'
-        ;
+            'aundersecretaries-news';
         $qb2 = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
             ->createQueryBuilder('b');
         $restNews = $qb2->innerJoin('b.categories', 'c')
-            ->where("b.published = :published")
+            ->where('b.published = :published')
             ->setParameter(':published', 1)
             ->andWhere("c.urlKey = '$restNewsUrl'")
             ->setFirstResult(0)
@@ -60,27 +59,26 @@ class IndexController extends AbstractActionController
             ->orderBy('b.id', 'DESC')
             ->getQuery()
             ->getResult();
-        
-        
+
         $missionUrl = ($locale->getShortCode() == 'en') ? 'en-missions-news' : 'ar-missions-news';
         $qb3 = $this->getEntityManager()->getRepository('Blog\Entity\Blog')
             ->createQueryBuilder('b');
         $missionNews = $qb3->innerJoin('b.categories', 'c')
-            ->where("b.published = :published")
+            ->where('b.published = :published')
             ->setParameter(':published', 1)
             ->andWhere("c.urlKey = '$missionUrl'")
             ->setFirstResult(0)
             ->setMaxResults(10)
             ->orderBy('b.id', 'DESC')
             ->getQuery()
-            ->getResult();    
+            ->getResult();
 
         $this->layout('layout/layout');
 
         return new ViewModel([
-            'blogs' => $blogs,  // chunk array for render in news
+            'blogs'       => $blogs,  // chunk array for render in news
             'missionNews' => $missionNews,
-            'restNews' => $restNews,
+            'restNews'    => $restNews,
         ]);
     }
 }

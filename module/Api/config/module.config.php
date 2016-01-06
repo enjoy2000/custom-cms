@@ -1,76 +1,76 @@
 <?php
 
-return array(
-    'router' => array(
-        'routes' => array(
-            'api' => array(
-                'type' => 'Literal',
-                'options' => array(
-                    'route'    => '/api',
-                    'constraints' => array(
-                    ),
-                    'defaults' => array(
+return [
+    'router' => [
+        'routes' => [
+            'api' => [
+                'type'    => 'Literal',
+                'options' => [
+                    'route'       => '/api',
+                    'constraints' => [
+                    ],
+                    'defaults' => [
                         '__NAMESPACE__' => 'Api\Controller',
-                        'controller' => 'Index',
-                    ),
-                ),
-                'child_routes' => array(
-                    'user' => array(
+                        'controller'    => 'Index',
+                    ],
+                ],
+                'child_routes' => [
+                    'user' => [
                         'type'    => 'Segment',
-                        'options' => array(
-                            'route'    => '/user/[[:id[/]][:controller[/]]]',
-                            'constraints' => array(
+                        'options' => [
+                            'route'       => '/user/[[:id[/]][:controller[/]]]',
+                            'constraints' => [
                                 'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'id' => '[0-9]*',
-                            ),
-                            'defaults' => array(
+                                'id'         => '[0-9]*',
+                            ],
+                            'defaults' => [
                                 '__NAMESPACE__' => 'Api\Controller\User',
-                            ),
-                        ),
-                    ),
-                    'blog' => array(
+                            ],
+                        ],
+                    ],
+                    'blog' => [
                         'type'    => 'Segment',
-                        'options' => array(
-                            'route'    => '/blog/[[:id[/]][:controller[/]]]',
-                            'constraints' => array(
+                        'options' => [
+                            'route'       => '/blog/[[:id[/]][:controller[/]]]',
+                            'constraints' => [
                                 'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'id' => '[0-9]*',
-                            ),
-                            'defaults' => array(
+                                'id'         => '[0-9]*',
+                            ],
+                            'defaults' => [
                                 '__NAMESPACE__' => 'Api\Controller\Blog',
-                            ),
-                        ),
-                    ),
-                    'user_child' => array(
+                            ],
+                        ],
+                    ],
+                    'user_child' => [
                         'type'    => 'Segment',
-                        'options' => array(
-                            'route'    => '/user/:user_id/:controller/:id[/]',
-                            'constraints' => array(
+                        'options' => [
+                            'route'       => '/user/:user_id/:controller/:id[/]',
+                            'constraints' => [
                                 'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'user_id' => '[0-9]*',
-                                'id' => '[0-9]*',
-                            ),
-                            'defaults' => array(
+                                'user_id'    => '[0-9]*',
+                                'id'         => '[0-9]*',
+                            ],
+                            'defaults' => [
                                 '__NAMESPACE__' => 'Api\Controller\User',
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-        ),
-    ),
-    'controllers' => array(
-        'invokables' => array(
-            'Api\Controller\Blog\Blog' => 'Api\Controller\Blog\BlogController',
-            'Api\Controller\Blog\Category' => 'Api\Controller\Blog\CategoryController',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
+    'controllers' => [
+        'invokables' => [
+            'Api\Controller\Blog\Blog'            => 'Api\Controller\Blog\BlogController',
+            'Api\Controller\Blog\Category'        => 'Api\Controller\Blog\CategoryController',
             'Api\Controller\Blog\MissionCategory' => 'Api\Controller\Blog\MissionCategoryController',
-            'Api\Controller\Blog\Locale' => 'Api\Controller\Blog\LocaleController',
-            'Api\Controller\Blog\Moderator' => 'Api\Controller\Blog\ModeratorController',
-        ),
-    ),
-    'view_manager' => array(
-        'strategies' => array(
+            'Api\Controller\Blog\Locale'          => 'Api\Controller\Blog\LocaleController',
+            'Api\Controller\Blog\Moderator'       => 'Api\Controller\Blog\ModeratorController',
+        ],
+    ],
+    'view_manager' => [
+        'strategies' => [
             'ViewJsonStrategy',
-        ),
-    ),
-);
+        ],
+    ],
+];

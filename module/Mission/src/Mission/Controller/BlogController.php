@@ -3,22 +3,20 @@
  * Created by PhpStorm.
  * User: hat
  * Date: 29/12/2014
- * Time: 10:59
+ * Time: 10:59.
  */
-
 namespace Mission\Controller;
 
 use Application\Controller\AbstractActionController;
 use Doctrine\DBAL\Schema\View;
-use Zend\View\Model\ViewModel;
+use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
 use Mission\Entity\Blog;
 use Zend\Paginator\Paginator;
-use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
-use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use Zend\View\Model\ViewModel;
 
-
-class BlogController extends AbstractActionController {
-
+class BlogController extends AbstractActionController
+{
     public function viewAction()
     {
         $slug = $this->params()->fromRoute('slug');
@@ -30,13 +28,13 @@ class BlogController extends AbstractActionController {
             $qb = $em->getRepository('Mission\Entity\StaticPage')->createQueryBuilder('sp');
             $qb->andwhere($qb->expr()->eq('sp.category', $category->getId()))
                 ->andWhere($qb->expr()->eq('sp.urlKey', "'".$staticUrlKey."'"));
-            $staticPage  = $qb->getQuery()->getResult();
+            $staticPage = $qb->getQuery()->getResult();
             //var_dump($staticPage[0]);die;
             if (is_array($staticPage) && isset($staticPage[0])) {
-                return $this->forward()->dispatch('Mission\Controller\Blog', array(
-                    'action' => 'static',
+                return $this->forward()->dispatch('Mission\Controller\Blog', [
+                    'action'       => 'static',
                     'staticPage'   => $staticPage[0],
-                ));
+                ]);
             }
         }
 
@@ -44,10 +42,10 @@ class BlogController extends AbstractActionController {
         $blog = $this->findOneBy('Mission\Entity\Blog', ['urlKey' => $slug]);
         //var_dump($slug);die;
         if ($category) {
-            return $this->forward()->dispatch('Mission\Controller\Blog', array(
-                'action' => 'category',
-                'category'   => $category
-            ));
+            return $this->forward()->dispatch('Mission\Controller\Blog', [
+                'action'     => 'category',
+                'category'   => $category,
+            ]);
         } else {
             if ($blog) {
                 // increase blog view
@@ -55,10 +53,10 @@ class BlogController extends AbstractActionController {
                 $this->getEntityManager()->merge($blog);
                 $this->getEntityManager()->flush();
 
-                return $this->forward()->dispatch('Mission\Controller\Blog', array(
+                return $this->forward()->dispatch('Mission\Controller\Blog', [
                     'action' => 'article',
-                    'blog'   => $blog
-                ));
+                    'blog'   => $blog,
+                ]);
             } else {
                 $this->flashMessenger()->addErrorMessage($this->getTranslator()
                     ->translate('Your link is expired or that news does not exist anymore.'));
@@ -77,7 +75,7 @@ class BlogController extends AbstractActionController {
         }
 
         return new ViewModel([
-            'blog' => $blog
+            'blog' => $blog,
         ]);
     }
 
@@ -91,13 +89,13 @@ class BlogController extends AbstractActionController {
         $paginator = new Paginator($adapter);
         $paginator->setDefaultItemCountPerPage(\Mission\Entity\Category::BLOGS_PER_PAGE);
 
-        $page = (int)$this->getRequest()->getQuery('page');
+        $page = (int) $this->getRequest()->getQuery('page');
         if ($page) {
             $paginator->setCurrentPageNumber($page);
         }
 
         return new ViewModel([
-            'category' => $category,
+            'category'  => $category,
             'paginator' => $paginator,
         ]);
     }
@@ -109,7 +107,7 @@ class BlogController extends AbstractActionController {
         $staticPage = $this->params()->fromRoute('staticPage');
 
         return new ViewModel([
-            'staticPage' => $staticPage
+            'staticPage' => $staticPage,
         ]);
     }
 }

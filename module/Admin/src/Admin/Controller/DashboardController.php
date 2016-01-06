@@ -3,9 +3,8 @@
  * Created by PhpStorm.
  * User: antiprovn
  * Date: 1/2/15
- * Time: 7:07 PM
+ * Time: 7:07 PM.
  */
-
 namespace Admin\Controller;
 
 use Application\Controller\AbstractActionController;
@@ -15,7 +14,7 @@ class DashboardController extends AbstractActionController
 {
     public function indexAction()
     {
-        /**
+        /*
         // clone category
         $em = $this->getEntityManager();
         $categories = $em->getRepository('Blog\Entity\Category')->findAll();

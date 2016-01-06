@@ -3,21 +3,20 @@
  * Created by PhpStorm.
  * User: hat
  * Date: 29/12/2014
- * Time: 11:53
+ * Time: 11:53.
  */
-
 namespace Blog\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use User\Entity\User;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="Category")
  */
-class Category {
-
+class Category
+{
     const BLOGS_PER_PAGE = 5;
     const NEWS_EN = 'main-english';
     const NEWS_AR = 'arabic-1';
@@ -78,7 +77,8 @@ class Category {
         return $this->name;
     }
 
-    public function setName($name) {
+    public function setName($name)
+    {
         $this->name = $name;
     }
 
@@ -122,13 +122,14 @@ class Category {
         foreach ($mods as $mod) {
             $users[] = $mod->getData();
         }
+
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'locale' => $this->locale->getData(),
-            'urlKey' => $this->urlKey,
+            'id'         => $this->id,
+            'name'       => $this->name,
+            'locale'     => $this->locale->getData(),
+            'urlKey'     => $this->urlKey,
             'moderators' => $users,
-            'category' => $this->category
+            'category'   => $this->category,
         ];
     }
 
@@ -138,7 +139,7 @@ class Category {
             'name',
             'urlKey',
             'locale',
-            'category'
+            'category',
         ];
         foreach ($keys as $key) {
             if (isset($data[$key])) {
@@ -150,9 +151,9 @@ class Category {
     public function getUrl()
     {
         if ($this->locale->getShortCode() == 'en') {
-            $url = '/en/' . \Blog\Entity\Blog::BLOG_ROUTE . '/' . $this->urlKey;
+            $url = '/en/'.\Blog\Entity\Blog::BLOG_ROUTE.'/'.$this->urlKey;
         } else {
-            $url = '/' . \Blog\Entity\Blog::BLOG_ROUTE . '/' . $this->urlKey;
+            $url = '/'.\Blog\Entity\Blog::BLOG_ROUTE.'/'.$this->urlKey;
         }
 
         return $url;
@@ -168,14 +169,15 @@ class Category {
         $this->category = $category;
     }
 
-    public function getActiveBlogs($controller) 
+    public function getActiveBlogs($controller)
     {
         $em = $controller->getEntityManager();
         $qb = $em->getRepository('Blog\Entity\Blog')->createQueryBuilder('b');
-        $queryBuilder  = $qb
+        $queryBuilder = $qb
                     ->innerJoin('b.categories', 'c')
-                    ->where("c.id=" . $this->id)
+                    ->where('c.id='.$this->id)
                     ->orderBy('b.id', 'DESC');
+
         return $queryBuilder;
     }
 }

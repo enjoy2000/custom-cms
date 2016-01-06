@@ -3,23 +3,24 @@
  * Created by PhpStorm.
  * User: hat
  * Date: 29/12/2014
- * Time: 10:59
+ * Time: 10:59.
  */
-
 namespace Blog\Controller;
 
 use Application\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
-use Zend\View\Model\JsonModel;
-use Zend\Session\Container;
 use Blog\Entity\Category;
+use Zend\Session\Container;
+use Zend\View\Model\JsonModel;
+use Zend\View\Model\ViewModel;
 
-class IndexController extends AbstractActionController {
+class IndexController extends AbstractActionController
+{
     public function indexAction()
     {
         $locale = new Container('locale');
         $locale = $this->findOneBy('Blog\Entity\Locale', ['code' => $locale->locale]);
         $catUrlKey = ($locale->getShortCode() == 'en') ? Category::NEWS_EN : Category::NEWS_AR;
+
         return $this->redirect()->toRoute('blog/view', ['slug' => $catUrlKey]);
 
         // get categories based on current locale
@@ -30,7 +31,7 @@ class IndexController extends AbstractActionController {
         );
 
         return new ViewModel([
-            'categories' => $categories
+            'categories' => $categories,
         ]);
     }
 
@@ -54,21 +55,21 @@ class IndexController extends AbstractActionController {
             ->setParameter('urlKey', $catUrlKey)
             ->orderBy('b.id', 'DESC')
             ->setMaxResults(10)
-            ->setFirstResult(0)
-        ;
+            ->setFirstResult(0);
         $blogs = $qb->getQuery()->getResult();
         $newsTickers = '';
         /** @var \Blog\Entity\Blog $blog */
         foreach ($blogs as $blog) {
             $newsTickers .= '<li><a href="'
-                            . $blog->getUrl() . '">'
-                            . $blog->getTitle() . '</a> <span class="date">'
-                            . $blog->getDate()
-                            . '</span></li>';
+                            .$blog->getUrl().'">'
+                            .$blog->getTitle().'</a> <span class="date">'
+                            .$blog->getDate()
+                            .'</span></li>';
         }
         $response = $this->getResponse();
         $response->setStatusCode(200);
         $response->setContent($newsTickers);
+
         return $response;
     }
 
@@ -95,18 +96,18 @@ class IndexController extends AbstractActionController {
                     0
                 );
 
-            $blogsData = [];
+        $blogsData = [];
             /** @var \Blog\Entity\Blog $blog */
             foreach ($blogs as $blog) {
                 $blogsData[] = [
-                    'blogUrl' => $blog->getUrl(),
-                    'title' => $blog->getTitle(),
-                    'thumbnail' => $blog->getThumbnail(),
+                    'blogUrl'      => $blog->getUrl(),
+                    'title'        => $blog->getTitle(),
+                    'thumbnail'    => $blog->getThumbnail(),
                     'shortContent' => $blog->getShortContent(),
                 ];
             }
 
-            $cache->setItem($key, $blogsData);
+        $cache->setItem($key, $blogsData);
         //}
 
         return new JsonModel([

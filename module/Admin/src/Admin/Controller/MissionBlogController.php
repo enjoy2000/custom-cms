@@ -3,18 +3,17 @@
  * Created by PhpStorm.
  * User: hat
  * Date: 30/12/2014
- * Time: 11:46
+ * Time: 11:46.
  */
-
 namespace Admin\Controller;
 
 use Application\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
-use Mission\Form\BlogForm;
-use Mission\Entity\Blog;
-use Zend\Paginator\Paginator;
-use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
+use Mission\Entity\Blog;
+use Mission\Form\BlogForm;
+use Zend\Paginator\Paginator;
+use Zend\View\Model\ViewModel;
 
 class MissionBlogController extends AbstractActionController
 {
@@ -28,7 +27,7 @@ class MissionBlogController extends AbstractActionController
         // start filter
         if ($localeCode = $this->params()->fromQuery('locale')) {
             $locale = $this->findOneBy('Blog\Entity\Locale', ['name' => $localeCode]);
-            $queryBuilder->andWhere('blog.locale_id = ' . $locale->getId());
+            $queryBuilder->andWhere('blog.locale_id = '.$locale->getId());
         }
 
         // set order by blog id DESC
@@ -38,14 +37,14 @@ class MissionBlogController extends AbstractActionController
         $paginator = new Paginator($adapter);
         $paginator->setDefaultItemCountPerPage(10);
 
-        $page = (int)$this->getRequest()->getQuery('page');
+        $page = (int) $this->getRequest()->getQuery('page');
         if ($page) {
             $paginator->setCurrentPageNumber($page);
         }
 
         //var_dump($paginator);die;
         return new ViewModel([
-            'paginator' => $paginator
+            'paginator' => $paginator,
         ]);
     }
 
@@ -66,18 +65,19 @@ class MissionBlogController extends AbstractActionController
             if ($form->isValid()) {
                 $form->save($this);
                 $this->flashMessenger()->addSuccessMessage('You news is created successfully!');
+
                 return $this->redirect()->toRoute('zfcadmin/mission-blog');
             }
         }
 
         return new ViewModel([
-            'form' => $form
+            'form' => $form,
         ]);
     }
 
     public function editAction()
     {
-        $id = (int)$this->params()->fromRoute('id');
+        $id = (int) $this->params()->fromRoute('id');
         $blog = $this->find('Mission\Entity\Blog', $id);
         $em = $this->getEntityManager();
 
@@ -98,12 +98,13 @@ class MissionBlogController extends AbstractActionController
             if ($form->isValid()) {
                 $form->save($this);
                 $this->flashMessenger()->addSuccessMessage('You news is updated successfully!');
+
                 return $this->redirect()->toRoute('zfcadmin/blog');
             }
         }
 
         return new ViewModel([
-            'form' => $form
+            'form' => $form,
         ]);
     }
 }

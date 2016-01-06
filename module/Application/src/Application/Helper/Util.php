@@ -3,7 +3,7 @@
 namespace Application\Helper;
 
 /**
- * util.php
+ * util.php.
  *
  * util.php is a library of helper functions for common tasks such as
  * formatting bytes as a string or displaying a date in terms of how long ago
@@ -12,62 +12,63 @@ namespace Application\Helper;
  * designed to avoid any possible conflicts.
  *
  * @author Brandon Wamboldt <brandon.wamboldt@gmail.com>
+ *
  * @link   http://github.com/brandonwamboldt/utilphp/ Official Documentation
  */
-class util
+class Util
 {
     /**
      * A constant representing the number of seconds in a minute, for
-     * making code more verbose
+     * making code more verbose.
      *
-     * @var integer
+     * @var int
      */
     const SECONDS_IN_A_MINUTE = 60;
 
     /**
      * A constant representing the number of seconds in an hour, for making
-     * code more verbose
+     * code more verbose.
      *
-     * @var integer
+     * @var int
      */
     const SECONDS_IN_A_HOUR = 3600;
     const SECONDS_IN_AN_HOUR = 3600;
 
     /**
      * A constant representing the number of seconds in a day, for making
-     * code more verbose
+     * code more verbose.
      *
-     * @var integer
+     * @var int
      */
     const SECONDS_IN_A_DAY = 86400;
 
     /**
      * A constant representing the number of seconds in a week, for making
-     * code more verbose
+     * code more verbose.
      *
-     * @var integer
+     * @var int
      */
     const SECONDS_IN_A_WEEK = 604800;
 
     /**
      * A constant representing the number of seconds in a month (30 days),
-     * for making code more verbose
+     * for making code more verbose.
      *
-     * @var integer
+     * @var int
      */
     const SECONDS_IN_A_MONTH = 2592000;
 
     /**
      * A constant representing the number of seconds in a year (365 days),
-     * for making code more verbose
+     * for making code more verbose.
      *
-     * @var integer
+     * @var int
      */
     const SECONDS_IN_A_YEAR = 31536000;
 
     /**
      * A collapse icon, using in the dump_var function to allow collapsing
-     * an array or object
+     * an array or object.
      *
      * @var string
      */
@@ -75,7 +76,7 @@ class util
 
     /**
      * A collapse icon, using in the dump_var function to allow collapsing
-     * an array or object
+     * an array or object.
      *
      * @var string
      */
@@ -89,26 +90,22 @@ class util
      *
      * @see https://github.com/jbroadway/urlify/blob/master/URLify.php
      */
-    public static $maps = array(
-        'de' => array(/* German */
+    public static $maps = [
+        'de' => [/* German */
             'Ä' => 'Ae', 'Ö' => 'Oe', 'Ü' => 'Ue', 'ä' => 'ae', 'ö' => 'oe', 'ü' => 'ue', 'ß' => 'ss',
-            'ẞ' => 'SS'
-        ),
-        'latin' => array(
-            'À' => 'A', 'Á' => 'A', 'Â' => 'A', 'Ã' => 'A', 'Ä' => 'A', 'Å' => 'A','Ă' => 'A', 'Æ' => 'AE', 'Ç' =>
-                'C', 'È' => 'E', 'É' => 'E', 'Ê' => 'E', 'Ë' => 'E', 'Ì' => 'I', 'Í' => 'I', 'Î' => 'I',
-            'Ï' => 'I', 'Ð' => 'D', 'Ñ' => 'N', 'Ò' => 'O', 'Ó' => 'O', 'Ô' => 'O', 'Õ' => 'O', 'Ö' =>
-                'O', 'Ő' => 'O', 'Ø' => 'O','Ș' => 'S','Ț' => 'T', 'Ù' => 'U', 'Ú' => 'U', 'Û' => 'U', 'Ü' => 'U', 'Ű' => 'U',
-            'Ý' => 'Y', 'Þ' => 'TH', 'ß' => 'ss', 'à' => 'a', 'á' => 'a', 'â' => 'a', 'ã' => 'a', 'ä' =>
-                'a', 'å' => 'a', 'ă' => 'a', 'æ' => 'ae', 'ç' => 'c', 'è' => 'e', 'é' => 'e', 'ê' => 'e', 'ë' => 'e',
-            'ì' => 'i', 'í' => 'i', 'î' => 'i', 'ï' => 'i', 'ð' => 'd', 'ñ' => 'n', 'ò' => 'o', 'ó' =>
-                'o', 'ô' => 'o', 'õ' => 'o', 'ö' => 'o', 'ő' => 'o', 'ø' => 'o', 'ș' => 's', 'ț' => 't', 'ù' => 'u', 'ú' => 'u',
-            'û' => 'u', 'ü' => 'u', 'ű' => 'u', 'ý' => 'y', 'þ' => 'th', 'ÿ' => 'y'
-        ),
-        'latin_symbols' => array(
-            '©' => '(c)'
-        ),
-        'el' => array(/* Greek */
+            'ẞ' => 'SS',
+        ],
+        'latin' => [
+            'À' => 'A', 'Á' => 'A', 'Â' => 'A', 'Ã' => 'A', 'Ä' => 'A', 'Å' => 'A', 'Ă' => 'A', 'Æ' => 'AE', 'Ç' => 'C', 'È' => 'E', 'É' => 'E', 'Ê' => 'E', 'Ë' => 'E', 'Ì' => 'I', 'Í' => 'I', 'Î' => 'I',
+            'Ï' => 'I', 'Ð' => 'D', 'Ñ' => 'N', 'Ò' => 'O', 'Ó' => 'O', 'Ô' => 'O', 'Õ' => 'O', 'Ö' => 'O', 'Ő' => 'O', 'Ø' => 'O', 'Ș' => 'S', 'Ț' => 'T', 'Ù' => 'U', 'Ú' => 'U', 'Û' => 'U', 'Ü' => 'U', 'Ű' => 'U',
+            'Ý' => 'Y', 'Þ' => 'TH', 'ß' => 'ss', 'à' => 'a', 'á' => 'a', 'â' => 'a', 'ã' => 'a', 'ä' => 'a', 'å' => 'a', 'ă' => 'a', 'æ' => 'ae', 'ç' => 'c', 'è' => 'e', 'é' => 'e', 'ê' => 'e', 'ë' => 'e',
+            'ì' => 'i', 'í' => 'i', 'î' => 'i', 'ï' => 'i', 'ð' => 'd', 'ñ' => 'n', 'ò' => 'o', 'ó' => 'o', 'ô' => 'o', 'õ' => 'o', 'ö' => 'o', 'ő' => 'o', 'ø' => 'o', 'ș' => 's', 'ț' => 't', 'ù' => 'u', 'ú' => 'u',
+            'û' => 'u', 'ü' => 'u', 'ű' => 'u', 'ý' => 'y', 'þ' => 'th', 'ÿ' => 'y',
+        ],
+        'latin_symbols' => [
+            '©' => '(c)',
+        ],
+        'el' => [/* Greek */
             'α' => 'a', 'β' => 'b', 'γ' => 'g', 'δ' => 'd', 'ε' => 'e', 'ζ' => 'z', 'η' => 'h', 'θ' => '8',
             'ι' => 'i', 'κ' => 'k', 'λ' => 'l', 'μ' => 'm', 'ν' => 'n', 'ξ' => '3', 'ο' => 'o', 'π' => 'p',
             'ρ' => 'r', 'σ' => 's', 'τ' => 't', 'υ' => 'y', 'φ' => 'f', 'χ' => 'x', 'ψ' => 'ps', 'ω' => 'w',
@@ -118,13 +115,13 @@ class util
             'Ι' => 'I', 'Κ' => 'K', 'Λ' => 'L', 'Μ' => 'M', 'Ν' => 'N', 'Ξ' => '3', 'Ο' => 'O', 'Π' => 'P',
             'Ρ' => 'R', 'Σ' => 'S', 'Τ' => 'T', 'Υ' => 'Y', 'Φ' => 'F', 'Χ' => 'X', 'Ψ' => 'PS', 'Ω' => 'W',
             'Ά' => 'A', 'Έ' => 'E', 'Ί' => 'I', 'Ό' => 'O', 'Ύ' => 'Y', 'Ή' => 'H', 'Ώ' => 'W', 'Ϊ' => 'I',
-            'Ϋ' => 'Y'
-        ),
-        'tr' => array(/* Turkish */
+            'Ϋ' => 'Y',
+        ],
+        'tr' => [/* Turkish */
             'ş' => 's', 'Ş' => 'S', 'ı' => 'i', 'İ' => 'I', 'ç' => 'c', 'Ç' => 'C', 'ü' => 'u', 'Ü' => 'U',
-            'ö' => 'o', 'Ö' => 'O', 'ğ' => 'g', 'Ğ' => 'G'
-        ),
-        'ru' => array(/* Russian */
+            'ö' => 'o', 'Ö' => 'O', 'ğ' => 'g', 'Ğ' => 'G',
+        ],
+        'ru' => [/* Russian */
             'а' => 'a', 'б' => 'b', 'в' => 'v', 'г' => 'g', 'д' => 'd', 'е' => 'e', 'ё' => 'yo', 'ж' => 'zh',
             'з' => 'z', 'и' => 'i', 'й' => 'j', 'к' => 'k', 'л' => 'l', 'м' => 'm', 'н' => 'n', 'о' => 'o',
             'п' => 'p', 'р' => 'r', 'с' => 's', 'т' => 't', 'у' => 'u', 'ф' => 'f', 'х' => 'h', 'ц' => 'c',
@@ -135,34 +132,34 @@ class util
             'П' => 'P', 'Р' => 'R', 'С' => 'S', 'Т' => 'T', 'У' => 'U', 'Ф' => 'F', 'Х' => 'H', 'Ц' => 'C',
             'Ч' => 'Ch', 'Ш' => 'Sh', 'Щ' => 'Sh', 'Ъ' => '', 'Ы' => 'Y', 'Ь' => '', 'Э' => 'E', 'Ю' => 'Yu',
             'Я' => 'Ya',
-            '№' => ''
-        ),
-        'uk' => array(/* Ukrainian */
-            'Є' => 'Ye', 'І' => 'I', 'Ї' => 'Yi', 'Ґ' => 'G', 'є' => 'ye', 'і' => 'i', 'ї' => 'yi', 'ґ' => 'g'
-        ),
-        'cs' => array(/* Czech */
+            '№' => '',
+        ],
+        'uk' => [/* Ukrainian */
+            'Є' => 'Ye', 'І' => 'I', 'Ї' => 'Yi', 'Ґ' => 'G', 'є' => 'ye', 'і' => 'i', 'ї' => 'yi', 'ґ' => 'g',
+        ],
+        'cs' => [/* Czech */
             'č' => 'c', 'ď' => 'd', 'ě' => 'e', 'ň' => 'n', 'ř' => 'r', 'š' => 's', 'ť' => 't', 'ů' => 'u',
             'ž' => 'z', 'Č' => 'C', 'Ď' => 'D', 'Ě' => 'E', 'Ň' => 'N', 'Ř' => 'R', 'Š' => 'S', 'Ť' => 'T',
-            'Ů' => 'U', 'Ž' => 'Z'
-        ),
-        'pl' => array(/* Polish */
+            'Ů' => 'U', 'Ž' => 'Z',
+        ],
+        'pl' => [/* Polish */
             'ą' => 'a', 'ć' => 'c', 'ę' => 'e', 'ł' => 'l', 'ń' => 'n', 'ó' => 'o', 'ś' => 's', 'ź' => 'z',
             'ż' => 'z', 'Ą' => 'A', 'Ć' => 'C', 'Ę' => 'e', 'Ł' => 'L', 'Ń' => 'N', 'Ó' => 'O', 'Ś' => 'S',
-            'Ź' => 'Z', 'Ż' => 'Z'
-        ),
-        'ro' => array(/* Romanian */
-            'ă' => 'a', 'â' => 'a', 'î' => 'i', 'ș' => 's', 'ț' => 't', 'Ţ' => 'T', 'ţ' => 't'
-        ),
-        'lv' => array(/* Latvian */
+            'Ź' => 'Z', 'Ż' => 'Z',
+        ],
+        'ro' => [/* Romanian */
+            'ă' => 'a', 'â' => 'a', 'î' => 'i', 'ș' => 's', 'ț' => 't', 'Ţ' => 'T', 'ţ' => 't',
+        ],
+        'lv' => [/* Latvian */
             'ā' => 'a', 'č' => 'c', 'ē' => 'e', 'ģ' => 'g', 'ī' => 'i', 'ķ' => 'k', 'ļ' => 'l', 'ņ' => 'n',
             'š' => 's', 'ū' => 'u', 'ž' => 'z', 'Ā' => 'A', 'Č' => 'C', 'Ē' => 'E', 'Ģ' => 'G', 'Ī' => 'i',
-            'Ķ' => 'k', 'Ļ' => 'L', 'Ņ' => 'N', 'Š' => 'S', 'Ū' => 'u', 'Ž' => 'Z'
-        ),
-        'lt' => array(/* Lithuanian */
+            'Ķ' => 'k', 'Ļ' => 'L', 'Ņ' => 'N', 'Š' => 'S', 'Ū' => 'u', 'Ž' => 'Z',
+        ],
+        'lt' => [/* Lithuanian */
             'ą' => 'a', 'č' => 'c', 'ę' => 'e', 'ė' => 'e', 'į' => 'i', 'š' => 's', 'ų' => 'u', 'ū' => 'u', 'ž' => 'z',
-            'Ą' => 'A', 'Č' => 'C', 'Ę' => 'E', 'Ė' => 'E', 'Į' => 'I', 'Š' => 'S', 'Ų' => 'U', 'Ū' => 'U', 'Ž' => 'Z'
-        ),
-        'vn' => array(/* Vietnamese */
+            'Ą' => 'A', 'Č' => 'C', 'Ę' => 'E', 'Ė' => 'E', 'Į' => 'I', 'Š' => 'S', 'Ų' => 'U', 'Ū' => 'U', 'Ž' => 'Z',
+        ],
+        'vn' => [/* Vietnamese */
             'Á' => 'A', 'À' => 'A', 'Ả' => 'A', 'Ã' => 'A', 'Ạ' => 'A', 'Ă' => 'A', 'Ắ' => 'A', 'Ằ' => 'A', 'Ẳ' => 'A', 'Ẵ' => 'A', 'Ặ' => 'A', 'Â' => 'A', 'Ấ' => 'A', 'Ầ' => 'A', 'Ẩ' => 'A', 'Ẫ' => 'A', 'Ậ' => 'A',
             'á' => 'a', 'à' => 'a', 'ả' => 'a', 'ã' => 'a', 'ạ' => 'a', 'ă' => 'a', 'ắ' => 'a', 'ằ' => 'a', 'ẳ' => 'a', 'ẵ' => 'a', 'ặ' => 'a', 'â' => 'a', 'ấ' => 'a', 'ầ' => 'a', 'ẩ' => 'a', 'ẫ' => 'a', 'ậ' => 'a',
             'É' => 'E', 'È' => 'E', 'Ẻ' => 'E', 'Ẽ' => 'E', 'Ẹ' => 'E', 'Ê' => 'E', 'Ế' => 'E', 'Ề' => 'E', 'Ể' => 'E', 'Ễ' => 'E', 'Ệ' => 'E',
@@ -173,30 +170,30 @@ class util
             'Ú' => 'U', 'Ù' => 'U', 'Ủ' => 'U', 'Ũ' => 'U', 'Ụ' => 'U', 'Ư' => 'U', 'Ứ' => 'U', 'Ừ' => 'U', 'Ử' => 'U', 'Ữ' => 'U', 'Ự' => 'U',
             'ú' => 'u', 'ù' => 'u', 'ủ' => 'u', 'ũ' => 'u', 'ụ' => 'u', 'ư' => 'u', 'ứ' => 'u', 'ừ' => 'u', 'ử' => 'u', 'ữ' => 'u', 'ự' => 'u',
             'Ý' => 'Y', 'Ỳ' => 'Y', 'Ỷ' => 'Y', 'Ỹ' => 'Y', 'Ỵ' => 'Y', 'ý' => 'y', 'ỳ' => 'y', 'ỷ' => 'y', 'ỹ' => 'y', 'ỵ' => 'y',
-            'Đ' => 'D', 'đ' => 'd'
-        ),
-        'ar' => array(/* Arabic */
+            'Đ' => 'D', 'đ' => 'd',
+        ],
+        'ar' => [/* Arabic */
             'أ' => 'a', 'ب' => 'b', 'ت' => 't', 'ث' => 'th', 'ج' => 'g', 'ح' => 'h', 'خ' => 'kh', 'د' => 'd',
             'ذ' => 'th', 'ر' => 'r', 'ز' => 'z', 'س' => 's', 'ش' => 'sh', 'ص' => 's', 'ض' => 'd', 'ط' => 't',
             'ظ' => 'th', 'ع' => 'aa', 'غ' => 'gh', 'ف' => 'f', 'ق' => 'k', 'ك' => 'k', 'ل' => 'l', 'م' => 'm',
-            'ن' => 'n', 'ه' => 'h', 'و' => 'o', 'ي' => 'y'
-        ),
-        'sr' => array(/* Serbian */
+            'ن' => 'n', 'ه' => 'h', 'و' => 'o', 'ي' => 'y',
+        ],
+        'sr' => [/* Serbian */
             'ђ' => 'dj', 'ј' => 'j', 'љ' => 'lj', 'њ' => 'nj', 'ћ' => 'c', 'џ' => 'dz', 'đ' => 'dj',
-            'Ђ' => 'Dj', 'Ј' => 'j', 'Љ' => 'Lj', 'Њ' => 'Nj', 'Ћ' => 'C', 'Џ' => 'Dz', 'Đ' => 'Dj'
-        ),
-        'az' => array(/* Azerbaijani */
+            'Ђ' => 'Dj', 'Ј' => 'j', 'Љ' => 'Lj', 'Њ' => 'Nj', 'Ћ' => 'C', 'Џ' => 'Dz', 'Đ' => 'Dj',
+        ],
+        'az' => [/* Azerbaijani */
             'ç' => 'c', 'ə' => 'e', 'ğ' => 'g', 'ı' => 'i', 'ö' => 'o', 'ş' => 's', 'ü' => 'u',
-            'Ç' => 'C', 'Ə' => 'E', 'Ğ' => 'G', 'İ' => 'I', 'Ö' => 'O', 'Ş' => 'S', 'Ü' => 'U'
-        ),
-    );
+            'Ç' => 'C', 'Ə' => 'E', 'Ğ' => 'G', 'İ' => 'I', 'Ö' => 'O', 'Ş' => 'S', 'Ü' => 'U',
+        ],
+    ];
 
     /**
-     * The character map for the designated language
+     * The character map for the designated language.
      *
      * @see https://github.com/jbroadway/urlify/blob/master/URLify.php
      */
-    private static $map = array();
+    private static $map = [];
 
     /**
      * The character list as a string.
@@ -213,7 +210,7 @@ class util
     private static $regex = '';
 
     /**
-     * The current language
+     * The current language.
      *
      * @see https://github.com/jbroadway/urlify/blob/master/URLify.php
      */
@@ -240,7 +237,7 @@ class util
 
         // Reset static vars
         self::$language = $language;
-        self::$map = array();
+        self::$map = [];
         self::$chars = '';
 
         foreach (self::$maps as $map) {
@@ -250,9 +247,8 @@ class util
             }
         }
 
-        self::$regex = '/[' . self::$chars . ']/u';
+        self::$regex = '/['.self::$chars.']/u';
     }
-
 
     /**
      * Access an array index, retrieving the value stored there if it
@@ -260,10 +256,11 @@ class util
      * concisely access an index which may or may not exist without
      * raising a warning.
      *
-     * @param  array  $var     Array to access
-     * @param  string $field   Index to access in the array
-     * @param  mixed  $default Default value to return if the key is not
-     *                         present in the array
+     * @param array  $var     Array to access
+     * @param string $field   Index to access in the array
+     * @param mixed  $default Default value to return if the key is not
+     *                        present in the array
+     *
      * @return mixed
      */
     public static function array_get(&$var, $default = null)
@@ -277,41 +274,42 @@ class util
 
     /**
      * Display a variable's contents using nice HTML formatting and will
-     * properly display the value of booleans as true or false
+     * properly display the value of booleans as true or false.
      *
      * @see var_dump_plain()
      *
-     * @param  mixed $var The variable to dump
+     * @param mixed $var The variable to dump
+     *
      * @return string
      */
     public static function var_dump($var, $return = false, $expandLevel = 1)
     {
         self::$hasArray = false;
         $toggScript = 'var colToggle = function(toggID) {var img = document.getElementById(toggID);if (document.getElementById(toggID + "-collapsable").style.display == "none") {document.getElementById(toggID + "-collapsable").style.display = "inline";setImg(toggID, 0);var previousSibling = document.getElementById(toggID + "-collapsable").previousSibling;while (previousSibling != null && (previousSibling.nodeType != 1 || previousSibling.tagName.toLowerCase() != "br")) {previousSibling = previousSibling.previousSibling;}} else {document.getElementById(toggID + "-collapsable").style.display = "none";setImg(toggID, 1);var previousSibling = document.getElementById(toggID + "-collapsable").previousSibling; while (previousSibling != null && (previousSibling.nodeType != 1 || previousSibling.tagName.toLowerCase() != "br")) {previousSibling = previousSibling.previousSibling;}}};';
-        $imgScript = 'var setImg = function(objID,imgID,addStyle) {var imgStore = ["data:image/png;base64,' . self::$icon_collapse . '", "data:image/png;base64,' . self::$icon_expand . '"];if (objID) {document.getElementById(objID).setAttribute("src", imgStore[imgID]);if (addStyle){document.getElementById(objID).setAttribute("style", "position:relative;left:-5px;top:-1px;cursor:pointer;");}}};';
-        $jsCode = preg_replace('/ +/', ' ', '<script>' . $toggScript . $imgScript . '</script>');
-        $html = '<pre style="margin-bottom: 18px;' .
-            'background: #f7f7f9;' .
-            'border: 1px solid #e1e1e8;' .
-            'padding: 8px;' .
-            'border-radius: 4px;' .
-            '-moz-border-radius: 4px;' .
-            '-webkit-border radius: 4px;' .
-            'display: block;' .
-            'font-size: 12.05px;' .
-            'white-space: pre-wrap;' .
-            'word-wrap: break-word;' .
-            'color: #333;' .
+        $imgScript = 'var setImg = function(objID,imgID,addStyle) {var imgStore = ["data:image/png;base64,'.self::$icon_collapse.'", "data:image/png;base64,'.self::$icon_expand.'"];if (objID) {document.getElementById(objID).setAttribute("src", imgStore[imgID]);if (addStyle){document.getElementById(objID).setAttribute("style", "position:relative;left:-5px;top:-1px;cursor:pointer;");}}};';
+        $jsCode = preg_replace('/ +/', ' ', '<script>'.$toggScript.$imgScript.'</script>');
+        $html = '<pre style="margin-bottom: 18px;'.
+            'background: #f7f7f9;'.
+            'border: 1px solid #e1e1e8;'.
+            'padding: 8px;'.
+            'border-radius: 4px;'.
+            '-moz-border-radius: 4px;'.
+            '-webkit-border radius: 4px;'.
+            'display: block;'.
+            'font-size: 12.05px;'.
+            'white-space: pre-wrap;'.
+            'word-wrap: break-word;'.
+            'color: #333;'.
             'font-family: Menlo,Monaco,Consolas,\'Courier New\',monospace;">';
-        $done  = array();
+        $done = [];
         $html .= self::var_dump_plain($var, intval($expandLevel), 0, $done);
         $html .= '</pre>';
 
         if (self::$hasArray) {
-            $html = $jsCode . $html;
+            $html = $jsCode.$html;
         }
 
-        if (! $return) {
+        if (!$return) {
             echo $html;
         }
 
@@ -324,10 +322,11 @@ class util
      * like booleans and resources. Supports collapsable arrays and objects
      * as well.
      *
-     * @param  mixed $var The variable to dump
+     * @param mixed $var The variable to dump
+     *
      * @return string
      */
-    public static function var_dump_plain($var, $expLevel, $depth = 0, $done = array())
+    public static function var_dump_plain($var, $expLevel, $depth = 0, $done = [])
     {
         $html = '';
 
@@ -337,30 +336,31 @@ class util
             $setStyle = 'display:inline;';
         } elseif ($expLevel == 0) {
             $setImg = 1;
-            $setStyle='display:none;';
+            $setStyle = 'display:none;';
         } elseif ($expLevel < 0) {
             $setImg = 0;
             $setStyle = 'display:inline;';
         }
 
         if (is_bool($var)) {
-            $html .= '<span style="color:#588bff;">bool</span><span style="color:#999;">(</span><strong>' . (($var) ? 'true' : 'false') . '</strong><span style="color:#999;">)</span>';
+            $html .= '<span style="color:#588bff;">bool</span><span style="color:#999;">(</span><strong>'.(($var) ? 'true' : 'false').'</strong><span style="color:#999;">)</span>';
         } elseif (is_int($var)) {
-            $html .= '<span style="color:#588bff;">int</span><span style="color:#999;">(</span><strong>' . $var . '</strong><span style="color:#999;">)</span>';
+            $html .= '<span style="color:#588bff;">int</span><span style="color:#999;">(</span><strong>'.$var.'</strong><span style="color:#999;">)</span>';
         } elseif (is_float($var)) {
-            $html .= '<span style="color:#588bff;">float</span><span style="color:#999;">(</span><strong>' . $var . '</strong><span style="color:#999;">)</span>';
+            $html .= '<span style="color:#588bff;">float</span><span style="color:#999;">(</span><strong>'.$var.'</strong><span style="color:#999;">)</span>';
         } elseif (is_string($var)) {
-            $html .= '<span style="color:#588bff;">string</span><span style="color:#999;">(</span>' . strlen($var) . '<span style="color:#999;">)</span> <strong>"' . self::htmlentities($var) . '"</strong>';
+            $html .= '<span style="color:#588bff;">string</span><span style="color:#999;">(</span>'.strlen($var).'<span style="color:#999;">)</span> <strong>"'.self::htmlentities($var).'"</strong>';
         } elseif (is_null($var)) {
             $html .= '<strong>NULL</strong>';
         } elseif (is_resource($var)) {
-            $html .= '<span style="color:#588bff;">resource</span>("' . get_resource_type($var) . '") <strong>"' . $var . '"</strong>';
+            $html .= '<span style="color:#588bff;">resource</span>("'.get_resource_type($var).'") <strong>"'.$var.'"</strong>';
         } elseif (is_array($var)) {
             // Check for recursion
             if ($depth > 0) {
                 foreach ($done as $prev) {
                     if ($prev === $var) {
-                        $html .= '<span style="color:#588bff;">array</span>(' . count($var) . ') *RECURSION DETECTED*';
+                        $html .= '<span style="color:#588bff;">array</span>('.count($var).') *RECURSION DETECTED*';
+
                         return $html;
                     }
                 }
@@ -370,11 +370,11 @@ class util
             }
 
             self::$hasArray = true;
-            $uuid = 'include-php-' . uniqid() . mt_rand(1, 1000000);
+            $uuid = 'include-php-'.uniqid().mt_rand(1, 1000000);
 
-            $html .= (!empty($var) ? ' <img id="' . $uuid . '" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" onclick="javascript:colToggle(this.id);" /><script>setImg("' . $uuid . '",'.$setImg.',1);</script>' : '') . '<span style="color:#588bff;">array</span>(' . count($var) . ')';
-            if (! empty($var)) {
-                $html .= ' <span id="' . $uuid . '-collapsable" style="'.$setStyle.'"><br />[<br />';
+            $html .= (!empty($var) ? ' <img id="'.$uuid.'" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" onclick="javascript:colToggle(this.id);" /><script>setImg("'.$uuid.'",'.$setImg.',1);</script>' : '').'<span style="color:#588bff;">array</span>('.count($var).')';
+            if (!empty($var)) {
+                $html .= ' <span id="'.$uuid.'-collapsable" style="'.$setStyle.'"><br />[<br />';
 
                 $indent = 4;
                 $longest_key = 0;
@@ -389,9 +389,9 @@ class util
 
                 foreach ($var as $key => $value) {
                     if (is_numeric($key)) {
-                        $html .= str_repeat(' ', $indent) . str_pad($key, $longest_key, ' ');
+                        $html .= str_repeat(' ', $indent).str_pad($key, $longest_key, ' ');
                     } else {
-                        $html .= str_repeat(' ', $indent) . str_pad('"' . self::htmlentities($key) . '"', $longest_key, ' ');
+                        $html .= str_repeat(' ', $indent).str_pad('"'.self::htmlentities($key).'"', $longest_key, ' ');
                     }
 
                     $html .= ' => ';
@@ -400,11 +400,11 @@ class util
 
                     foreach ($value as $line => $val) {
                         if ($line != 0) {
-                            $value[$line] = str_repeat(' ', $indent * 2) . $val;
+                            $value[$line] = str_repeat(' ', $indent * 2).$val;
                         }
                     }
 
-                    $html .= implode('<br />', $value) . '<br />';
+                    $html .= implode('<br />', $value).'<br />';
                 }
 
                 $html .= ']</span>';
@@ -413,7 +413,8 @@ class util
             // Check for recursion
             foreach ($done as $prev) {
                 if ($prev === $var) {
-                    $html .= '<span style="color:#588bff;">object</span>(' . get_class($var) . ') *RECURSION DETECTED*';
+                    $html .= '<span style="color:#588bff;">object</span>('.get_class($var).') *RECURSION DETECTED*';
+
                     return $html;
                 }
             }
@@ -421,10 +422,10 @@ class util
             // Keep track of variables we have already processed to detect recursion
             $done[] = &$var;
 
-            self::$hasArray=true;
-            $uuid = 'include-php-' . uniqid() . mt_rand(1, 1000000);
+            self::$hasArray = true;
+            $uuid = 'include-php-'.uniqid().mt_rand(1, 1000000);
 
-            $html .= ' <img id="' . $uuid . '" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" onclick="javascript:colToggle(this.id);" /><script>setImg("' . $uuid . '",'.$setImg.',1);</script><span style="color:#588bff;">object</span>(' . get_class($var) . ') <span id="' . $uuid . '-collapsable" style="'.$setStyle.'"><br />[<br />';
+            $html .= ' <img id="'.$uuid.'" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" onclick="javascript:colToggle(this.id);" /><script>setImg("'.$uuid.'",'.$setImg.',1);</script><span style="color:#588bff;">object</span>('.get_class($var).') <span id="'.$uuid.'-collapsable" style="'.$setStyle.'"><br />[<br />';
 
             $varArray = (array) $var;
 
@@ -434,11 +435,11 @@ class util
             foreach ($varArray as $key => $value) {
                 if (substr($key, 0, 2) == "\0*") {
                     unset($varArray[$key]);
-                    $key = 'protected:' . substr($key, 2);
+                    $key = 'protected:'.substr($key, 2);
                     $varArray[$key] = $value;
                 } elseif (substr($key, 0, 1) == "\0") {
                     unset($varArray[$key]);
-                    $key = 'private:' . substr($key, 1, strpos(substr($key, 1), "\0")) . ':' . substr($key, strpos(substr($key, 1), "\0") + 1);
+                    $key = 'private:'.substr($key, 1, strpos(substr($key, 1), "\0")).':'.substr($key, strpos(substr($key, 1), "\0") + 1);
                     $varArray[$key] = $value;
                 }
 
@@ -451,9 +452,9 @@ class util
 
             foreach ($varArray as $key => $value) {
                 if (is_numeric($key)) {
-                    $html .= str_repeat(' ', $indent) . str_pad($key, $longest_key, ' ');
+                    $html .= str_repeat(' ', $indent).str_pad($key, $longest_key, ' ');
                 } else {
-                    $html .= str_repeat(' ', $indent) . str_pad('"' . self::htmlentities($key) . '"', $longest_key, ' ');
+                    $html .= str_repeat(' ', $indent).str_pad('"'.self::htmlentities($key).'"', $longest_key, ' ');
                 }
 
                 $html .= ' => ';
@@ -462,11 +463,11 @@ class util
 
                 foreach ($value as $line => $val) {
                     if ($line != 0) {
-                        $value[$line] = str_repeat(' ', $indent * 2) . $val;
+                        $value[$line] = str_repeat(' ', $indent * 2).$val;
                     }
                 }
 
-                $html .= implode('<br />', $value) . '<br />';
+                $html .= implode('<br />', $value).'<br />';
             }
 
             $html .= ']</span>';
@@ -483,11 +484,12 @@ class util
      * as the second parameter, it will create strings safe for use as CSS
      * classes or IDs.
      *
-     * @param   string  $string    A string to convert to a slug
-     * @param   string  $separator The string to separate words with
-     * @param   boolean $css_mode  Whether or not to generate strings safe for
-     *                             CSS classes/IDs (Default to false)
-     * @return  string
+     * @param string $string    A string to convert to a slug
+     * @param string $separator The string to separate words with
+     * @param bool   $css_mode  Whether or not to generate strings safe for
+     *                          CSS classes/IDs (Default to false)
+     *
+     * @return string
      */
     public static function slugify($string, $separator = '-', $css_mode = false)
     {
@@ -506,10 +508,10 @@ class util
         $slug = preg_replace('/([^a-z0-9]+)/', $separator, strtolower(self::remove_accents($string)));
 
         if ($css_mode) {
-            $digits = array('zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine');
+            $digits = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 
             if (is_numeric(substr($slug, 0, 1))) {
-                $slug = $digits[substr($slug, 0, 1)] . substr($slug, 1);
+                $slug = $digits[substr($slug, 0, 1)].substr($slug, 1);
             }
         }
 
@@ -522,8 +524,9 @@ class util
      * NOTE: This function checks for 5-Byte sequences, UTF8
      *       has Bytes Sequences with a maximum length of 4.
      *
-     * @param  string $string The string to be checked
-     * @return boolean
+     * @param string $string The string to be checked
+     *
+     * @return bool
      */
     public static function seems_utf8($string)
     {
@@ -542,6 +545,7 @@ class util
      * A non-Mbstring UTF-8 checker.
      *
      * @param $string
+     *
      * @return bool
      */
     protected static function seemsUtf8Regex($string)
@@ -562,41 +566,43 @@ class util
     | (?<=[\xF0-\xF4][\x80-\xBF])[\x80-\xBF](?![\x80-\xBF]) # Short 4 byte sequence (2)
 )/x';
 
-        return ! preg_match($regex, $string);
+        return !preg_match($regex, $string);
     }
 
     /**
      * Nice formatting for computer sizes (Bytes).
      *
-     * @param   integer $bytes    The number in bytes to format
-     * @param   integer $decimals The number of decimal points to include
-     * @return  string
+     * @param int $bytes    The number in bytes to format
+     * @param int $decimals The number of decimal points to include
+     *
+     * @return string
      */
     public static function size_format($bytes, $decimals = 0)
     {
         $bytes = floatval($bytes);
 
         if ($bytes < 1024) {
-            return $bytes . ' B';
+            return $bytes.' B';
         } elseif ($bytes < pow(1024, 2)) {
-            return number_format($bytes / 1024, $decimals, '.', '') . ' KiB';
+            return number_format($bytes / 1024, $decimals, '.', '').' KiB';
         } elseif ($bytes < pow(1024, 3)) {
-            return number_format($bytes / pow(1024, 2), $decimals, '.', '') . ' MiB';
+            return number_format($bytes / pow(1024, 2), $decimals, '.', '').' MiB';
         } elseif ($bytes < pow(1024, 4)) {
-            return number_format($bytes / pow(1024, 3), $decimals, '.', '') . ' GiB';
+            return number_format($bytes / pow(1024, 3), $decimals, '.', '').' GiB';
         } elseif ($bytes < pow(1024, 5)) {
-            return number_format($bytes / pow(1024, 4), $decimals, '.', '') . ' TiB';
+            return number_format($bytes / pow(1024, 4), $decimals, '.', '').' TiB';
         } elseif ($bytes < pow(1024, 6)) {
-            return number_format($bytes / pow(1024, 5), $decimals, '.', '') . ' PiB';
+            return number_format($bytes / pow(1024, 5), $decimals, '.', '').' PiB';
         } else {
-            return number_format($bytes / pow(1024, 5), $decimals, '.', '') . ' PiB';
+            return number_format($bytes / pow(1024, 5), $decimals, '.', '').' PiB';
         }
     }
 
     /**
      * Serialize data, if needed.
      *
-     * @param  mixed $data Data that might need to be serialized
+     * @param mixed $data Data that might need to be serialized
+     *
      * @return mixed
      */
     public static function maybe_serialize($data)
@@ -611,7 +617,8 @@ class util
     /**
      * Unserialize value only if it is serialized.
      *
-     * @param  string $data A variable that may or may not be serialized
+     * @param string $data A variable that may or may not be serialized
+     *
      * @return mixed
      */
     public static function maybe_unserialize($data)
@@ -630,13 +637,14 @@ class util
      * If $data is not an string, then returned value will always be false.
      * Serialized data is always a string.
      *
-     * @param  mixed $data Value to check to see if was serialized
-     * @return boolean
+     * @param mixed $data Value to check to see if was serialized
+     *
+     * @return bool
      */
     public static function is_serialized($data)
     {
         // If it isn't a string, it isn't serialized
-        if (! is_string($data)) {
+        if (!is_string($data)) {
             return false;
         }
 
@@ -666,7 +674,7 @@ class util
 
         switch ($token) {
             case 's':
-                if ('"' !== $data[$length-2]) {
+                if ('"' !== $data[$length - 2]) {
                     return false;
                 }
 
@@ -690,26 +698,28 @@ class util
      * NOTE: This error can *frequently* occur with mismatched character sets and higher-than-ASCII characters.
      *
      * @param $brokenSerializedData
+     *
      * @return string
      */
     public static function fix_broken_serialization($brokenSerializedData)
     {
-        $fixdSerializedData = preg_replace_callback('!s:(\d+):"(.*?)";!', function($matches) {
+        $fixdSerializedData = preg_replace_callback('!s:(\d+):"(.*?)";!', function ($matches) {
             $snip = $matches[2];
-            return 's:' . strlen($snip) . ':"' . $snip . '";';
+
+            return 's:'.strlen($snip).':"'.$snip.'";';
         }, $brokenSerializedData);
 
         return $fixdSerializedData;
     }
 
     /**
-     * Checks to see if the page is being server over SSL or not
+     * Checks to see if the page is being server over SSL or not.
      *
-     * @return boolean
+     * @return bool
      */
     public static function is_https()
     {
-        if (isset($_SERVER['HTTPS']) && ! empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
+        if (isset($_SERVER['HTTPS']) && !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
             return true;
         }
 
@@ -728,10 +738,11 @@ class util
      * uses the $_SERVER value. Additional values provided are expected
      * to be encoded appropriately with urlencode() or rawurlencode().
      *
-     * @param  mixed  $newkey          Either newkey or an associative
-     *                                 array
-     * @param  mixed  $newvalue        Either newvalue or oldquery or uri
-     * @param  mixed  $oldquery_or_uri Optionally the old query or uri
+     * @param mixed $newkey          Either newkey or an associative
+     *                               array
+     * @param mixed $newvalue        Either newvalue or oldquery or uri
+     * @param mixed $oldquery_or_uri Optionally the old query or uri
+     *
      * @return string
      */
     public static function add_query_arg()
@@ -775,13 +786,13 @@ class util
         // Does the URI contain a query string?
         if (strpos($uri, '?') !== false) {
             $parts = explode('?', $uri, 2);
-            $base  = $parts[0] . '?';
+            $base = $parts[0].'?';
             $query = $parts[1];
-        } elseif (! empty($protocol) || strpos($uri, '=') === false) {
-            $base  = $uri . '?';
+        } elseif (!empty($protocol) || strpos($uri, '=') === false) {
+            $base = $uri.'?';
             $query = '';
         } else {
-            $base  = '';
+            $base = '';
             $query = $uri;
         }
 
@@ -807,7 +818,7 @@ class util
         $ret = http_build_query($qs);
         $ret = trim($ret, '?');
         $ret = preg_replace('#=(&|$)#', '$1', $ret);
-        $ret = $protocol . $base . $ret . $frag;
+        $ret = $protocol.$base.$ret.$frag;
         $ret = rtrim($ret, '?');
 
         return $ret;
@@ -816,8 +827,9 @@ class util
     /**
      * Removes an item or list from the query string.
      *
-     * @param  string|array  $keys Query key or keys to remove.
-     * @param  bool          $uri  When false uses the $_SERVER value
+     * @param string|array $keys Query key or keys to remove.
+     * @param bool         $uri  When false uses the $_SERVER value
+     *
      * @return string
      */
     public static function remove_query_arg($keys, $uri = false)
@@ -838,19 +850,20 @@ class util
      *
      * Supports 'y', 'n', 'yes', 'no' and a few other variations.
      *
-     * @param  string $string  The string to convert to boolean
-     * @param  bool   $default The value to return if we can't match any
-     *                          yes/no words
-     * @return boolean
+     * @param string $string  The string to convert to boolean
+     * @param bool   $default The value to return if we can't match any
+     *                        yes/no words
+     *
+     * @return bool
      */
     public static function str_to_bool($string, $default = false)
     {
         $yes_words = 'affirmative|all right|aye|indubitably|most assuredly|ok|of course|okay|sure thing|y|yes+|yea|yep|sure|yeah|true|t|on|1|oui|vrai';
         $no_words = 'no*|no way|nope|nah|na|never|absolutely not|by no means|negative|never ever|false|f|off|0|non|faux';
 
-        if (preg_match('/^(' . $yes_words . ')$/i', $string)) {
+        if (preg_match('/^('.$yes_words.')$/i', $string)) {
             return true;
-        } elseif (preg_match('/^(' . $no_words . ')$/i', $string)) {
+        } elseif (preg_match('/^('.$no_words.')$/i', $string)) {
             return false;
         }
 
@@ -860,21 +873,23 @@ class util
     /**
      * Check if a string starts with the given string.
      *
-     * @param  string $string
-     * @param  string $starts_with
-     * @return boolean
+     * @param string $string
+     * @param string $starts_with
+     *
+     * @return bool
      */
     public static function starts_with($string, $starts_with)
     {
-        return (strpos($string, $starts_with) === 0);
+        return strpos($string, $starts_with) === 0;
     }
 
     /**
      * Check if a string ends with the given string.
      *
-     * @param  string $string
-     * @param  string $starts_with
-     * @return boolean
+     * @param string $string
+     * @param string $starts_with
+     *
+     * @return bool
      */
     public static function ends_with($string, $ends_with)
     {
@@ -884,32 +899,35 @@ class util
     /**
      * Check if a string contains another string.
      *
-     * @param  string $haystack
-     * @param  string $needle
-     * @return boolean
+     * @param string $haystack
+     * @param string $needle
+     *
+     * @return bool
      */
     public static function str_contains($haystack, $needle)
     {
-        return (strpos($haystack, $needle) !== false);
+        return strpos($haystack, $needle) !== false;
     }
 
     /**
      * Check if a string contains another string. This version is case
      * insensitive.
      *
-     * @param  string $haystack
-     * @param  string $needle
-     * @return boolean
+     * @param string $haystack
+     * @param string $needle
+     *
+     * @return bool
      */
     public static function str_icontains($haystack, $needle)
     {
-        return (stripos($haystack, $needle) !== false);
+        return stripos($haystack, $needle) !== false;
     }
 
     /**
      * Return the file extension of the given filename.
      *
-     * @param  string $filename
+     * @param string $filename
+     *
      * @return string
      */
     public static function get_file_ext($filename)
@@ -920,10 +938,12 @@ class util
     /**
      * Removes a directory (and its contents) recursively.
      *
-     * @param  string $dir              The directory to be deleted recursively
-     * @param  bool   $traverseSymlinks Delete contents of symlinks recursively
-     * @return bool
+     * @param string $dir              The directory to be deleted recursively
+     * @param bool   $traverseSymlinks Delete contents of symlinks recursively
+     *
      * @throws \RuntimeException
+     *
+     * @return bool
      */
     public static function rmdir($dir, $traverseSymlinks = false)
     {
@@ -939,13 +959,13 @@ class util
                     continue;
                 }
 
-                $currentPath = $dir . '/' . $file;
+                $currentPath = $dir.'/'.$file;
 
                 if (is_dir($currentPath)) {
                     self::rmdir($currentPath, $traverseSymlinks);
                 } elseif (!unlink($currentPath)) {
                     // @codeCoverageIgnoreStart
-                    throw new \RuntimeException('Unable to delete ' . $currentPath);
+                    throw new \RuntimeException('Unable to delete '.$currentPath);
                     // @codeCoverageIgnoreEnd
                 }
             }
@@ -955,13 +975,13 @@ class util
         if (is_link($dir) && !defined('PHP_WINDOWS_VERSION_MAJOR')) {
             if (!unlink($dir)) {
                 // @codeCoverageIgnoreStart
-                throw new \RuntimeException('Unable to delete ' . $dir);
+                throw new \RuntimeException('Unable to delete '.$dir);
                 // @codeCoverageIgnoreEnd
             }
         } else {
             if (!rmdir($dir)) {
                 // @codeCoverageIgnoreStart
-                throw new \RuntimeException('Unable to delete ' . $dir);
+                throw new \RuntimeException('Unable to delete '.$dir);
                 // @codeCoverageIgnoreEnd
             }
         }
@@ -972,7 +992,8 @@ class util
     /**
      * Convert entities, while preserving already-encoded entities.
      *
-     * @param  string $string The text to be converted
+     * @param string $string The text to be converted
+     *
      * @return string
      */
     public static function htmlentities($string, $preserve_encoded_entities = false)
@@ -985,6 +1006,7 @@ class util
             }
 
             $translation_table[chr(38)] = '&';
+
             return preg_replace('/&(?![A-Za-z]{0,4}\w{2,3};|#[0-9]{2,3};)/', '&amp;', strtr($string, $translation_table));
         }
 
@@ -995,8 +1017,9 @@ class util
      * Convert >, <, ', " and & to html entities, but preserves entities that
      * are already encoded.
      *
-     * @param   string $string The text to be converted
-     * @return  string
+     * @param string $string The text to be converted
+     *
+     * @return string
      */
     public static function htmlspecialchars($string, $preserve_encoded_entities = false)
     {
@@ -1020,8 +1043,9 @@ class util
      *
      * @see https://github.com/jbroadway/urlify/blob/master/URLify.php
      *
-     * @param  string $string   Text that might have not-ASCII characters
-     * @param  string $language Specifies a priority for a specific language.
+     * @param string $string   Text that might have not-ASCII characters
+     * @param string $language Specifies a priority for a specific language.
+     *
      * @return string Filtered string with replaced "nice" characters
      */
     public static function downcode($text, $language = '')
@@ -1039,16 +1063,16 @@ class util
             }
         } else {
             // Not a UTF-8 string so we assume its ISO-8859-1
-            $search  = "\x80\x83\x8a\x8e\x9a\x9e\x9f\xa2\xa5\xb5\xc0\xc1\xc2\xc3\xc4\xc5\xc7\xc8\xc9\xca\xcb\xcc\xcd";
+            $search = "\x80\x83\x8a\x8e\x9a\x9e\x9f\xa2\xa5\xb5\xc0\xc1\xc2\xc3\xc4\xc5\xc7\xc8\xc9\xca\xcb\xcc\xcd";
             $search .= "\xce\xcf\xd1\xd2\xd3\xd4\xd5\xd6\xd8\xd9\xda\xdb\xdc\xdd\xe0\xe1\xe2\xe3\xe4\xe5\xe7\xe8\xe9";
             $search .= "\xea\xeb\xec\xed\xee\xef\xf1\xf2\xf3\xf4\xf5\xf6\xf8\xf9\xfa\xfb\xfc\xfd\xff";
-            $text    = strtr($text, $search, 'EfSZszYcYuAAAAAACEEEEIIIINOOOOOOUUUUYaaaaaaceeeeiiiinoooooouuuuyy');
+            $text = strtr($text, $search, 'EfSZszYcYuAAAAAACEEEEIIIINOOOOOOUUUUYaaaaaaceeeeiiiinoooooouuuuyy');
 
             // These latin characters should be represented by two characters so
             // we can't use strtr
-            $complexSearch  = array("\x8c", "\x9c", "\xc6", "\xd0", "\xde", "\xdf", "\xe6", "\xf0", "\xfe");
-            $complexReplace = array('OE', 'oe', 'AE', 'DH', 'TH', 'ss', 'ae', 'dh', 'th');
-            $text           = str_replace($complexSearch, $complexReplace, $text);
+            $complexSearch = ["\x8c", "\x9c", "\xc6", "\xd0", "\xde", "\xdf", "\xe6", "\xf0", "\xfe"];
+            $complexReplace = ['OE', 'oe', 'AE', 'DH', 'TH', 'ss', 'ae', 'dh', 'th'];
+            $text = str_replace($complexSearch, $complexReplace, $text);
         }
 
         return $text;
@@ -1060,8 +1084,9 @@ class util
      * If there are no accent characters, then the string given is just
      * returned.
      *
-     * @param  string $string   Text that might have accent characters
-     * @param  string $language Specifies a priority for a specific language.
+     * @param string $string   Text that might have accent characters
+     * @param string $language Specifies a priority for a specific language.
+     *
      * @return string Filtered  string with replaced "nice" characters
      */
     public static function remove_accents($string, $language = '')
@@ -1076,7 +1101,8 @@ class util
     /**
      * Strip all witespaces from the given string.
      *
-     * @param  string $string The string to strip
+     * @param string $string The string to strip
+     *
      * @return string
      */
     public static function strip_space($string)
@@ -1089,9 +1115,10 @@ class util
      * - Remove accents
      * - Lower the string
      * - Remove punctuation characters
-     * - Strip whitespaces
+     * - Strip whitespaces.
      *
-     * @param  string $string the string to sanitize
+     * @param string $string the string to sanitize
+     *
      * @return string
      */
     public static function sanitize_string($string)
@@ -1107,8 +1134,9 @@ class util
     /**
      * Pads a given string with zeroes on the left.
      *
-     * @param  int  $number The number to pad
-     * @param  int  $length The total length of the desired string
+     * @param int $number The number to pad
+     * @param int $length The total length of the desired string
+     *
      * @return string
      */
     public static function zero_pad($number, $length)
@@ -1120,9 +1148,10 @@ class util
      * Converts a unix timestamp to a relative time string, such as "3 days ago"
      * or "2 weeks ago".
      *
-     * @param  int    $from   The date to use as a starting point
-     * @param  int    $to     The date to compare to, defaults to now
-     * @param  string $suffix The string to add to the end, defaults to " ago"
+     * @param int    $from   The date to use as a starting point
+     * @param int    $to     The date to compare to, defaults to now
+     * @param string $suffix The string to add to the end, defaults to " ago"
+     *
      * @return string
      */
     public static function human_time_diff($from, $to = '', $as_text = false, $suffix = ' ago')
@@ -1132,52 +1161,53 @@ class util
         }
 
         $from = new \DateTime(date('Y-m-d H:i:s', $from));
-        $to   = new \DateTime(date('Y-m-d H:i:s', $to));
+        $to = new \DateTime(date('Y-m-d H:i:s', $to));
         $diff = $from->diff($to);
 
         if ($diff->y > 1) {
-            $text = $diff->y . ' years';
+            $text = $diff->y.' years';
         } elseif ($diff->y == 1) {
             $text = '1 year';
         } elseif ($diff->m > 1) {
-            $text = $diff->m . ' months';
+            $text = $diff->m.' months';
         } elseif ($diff->m == 1) {
             $text = '1 month';
         } elseif ($diff->d > 7) {
-            $text = ceil($diff->d / 7) . ' weeks';
+            $text = ceil($diff->d / 7).' weeks';
         } elseif ($diff->d == 7) {
             $text = '1 week';
         } elseif ($diff->d > 1) {
-            $text = $diff->d . ' days';
+            $text = $diff->d.' days';
         } elseif ($diff->d == 1) {
             $text = '1 day';
         } elseif ($diff->h > 1) {
-            $text = $diff->h . ' hours';
+            $text = $diff->h.' hours';
         } elseif ($diff->h == 1) {
             $text = ' 1 hour';
         } elseif ($diff->i > 1) {
-            $text = $diff->i . ' minutes';
+            $text = $diff->i.' minutes';
         } elseif ($diff->i == 1) {
             $text = '1 minute';
         } elseif ($diff->s > 1) {
-            $text = $diff->s . ' seconds';
+            $text = $diff->s.' seconds';
         } else {
             $text = '1 second';
         }
 
         if ($as_text) {
             $text = explode(' ', $text, 2);
-            $text = self::number_to_word($text[0]) . ' ' . $text[1];
+            $text = self::number_to_word($text[0]).' '.$text[1];
         }
 
-        return trim($text) . $suffix;
+        return trim($text).$suffix;
     }
 
     /**
      * Converts a number into the text equivalent. For example, 456 becomes four
      * hundred and fifty-six.
      *
-     * @param  int|float $number The number to convert into text
+     * @param int|float $number The number to convert into text
+     *
      * @return string
      */
     public static function number_to_word($number)
@@ -1205,9 +1235,9 @@ class util
         } else {
             $length = 19;
             $number = str_pad($number, 60, '0', STR_PAD_LEFT);
-            $group  = rtrim(chunk_split($number, 3, ' '), ' ');
+            $group = rtrim(chunk_split($number, 3, ' '), ' ');
             $groups = explode(' ', $group);
-            $groups2 = array();
+            $groups2 = [];
 
             foreach ($groups as $group) {
                 $groups2[] = self::numberToWordThreeDigits($group[0], $group[1], $group[2]);
@@ -1215,8 +1245,8 @@ class util
 
             for ($z = 0; $z < count($groups2); $z++) {
                 if ($groups2[$z] != '') {
-                    $output .= $groups2[$z] . self::numberToWordConvertGroup($length - $z);
-                    $output .= ($z < $length && ! array_search('', array_slice($groups2, $z + 1, -1)) && $groups2[$length] != '' && $groups[$length][0] == '0' ? ' and ' : ', ');
+                    $output .= $groups2[$z].self::numberToWordConvertGroup($length - $z);
+                    $output .= ($z < $length && !array_search('', array_slice($groups2, $z + 1, -1)) && $groups2[$length] != '' && $groups[$length][0] == '0' ? ' and ' : ', ');
                 }
             }
 
@@ -1227,7 +1257,7 @@ class util
             $output .= ' point';
 
             for ($i = 0; $i < strlen($decimal); $i++) {
-                $output .= ' ' . self::numberToWordConvertDigit($decimal[$i]);
+                $output .= ' '.self::numberToWordConvertDigit($decimal[$i]);
             }
         }
 
@@ -1236,7 +1266,7 @@ class util
 
     protected static function numberToWordConvertGroup($index)
     {
-        switch($index) {
+        switch ($index) {
             case 11:
                 return ' decillion';
             case 10:
@@ -1275,7 +1305,7 @@ class util
         }
 
         if ($digit1 != '0') {
-            $output .= self::numberToWordConvertDigit($digit1) . ' hundred';
+            $output .= self::numberToWordConvertDigit($digit1).' hundred';
 
             if ($digit2 != '0' || $digit3 != '0') {
                 $output .= ' and ';
@@ -1389,14 +1419,15 @@ class util
     /**
      * Transmit UTF-8 content headers if the headers haven't already been sent.
      *
-     * @param  string  $content_type The content type to send out
-     * @return boolean
+     * @param string $content_type The content type to send out
+     *
+     * @return bool
      */
     public static function utf8_headers($content_type = 'text/html')
     {
         // @codeCoverageIgnoreStart
-        if (! headers_sent()) {
-            header('Content-type: ' . $content_type . '; charset=utf-8');
+        if (!headers_sent()) {
+            header('Content-type: '.$content_type.'; charset=utf-8');
 
             return true;
         }
@@ -1415,12 +1446,13 @@ class util
      * @param string $content  The content to output for the download.
      *                         If you don't specify this, just the
      *                         headers will be sent
-     * @return boolean
+     *
+     * @return bool
      */
     public static function force_download($filename, $content = false)
     {
         // @codeCoverageIgnoreStart
-        if (! headers_sent()) {
+        if (!headers_sent()) {
             // Required for some browsers
             if (ini_get('zlib.output_compression')) {
                 @ini_set('zlib.output_compression', 'Off');
@@ -1433,12 +1465,12 @@ class util
             // Required for certain browsers
             header('Cache-Control: private', false);
 
-            header('Content-Disposition: attachment; filename="' . basename(str_replace('"', '', $filename)) . '";');
+            header('Content-Disposition: attachment; filename="'.basename(str_replace('"', '', $filename)).'";');
             header('Content-Type: application/force-download');
             header('Content-Transfer-Encoding: binary');
 
             if ($content) {
-                header('Content-Length: ' . strlen($content));
+                header('Content-Length: '.strlen($content));
             }
 
             ob_clean();
@@ -1462,14 +1494,14 @@ class util
      * headers must be sent so that all of them get the point that no
      * caching should occur
      *
-     * @return boolean
+     * @return bool
      */
     public static function nocache_headers()
     {
         // @codeCoverageIgnoreStart
-        if (! headers_sent()) {
+        if (!headers_sent()) {
             header('Expires: Wed, 11 Jan 1984 05:00:00 GMT');
-            header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT');
+            header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
             header('Cache-Control: no-cache, must-revalidate, max-age=0');
             header('Pragma: no-cache');
 
@@ -1483,31 +1515,33 @@ class util
     /**
      * Generates a string of random characters.
      *
-     * @throws  LengthException  If $length is bigger than the available
-     *                           character pool and $no_duplicate_chars is
-     *                           enabled
      *
-     * @param   integer $length             The length of the string to
-     *                                      generate
-     * @param   boolean $human_friendly     Whether or not to make the
-     *                                      string human friendly by
-     *                                      removing characters that can be
-     *                                      confused with other characters (
-     *                                      O and 0, l and 1, etc)
-     * @param   boolean $include_symbols    Whether or not to include
-     *                                      symbols in the string. Can not
-     *                                      be enabled if $human_friendly is
-     *                                      true
-     * @param   boolean $no_duplicate_chars Whether or not to only use
-     *                                      characters once in the string.
-     * @return  string
+     * @param int  $length             The length of the string to
+     *                                 generate
+     * @param bool $human_friendly     Whether or not to make the
+     *                                 string human friendly by
+     *                                 removing characters that can be
+     *                                 confused with other characters (
+     *                                 O and 0, l and 1, etc)
+     * @param bool $include_symbols    Whether or not to include
+     *                                 symbols in the string. Can not
+     *                                 be enabled if $human_friendly is
+     *                                 true
+     * @param bool $no_duplicate_chars Whether or not to only use
+     *                                 characters once in the string.
+     *
+     * @throws LengthException If $length is bigger than the available
+     *                         character pool and $no_duplicate_chars is
+     *                         enabled
+     *
+     * @return string
      */
     public static function random_string($length = 16, $human_friendly = true, $include_symbols = false, $no_duplicate_chars = false)
     {
         $nice_chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefhjkmnprstuvwxyz23456789';
-        $all_an     = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
-        $symbols    = '!@#$%^&*()~_-=+{}[]|:;<>,.?/"\'\\`';
-        $string     = '';
+        $all_an = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+        $symbols = '!@#$%^&*()~_-=+{}[]|:;<>,.?/"\'\\`';
+        $string = '';
 
         // Determine the pool of available characters based on the given parameters
         if ($human_friendly) {
@@ -1532,9 +1566,9 @@ class util
 
         // Convert the pool of characters into an array of characters and
         // shuffle the array
-        $pool       = str_split($pool);
+        $pool = str_split($pool);
         $poolLength = count($pool);
-        $rand       = mt_rand(0, $poolLength - 1);
+        $rand = mt_rand(0, $poolLength - 1);
 
         // Generate our string
         for ($i = 0; $i < $length; $i++) {
@@ -1557,9 +1591,10 @@ class util
     /**
      * Generate secure random string of given length
      * If 'openssl_random_pseudo_bytes' is not available
-     * then generate random string using default function
+     * then generate random string using default function.
      *
      * @param int $length length of string
+     *
      * @return bool
      */
     public static function secure_random_string($length = 16)
@@ -1571,7 +1606,7 @@ class util
                 throw new \LengthException('$length is not accurate, unable to generate random string');
             }
 
-            return substr(str_replace(array('/', '+', '='), '', base64_encode($bytes)), 0, $length);
+            return substr(str_replace(['/', '+', '='], '', base64_encode($bytes)), 0, $length);
         }
 
         return static::random_string($length);
@@ -1580,7 +1615,8 @@ class util
     /**
      * Validate an email address.
      *
-     * @param  string $possible_email An email address to validate
+     * @param string $possible_email An email address to validate
+     *
      * @return bool
      */
     public static function validate_email($possible_email)
@@ -1591,9 +1627,10 @@ class util
     /**
      * Return the URL to a user's gravatar.
      *
-     * @param   string  $email The email of the user
-     * @param   integer $size  The size of the gravatar
-     * @return  string
+     * @param string $email The email of the user
+     * @param int    $size  The size of the gravatar
+     *
+     * @return string
      */
     public static function get_gravatar($email, $size = 32)
     {
@@ -1603,7 +1640,7 @@ class util
             $url = 'http://www.gravatar.com/';
         }
 
-        $url .= 'avatar/' . md5($email) . '?s=' . (int) abs($size);
+        $url .= 'avatar/'.md5($email).'?s='.(int) abs($size);
 
         return $url;
     }
@@ -1611,7 +1648,8 @@ class util
     /**
      * Turns all of the links in a string into HTML links.
      *
-     * @param  string $text The string to parse
+     * @param string $text The string to parse
+     *
      * @return string
      */
     public static function linkify($text)
@@ -1630,13 +1668,14 @@ class util
              )                              # End $2:
             %ix';
 
-        return preg_replace_callback($section_html_pattern, array(__CLASS__, 'linkifyCallback'), $text);
+        return preg_replace_callback($section_html_pattern, [__CLASS__, 'linkifyCallback'], $text);
     }
 
     /**
      * Callback for the preg_replace in the linkify() method.
      *
-     * @param  array  $matches Matches from the preg_ function
+     * @param array $matches Matches from the preg_ function
+     *
      * @return string
      */
     protected static function linkifyRegex($text)
@@ -1690,7 +1729,8 @@ class util
     /**
      * Callback for the preg_replace in the linkify() method.
      *
-     * @param  array  $matches Matches from the preg_ function
+     * @param array $matches Matches from the preg_ function
+     *
      * @return string
      */
     protected static function linkifyCallback($matches)
@@ -1724,12 +1764,11 @@ class util
             $url .= $_SERVER['PHP_AUTH_USER'];
 
             if (isset($_SERVER['PHP_AUTH_PW'])) {
-                $url .= ':' . $_SERVER['PHP_AUTH_PW'];
+                $url .= ':'.$_SERVER['PHP_AUTH_PW'];
             }
 
             $url .= '@';
         }
-
 
         // We want the user to stay on the same host they are currently on,
         // but beware of security issues
@@ -1740,18 +1779,18 @@ class util
 
         // Is it on a non standard port?
         if ($is_https && ($port != 443)) {
-            $url .= ':' . $_SERVER['SERVER_PORT'];
+            $url .= ':'.$_SERVER['SERVER_PORT'];
         } elseif (!$is_https && ($port != 80)) {
-            $url .= ':' . $_SERVER['SERVER_PORT'];
+            $url .= ':'.$_SERVER['SERVER_PORT'];
         }
 
         // Get the rest of the URL
-        if (! isset($_SERVER['REQUEST_URI'])) {
+        if (!isset($_SERVER['REQUEST_URI'])) {
             // Microsoft IIS doesn't set REQUEST_URI by default
             $url .= substr($_SERVER['PHP_SELF'], 1);
 
             if (isset($_SERVER['QUERY_STRING'])) {
-                $url .= '?' . $_SERVER['QUERY_STRING'];
+                $url .= '?'.$_SERVER['QUERY_STRING'];
             }
         } else {
             $url .= $_SERVER['REQUEST_URI'];
@@ -1763,22 +1802,23 @@ class util
     /**
      * Returns the IP address of the client.
      *
-     * @param   boolean $trust_proxy_headers Whether or not to trust the
-     *                                       proxy headers HTTP_CLIENT_IP
-     *                                       and HTTP_X_FORWARDED_FOR. ONLY
-     *                                       use if your server is behind a
-     *                                       proxy that sets these values
-     * @return  string
+     * @param bool $trust_proxy_headers Whether or not to trust the
+     *                                  proxy headers HTTP_CLIENT_IP
+     *                                  and HTTP_X_FORWARDED_FOR. ONLY
+     *                                  use if your server is behind a
+     *                                  proxy that sets these values
+     *
+     * @return string
      */
     public static function get_client_ip($trust_proxy_headers = false)
     {
-        if (! $trust_proxy_headers) {
+        if (!$trust_proxy_headers) {
             return $_SERVER['REMOTE_ADDR'];
         }
 
-        if (! empty($_SERVER['HTTP_CLIENT_IP'])) {
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
             $ip = $_SERVER['HTTP_CLIENT_IP'];
-        } elseif (! empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
             $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
         } else {
             $ip = $_SERVER['REMOTE_ADDR'];
@@ -1790,19 +1830,20 @@ class util
     /**
      * Truncate a string to a specified length without cutting a word off.
      *
-     * @param   string  $string  The string to truncate
-     * @param   integer $length  The length to truncate the string to
-     * @param   string  $append  Text to append to the string IF it gets
-     *                           truncated, defaults to '...'
-     * @return  string
+     * @param string $string The string to truncate
+     * @param int    $length The length to truncate the string to
+     * @param string $append Text to append to the string IF it gets
+     *                       truncated, defaults to '...'
+     *
+     * @return string
      */
     public static function safe_truncate($string, $length, $append = '...')
     {
-        $ret        = substr($string, 0, $length);
+        $ret = substr($string, 0, $length);
         $last_space = strrpos($ret, ' ');
 
         if ($last_space !== false && $string != $ret) {
-            $ret     = substr($ret, 0, $last_space);
+            $ret = substr($ret, 0, $last_space);
         }
 
         if ($ret != $string) {
@@ -1812,13 +1853,13 @@ class util
         return $ret;
     }
 
-
     /**
      * Truncate the string to given length of charactes.
      *
      * @param $string
      * @param $limit
      * @param string $append
+     *
      * @return string
      */
     public static function limit_characters($string, $limit = 100, $append = '...')
@@ -1836,12 +1877,13 @@ class util
      * @param $string
      * @param $limit
      * @param string $append
+     *
      * @return string
      */
     public static function limit_words($string, $limit = 100, $append = '...')
     {
         preg_match('/^\s*+(?:\S++\s*+){1,'.$limit.'}/u', $string, $matches);
-        if (! isset($matches[0]) || strlen($string) === strlen($matches[0])) {
+        if (!isset($matches[0]) || strlen($string) === strlen($matches[0])) {
             return $string;
         }
 
@@ -1851,7 +1893,8 @@ class util
     /**
      * Returns the ordinal version of a number (appends th, st, nd, rd).
      *
-     * @param  string $number The number to append an ordinal suffix to
+     * @param string $number The number to append an ordinal suffix to
+     *
      * @return string
      */
     public static function ordinal($number)
@@ -1859,14 +1902,15 @@ class util
         $test_c = abs($number) % 10;
         $ext = ((abs($number) % 100 < 21 && abs($number) % 100 > 4) ? 'th' : (($test_c < 4) ? ($test_c < 3) ? ($test_c < 2) ? ($test_c < 1) ? 'th' : 'st' : 'nd' : 'rd' : 'th'));
 
-        return $number . $ext;
+        return $number.$ext;
     }
 
     /**
-     * Returns the file permissions as a nice string, like -rw-r--r--
+     * Returns the file permissions as a nice string, like -rw-r--r--.
      *
-     * @param   string $file The name of the file to get permissions form
-     * @return  string
+     * @param string $file The name of the file to get permissions form
+     *
+     * @return string
      */
     public static function full_permissions($file, $perms = null)
     {
@@ -1927,7 +1971,8 @@ class util
     /**
      * Returns the first element in an array.
      *
-     * @param  array $array
+     * @param array $array
+     *
      * @return mixed
      */
     public static function array_first(array $array)
@@ -1938,7 +1983,8 @@ class util
     /**
      * Returns the last element in an array.
      *
-     * @param  array $array
+     * @param array $array
+     *
      * @return mixed
      */
     public static function array_last(array $array)
@@ -1949,7 +1995,8 @@ class util
     /**
      * Returns the first key in an array.
      *
-     * @param  array $array
+     * @param array $array
+     *
      * @return int|string
      */
     public static function array_first_key(array $array)
@@ -1962,7 +2009,8 @@ class util
     /**
      * Returns the last key in an array.
      *
-     * @param  array $array
+     * @param array $array
+     *
      * @return int|string
      */
     public static function array_last_key(array $array)
@@ -1975,17 +2023,18 @@ class util
     /**
      * Flatten a multi-dimensional array into a one dimensional array.
      *
-     * @param  array   $array         The array to flatten
-     * @param  boolean $preserve_keys Whether or not to preserve array keys.
-     *                                Keys from deeply nested arrays will
-     *                                overwrite keys from shallowy nested arrays
+     * @param array $array         The array to flatten
+     * @param bool  $preserve_keys Whether or not to preserve array keys.
+     *                             Keys from deeply nested arrays will
+     *                             overwrite keys from shallowy nested arrays
+     *
      * @return array
      */
     public static function array_flatten(array $array, $preserve_keys = true)
     {
-        $flattened = array();
+        $flattened = [];
 
-        array_walk_recursive($array, function($value, $key) use (&$flattened, $preserve_keys) {
+        array_walk_recursive($array, function ($value, $key) use (&$flattened, $preserve_keys) {
             if ($preserve_keys && !is_int($key)) {
                 $flattened[$key] = $value;
             } else {
@@ -2002,17 +2051,18 @@ class util
      * and you call util::array_pluck($array, 'name'), the function will
      * return an array of values from $array[]->name.
      *
-     * @param  array   $array            An array
-     * @param  string  $field            The field to get values from
-     * @param  boolean $preserve_keys    Whether or not to preserve the
-     *                                   array keys
-     * @param  boolean $remove_nomatches If the field doesn't appear to be set,
-     *                                   remove it from the array
+     * @param array  $array            An array
+     * @param string $field            The field to get values from
+     * @param bool   $preserve_keys    Whether or not to preserve the
+     *                                 array keys
+     * @param bool   $remove_nomatches If the field doesn't appear to be set,
+     *                                 remove it from the array
+     *
      * @return array
      */
     public static function array_pluck(array $array, $field, $preserve_keys = true, $remove_nomatches = true)
     {
-        $new_list = array();
+        $new_list = [];
 
         foreach ($array as $key => $value) {
             if (is_object($value)) {
@@ -2022,7 +2072,7 @@ class util
                     } else {
                         $new_list[] = $value->{$field};
                     }
-                } elseif (! $remove_nomatches) {
+                } elseif (!$remove_nomatches) {
                     $new_list[$key] = $value;
                 }
             } else {
@@ -2032,7 +2082,7 @@ class util
                     } else {
                         $new_list[] = $value[$field];
                     }
-                } elseif (! $remove_nomatches) {
+                } elseif (!$remove_nomatches) {
                     $new_list[$key] = $value;
                 }
             }
@@ -2046,11 +2096,12 @@ class util
      * values. You can optionally specify a field of the nested arrays and
      * objects to search in.
      *
-     * @param  array   $array  The array to search
-     * @param  scalar  $search The value to search for
-     * @param  string  $field  The field to search in, if not specified
-     *                         all fields will be searched
-     * @return boolean|scalar  False on failure or the array key on success
+     * @param array  $array  The array to search
+     * @param scalar $search The value to search for
+     * @param string $field  The field to search in, if not specified
+     *                       all fields will be searched
+     *
+     * @return bool|scalar False on failure or the array key on success
      */
     public static function array_search_deep(array $array, $search, $field = false)
     {
@@ -2091,21 +2142,22 @@ class util
      * Returns an array containing all the elements of arr1 after applying
      * the callback function to each one.
      *
-     * @param  string  $callback     Callback function to run for each
-     *                               element in each array
-     * @param  array   $array        An array to run through the callback
-     *                               function
-     * @param  boolean $on_nonscalar Whether or not to call the callback
-     *                               function on nonscalar values
-     *                               (Objects, resources, etc)
+     * @param string $callback     Callback function to run for each
+     *                             element in each array
+     * @param array  $array        An array to run through the callback
+     *                             function
+     * @param bool   $on_nonscalar Whether or not to call the callback
+     *                             function on nonscalar values
+     *                             (Objects, resources, etc)
+     *
      * @return array
      */
     public static function array_map_deep(array $array, $callback, $on_nonscalar = false)
     {
         foreach ($array as $key => $value) {
             if (is_array($value)) {
-                $args = array($value, $callback, $on_nonscalar);
-                $array[$key] = call_user_func_array(array(__CLASS__, __FUNCTION__), $args);
+                $args = [$value, $callback, $on_nonscalar];
+                $array[$key] = call_user_func_array([__CLASS__, __FUNCTION__], $args);
             } elseif (is_scalar($value) || $on_nonscalar) {
                 $array[$key] = call_user_func($callback, $value);
             }
@@ -2123,7 +2175,8 @@ class util
      * Wrapper to prevent errors if the user doesn't have the mbstring
      * extension installed.
      *
-     * @param  string $encoding
+     * @param string $encoding
+     *
      * @return string
      */
     protected static function mbInternalEncoding($encoding = null)

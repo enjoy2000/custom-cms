@@ -1,11 +1,11 @@
 <?php
 /**
- * BjyAuthorize Module (https://github.com/bjyoungblood/BjyAuthorize)
+ * BjyAuthorize Module (https://github.com/bjyoungblood/BjyAuthorize).
  *
  * @link https://github.com/bjyoungblood/BjyAuthorize for the canonical source repository
+ *
  * @license http://framework.zend.com/license/new-bsd New BSD License
  */
- 
 namespace User\Entity;
 
 use BjyAuthorize\Provider\Role\ProviderInterface;
@@ -97,7 +97,7 @@ class User implements UserInterface, ProviderInterface
      */
     public function setId($id)
     {
-        $this->id = (int)$id;
+        $this->id = (int) $id;
     }
 
     /**
@@ -233,14 +233,16 @@ class User implements UserInterface, ProviderInterface
     }
 
     /**
-     * Add role to user by role id
+     * Add role to user by role id.
+     *
      * @param $controller
      * @param $roleName
+     *
      * @return void
      */
     public function addRoleByRoleName($controller, $roleName = 'guest')
     {
-        $role = $controller->getEntityManager()->getRepository('User\Entity\Role')->findOneBy(array('roleId' => $roleName));
+        $role = $controller->getEntityManager()->getRepository('User\Entity\Role')->findOneBy(['roleId' => $roleName]);
         if ($role) {
             $this->addRole($role);
             $controller->getEntityManager()->merge($this);
@@ -248,7 +250,6 @@ class User implements UserInterface, ProviderInterface
 
             return $this;
         } else {
-
             return false;
         }
     }
@@ -268,11 +269,11 @@ class User implements UserInterface, ProviderInterface
     public function getData()
     {
         return [
-            'id' => $this->id,
-            'username' => $this->username,
-            'email' => $this->email,
+            'id'          => $this->id,
+            'username'    => $this->username,
+            'email'       => $this->email,
             'displayName' => $this->displayName,
-            'roles' => $this->getRoles()
+            'roles'       => $this->getRoles(),
         ];
     }
 }

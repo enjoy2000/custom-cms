@@ -1,400 +1,401 @@
     <?php
 /**
- * Zend Framework (http://framework.zend.com/)
+ * Zend Framework (http://framework.zend.com/).
  *
  * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
+ *
  * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-return array(
-    'router' => array(
-        'routes' => array(
-            'zfcadmin' => array(
-                'options' => array(
-                    'defaults' => array(
+return [
+    'router' => [
+        'routes' => [
+            'zfcadmin' => [
+                'options' => [
+                    'defaults' => [
                         'controller' => 'Admin\Controller\Dashboard',
                         'action'     => 'index',
-                    ),
-                ),
-                'child_routes' => array(
+                    ],
+                ],
+                'child_routes' => [
 
                     // DASHBOARD
-                    'dashboard' => array(
-                        'type' => 'Segment',
-                        'options' => array(
-                            'route' => '/dashboard[/:action]',
-                            'constraints' => array(
+                    'dashboard' => [
+                        'type'    => 'Segment',
+                        'options' => [
+                            'route'       => '/dashboard[/:action]',
+                            'constraints' => [
                                 'controller' => 'Admin\Controller\Dashboard',
-                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                            ),
-                            'defaults' => array(
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ],
+                            'defaults' => [
                                 'controller' => 'Admin\Controller\Dashboard',
                                 'action'     => 'index',
-                            ),
-                        ),
-                    ),
+                            ],
+                        ],
+                    ],
 
                     // CATEGORY
-                    'category' => array(
-                        'type' => 'literal',
-                        'options' => array(
-                            'route' => '/category',
-                            'defaults' => array(
+                    'category' => [
+                        'type'    => 'literal',
+                        'options' => [
+                            'route'    => '/category',
+                            'defaults' => [
                                 'controller' => 'Admin\Controller\Category',
-                                'action' => 'index',
-                            ),
-                        ),
+                                'action'     => 'index',
+                            ],
+                        ],
                         'may_terminate' => true,
-                        'child_routes' => array(
-                            'new' => array(
-                                'type' => 'literal',
-                                'options' => array(
-                                    'route' => '/new',
-                                    'defaults' => array(
+                        'child_routes'  => [
+                            'new' => [
+                                'type'    => 'literal',
+                                'options' => [
+                                    'route'    => '/new',
+                                    'defaults' => [
                                         'action' => 'new',
-                                    ),
-                                ),
-                            ),
-                            'edit' => array(
-                                'type' => 'Segment',
-                                'options' => array(
-                                    'route' => '/edit[/][:id]',
-                                    'constraints' => array(
+                                    ],
+                                ],
+                            ],
+                            'edit' => [
+                                'type'    => 'Segment',
+                                'options' => [
+                                    'route'       => '/edit[/][:id]',
+                                    'constraints' => [
                                         'slug' => '[0-9]+',
-                                    ),
-                                    'defaults' => array(
+                                    ],
+                                    'defaults' => [
                                         'action' => 'edit',
-                                    ),
-                                ),
-                            ),
-                        ),
-                    ),
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
 
                     // BLOG
-                    'blog' => array(
-                        'type' => 'literal',
-                        'options' => array(
-                            'route' => '/blog',
-                            'defaults' => array(
+                    'blog' => [
+                        'type'    => 'literal',
+                        'options' => [
+                            'route'    => '/blog',
+                            'defaults' => [
                                 'controller' => 'Admin\Controller\Blog',
-                                'action' => 'index',
-                            ),
-                        ),
+                                'action'     => 'index',
+                            ],
+                        ],
                         'may_terminate' => true,
-                        'child_routes' => array(
-                            'new' => array(
-                                'type' => 'literal',
-                                'options' => array(
-                                    'route' => '/new',
-                                    'defaults' => array(
+                        'child_routes'  => [
+                            'new' => [
+                                'type'    => 'literal',
+                                'options' => [
+                                    'route'    => '/new',
+                                    'defaults' => [
                                         'action' => 'new',
-                                    ),
-                                ),
-                            ),
-                            'query' => array(
-                                'type' => 'literal',
-                                'options' => array(
-                                    'route' => '/query',
-                                    'defaults' => array(
+                                    ],
+                                ],
+                            ],
+                            'query' => [
+                                'type'    => 'literal',
+                                'options' => [
+                                    'route'    => '/query',
+                                    'defaults' => [
                                         'action' => 'query',
-                                    ),
-                                ),
-                            ),
-                            'edit' => array(
-                                'type' => 'Segment',
-                                'options' => array(
-                                    'route' => '/edit[/][:id]',
-                                    'constraints' => array(
+                                    ],
+                                ],
+                            ],
+                            'edit' => [
+                                'type'    => 'Segment',
+                                'options' => [
+                                    'route'       => '/edit[/][:id]',
+                                    'constraints' => [
                                         'slug' => '[0-9]+',
-                                    ),
-                                    'defaults' => array(
+                                    ],
+                                    'defaults' => [
                                         'action' => 'edit',
-                                    ),
-                                ),
-                            ),
-                            'delete' => array(
-                                'type' => 'Segment',
-                                'options' => array(
-                                    'route' => '/delete[/][:id]',
-                                    'constraints' => array(
+                                    ],
+                                ],
+                            ],
+                            'delete' => [
+                                'type'    => 'Segment',
+                                'options' => [
+                                    'route'       => '/delete[/][:id]',
+                                    'constraints' => [
                                         'slug' => '[0-9]+',
-                                    ),
-                                    'defaults' => array(
+                                    ],
+                                    'defaults' => [
                                         'action' => 'delete',
-                                    ),
-                                ),
-                            ),
-                        ),
-                    ),
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
 
                     // USER
-                    'moderator' => array(
-                        'type' => 'literal',
-                        'options' => array(
-                            'route' => '/moderator',
-                            'defaults' => array(
+                    'moderator' => [
+                        'type'    => 'literal',
+                        'options' => [
+                            'route'    => '/moderator',
+                            'defaults' => [
                                 'controller' => 'Admin\Controller\Moderator',
-                                'action' => 'index',
-                            ),
-                        ),
+                                'action'     => 'index',
+                            ],
+                        ],
                         'may_terminate' => true,
-                        'child_routes' => array(
-                            'create' => array(
-                                'type' => 'literal',
-                                'options' => array(
-                                    'route' => '/create',
-                                    'defaults' => array(
+                        'child_routes'  => [
+                            'create' => [
+                                'type'    => 'literal',
+                                'options' => [
+                                    'route'    => '/create',
+                                    'defaults' => [
                                         'action' => 'register',
-                                    ),
-                                ),
-                            ),
-                            'register' => array(
-                                'type' => 'literal',
-                                'options' => array(
-                                    'route' => '/register',
-                                    'defaults' => array(
+                                    ],
+                                ],
+                            ],
+                            'register' => [
+                                'type'    => 'literal',
+                                'options' => [
+                                    'route'    => '/register',
+                                    'defaults' => [
                                         'action' => 'register',
-                                    ),
-                                ),
-                            ),
-                            'edit' => array(
-                                'type' => 'Segment',
-                                'options' => array(
-                                    'route' => '/edit[/][:id]',
-                                    'constraints' => array(
+                                    ],
+                                ],
+                            ],
+                            'edit' => [
+                                'type'    => 'Segment',
+                                'options' => [
+                                    'route'       => '/edit[/][:id]',
+                                    'constraints' => [
                                         'id' => '[0-9]+',
-                                    ),
-                                    'defaults' => array(
+                                    ],
+                                    'defaults' => [
                                         'action' => 'edit',
-                                    ),
-                                ),
-                            ),
-                        ),
-                    ),
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
 
                     // MISSION CATEGORY
-                    'mission-category' => array(
-                        'type' => 'literal',
-                        'options' => array(
-                            'route' => '/mission-category',
-                            'defaults' => array(
+                    'mission-category' => [
+                        'type'    => 'literal',
+                        'options' => [
+                            'route'    => '/mission-category',
+                            'defaults' => [
                                 'controller' => 'Admin\Controller\MissionCategory',
-                                'action' => 'index',
-                            ),
-                        ),
+                                'action'     => 'index',
+                            ],
+                        ],
                         'may_terminate' => true,
-                        'child_routes' => array(
-                            'new' => array(
-                                'type' => 'literal',
-                                'options' => array(
-                                    'route' => '/new',
-                                    'defaults' => array(
+                        'child_routes'  => [
+                            'new' => [
+                                'type'    => 'literal',
+                                'options' => [
+                                    'route'    => '/new',
+                                    'defaults' => [
                                         'action' => 'new',
-                                    ),
-                                ),
-                            ),
-                            'edit' => array(
-                                'type' => 'Segment',
-                                'options' => array(
-                                    'route' => '/edit[/][:id]',
-                                    'constraints' => array(
+                                    ],
+                                ],
+                            ],
+                            'edit' => [
+                                'type'    => 'Segment',
+                                'options' => [
+                                    'route'       => '/edit[/][:id]',
+                                    'constraints' => [
                                         'id' => '[0-9]+',
-                                    ),
-                                    'defaults' => array(
+                                    ],
+                                    'defaults' => [
                                         'action' => 'edit',
-                                    ),
-                                ),
-                            ),
-                            'static' => array(
-                                'type' => 'Literal',
-                                'options' => array(
-                                    'route' => '/static',
-                                    'defaults' => array(
+                                    ],
+                                ],
+                            ],
+                            'static' => [
+                                'type'    => 'Literal',
+                                'options' => [
+                                    'route'    => '/static',
+                                    'defaults' => [
                                         'controller' => 'Admin\Controller\MissionStatic',
-                                        'action' => 'index',
-                                    ),
-                                ),
+                                        'action'     => 'index',
+                                    ],
+                                ],
                                 'may_terminate' => true,
-                                'child_routes' => array(
-                                    'edit' => array(
-                                        'type' => 'Segment',
-                                        'options' => array(
-                                            'route' => '/edit[/][:id]',
-                                            'constraints' => array(
+                                'child_routes'  => [
+                                    'edit' => [
+                                        'type'    => 'Segment',
+                                        'options' => [
+                                            'route'       => '/edit[/][:id]',
+                                            'constraints' => [
                                                 'id' => '[0-9]+',
-                                            ),
-                                            'defaults' => array(
+                                            ],
+                                            'defaults' => [
                                                 'controller' => 'Admin\Controller\MissionStatic',
-                                                'action' => 'edit',
-                                            ),
-                                        ),
-                                    ),
-                                    'new' => array(
-                                        'type' => 'Segment',
-                                        'options' => array(
-                                            'route' => '/new',
-                                            'defaults' => array(
+                                                'action'     => 'edit',
+                                            ],
+                                        ],
+                                    ],
+                                    'new' => [
+                                        'type'    => 'Segment',
+                                        'options' => [
+                                            'route'    => '/new',
+                                            'defaults' => [
                                                 'controller' => 'Admin\Controller\MissionStatic',
-                                                'action' => 'new',
-                                            ),
-                                        ),
-                                    ),
-                                    'manage' => array(
-                                        'type' => 'Segment',
-                                        'options' => array(
-                                            'route' => '/manage[/][:id]',
-                                            'constraints' => array(
+                                                'action'     => 'new',
+                                            ],
+                                        ],
+                                    ],
+                                    'manage' => [
+                                        'type'    => 'Segment',
+                                        'options' => [
+                                            'route'       => '/manage[/][:id]',
+                                            'constraints' => [
                                                 'id' => '[0-9]+',
-                                            ),
-                                            'defaults' => array(
+                                            ],
+                                            'defaults' => [
                                                 'controller' => 'Admin\Controller\MissionStatic',
-                                                'action' => 'manage',
-                                            ),
-                                        ),
-                                    ),
-                                ),
-                            ),
-                        ),
-                    ),
+                                                'action'     => 'manage',
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
 
                     // BLOG
-                    'mission-blog' => array(
-                        'type' => 'literal',
-                        'options' => array(
-                            'route' => '/mission-blog',
-                            'defaults' => array(
+                    'mission-blog' => [
+                        'type'    => 'literal',
+                        'options' => [
+                            'route'    => '/mission-blog',
+                            'defaults' => [
                                 'controller' => 'Admin\Controller\MissionBlog',
-                                'action' => 'index',
-                            ),
-                        ),
+                                'action'     => 'index',
+                            ],
+                        ],
                         'may_terminate' => true,
-                        'child_routes' => array(
-                            'new' => array(
-                                'type' => 'literal',
-                                'options' => array(
-                                    'route' => '/new',
-                                    'defaults' => array(
+                        'child_routes'  => [
+                            'new' => [
+                                'type'    => 'literal',
+                                'options' => [
+                                    'route'    => '/new',
+                                    'defaults' => [
                                         'action' => 'new',
-                                    ),
-                                ),
-                            ),
-                            'edit' => array(
-                                'type' => 'Segment',
-                                'options' => array(
-                                    'route' => '/edit[/][:id]',
-                                    'constraints' => array(
+                                    ],
+                                ],
+                            ],
+                            'edit' => [
+                                'type'    => 'Segment',
+                                'options' => [
+                                    'route'       => '/edit[/][:id]',
+                                    'constraints' => [
                                         'slug' => '[0-9]+',
-                                    ),
-                                    'defaults' => array(
+                                    ],
+                                    'defaults' => [
                                         'action' => 'edit',
-                                    ),
-                                ),
-                            ),
-                        ),
-                    ),
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
 
                     // menu
-                    'menu' => array(
-                        'type' => 'Segment',
-                        'options' => array(
-                            'route' => '/menu[/[:action[/]][:id[/]]]',
-                            'defaults' => array(
+                    'menu' => [
+                        'type'    => 'Segment',
+                        'options' => [
+                            'route'    => '/menu[/[:action[/]][:id[/]]]',
+                            'defaults' => [
                                 'controller' => 'Admin\Controller\Menu',
-                                'action' => 'index',
-                            ),
-                        ),
+                                'action'     => 'index',
+                            ],
+                        ],
                         'may_terminate' => true,
-                        'child_routes' => array(
-                            'new' => array(
-                                'type' => 'literal',
-                                'options' => array(
-                                    'route' => '/new',
-                                    'defaults' => array(
+                        'child_routes'  => [
+                            'new' => [
+                                'type'    => 'literal',
+                                'options' => [
+                                    'route'    => '/new',
+                                    'defaults' => [
                                         'action' => 'new',
-                                    ),
-                                ),
-                            ),
-                            'edit' => array(
-                                'type' => 'Segment',
-                                'options' => array(
-                                    'route' => '/edit[/][:id]',
-                                    'constraints' => array(
+                                    ],
+                                ],
+                            ],
+                            'edit' => [
+                                'type'    => 'Segment',
+                                'options' => [
+                                    'route'       => '/edit[/][:id]',
+                                    'constraints' => [
                                         'slug' => '[0-9]+',
-                                    ),
-                                    'defaults' => array(
+                                    ],
+                                    'defaults' => [
                                         'action' => 'edit',
-                                    ),
-                                ),
-                            ),
-                            'delete' => array(
-                                'type' => 'Segment',
-                                'options' => array(
-                                    'route' => '/delete[/][:id]',
-                                    'constraints' => array(
+                                    ],
+                                ],
+                            ],
+                            'delete' => [
+                                'type'    => 'Segment',
+                                'options' => [
+                                    'route'       => '/delete[/][:id]',
+                                    'constraints' => [
                                         'id' => '[0-9]+',
-                                    ),
-                                    'defaults' => array(
+                                    ],
+                                    'defaults' => [
                                         'action' => 'delete',
-                                    ),
-                                ),
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-        ),
-    ),
-    'service_manager' => array(
-        'abstract_factories' => array(
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
+    'service_manager' => [
+        'abstract_factories' => [
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
-        ),
-        'aliases' => array(
+        ],
+        'aliases' => [
             'translator' => 'MvcTranslator',
-        ),
-    ),
-    'translator' => array(
-        'locale' => 'en_US',
-        'translation_file_patterns' => array(
-            array(
+        ],
+    ],
+    'translator' => [
+        'locale'                    => 'en_US',
+        'translation_file_patterns' => [
+            [
                 'type'     => 'gettext',
-                'base_dir' => __DIR__ . '/../language',
+                'base_dir' => __DIR__.'/../language',
                 'pattern'  => '%s.mo',
-            ),
-        ),
-    ),
-    'controllers' => array(
-        'invokables' => array(
-            'Admin\Controller\Blog' => 'Admin\Controller\BlogController',
-            'Admin\Controller\Category' => 'Admin\Controller\CategoryController',
-            'Admin\Controller\Dashboard' => 'Admin\Controller\DashboardController',
-            'Admin\Controller\Menu' => 'Admin\Controller\MenuController',
-            'Admin\Controller\MissionBlog' => 'Admin\Controller\MissionBlogController',
+            ],
+        ],
+    ],
+    'controllers' => [
+        'invokables' => [
+            'Admin\Controller\Blog'            => 'Admin\Controller\BlogController',
+            'Admin\Controller\Category'        => 'Admin\Controller\CategoryController',
+            'Admin\Controller\Dashboard'       => 'Admin\Controller\DashboardController',
+            'Admin\Controller\Menu'            => 'Admin\Controller\MenuController',
+            'Admin\Controller\MissionBlog'     => 'Admin\Controller\MissionBlogController',
             'Admin\Controller\MissionCategory' => 'Admin\Controller\MissionCategoryController',
-            'Admin\Controller\MissionStatic' => 'Admin\Controller\MissionStaticController',
-            'Admin\Controller\Moderator' => 'Admin\Controller\ModeratorController'
-        ),
-    ),
-    'view_manager' => array(
+            'Admin\Controller\MissionStatic'   => 'Admin\Controller\MissionStaticController',
+            'Admin\Controller\Moderator'       => 'Admin\Controller\ModeratorController',
+        ],
+    ],
+    'view_manager' => [
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
         'doctype'                  => 'HTML5',
-        'template_map' => array(
-            'admin/category/index' => __DIR__ . '/../view/admin/category/index.phtml',
-            'admin/category/new' => __DIR__ . '/../view/admin/category/new.phtml',
-            'admin/dashboard/index' => __DIR__ . '/../view/admin/dashboard/index.phtml',
-        ),
-        'template_path_stack' => array(
-            __DIR__ . '/../view',
-            'zfcuser' => __DIR__ . '/../view',
-        ),
-    ),
+        'template_map'             => [
+            'admin/category/index'  => __DIR__.'/../view/admin/category/index.phtml',
+            'admin/category/new'    => __DIR__.'/../view/admin/category/new.phtml',
+            'admin/dashboard/index' => __DIR__.'/../view/admin/dashboard/index.phtml',
+        ],
+        'template_path_stack' => [
+            __DIR__.'/../view',
+            'zfcuser' => __DIR__.'/../view',
+        ],
+    ],
     // Placeholder for console routes
-    'console' => array(
-        'router' => array(
-            'routes' => array(
-            ),
-        ),
-    ),
-);
+    'console' => [
+        'router' => [
+            'routes' => [
+            ],
+        ],
+    ],
+];

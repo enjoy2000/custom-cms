@@ -2,9 +2,6 @@
 
 namespace Landing\Service;
 
-use Zend\ServiceManager\ServiceManagerAwareInterface;
-use Zend\ServiceManager\ServiceManager;
-
 class Menu
 {
     private $_serviceLocator = null;
@@ -37,27 +34,27 @@ class Menu
             $data = $menu->getMenu($this->_getLocaleShortCode());
             if (!$menu->hasChild($em)) {
                 $html .= '<li class="'
-                    . $active
-                    . '"><a href="'
-                    . $this->_getUrl($menu, $name)
-                    . '" title="'
-                    . $data['label']
-                    . '">'
-                    . $data['label']
-                    . '</a></li>';
+                    .$active
+                    .'"><a href="'
+                    .$this->_getUrl($menu, $name)
+                    .'" title="'
+                    .$data['label']
+                    .'">'
+                    .$data['label']
+                    .'</a></li>';
             } else {
                 $html .= '<li class="dropdown'
-                    . $active
-                    . '"><a data-toggle="dropdown" href="'
-                    . $this->_getUrl($menu, $name)
-                    . '" title="'
-                    . $data['label']
-                    . '">'
-                    . $data['label']
-                    . ' <span class="caret"></span>'
-                    . '</a>'
-                    . $this->_renderChild($menu, $em, $name)
-                    . '</li>';
+                    .$active
+                    .'"><a data-toggle="dropdown" href="'
+                    .$this->_getUrl($menu, $name)
+                    .'" title="'
+                    .$data['label']
+                    .'">'
+                    .$data['label']
+                    .' <span class="caret"></span>'
+                    .'</a>'
+                    .$this->_renderChild($menu, $em, $name)
+                    .'</li>';
             }
         }
         //$html .= '</ul>';
@@ -100,15 +97,14 @@ class Menu
 
         $html
             .= '<div class="panel-heading">'
-            . '<a href="'
-            . $this->_getUrl($parentMenu)
-            . '" title="'
-            . $parentData['label']
-            . '">'
-            . $parentData['label']
-            . '</a>'
-            . '</div>'
-        ;
+            .'<a href="'
+            .$this->_getUrl($parentMenu)
+            .'" title="'
+            .$parentData['label']
+            .'">'
+            .$parentData['label']
+            .'</a>'
+            .'</div>';
 
         if ($parentMenu->hasChild($em)) {
             foreach ($parentMenu->getChildMenus($em) as $menu) {
@@ -120,15 +116,14 @@ class Menu
                 }
                 $html
                     .= '<a class="list-group-item'
-                    . $active
-                    . '" href="'
-                    . $this->_getUrl($menu)
-                    . '" title="'
-                    . $data['label']
-                    . '">'
-                    . $data['label']
-                    . '</a>'
-                ;
+                    .$active
+                    .'" href="'
+                    .$this->_getUrl($menu)
+                    .'" title="'
+                    .$data['label']
+                    .'">'
+                    .$data['label']
+                    .'</a>';
             }
         }
 
@@ -146,12 +141,12 @@ class Menu
                 if ($name != null || $menu->getShowMenu()) {
                     $data = $menu->getMenu($this->_getLocaleShortCode());
                     $html .= '<li><a href="'
-                        . $this->_getUrl($menu, $name)
-                        . '" title="'
-                        . $data['label']
-                        . '">'
-                        . $data['label']
-                        . '</a></li>';
+                        .$this->_getUrl($menu, $name)
+                        .'" title="'
+                        .$data['label']
+                        .'">'
+                        .$data['label']
+                        .'</a></li>';
                 }
             }
             $html .= '</ul>';
@@ -168,8 +163,7 @@ class Menu
     protected function _sortByOrderNumber($menus)
     {
         $sortedMenus = [];
-        foreach ($menus as $menu)
-        {
+        foreach ($menus as $menu) {
             $sortedMenus[$menu->getId()] = $menu;
         }
         ksort($sortedMenus);
@@ -177,7 +171,7 @@ class Menu
         return $sortedMenus;
     }
 
-    protected function _url($name = null, $params = array(), $options = array(), $reuseMatchedParams = false)
+    protected function _url($name = null, $params = [], $options = [], $reuseMatchedParams = false)
     {
         //var_dump($arr);die;
         if (empty($params)) {
@@ -189,7 +183,6 @@ class Menu
 
     protected function _getUrl($menu, $name = null)
     {
-
         if ($name == 'admin') {
             return $this->_url('zfcadmin/menu', ['action' => 'edit', 'id' => $menu->getId()]);
         }
@@ -198,7 +191,7 @@ class Menu
         switch ($type) {
             case 'category':
             case 'article':
-                $url =  $this->_url('blog/view', ['slug' => $data['link']]);
+                $url = $this->_url('blog/view', ['slug' => $data['link']]);
                 break;
             case 'static':
                 $url = $this->_url($data['link']);
@@ -229,6 +222,6 @@ class Menu
             $arrKeys[] = $childData['link'];
         }
 
-        return (in_array($routeName, $arrKeys) || in_array($currentSlug, $arrKeys));
+        return in_array($routeName, $arrKeys) || in_array($currentSlug, $arrKeys);
     }
 }

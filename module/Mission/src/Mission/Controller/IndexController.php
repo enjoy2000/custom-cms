@@ -3,16 +3,16 @@
  * Created by PhpStorm.
  * User: hat
  * Date: 29/12/2014
- * Time: 10:59
+ * Time: 10:59.
  */
-
 namespace Mission\Controller;
 
 use Application\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
 use Zend\Session\Container;
+use Zend\View\Model\ViewModel;
 
-class IndexController extends AbstractActionController {
+class IndexController extends AbstractActionController
+{
     public function indexAction()
     {
         $locale = new Container('locale');
@@ -26,7 +26,7 @@ class IndexController extends AbstractActionController {
         );
 
         return new ViewModel([
-            'categories' => $categories
+            'categories' => $categories,
         ]);
     }
 
@@ -38,11 +38,12 @@ class IndexController extends AbstractActionController {
         $childPages = $category->getChildPages($this->getEntityManager());
 
         $view = new ViewModel([
-            'category' => $categorySlug,
-            'static' => $staticPageSlug,
-            'childPages' => $childPages
+            'category'   => $categorySlug,
+            'static'     => $staticPageSlug,
+            'childPages' => $childPages,
         ]);
         $view->setTerminal(true);
+
         return $view;
     }
 
@@ -51,9 +52,10 @@ class IndexController extends AbstractActionController {
         $categorySlug = $this->params()->fromQuery('category');
         $category = $this->findOneBy('Mission\Entity\Category', ['urlKey' => $categorySlug]);
         $view = new ViewModel([
-            'header' => $category->getName()
+            'header' => $category->getName(),
         ]);
         $view->setTerminal(true);
+
         return $view;
     }
 }
