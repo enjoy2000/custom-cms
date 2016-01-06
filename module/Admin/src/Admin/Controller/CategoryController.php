@@ -3,14 +3,13 @@
  * Created by PhpStorm.
  * User: hat
  * Date: 30/12/2014
- * Time: 11:46
+ * Time: 11:46.
  */
-
 namespace Admin\Controller;
 
 use Application\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
 use Application\Helper\Util;
+use Zend\View\Model\ViewModel;
 
 class CategoryController extends AbstractActionController
 {
@@ -26,7 +25,7 @@ class CategoryController extends AbstractActionController
 
     public function editAction()
     {
-        $id = (int)$this->params()->fromRoute('id');
+        $id = (int) $this->params()->fromRoute('id');
         $category = $this->find('Blog\Entity\Category', $id);
         $em = $this->getEntityManager();
 
@@ -36,15 +35,15 @@ class CategoryController extends AbstractActionController
 
         if ($this->getRequest()->isPost()) {
             $data = $this->getRequest()->getPost();
-            $data['locale'] = $this->find('Blog\Entity\Locale', (int)$data['locale']);
-            $data['category'] = $this->find('Blog\Entity\Category', (int)$data['category']);
+            $data['locale'] = $this->find('Blog\Entity\Locale', (int) $data['locale']);
+            $data['category'] = $this->find('Blog\Entity\Category', (int) $data['category']);
 
             // if new slug exist add unique id
             if ($category->getUrlKey() != $data['urlKey']) {
-		$data['urlKey'] = Util::slugify($data['urlKey']);
+                $data['urlKey'] = Util::slugify($data['urlKey']);
                 $slugExist = $this->findOneBy('Blog\Entity\Category', ['urlKey' => $data['urlKey']]);
                 if ($slugExist) {
-                    $data['urlKey'] .= '-' . date('Ymdhis');
+                    $data['urlKey'] .= '-'.date('Ymdhis');
                 }
             }
 
@@ -58,9 +57,9 @@ class CategoryController extends AbstractActionController
         $locales = $this->getEntityManager()->getRepository('Blog\Entity\Locale')->findAll();
 
         return new ViewModel([
-            'category' => $category,
-            'locales' => $locales,
-            'arCategories' => $arCategories
+            'category'     => $category,
+            'locales'      => $locales,
+            'arCategories' => $arCategories,
         ]);
     }
 }

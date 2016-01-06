@@ -3,32 +3,26 @@
  * Created by PhpStorm.
  * User: antiprovn
  * Date: 1/2/15
- * Time: 7:07 PM
+ * Time: 7:07 PM.
  */
-
 namespace Admin\Controller;
 
-use Application\Controller\AbstractActionController;
-use User\Form\EditForm;
-use Zend\View\View;
-use ZfcUser\Controller\UserController;
-use Zend\View\Model\ViewModel;
-use Zend\Form\Form;
-use Zend\Stdlib\ResponseInterface as Response;
-use Zend\Stdlib\Parameters;
-use ZfcUser\Service\User as UserService;
-use ZfcUser\Options\UserControllerOptionsInterface;
-use Zend\Paginator\Paginator;
-use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
+use User\Form\EditForm;
 use Zend\Crypt\Password\Bcrypt;
+use Zend\Form\Form;
+use Zend\Paginator\Paginator;
+use Zend\Stdlib\ResponseInterface as Response;
+use Zend\View\Model\ViewModel;
+use ZfcUser\Controller\UserController;
 
 class ModeratorController extends UserController
 {
     protected $_entityManager = null;
+
     public function __construct()
     {
-
     }
 
     public function getEntityManager()
@@ -47,7 +41,7 @@ class ModeratorController extends UserController
         $users = $em->getRepository('User\Entity\User');
 
         $qb = $users->createQueryBuilder('user');
-        $qb  = $qb
+        $qb = $qb
             ->innerJoin('user.roles', 'r')
             ->where("r.roleId='moderator'");
 
@@ -58,25 +52,25 @@ class ModeratorController extends UserController
         $paginator = new Paginator($adapter);
         $paginator->setDefaultItemCountPerPage(10);
 
-        $page = (int)$this->getRequest()->getQuery('page');
+        $page = (int) $this->getRequest()->getQuery('page');
         if ($page) {
             $paginator->setCurrentPageNumber($page);
         }
 
         return new ViewModel([
-            'paginator' => $paginator
+            'paginator' => $paginator,
         ]);
     }
 
     public function editAction()
     {
-        $id = (int)$this->params()->fromRoute('id');
+        $id = (int) $this->params()->fromRoute('id');
         /** @var \User\Entity\User $moderator */
         $moderator = $this->getEntityManager()->find('User\Entity\User', $id);
         $form = new EditForm();
         $form->setData([
-            'id' => $moderator->getId(),
-            'displayName' => $moderator->getDisplayName()
+            'id'          => $moderator->getId(),
+            'displayName' => $moderator->getDisplayName(),
         ]);
 
         if ($this->getRequest()->isPost()) {
@@ -92,7 +86,7 @@ class ModeratorController extends UserController
                 if ($data['password'] && $data['confirmation']) {
                     /** @var \ZfcUser\Service\User $service */
                     $service = $this->getUserService();
-                    $bcrypt = new Bcrypt;
+                    $bcrypt = new Bcrypt();
                     $bcrypt->setCost($service->getOptions()->getPasswordCost());
                     $pass = $bcrypt->create($data['password']);
                     $moderator->setPassword($pass);
@@ -110,7 +104,7 @@ class ModeratorController extends UserController
         }
 
         return new ViewModel([
-            'form' => $form
+            'form' => $form,
         ]);
     }
 
@@ -127,17 +121,17 @@ class ModeratorController extends UserController
         }
 
         $redirectUrl = $this->url()->fromRoute('zfcadmin/moderator/create')
-            . ($redirect ? '?redirect=' . rawurlencode($redirect) : '');
+            .($redirect ? '?redirect='.rawurlencode($redirect) : '');
         $prg = $this->prg($redirectUrl, true);
 
         if ($prg instanceof Response) {
             return $prg;
         } elseif ($prg === false) {
-            return array(
-                'registerForm' => $form,
+            return [
+                'registerForm'       => $form,
                 'enableRegistration' => $this->getOptions()->getEnableRegistration(),
-                'redirect' => $redirect,
-            );
+                'redirect'           => $redirect,
+            ];
         }
 
         $post = $prg;
@@ -152,6 +146,7 @@ class ModeratorController extends UserController
         $em->flush();
 
         $this->flashMessenger()->addSuccessMessage('Created new moderator successfully!');
+
         return $this->redirect()->toRoute('zfcadmin');
     }
 }

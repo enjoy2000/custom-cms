@@ -3,20 +3,19 @@
  * Created by PhpStorm.
  * User: hat
  * Date: 30/12/2014
- * Time: 11:46
+ * Time: 11:46.
  */
-
 namespace Admin\Controller;
 
-use Application\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
-use Blog\Form\BlogForm;
-use Blog\Entity\Blog;
-use Zend\Paginator\Paginator;
-use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
-use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
 use Admin\Table\Blog as BlogTable;
+use Application\Controller\AbstractActionController;
+use Blog\Entity\Blog;
+use Blog\Form\BlogForm;
+use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
 use Zend\Http\Response;
+use Zend\Paginator\Paginator;
+use Zend\View\Model\ViewModel;
 
 class BlogController extends AbstractActionController
 {
@@ -31,7 +30,7 @@ class BlogController extends AbstractActionController
         // start filter
         if ($localeCode = $this->params()->fromQuery('locale')) {
             $locale = $this->findOneBy('Blog\Entity\Locale', ['name' => $localeCode]);
-            $queryBuilder->andWhere('blog.locale_id = ' . $locale->getId());
+            $queryBuilder->andWhere('blog.locale_id = '.$locale->getId());
         }
 
         // set order by blog id DESC
@@ -41,14 +40,14 @@ class BlogController extends AbstractActionController
         $paginator = new Paginator($adapter);
         $paginator->setDefaultItemCountPerPage(10);
 
-        $page = (int)$this->getRequest()->getQuery('page');
+        $page = (int) $this->getRequest()->getQuery('page');
         if ($page) {
             $paginator->setCurrentPageNumber($page);
         }
 
         //var_dump($paginator);die;
         return new ViewModel([
-            'paginator' => $paginator
+            'paginator' => $paginator,
         ]);
     }
 
@@ -59,8 +58,7 @@ class BlogController extends AbstractActionController
         $blogs = $em->getRepository('Blog\Entity\Blog');
         $queryBuilder = $blogs->createQueryBuilder('b')
                     ->innerJoin('b.categories', 'c')
-                    ->innerJoin('b.locale', 'l')
-        ;
+                    ->innerJoin('b.locale', 'l');
 
         if (!$this->isAdmin()) {
             $queryBuilder->innerJoin('c.moderators', 'm')
@@ -71,11 +69,11 @@ class BlogController extends AbstractActionController
         $table = new BlogTable();
         $table->setAdapter($this->getDbAdapter())
             ->setSource($queryBuilder)
-            ->setParamAdapter($this->getRequest()->getPost())
-        ;
+            ->setParamAdapter($this->getRequest()->getPost());
 
         $response = new Response();
         $response->setContent($table->render());
+
         return $response;
     }
 
@@ -96,18 +94,19 @@ class BlogController extends AbstractActionController
             if ($form->isValid()) {
                 $form->save($this);
                 $this->flashMessenger()->addSuccessMessage('Your news is created successfully!');
+
                 return $this->redirect()->toRoute('zfcadmin/blog');
             }
         }
 
         return new ViewModel([
-            'form' => $form
+            'form' => $form,
         ]);
     }
 
     public function editAction()
     {
-        $id = (int)$this->params()->fromRoute('id');
+        $id = (int) $this->params()->fromRoute('id');
         $blog = $this->find('Blog\Entity\Blog', $id);
         $em = $this->getEntityManager();
 
@@ -128,23 +127,25 @@ class BlogController extends AbstractActionController
             if ($form->isValid()) {
                 $form->save($this);
                 $this->flashMessenger()->addSuccessMessage('You news has been updated successfully!');
+
                 return $this->redirect()->toRoute('zfcadmin/blog');
             }
         }
 
         return new ViewModel([
-            'form' => $form
+            'form' => $form,
         ]);
     }
 
     public function deleteAction()
     {
-        $id = (int)$this->params()->fromRoute('id');
+        $id = (int) $this->params()->fromRoute('id');
         $blog = $this->find('Blog\Entity\Blog', $id);
         $this->getEntityManager()->remove($blog);
         $this->getEntityManager()->flush();
 
         $this->flashMessenger()->addSuccessMessage('You news has been deleted successfully!');
+
         return $this->redirect()->toRoute('zfcadmin/blog');
     }
 }

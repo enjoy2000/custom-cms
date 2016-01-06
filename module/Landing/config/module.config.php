@@ -1,151 +1,152 @@
 <?php
 /**
- * Zend Framework (http://framework.zend.com/)
+ * Zend Framework (http://framework.zend.com/).
  *
  * @link       for the canonical source repository
+ *
  * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-return array(
-    'router' => array(
-        'routes' => array(
-            'landing' => array(
+return [
+    'router' => [
+        'routes' => [
+            'landing' => [
                 'type'    => 'Segment',
-                'options' => array(
+                'options' => [
                     'route'    => '/landing/[:controller[/[:action[/]]]]',
-                    'defaults' => array(
+                    'defaults' => [
                         '__NAMESPACE__' => 'Landing\Controller',
                         'controller'    => 'Index',
                         'action'        => 'index',
-                    ),
-                    'constraints' => array(
+                    ],
+                    'constraints' => [
                         'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-                    ),
-                ),
-            ),
-            'home' => array(
-                'type' => 'Literal',
-                'options' => array(
+                    ],
+                ],
+            ],
+            'home' => [
+                'type'    => 'Literal',
+                'options' => [
                     'route'    => '/',
-                    'defaults' => array(
+                    'defaults' => [
                         'controller' => 'Landing\Controller\Index',
                         'action'     => 'index',
-                    ),
-                ),
-            ),
-            'the-ministry' => array(
-                'type' => 'Literal',
-                'options' => array(
+                    ],
+                ],
+            ],
+            'the-ministry' => [
+                'type'    => 'Literal',
+                'options' => [
                     'route'    => '/the-ministry',
-                    'defaults' => array(
+                    'defaults' => [
                         'controller' => 'Landing\Controller\Ministry',
                         'action'     => 'index',
-                    ),
-                ),
+                    ],
+                ],
                 'custom_links' => [
                     [
                         'label' => 'Press Releases',
-                        'link' => [
+                        'link'  => [
                             'en' => 'press-releases',
-                            'ar' => 'arabic-press-releases'
+                            'ar' => 'arabic-press-releases',
                         ],
                     ],
                     [
                         'label' => 'Speeches & Interviews',
-                        'link' => [
+                        'link'  => [
                             'en' => 'speeches-interviews',
-                            'ar' => 'arabic-speeches-interviews'
+                            'ar' => 'arabic-speeches-interviews',
                         ],
                     ],
                     [
                         'label' => 'Ministry\'s Announcements',
-                        'link' => [
+                        'link'  => [
                             'en' => 'ministry-s-announcements',
-                            'ar' => 'arabic-ministry-s-announcements'
+                            'ar' => 'arabic-ministry-s-announcements',
                         ],
                     ],
                     [
                         'label' => 'Announcements',
-                        'link' => [
+                        'link'  => [
                             'en' => 'announcements',
-                            'ar' => 'arabic-announcements'
+                            'ar' => 'arabic-announcements',
                         ],
                     ],
                     [
                         'label' => 'Ministry\'s Magazine',
-                        'link' => [
+                        'link'  => [
                             'en' => 'ministry-s-magazine',
-                            'ar' => 'arabic-ministry-s-magazine'
+                            'ar' => 'arabic-ministry-s-magazine',
                         ],
                     ],
                     [
                         'label' => 'Undersecretaries',
-                        'link' => [
+                        'link'  => [
                             'en' => 'undersecretaries',
-                            'ar' => 'ar-undersecretaries'
+                            'ar' => 'ar-undersecretaries',
                         ],
                     ],
                     [
                         'label' => 'Iraqi Ambassadors',
-                        'link' => [
+                        'link'  => [
                             'en' => 'en-iraqi-mofa-ambassadors',
-                            'ar' => 'ar-iraqi-mofa-ambassadors'
+                            'ar' => 'ar-iraqi-mofa-ambassadors',
                         ],
                     ],
                     [
                         'label' => 'Ministry Departments',
-                        'link' => [
+                        'link'  => [
                             'en' => 'en-ministry-departments',
-                            'ar' => 'ar-mofa-ministry-departments'
+                            'ar' => 'ar-mofa-ministry-departments',
                         ],
                     ],
                     [
                         'label' => 'Other Links',
-                        'link' => [
+                        'link'  => [
                             'en' => 'en-other-links',
-                            'ar' => 'ar-other-links'
+                            'ar' => 'ar-other-links',
                         ],
                     ],
                     [
                         'label' => 'Martyrs of The Ministry of Foreign Affairs',
-                        'link' => [
+                        'link'  => [
                             'en' => 'en-martyrs-of-the-inistry-of-foreign-affairs',
-                            'ar' => 'ar-martyrs-of-the-inistry-of-foreign-affairs'
+                            'ar' => 'ar-martyrs-of-the-inistry-of-foreign-affairs',
                         ],
                     ],
                     [
                         'label' => 'The Ministry Law No. 36 of 2013',
-                        'link' => [
+                        'link'  => [
                             'en' => 'the-ministry-law-no-36-of-2013',
-                            'ar' => 'ar-the-ministry-law-no-36-of-2013'
+                            'ar' => 'ar-the-ministry-law-no-36-of-2013',
                         ],
                     ],
                 ],
                 'may_terminate' => true,
-                'child_routes' => array(
-                    'faq' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                'child_routes'  => [
+                    'faq' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/faq',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\Ministry',
                                 'action'     => 'faq',
-                            ),
-                        ),
-                    ),
-                    'ministry-departments' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'ministry-departments' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/ministry-departments',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\Ministry',
                                 'action'     => 'ministryDepartments',
-                            ),
-                        ),
+                            ],
+                        ],
                         'hide' => true,
-                    ),
+                    ],
                     /*
                     'speeches-interviews' => array(
                         'type' => 'Literal',
@@ -167,615 +168,615 @@ return array(
                             ),
                         ),
                     ),*/
-                    'announcements' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                    'announcements' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/announcements',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\Ministry',
                                 'action'     => 'announcements',
-                            ),
-                        ),
+                            ],
+                        ],
                         'hide' => true,
-                    ),
-                    'magazine' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                    ],
+                    'magazine' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/magazine',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\Ministry',
                                 'action'     => 'magazine',
-                            ),
-                        ),
+                            ],
+                        ],
                         'hide' => true,
-                    ),
-                    'the-minister' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                    ],
+                    'the-minister' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/the-minister',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\Ministry',
                                 'action'     => 'theMinister',
-                            ),
-                        ),
-                    ),
-                    'mofa-ministers' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'mofa-ministers' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/mofa-ministers',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\Ministry',
                                 'action'     => 'mofa-ministers',
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-            'about-iraq' => array(
-                'type' => 'Literal',
-                'options' => array(
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'about-iraq' => [
+                'type'    => 'Literal',
+                'options' => [
                     'route'    => '/about-iraq',
-                    'defaults' => array(
+                    'defaults' => [
                         'controller' => 'Landing\Controller\AboutIraq',
                         'action'     => 'index',
-                    ),
-                ),
+                    ],
+                ],
                 'custom_links' => [
                     [
                         'label' => 'Religious Tourism',
-                        'link' => [
+                        'link'  => [
                             'en' => 'en-religious-tourism',
-                            'ar' => 'ar-mofa-religious-tourism'
+                            'ar' => 'ar-mofa-religious-tourism',
                         ],
                     ],
                 ],
                 'may_terminate' => true,
-                'child_routes' => array(
-                    'announcements' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                'child_routes'  => [
+                    'announcements' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/announcements',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\AboutIraq',
                                 'action'     => 'announcements',
-                            ),
-                        ),
-                    ),
-                    'constitution' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'constitution' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/constitution',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\AboutIraq',
                                 'action'     => 'constitution',
-                            ),
-                        ),
-                    ),
-                    'encyclopedia' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'encyclopedia' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/encyclopedia',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\AboutIraq',
                                 'action'     => 'encyclopedia',
-                            ),
-                        ),
-                    ),
-                    'investment' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'investment' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/investment',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\AboutIraq',
                                 'action'     => 'investment',
-                            ),
-                        ),
-                    ),
-                    'the-virtual-museum-of-iraq' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'the-virtual-museum-of-iraq' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/the-virtual-museum-of-iraq',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\AboutIraq',
                                 'action'     => 'the-virtual-museum-of-iraq',
-                            ),
-                        ),
-                    ),
-                    'tourist-guide' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'tourist-guide' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/tourist-guide',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\AboutIraq',
                                 'action'     => 'tourist-guide',
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-            'foreign-policy' => array(
-                'type' => 'Literal',
-                'options' => array(
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'foreign-policy' => [
+                'type'    => 'Literal',
+                'options' => [
                     'route'    => '/foreign-policy',
-                    'defaults' => array(
+                    'defaults' => [
                         'controller' => 'Landing\Controller\ForeignPolicy',
                         'action'     => 'index',
-                    ),
-                ),
+                    ],
+                ],
                 'may_terminate' => true,
-                'child_routes' => array(
-                    'arab-league' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                'child_routes'  => [
+                    'arab-league' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/arab-league',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ForeignPolicy',
                                 'action'     => 'arab-league',
-                            ),
-                        ),
-                    ),
-                    'economic-rehabilitation' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'economic-rehabilitation' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/economic-rehabilitation',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ForeignPolicy',
                                 'action'     => 'economic-rehabilitation',
-                            ),
-                        ),
-                    ),
-                    'human-rights' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'human-rights' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/human-rights',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ForeignPolicy',
                                 'action'     => 'human-rights',
-                            ),
-                        ),
-                    ),
-                    'international-organizations' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'international-organizations' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/international-organizations',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ForeignPolicy',
                                 'action'     => 'internationalOrganizations',
-                            ),
-                        ),
-                    ),
-                    'iraq-and-the-united-nations' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'iraq-and-the-united-nations' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/iraq-and-the-united-nations',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ForeignPolicy',
                                 'action'     => 'iraq-and-the-united-nations',
-                            ),
-                        ),
-                    ),
-                    'iraq-s-diplomatic-missions' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'iraq-s-diplomatic-missions' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/iraq-s-diplomatic-missions',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ForeignPolicy',
                                 'action'     => 'iraq-s-diplomatic-missions',
-                            ),
-                        ),
-                    ),
-                    'iraq-s-security' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'iraq-s-security' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/iraq-s-security',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ForeignPolicy',
                                 'action'     => 'iraq-s-security',
-                            ),
-                        ),
-                    ),
-                    'iraqi-treaties' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'iraqi-treaties' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/iraqi-treaties',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ForeignPolicy',
                                 'action'     => 'iraqi-treaties',
-                            ),
-                        ),
-                    ),
-                    'reforming-the-ministry' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'reforming-the-ministry' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/reforming-the-ministry',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ForeignPolicy',
                                 'action'     => 'reforming-the-ministry',
-                            ),
-                        ),
-                    ),
-                    'security-council-resolutions' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'security-council-resolutions' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/security-council-resolutions',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ForeignPolicy',
                                 'action'     => 'security-council-resolutions',
-                            ),
-                        ),
-                    ),
-                    'the-new-iraq' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'the-new-iraq' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/the-new-iraq',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ForeignPolicy',
                                 'action'     => 'theNewIraq',
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-            'diplomatic-missions' => array(
-                'type' => 'Literal',
-                'options' => array(
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'diplomatic-missions' => [
+                'type'    => 'Literal',
+                'options' => [
                     'route'    => '/diplomatic-missions',
-                    'defaults' => array(
+                    'defaults' => [
                         'controller' => 'Landing\Controller\DiplomaticMissions',
                         'action'     => 'index',
-                    ),
-                ),
+                    ],
+                ],
                 'may_terminate' => true,
-                'child_routes' => array(
-                    'iraqi-ambassadors' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                'child_routes'  => [
+                    'iraqi-ambassadors' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/iraqi-ambassadors',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ForeignPolicy',
                                 'action'     => 'iraqiAmbassadors',
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-            'consular-services' => array(
-                'type' => 'Literal',
-                'options' => array(
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'consular-services' => [
+                'type'    => 'Literal',
+                'options' => [
                     'route'    => '/consular-services',
-                    'defaults' => array(
+                    'defaults' => [
                         'controller' => 'Landing\Controller\ConsularServices',
                         'action'     => 'index',
-                    ),
-                ),
+                    ],
+                ],
                 'may_terminate' => true,
-                'child_routes' => array(
-                    'approving-corpse-entry-to-iraq' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                'child_routes'  => [
+                    'approving-corpse-entry-to-iraq' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/approving-corpse-entry-to-iraq',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'approving-corpse-entry-to-iraq',
-                            ),
-                        ),
-                    ),
-                    'authorization' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'authorization' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/authorization',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'authorization',
-                            ),
-                        ),
-                    ),
-                    'birth-certificate' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'birth-certificate' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/birth-certificate',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'birth-certificate',
-                            ),
-                        ),
-                    ),
-                    'certificate-of-origin' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'certificate-of-origin' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/certificate-of-origin',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'certificate-of-origin',
-                            ),
-                        ),
-                    ),
-                    'death-certificate' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'death-certificate' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/death-certificate',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'death-certificate',
-                            ),
-                        ),
-                    ),
-                    'extension-of-passports' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'extension-of-passports' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/extension-of-passports',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'extension-of-passports',
-                            ),
-                        ),
-                    ),
-                    'faq' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'faq' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/faq',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'faq',
-                            ),
-                        ),
-                    ),
-                    'fees' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'fees' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/fees',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'fees',
-                            ),
-                        ),
-                    ),
-                    'forms' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'forms' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/forms',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'forms',
-                            ),
-                        ),
-                    ),
-                    'general-affairs' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'general-affairs' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/general-affairs',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'general-affairs',
-                            ),
-                        ),
-                    ),
-                    'indigent-deportation' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'indigent-deportation' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/indigent-deportation',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'indigent-deportation',
-                            ),
-                        ),
-                    ),
-                    'lawsuits' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'lawsuits' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/lawsuits',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'lawsuits',
-                            ),
-                        ),
-                    ),
-                    'life-certificate' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'life-certificate' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/life-certificate',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'life-certificate',
-                            ),
-                        ),
-                    ),
-                    'loss-of-passports' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'loss-of-passports' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/loss-of-passports',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'loss-of-passports',
-                            ),
-                        ),
-                    ),
-                    'marriage-divorces-registration' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'marriage-divorces-registration' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/marriage-divorces-registration',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'marriage-divorces-registration',
-                            ),
-                        ),
-                    ),
-                    'nationality-cert' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'nationality-cert' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/nationality-cert',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'nationality-cert',
-                            ),
-                        ),
-                    ),
-                    'non-conviction-certificate' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'non-conviction-certificate' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/non-conviction-certificate',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'non-conviction-certificate',
-                            ),
-                        ),
-                    ),
-                    'palestinian-travel-documents' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'palestinian-travel-documents' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/palestinian-travel-documents',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'palestinian-travel-documents',
-                            ),
-                        ),
-                    ),
-                    'pass-doc' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'pass-doc' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/pass-doc',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'pass-doc',
-                            ),
-                        ),
-                    ),
-                    'passport-system' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'passport-system' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/passport-system',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'passport-system',
-                            ),
-                        ),
-                    ),
-                    'passports-issuance' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'passports-issuance' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/passports-issuance',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'passports-issuance',
-                            ),
-                        ),
-                    ),
-                    'patrimonies' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'patrimonies' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/patrimonies',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'patrimonies',
-                            ),
-                        ),
-                    ),
-                    'ratifications' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'ratifications' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/ratifications',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'ratifications',
-                            ),
-                        ),
-                    ),
-                    'the-civil-status-id' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'the-civil-status-id' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/the-civil-status-id',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'the-civil-status-id',
-                            ),
-                        ),
-                    ),
-                    'visa' => array(
-                        'type' => 'Literal',
-                        'options' => array(
+                            ],
+                        ],
+                    ],
+                    'visa' => [
+                        'type'    => 'Literal',
+                        'options' => [
                             'route'    => '/visa',
-                            'defaults' => array(
+                            'defaults' => [
                                 'controller' => 'Landing\Controller\ConsularServices',
                                 'action'     => 'visa',
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-            'contact-us' => array(
-                'type' => 'Literal',
-                'options' => array(
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'contact-us' => [
+                'type'    => 'Literal',
+                'options' => [
                     'route'    => '/contact-us',
-                    'defaults' => array(
+                    'defaults' => [
                         'controller' => 'Landing\Controller\ContactUs',
                         'action'     => 'index',
-                    ),
-                ),
-            ),
-        ),
-    ),
-    'controllers' => array(
-        'invokables' => array(
-            'Landing\Controller\AboutIraq' => 'Landing\Controller\AboutIraqController',
-            'Landing\Controller\ConsularServices' => 'Landing\Controller\ConsularServicesController',
-            'Landing\Controller\ContactUs' => 'Landing\Controller\ContactUsController',
-            'Landing\Controller\ForeignPolicy' => 'Landing\Controller\ForeignPolicyController',
+                    ],
+                ],
+            ],
+        ],
+    ],
+    'controllers' => [
+        'invokables' => [
+            'Landing\Controller\AboutIraq'          => 'Landing\Controller\AboutIraqController',
+            'Landing\Controller\ConsularServices'   => 'Landing\Controller\ConsularServicesController',
+            'Landing\Controller\ContactUs'          => 'Landing\Controller\ContactUsController',
+            'Landing\Controller\ForeignPolicy'      => 'Landing\Controller\ForeignPolicyController',
             'Landing\Controller\DiplomaticMissions' => 'Landing\Controller\DiplomaticMissionsController',
-            'Landing\Controller\Index' => 'Landing\Controller\IndexController',
-            'Landing\Controller\Ministry' => 'Landing\Controller\MinistryController',
-        ),
-    ),
-    'view_manager' => array(
+            'Landing\Controller\Index'              => 'Landing\Controller\IndexController',
+            'Landing\Controller\Ministry'           => 'Landing\Controller\MinistryController',
+        ],
+    ],
+    'view_manager' => [
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
         'doctype'                  => 'HTML5',
-        'template_map' => array(
-            'sidebar' => __DIR__ . '/../view/partial/sidebar.phtml'
-        ),
-        'template_path_stack' => array(
-            __DIR__ . '/../view',
-        ),
-    ),
-    'service_manager' => array(
-        'abstract_factories' => array(
+        'template_map'             => [
+            'sidebar' => __DIR__.'/../view/partial/sidebar.phtml',
+        ],
+        'template_path_stack' => [
+            __DIR__.'/../view',
+        ],
+    ],
+    'service_manager' => [
+        'abstract_factories' => [
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
-        ),
-        'aliases' => array(
+        ],
+        'aliases' => [
             'translator' => 'MvcTranslator',
-        ),
-    ),
-    'translator' => array(
-        'locale' => 'en_US',
-        'translation_file_patterns' => array(
-            array(
+        ],
+    ],
+    'translator' => [
+        'locale'                    => 'en_US',
+        'translation_file_patterns' => [
+            [
                 'type'     => 'gettext',
-                'base_dir' => __DIR__ . '/../language',
+                'base_dir' => __DIR__.'/../language',
                 'pattern'  => '%s.mo',
-            ),
-        ),
-    ),
+            ],
+        ],
+    ],
     // Placeholder for console routes
-    'console' => array(
-        'router' => array(
-            'routes' => array(
-            ),
-        ),
-    ),
+    'console' => [
+        'router' => [
+            'routes' => [
+            ],
+        ],
+    ],
 
     // Doctrine
-    'doctrine' => array(
-        'driver' => array(
-            'landing_entities' => array(
+    'doctrine' => [
+        'driver' => [
+            'landing_entities' => [
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
-                'paths' => array(__DIR__ . '/../src/Landing/Entity')
-            ),
-            'orm_default' => array(
-                'drivers' => array(
-                    'Landing\Entity' => 'landing_entities'
-                )
-            )
-        )
-    ),
-);
+                'paths' => [__DIR__.'/../src/Landing/Entity'],
+            ],
+            'orm_default' => [
+                'drivers' => [
+                    'Landing\Entity' => 'landing_entities',
+                ],
+            ],
+        ],
+    ],
+];

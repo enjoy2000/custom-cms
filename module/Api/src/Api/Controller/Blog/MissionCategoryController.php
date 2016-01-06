@@ -3,22 +3,20 @@
  * Created by PhpStorm.
  * User: hat
  * Date: 29/12/2014
- * Time: 15:10
+ * Time: 15:10.
  */
 namespace Api\Controller\Blog;
 
 use Api\Controller\AbstractRestfulJsonController;
-use Mission\Entity\Category;
-use Zend\View\Model\JsonModel;
 use Application\Helper\Util;
-use Zend\Paginator\Paginator;
-use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
-use Zend\Session\Container;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
+use Mission\Entity\Category;
+use Zend\Paginator\Paginator;
+use Zend\View\Model\JsonModel;
 
 class MissionCategoryController extends AbstractRestfulJsonController
 {
-
     public function getList()
     {
         // create pager
@@ -30,21 +28,20 @@ class MissionCategoryController extends AbstractRestfulJsonController
         if ($localeId = $this->params()->fromQuery('locale')) {
             $queryBuilder
                 ->innerJoin('\Blog\Entity\Locale', 'l')
-                ->where("c.locale=l.id")
+                ->where('c.locale=l.id')
                 ->andWhere('l.id=:id')
-                ->setParameter(':id', (int)$localeId);
+                ->setParameter(':id', (int) $localeId);
         }
         $cats = $queryBuilder->getQuery()->getResult();
         $data = [];
         /**
-         * @var \Mission\Entity\Category $cat
+         * @var \Mission\Entity\Category
          */
         foreach ($cats as $cat) {
             $data[] = $cat->getData();
         }
 
-
-        /**
+        /*
         // end filter
         $adapter = new DoctrineAdapter(new ORMPaginator($queryBuilder));
         $paginator = new Paginator($adapter);
@@ -72,7 +69,7 @@ class MissionCategoryController extends AbstractRestfulJsonController
         $category = $this->find('Mission\Entity\Category', $id);
 
         return new JsonModel([
-            'category' => $category
+            'category' => $category,
         ]);
     }
 
@@ -81,7 +78,7 @@ class MissionCategoryController extends AbstractRestfulJsonController
         if (!$this->isAdmin()) {
             return $this->redirect()->toRoute('zfcuser', [
                 'controller' => 'user',
-                'action' => 'login'
+                'action'     => 'login',
             ]);
         }
         // get data for update
@@ -91,7 +88,7 @@ class MissionCategoryController extends AbstractRestfulJsonController
         $category = new Category();
 
         // get locale
-        $data['locale'] = $this->find('Blog\Entity\Locale', (int)$data['locale']);
+        $data['locale'] = $this->find('Blog\Entity\Locale', (int) $data['locale']);
 
         if (!$data['urlKey']) {
             $slug = Util::slugify($data['name']);
@@ -99,7 +96,7 @@ class MissionCategoryController extends AbstractRestfulJsonController
             // check slug exist
             $slugExist = $this->findOneBy('Mission\Entity\Category', ['urlKey' => $slug]);
             if ($slugExist) {
-                $slug .= '-' . date('Ymdhis');
+                $slug .= '-'.date('Ymdhis');
             }
             $data['urlKey'] = $slug;
         } else {
@@ -107,7 +104,7 @@ class MissionCategoryController extends AbstractRestfulJsonController
             // check slug exist
             $slugExist = $this->findOneBy('Mission\Entity\Category', ['urlKey' => $data['urlKey']]);
             if ($slugExist) {
-                $data['urlKey'] .= '-' . date('Ymdhis');
+                $data['urlKey'] .= '-'.date('Ymdhis');
             }
         }
 
@@ -116,7 +113,7 @@ class MissionCategoryController extends AbstractRestfulJsonController
         $em->flush();
 
         return new JsonModel([
-            'success' => true
+            'success' => true,
         ]);
     }
 
@@ -125,7 +122,7 @@ class MissionCategoryController extends AbstractRestfulJsonController
         if (!$this->isAdmin()) {
             return $this->redirect()->toRoute('zfcuser', [
                 'controller' => 'user',
-                'action' => 'login'
+                'action'     => 'login',
             ]);
         }
 
@@ -139,14 +136,14 @@ class MissionCategoryController extends AbstractRestfulJsonController
         if ($data['updateMods']) {
             $arrModEntities = [];
             foreach ($data['updateMods'] as $modId) {
-                $arrModEntities[] = $this->find('User\Entity\User', (int)$modId);
+                $arrModEntities[] = $this->find('User\Entity\User', (int) $modId);
             }
             $category->setModerators($arrModEntities);
             $em->merge($category);
             $em->flush();
 
             return new JsonModel([
-                'category' => $category->getData()
+                'category' => $category->getData(),
             ]);
         }
 
@@ -154,13 +151,13 @@ class MissionCategoryController extends AbstractRestfulJsonController
             // check slug exist
             $slugExist = $this->findOneBy('Mission\Entity\Category', ['urlKey' => $data['urlKey']]);
             if ($slugExist) {
-                $data['urlKey'] .= '-' . date('Ymdhis');
+                $data['urlKey'] .= '-'.date('Ymdhis');
             }
         }
 
         // get locale
         if ($data['locale']) {
-            $data['locale'] = $this->find('Blog\Entity\Locale', (int)$data['locale']);
+            $data['locale'] = $this->find('Blog\Entity\Locale', (int) $data['locale']);
         }
 
         $category->setData($data);
@@ -169,23 +166,24 @@ class MissionCategoryController extends AbstractRestfulJsonController
         $em->flush();
 
         return new JsonModel([
-            'category' => $category->getData()
+            'category' => $category->getData(),
         ]);
     }
 
     /**
      * @param $id
      */
-    public function delete($id) {
+    public function delete($id)
+    {
         if (!$this->isAdmin()) {
             return $this->redirect()->toRoute('zfcuser', [
                 'controller' => 'user',
-                'action' => 'login'
+                'action'     => 'login',
             ]);
         }
         $em = $this->getEntityManager();
 
-        /**
+        /*
          * Remove check foreign key for temp delete category
          * If we need to remove blogs belong to this category as well, remove the this
          */
@@ -198,7 +196,7 @@ class MissionCategoryController extends AbstractRestfulJsonController
         $em->getConnection()->exec('SET FOREIGN_KEY_CHECKS=1');
 
         return new JsonModel([
-            'success' => true
+            'success' => true,
         ]);
     }
 }

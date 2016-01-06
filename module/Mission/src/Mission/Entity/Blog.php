@@ -3,13 +3,12 @@
  * Created by PhpStorm.
  * User: hat
  * Date: 29/12/2014
- * Time: 11:08
+ * Time: 11:08.
  */
-
 namespace Mission\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
@@ -48,7 +47,7 @@ class Blog
     protected $photo = null;
 
     /**
-     * @var boolean
+     * @var bool
      * @ORM\Column(type="boolean")
      */
     protected $published = true;
@@ -141,9 +140,9 @@ class Blog
 
     public function getThumbnail()
     {
-        $cacheImagePath   = './public' . self::DEFAULT_CACHE_PATH . $this->photo;
+        $cacheImagePath = './public'.self::DEFAULT_CACHE_PATH.$this->photo;
         if (file_exists($cacheImagePath)) {
-            return self::DEFAULT_CACHE_PATH . $this->photo;
+            return self::DEFAULT_CACHE_PATH.$this->photo;
         } else {
             return $this->getPhotoUrl();
         }
@@ -389,7 +388,7 @@ class Blog
             'createUser',
             'createTime',
             'updateUser',
-            'updateTime'
+            'updateTime',
         ];
         foreach ($keys as $key) {
             if (isset($data[$key])) {
@@ -402,24 +401,25 @@ class Blog
 
     public function getEditUrl()
     {
-        return '/admin/mission-blog/edit/' . $this->id;
+        return '/admin/mission-blog/edit/'.$this->id;
     }
 
-    public function getDate($type='createTime')
+    public function getDate($type = 'createTime')
     {
         return $this->$type->format('d/m/Y');
     }
 
     public function getUrl()
     {
-        return '/' . self::BLOG_ROUTE . '/' . $this->urlKey;
+        return '/'.self::BLOG_ROUTE.'/'.$this->urlKey;
     }
 
-    public function renderPhoto() {
+    public function renderPhoto()
+    {
         $html = '';
-        $html .= '<a class="news-photo" href="' . $this->getUrl()
+        $html .= '<a class="news-photo" href="'.$this->getUrl()
                 .'" title="'.$this->title.'">';
-        $html .= '<img src="'. $this->getThumbnail() .'" alt="" />';
+        $html .= '<img src="'.$this->getThumbnail().'" alt="" />';
         $html .= '</a>';
 
         return $html;
@@ -432,6 +432,6 @@ class Blog
 
     public function getPhotoUrl()
     {
-        return self::DEFAULT_UPLOAD_PATH . $this->photo;
+        return self::DEFAULT_UPLOAD_PATH.$this->photo;
     }
 }

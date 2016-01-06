@@ -3,32 +3,37 @@
  * Created by PhpStorm.
  * User: antiprovn
  * Date: 9/27/14
- * Time: 8:30 PM
+ * Time: 8:30 PM.
  */
-
 namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractRestfulController as ZendAbstractRestfulController;
 
-class AbstractRestfulController extends ZendAbstractRestfulController{
-
+class AbstractRestfulController extends ZendAbstractRestfulController
+{
     use ControllerMethods;
 
-    public function getDataList($array){
+    public function getDataList($array)
+    {
         $data = [];
-        foreach($array as $member){
+        foreach ($array as $member) {
             $data[] = $member->getData();
         }
+
         return $data;
     }
 
-    function getAllData($entityPath){
+    public function getAllData($entityPath)
+    {
         $rows = $this->getEntityManager()->getRepository($entityPath)->findAll();
+
         return $this->getDataList($rows);
     }
 
-    function getAllDataBy($entityPath, $criteria=null, $orderBy=null){
+    public function getAllDataBy($entityPath, $criteria = null, $orderBy = null)
+    {
         $rows = $this->getEntityManager()->getRepository($entityPath)->findBy($criteria, $orderBy);
+
         return $this->getDataList($rows);
     }
 
@@ -38,7 +43,8 @@ class AbstractRestfulController extends ZendAbstractRestfulController{
         throw new \Exception('Method Not Allowed');
     }
 
-    # Override default actions as they do not return valid JsonModels
+    // Override default actions as they do not return valid JsonModels
+
     public function create($data)
     {
         return $this->methodNotAllowed();

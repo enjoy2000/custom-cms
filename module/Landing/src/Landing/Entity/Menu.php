@@ -3,9 +3,8 @@
  * Created by PhpStorm.
  * User: hat
  * Date: 29/12/2014
- * Time: 12:07
+ * Time: 12:07.
  */
-
 namespace Landing\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -14,7 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="Menu")
  */
-class Menu {
+class Menu
+{
     /**
      * @var int
      * @ORM\Id
@@ -67,7 +67,7 @@ class Menu {
     {
         return $this->id;
     }
-    
+
     public function getLabel()
     {
         return $this->label;
@@ -91,6 +91,7 @@ class Menu {
     {
         return $this->type;
     }
+
     public function getOrderNumber()
     {
         return $this->orderNumber;
@@ -117,20 +118,19 @@ class Menu {
     public static function sortByOrderNumber($menus)
     {
         $sortedMenus = [];
-        foreach ($menus as $menu)
-        {
+        foreach ($menus as $menu) {
             $sortedMenus[$menu->getOrderNumber()] = $menu;
         }
         ksort($sortedMenus);
 
         return $sortedMenus;
     }
-    
+
     public function hasChild($entityManager)
     {
         return (boolean) $this->getChildMenus($entityManager);
     }
-    
+
     public function setData($data)
     {
         $keys = [
@@ -154,15 +154,15 @@ class Menu {
     {
         //var_dump($this->showMenu);die;
         return [
-            'id' => $this->id,
-            'type' => $this->type,
-            'value' => $this->value,
-            'valueAr' => $this->valueAr,
-            'label' => $this->label,
-            'labelAr' => $this->labelAr,
+            'id'          => $this->id,
+            'type'        => $this->type,
+            'value'       => $this->value,
+            'valueAr'     => $this->valueAr,
+            'label'       => $this->label,
+            'labelAr'     => $this->labelAr,
             'orderNumber' => $this->orderNumber,
-            'parentMenu' => $this->parentMenu ? $this->parentMenu->getId() : null,
-            'showMenu' => $this->showMenu ? 1 : 0,
+            'parentMenu'  => $this->parentMenu ? $this->parentMenu->getId() : null,
+            'showMenu'    => $this->showMenu ? 1 : 0,
         ];
     }
 }

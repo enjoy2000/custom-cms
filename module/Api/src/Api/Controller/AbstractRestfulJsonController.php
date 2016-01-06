@@ -1,4 +1,5 @@
 <?php
+
 namespace Api\Controller;
 
 use Application\Controller\AbstractRestfulController;
@@ -29,7 +30,8 @@ class AbstractRestfulJsonController extends AbstractRestfulController
         return $this->getDataList($rows);
     }
 
-    # Override default actions as they do not return valid JsonModels
+    // Override default actions as they do not return valid JsonModels
+
     public function create($data)
     {
         return $this->methodNotAllowed();

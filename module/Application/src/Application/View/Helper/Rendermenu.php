@@ -3,41 +3,40 @@
  * Created by PhpStorm.
  * User: hat
  * Date: 22/01/2015
- * Time: 17:57
+ * Time: 17:57.
  */
-
 namespace Application\View\Helper;
 
-use Zend\View\Helper\AbstractHelper;
 use Zend\ServiceManager\ServiceManager;
+use Zend\View\Helper\AbstractHelper;
 
 /**
- * Returns total value (with tax)
- *
+ * Returns total value (with tax).
  */
 class Rendermenu extends AbstractHelper
 {
     /**
-     * Service Locator
+     * Service Locator.
+     *
      * @var ServiceManager
      */
     protected $serviceLocator;
 
     /**
-     * __invoke
+     * __invoke.
      *
-     * @access public
      * @param  string
-     * @return String
+     *
+     * @return string
      */
     public function __invoke($routeMatch, $name = null)
     {
         //$em = $this->serviceLocator->get('doctrine.entitymanager.orm_default');
         if (null === $name) {
             $menu = $this->_getMainMenu($routeMatch);
-        } else if ($name == 'sidebar') {
+        } elseif ($name == 'sidebar') {
             $menu = $this->_getSidebar($routeMatch);
-        } else if ($name == 'admin') {
+        } elseif ($name == 'admin') {
             $menu = $this->_getAdminMenu($routeMatch);
         }
 
@@ -66,7 +65,8 @@ class Rendermenu extends AbstractHelper
     }
 
     /**
-     * Setter for $serviceLocator
+     * Setter for $serviceLocator.
+     *
      * @param ServiceManager $serviceLocator
      */
     public function setServiceLocator(ServiceManager $serviceLocator)

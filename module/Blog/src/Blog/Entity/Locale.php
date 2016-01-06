@@ -3,9 +3,8 @@
  * Created by PhpStorm.
  * User: hat
  * Date: 29/12/2014
- * Time: 12:07
+ * Time: 12:07.
  */
-
 namespace Blog\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -14,7 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="Locale")
  */
-class Locale {
+class Locale
+{
     /**
      * @var int
      * @ORM\Id
@@ -79,7 +79,7 @@ class Locale {
             'id',
             'code',
             'name',
-            'shortCode'
+            'shortCode',
         ];
         $data = [];
         foreach ($keys as $key) {

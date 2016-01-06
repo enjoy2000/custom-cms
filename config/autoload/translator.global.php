@@ -1,23 +1,24 @@
 <?php
+
 return [
-    'translator' => array(
-        'cache' => array(
-            'adapter' => array(
-                'name' => 'Filesystem',
-                'options' => array(
-                    'cache_dir' => __DIR__ . '/../../data/cache',
-                    'ttl' => '3600'
-                )
-            ),
-            'plugins' => array(
-                array(
-                    'name' => 'serializer',
-                    'options' => array()
-                ),
-                'exception_handler' => array(
-                    'throw_exceptions' => true
-                )
-            ),
-        )
-    )
+    'translator' => [
+        'cache' => [
+            'adapter' => [
+                'name'    => 'Filesystem',
+                'options' => [
+                    'cache_dir' => __DIR__.'/../../data/cache',
+                    'ttl'       => '3600',
+                ],
+            ],
+            'plugins' => [
+                [
+                    'name'    => 'serializer',
+                    'options' => [],
+                ],
+                'exception_handler' => [
+                    'throw_exceptions' => true,
+                ],
+            ],
+        ],
+    ],
 ];

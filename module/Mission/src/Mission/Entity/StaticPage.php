@@ -3,9 +3,8 @@
  * Created by PhpStorm.
  * User: hat
  * Date: 29/12/2014
- * Time: 11:53
+ * Time: 11:53.
  */
-
 namespace Mission\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -14,8 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="StaticPage")
  */
-class StaticPage {
-
+class StaticPage
+{
     /**
      * @var int
      * @ORM\Id
@@ -37,7 +36,7 @@ class StaticPage {
     protected $urlKey;
 
     /**
-     * @var boolean
+     * @var bool
      * @ORM\Column(type="boolean")
      */
     protected $published = true;
@@ -306,7 +305,7 @@ class StaticPage {
             'createTime',
             'updateUser',
             'updateTime',
-            'orderNumber'
+            'orderNumber',
         ];
         foreach ($keys as $key) {
             if (isset($data[$key])) {
@@ -319,17 +318,17 @@ class StaticPage {
 
     public function getEditUrl()
     {
-        return '/admin/mission-blog/edit/' . $this->id;
+        return '/admin/mission-blog/edit/'.$this->id;
     }
 
-    public function getDate($type='createTime')
+    public function getDate($type = 'createTime')
     {
         return $this->$type->format('d/m/Y');
     }
 
     public function getUrl()
     {
-        return '/' . self::BLOG_ROUTE . '/' . $this->urlKey;
+        return '/'.self::BLOG_ROUTE.'/'.$this->urlKey;
     }
 
     public function getExactCreateTime()

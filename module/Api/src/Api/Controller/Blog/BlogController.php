@@ -3,20 +3,19 @@
  * Created by PhpStorm.
  * User: hat
  * Date: 29/12/2014
- * Time: 15:10
+ * Time: 15:10.
  */
 namespace Api\Controller\Blog;
 
 use Api\Controller\AbstractRestfulJsonController;
 use Blog\Entity\Blog;
-use Zend\View\Model\JsonModel;
-use Zend\Paginator\Paginator;
-use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
+use Zend\Paginator\Paginator;
+use Zend\View\Model\JsonModel;
 
 class BlogController extends AbstractRestfulJsonController
 {
-
     public function getList()
     {
         // create pager
@@ -31,25 +30,27 @@ class BlogController extends AbstractRestfulJsonController
         // start filter
         if ($localeCode = $this->params()->fromQuery('locale')) {
             $locale = $this->findOneBy('Blog\Entity\Locale', ['name' => $localeCode]);
-            $queryBuilder->andWhere('blog.locale_id = ' . $locale->getId());
+            $queryBuilder->andWhere('blog.locale_id = '.$locale->getId());
         }
         // end filter
         $adapter = new DoctrineAdapter(new ORMPaginator($queryBuilder));
         $paginator = new Paginator($adapter);
         $paginator->setDefaultItemCountPerPage(10);
 
-        $page = (int)$this->getRequest()->getQuery('page');
-        if ($page) $paginator->setCurrentPageNumber($page);
-        $data = array();
+        $page = (int) $this->getRequest()->getQuery('page');
+        if ($page) {
+            $paginator->setCurrentPageNumber($page);
+        }
+        $data = [];
 
-        foreach($paginator as $blog){
+        foreach ($paginator as $blog) {
             $blogData = $blog->getData();
             $data[] = $blogData;
         }
         //var_dump($paginator);die;
         return new JsonModel([
             'blogs' => $data,
-            'pages' => $paginator->getPages()
+            'pages' => $paginator->getPages(),
         ]);
     }
 
@@ -58,7 +59,7 @@ class BlogController extends AbstractRestfulJsonController
         $blog = $this->find('Blog\Entity\Blog', $id);
 
         return new JsonModel([
-            'blog' => $blog
+            'blog' => $blog,
         ]);
     }
 
@@ -76,7 +77,7 @@ class BlogController extends AbstractRestfulJsonController
         $em->flush();
 
         return new JsonModel([
-            'blog' => $blog
+            'blog' => $blog,
         ]);
     }
 
@@ -94,15 +95,17 @@ class BlogController extends AbstractRestfulJsonController
         $em->flush();
 
         return new JsonModel([
-            'blog' => $blog
+            'blog' => $blog,
         ]);
     }
 
     /**
-     * Delete but we just toggle published variable
+     * Delete but we just toggle published variable.
+     *
      * @param $id
      */
-    public function delete($id) {
+    public function delete($id)
+    {
         $em = $this->getEntityManager();
         $blog = $this->find('Blog\Entity\Blog', $id);
         $this->checkPermissionForModerator($blog->getCategories());
@@ -111,7 +114,7 @@ class BlogController extends AbstractRestfulJsonController
         $em->flush();
 
         return new JsonModel([
-            'blog' => $blog
+            'blog' => $blog,
         ]);
     }
 }

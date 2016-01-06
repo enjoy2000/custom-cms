@@ -3,9 +3,8 @@
  * Created by PhpStorm.
  * User: hat
  * Date: 07/01/2015
- * Time: 16:46
+ * Time: 16:46.
  */
-
 use Zend\ServiceManager\ServiceManager;
 
 class ServiceManagerListener

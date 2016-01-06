@@ -3,19 +3,16 @@
  * Created by PhpStorm.
  * User: hat
  * Date: 30/12/2014
- * Time: 11:46
+ * Time: 11:46.
  */
-
 namespace Admin\Controller;
 
 use Application\Controller\AbstractActionController;
-use Doctrine\DBAL\Schema\View;
-use Zend\View\Model\ViewModel;
-use Mission\Form\StaticForm;
-use Mission\Entity\StaticPage;
-use Zend\Paginator\Paginator;
-use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
+use Mission\Form\StaticForm;
+use Zend\Paginator\Paginator;
+use Zend\View\Model\ViewModel;
 
 class MissionStaticController extends AbstractActionController
 {
@@ -30,7 +27,7 @@ class MissionStaticController extends AbstractActionController
 
     public function manageAction()
     {
-        $id = (int)$this->params()->fromRoute('id');
+        $id = (int) $this->params()->fromRoute('id');
         $category = $this->find('Mission\Entity\Category', $id);
 
         $em = $this->getEntityManager();
@@ -42,7 +39,7 @@ class MissionStaticController extends AbstractActionController
         // start filter
         if ($localeCode = $this->params()->fromQuery('locale')) {
             $locale = $this->findOneBy('Blog\Entity\Locale', ['name' => $localeCode]);
-            $queryBuilder->andWhere('b.locale = ' . $locale->getId());
+            $queryBuilder->andWhere('b.locale = '.$locale->getId());
         }
 
         // set order by blog id DESC
@@ -52,15 +49,15 @@ class MissionStaticController extends AbstractActionController
         $paginator = new Paginator($adapter);
         $paginator->setDefaultItemCountPerPage(10);
 
-        $page = (int)$this->getRequest()->getQuery('page');
+        $page = (int) $this->getRequest()->getQuery('page');
         if ($page) {
             $paginator->setCurrentPageNumber($page);
         }
 
         //var_dump($paginator);die;
         return new ViewModel([
-            'category' => $category,
-            'paginator' => $paginator
+            'category'  => $category,
+            'paginator' => $paginator,
         ]);
     }
 
@@ -76,18 +73,19 @@ class MissionStaticController extends AbstractActionController
             if ($form->isValid()) {
                 $form->save($this);
                 $this->flashMessenger()->addSuccessMessage('Your static page is created successfully!');
+
                 return $this->redirect()->toRoute('zfcadmin/mission-category/static/manage', ['id' => $postData['category']]);
             }
         }
 
         return new ViewModel([
-            'form' => $form
+            'form' => $form,
         ]);
     }
 
     public function editAction()
     {
-        $id = (int)$this->params()->fromRoute('id');
+        $id = (int) $this->params()->fromRoute('id');
         $blog = $this->find('Mission\Entity\StaticPage', $id);
         $em = $this->getEntityManager();
 
@@ -103,12 +101,13 @@ class MissionStaticController extends AbstractActionController
             if ($form->isValid()) {
                 $form->save($this);
                 $this->flashMessenger()->addSuccessMessage('Your static page is updated successfully!');
-                return $this->redirect()->toRoute('zfcadmin/mission-category/static/manage',['id' => $postData['category']]);
+
+                return $this->redirect()->toRoute('zfcadmin/mission-category/static/manage', ['id' => $postData['category']]);
             }
         }
 
         return new ViewModel([
-            'form' => $form
+            'form' => $form,
         ]);
     }
 
@@ -120,12 +119,12 @@ class MissionStaticController extends AbstractActionController
         $dumpData = $dump->getData();
         unset($dumpData['id']);
         for ($i = 0; $i < 50; ++$i) {
-            $blog = new Blog;
+            $blog = new Blog();
             $dumpData['urlKey'] .= $i;
             $blog->setData($dumpData);
             $em->persist($blog);
             $em->flush();
-            echo sprintf('Inserted %s rows successfully<br />', $i+1);
+            echo sprintf('Inserted %s rows successfully<br />', $i + 1);
         }
         echo 'finished all';
         die;

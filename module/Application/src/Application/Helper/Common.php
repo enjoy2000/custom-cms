@@ -3,23 +3,22 @@
  * Created by PhpStorm.
  * User: antiprovn
  * Date: 12/31/14
- * Time: 2:00 AM
+ * Time: 2:00 AM.
  */
-
 namespace Application\Helper;
 
-
-class Common {
-
+class Common
+{
     public function __construct()
     {
         setlocale(LC_ALL, 'en_US.UTF8');
     }
 
     /**
-     * Return name with Uppercase the first character of each word in a string
+     * Return name with Uppercase the first character of each word in a string.
      *
      * @param string $route
+     *
      * @return string
      */
     public static function getNameFromRoute($route)
@@ -40,7 +39,6 @@ class Common {
             if (isset($route['custom_links'])) {
                 foreach ($route['custom_links'] as $link) {
                     if (in_array($slug, $link['link'])) {
-
                         return $k;
                     }
                 }
@@ -49,4 +47,4 @@ class Common {
 
         return false;
     }
-} 
+}

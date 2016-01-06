@@ -1,16 +1,17 @@
 <?php
-return array(
-    'log' => array(
-        'Log\App' => array(
-            'writers' => array(
-                array(
-                    'name' => 'stream',
+
+return [
+    'log' => [
+        'Log\App' => [
+            'writers' => [
+                [
+                    'name'     => 'stream',
                     'priority' => 1000,
-                    'options' => array(
+                    'options'  => [
                         'stream' => 'data/logs/app.log',
-                    ),
-                ),
-            ),
-        ),
-    ),
-);
+                    ],
+                ],
+            ],
+        ],
+    ],
+];

@@ -8,17 +8,17 @@
  * ReCaptcha CAPTCHA adapter, and setting the to and sender addresses for the
  * mail message.
  */
-return array(
+return [
     // This is simply configuration to pass to Zend\Captcha\Factory
-    'captcha' => array(
+    'captcha' => [
         'class'   => 'recaptcha',
-        'options' => array(
+        'options' => [
             'pubkey'  => 'RECAPTCHA_PUBKEY_HERE',
             'privkey' => 'RECAPTCHA_PRIVKEY_HERE',
-        ),
-    ),
+        ],
+    ],
     // This sets the default "to" and "sender" headers for your message
-    'message' => array(
+    'message' => [
         /*
         // These can be either a string, or an array of email => name pairs
         'to'     => 'contact@your.tld',
@@ -29,24 +29,24 @@ return array(
             'address' => 'contact@your.tld'
         ),
          */
-    ),
+    ],
     // Transport consists of two keys:
     // - "class", the mail tranport class to use, and
     // - "options", any options to use to configure the
     //   tranpsort. Usually these will be passed to the
     //   transport-specific options class
     // This example configures GMail as your SMTP server
-    'mail_transport' => array(
+    'mail_transport' => [
         'class'   => 'Zend\Mail\Transport\Smtp',
-        'options' => array(
+        'options' => [
             'host'             => 'smtp.gmail.com',
             'port'             => 587,
             'connectionClass'  => 'login',
-            'connectionConfig' => array(
+            'connectionConfig' => [
                 'ssl'      => 'tls',
                 'username' => 'contact@your.tld',
                 'password' => 'password',
-            ),
-        ),
-    ),
-);
+            ],
+        ],
+    ],
+];

@@ -3,32 +3,31 @@
  * Created by PhpStorm.
  * User: hat
  * Date: 22/01/2015
- * Time: 17:57
+ * Time: 17:57.
  */
-
 namespace Application\View\Helper;
 
-use Zend\View\Helper\AbstractHelper;
 use Zend\ServiceManager\ServiceManager;
+use Zend\View\Helper\AbstractHelper;
 
 /**
- * Returns total value (with tax)
- *
+ * Returns total value (with tax).
  */
 class Em extends AbstractHelper
 {
     /**
-     * Service Locator
+     * Service Locator.
+     *
      * @var ServiceManager
      */
     protected $serviceLocator;
 
     /**
-     * __invoke
+     * __invoke.
      *
-     * @access public
      * @param  string
-     * @return String
+     *
+     * @return string
      */
     public function __invoke()
     {
@@ -38,7 +37,8 @@ class Em extends AbstractHelper
     }
 
     /**
-     * Setter for $serviceLocator
+     * Setter for $serviceLocator.
+     *
      * @param ServiceManager $serviceLocator
      */
     public function setServiceLocator(ServiceManager $serviceLocator)
